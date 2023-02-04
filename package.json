@@ -1,0 +1,6 @@
+{
+  "name": "unified-pixiv",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [ "packages/*" ]
+}

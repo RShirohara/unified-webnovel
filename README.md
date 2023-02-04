@@ -2,7 +2,7 @@
 
 [![LICENSE][license-badge]][license]
 
-[unified][unified] packages for Pixiv novel.
+[unified][unified] packages for pixiv novel.
 
 **Warning**: This project still in draft.
 

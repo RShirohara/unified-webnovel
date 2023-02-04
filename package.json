@@ -1,6 +1,12 @@
 {
   "name": "unified-pixiv",
+  "description": "unified packages for pixiv novel",
   "license": "MIT",
   "private": true,
-  "workspaces": [ "packages/*" ]
+  "workspaces": [
+    "./packages/*"
+  ],
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
 }

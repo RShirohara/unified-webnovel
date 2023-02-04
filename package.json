@@ -41,7 +41,7 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "projects": [
-      "./packages/*"
+      "./packages/*/package.json"
     ]
   },
   "prettier": {

@@ -2,7 +2,7 @@
 
 [![LICENSE][license-badge]][license]
 
-[unified][unified] packages for pixiv novel.
+[unified][unified] packages for [pixiv novel][pixiv-novel].
 
 **Warning**: This project still in draft.
 
@@ -14,4 +14,5 @@
 
 [license-badge]: https://img.shields.io/github/license/RShirohara/unified-pixiv
 [license]: ./LICENSE
+[pixiv-novel]: https://www.pixiv.net/novel/
 [unified]: https://github.com/unifiedjs/unified/

@@ -1,6 +1,6 @@
 // Type definitions for pxast.
 
-import { Parent as UnistParent, Literal as UnistLiteral } from "unist";
+import { Parent as UnistParent, Literal as UnistLiteral, Node } from "unist";
 
 // Node
 
@@ -16,24 +16,61 @@ export interface Root extends Parent {
   type: "root";
 }
 
-// Mixin
+export interface Paragraph extends Parent {
+  type: "paragraph";
+  children: PhrasingContent[];
+}
 
-export interface Resource {
+export interface Heading extends Parent {
+  type: "heading";
+  children: StaticPhrasingContent[];
+}
+
+export interface PageHeading extends Node {
+  type: "pageHeading";
+  pageNumber: number;
+}
+
+export interface Text extends Literal {
+  type: "text";
+}
+
+export interface Ruby extends Literal {
+  type: "ruby";
+  ruby: string;
+}
+
+export interface Break extends Node {
+  type: "break";
+}
+
+export interface Link extends Parent {
+  type: "link";
   url: string;
-  title?: string | null | undefined;
+  children: StaticPhrasingContent[];
 }
 
-export interface Association {
-  identifier: string;
-  label?: string | null | undefined;
+export interface Image extends Node {
+  type: "image";
+  illustId: string;
+  pageNumber?: number;
 }
 
-export interface Reference extends Association {
-  referenceType: ReferenceType;
+export interface PageReference extends Node {
+  type: "pageReference";
+  pageNumber: number;
 }
-
-export type ReferenceType = "shortcut" | "collapsed" | "full";
 
 // Content model
 
-export type PxastContent = UnistLiteral;
+export type PxastContent = FlowContent | PhrasingContent;
+
+export type FlowContent = Heading | PageHeading | Paragraph;
+
+export type PhrasingContent =
+  | Link
+  | Image
+  | PageReference
+  | StaticPhrasingContent;
+
+export type StaticPhrasingContent = Break | Ruby | Text;

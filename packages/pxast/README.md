@@ -51,12 +51,44 @@ interface Paragraph <: Parent {
 }
 ```
 
+For example, the following text:
+
+```text
+たとえば私はこの文章を書く。
+```
+
+Yields:
+
+```js
+{
+  type: 'paragraph',
+  children: [
+    {type: 'text', value: 'たとえば私はこの文章を書く。'}
+  ]
+}
+```
+
 ### `Heading`
 
 ```idl
 interface Heading <: Parent {
   type: 'heading'
   children: [StaticPhrasingContent]
+}
+```
+
+For example, the following text:
+
+```text
+[chapter:まえがき]
+```
+
+Yields:
+
+```js
+{
+  type: 'heading'
+  children: [{type: 'text', value: 'まえがき'}]
 }
 ```
 
@@ -69,12 +101,39 @@ interface Page <: Node {
 }
 ```
 
+For example, the following text:
+
+```text
+[newpage]
+```
+
+Yields:
+
+```js
+{
+  type: 'pageHeading',
+  pageNumber: 1
+}
+```
+
 ### `Text`
 
 ```idl
 interface Text <: Literal {
   type: 'text'
 }
+```
+
+For example, the following text:
+
+```text
+たとえば私はこの文章を書く。
+```
+
+Yields:
+
+```js
+{type: 'text', value: 'たとえば私はこの文章を書く。'}
 ```
 
 ### `Ruby`
@@ -86,11 +145,47 @@ interface Ruby <: Literal {
 }
 ```
 
+For example, the following text:
+
+```text
+[[rb:私>わたし]]
+```
+
+Yields:
+
+```js
+{
+  type: 'ruby',
+  value: '私',
+  ruby: 'わたし'
+}
+```
+
 ### `Break`
 
 ```idl
 interface Break <: Node {
   type: 'break'
+}
+```
+
+For example, the following text:
+
+```text
+これは一行目。
+これが二行目。
+```
+
+Yields:
+
+```js
+{
+  type: 'paragraph',
+  children: [
+    {type: 'text', value: 'これは一行目。'},
+    {type: 'break'},
+    {type: 'text', value: 'これが二行目。'}
+  ]
 }
 ```
 
@@ -104,6 +199,22 @@ interface Link <: Parent {
 }
 ```
 
+For example, the following text:
+
+```text
+[[jumpurl:リンク例>https://example.com]]
+```
+
+Yields:
+
+```js
+{
+  type: 'link',
+  url: 'https://example.com',
+  children: [{type: 'text', value: 'リンク例'}]
+}
+```
+
 ### `Image`
 
 ```idl
@@ -114,12 +225,43 @@ interface Image <: Node {
 }
 ```
 
+For example, the following text:
+
+```text
+[pixivimage:000001-02]
+```
+
+Yields:
+
+```js
+{
+  type: 'image',
+  illustId: '000001',
+  pageNumber: 2
+}
+```
+
 ### `PageReference`
 
 ```idl
 interface PageReference <: Node {
   type: 'pageReference'
   pageNumber: 1 <= number
+}
+```
+
+For example, the following text:
+
+```text
+[jump:01]
+```
+
+Yields:
+
+```js
+{
+  type: 'pageReference',
+  pageNumber: 1
 }
 ```
 

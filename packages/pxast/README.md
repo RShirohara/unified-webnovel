@@ -313,14 +313,14 @@ type StaticPhrasingContent = Break | Ruby | Text
 
 <!-- Link Definitions -->
 
+[dfn-parent]: #parent
+[dfn-pxast-content]: #content-model
+[dfn-unist-literal]: https://github.com/syntax-tree/unist#literal
+[dfn-unist-parent]: https://github.com/syntax-tree/unist#parent
 [license]: ./LICENSE
 [pixiv-novel]: https://www.pixiv.net/novel/
-[unist]: https://github.com/syntax-tree/unist
 [syntax-tree]: https://github.com/syntax-tree/unist#syntax-tree
-[dfn-unist-parent]: https://github.com/syntax-tree/unist#parent
-[dfn-unist-literal]: https://github.com/syntax-tree/unist#literal
-[dfn-pxast-content]: #content-model
-[dfn-parent]: #parent
 [term-child]: https://github.com/syntax-tree/unist#child
 [term-root]: https://github.com/syntax-tree/unist#root
 [term-tree]: https://github.com/syntax-tree/unist#tree
+[unist]: https://github.com/syntax-tree/unist

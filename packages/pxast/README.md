@@ -330,7 +330,7 @@ type StaticPhrasingContent = Break | Ruby | Text
 ```
 
 **StaticPhrasing** content represent the text in a document, and its markup,
-that is not indended for user interaction.
+that is not intended for user interaction.
 
 ## License
 

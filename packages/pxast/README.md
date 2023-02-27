@@ -16,6 +16,12 @@ This document defines a format for representing [pixiv novel][pixiv-novel] as an
 
 ## Types
 
+If you are using TypeScript, you can use the unist types by installing them with npm:
+
+```shell
+npm install @RShirohara/pxast
+```
+
 ## Nodes
 
 ### `Parent`
@@ -26,6 +32,10 @@ interface Parent <: UnistParent {
 }
 ```
 
+**Parent** ([**UnistParent**][dfn-unist-parent]) represents an abstract interface in pxast containing other nodes (said to be [*children*][term-child]).
+
+Its content is limited to only other [pxast content][dfn-pxast-content].
+
 ### `Literal`
 
 ```idl
@@ -34,6 +44,10 @@ interface Literal <: UnistLiteral {
 }
 ```
 
+**Literal** ([**UnistLiteral**][dfn-unist-literal]) represents an abstract interface in pxast containing a value.
+
+Its `value` field is a `string`.
+
 ### `Root`
 
 ```idl
@@ -41,6 +55,10 @@ interface Root <: Parent {
   type: 'root'
 }
 ```
+
+**Root** ([**Parent**][dfn-parent]) represents a document.
+
+**Root** can be used as the [*root*][term-root] of a [*tree*][term-tree], never as a [*child*][term-child].
 
 ### `Paragraph`
 
@@ -299,3 +317,10 @@ type StaticPhrasingContent = Break | Ruby | Text
 [pixiv-novel]: https://www.pixiv.net/novel/
 [unist]: https://github.com/syntax-tree/unist
 [syntax-tree]: https://github.com/syntax-tree/unist#syntax-tree
+[dfn-unist-parent]: https://github.com/syntax-tree/unist#parent
+[dfn-unist-literal]: https://github.com/syntax-tree/unist#literal
+[dfn-pxast-content]: #content-model
+[dfn-parent]: #parent
+[term-child]: https://github.com/syntax-tree/unist#child
+[term-root]: https://github.com/syntax-tree/unist#root
+[term-tree]: https://github.com/syntax-tree/unist#tree

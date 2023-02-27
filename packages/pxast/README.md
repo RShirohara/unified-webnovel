@@ -69,6 +69,11 @@ interface Paragraph <: Parent {
 }
 ```
 
+**Paragraph** ([**Parent**][dfn-parent]) represents a unit of discourse dealing with a particular point.
+
+**Paragraph** can be used where [**content**][dfn-content] is expected.
+Its content model is [**phrasing**][dfn-phrasing-content] content.
+
 For example, the following text:
 
 ```text
@@ -95,6 +100,11 @@ interface Heading <: Parent {
 }
 ```
 
+**Heading** ([**Parent**][dfn-parent]) represents a heading of a section.
+
+**Heading** can be used where [**flow**][dfn-flow-content] content is expected.
+Its content model is [**phrasing**][dfn-phrasing-content] content.
+
 For example, the following text:
 
 ```text
@@ -118,6 +128,11 @@ interface Page <: Node {
   pageNumber: 1 <= number
 }
 ```
+
+**PageHeading** ([**Node**][dfn-node]) represents a heading of a page.
+
+**PageHeading** can be used where [**flow**][dfn-flow-content] content is expected.
+It has no content model.
 
 For example, the following text:
 
@@ -295,6 +310,8 @@ type PxastContent = FlowContent | PhrasingContent
 type FlowContent = Heading | PageHeading | Paragraph
 ```
 
+**Flow** content represent the sections of document.
+
 ### `PhrasingContent`
 
 ```idl
@@ -313,7 +330,11 @@ type StaticPhrasingContent = Break | Ruby | Text
 
 <!-- Link Definitions -->
 
+[dfn-content]: #contents
+[dfn-flow-content]: #flowcontent
+[dfn-node]: https://github.com/syntax-tree/unist#node
 [dfn-parent]: #parent
+[dfn-phrasing-content]: #phrasingcontent
 [dfn-pxast-content]: #content-model
 [dfn-unist-literal]: https://github.com/syntax-tree/unist#literal
 [dfn-unist-parent]: https://github.com/syntax-tree/unist#parent

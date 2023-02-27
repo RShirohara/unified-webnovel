@@ -321,11 +321,16 @@ type FlowContent = Heading | PageHeading | Paragraph
 type PhrasingContent = Link | Image | PageReference | StaticPhrasingContent
 ```
 
+**Phrasing** content represent the text in a document, and its markup.
+
 ### `StaticPhrasingContent`
 
 ```idl
 type StaticPhrasingContent = Break | Ruby | Text
 ```
+
+**StaticPhrasing** content represent the text in a document, and its markup,
+that is not indended for user interaction.
 
 ## License
 

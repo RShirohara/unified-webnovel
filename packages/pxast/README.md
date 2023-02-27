@@ -103,7 +103,7 @@ interface Heading <: Parent {
 **Heading** ([**Parent**][dfn-parent]) represents a heading of a section.
 
 **Heading** can be used where [**flow**][dfn-flow-content] content is expected.
-Its content model is [**phrasing**][dfn-phrasing-content] content.
+Its content model is [**static phrasing**][dfn-static-phrasing-content] content.
 
 For example, the following text:
 
@@ -336,6 +336,7 @@ type StaticPhrasingContent = Break | Ruby | Text
 [dfn-parent]: #parent
 [dfn-phrasing-content]: #phrasingcontent
 [dfn-pxast-content]: #content-model
+[dfn-static-phrasing-content]: #staticphrasingcontent
 [dfn-unist-literal]: https://github.com/syntax-tree/unist#literal
 [dfn-unist-parent]: https://github.com/syntax-tree/unist#parent
 [license]: ./LICENSE

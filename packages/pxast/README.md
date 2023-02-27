@@ -134,6 +134,9 @@ interface Page <: Node {
 **PageHeading** can be used where [**flow**][dfn-flow-content] content is expected.
 It has no content model.
 
+A `pageNumber` field must be present.
+A value of `1` is said to be the minimum value.
+
 For example, the following text:
 
 ```text

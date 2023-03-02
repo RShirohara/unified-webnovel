@@ -13,6 +13,7 @@
 ## Introduction
 
 This document defines a format for representing [pixiv novel][pixiv-novel] as an [abstract syntax tree][syntax-tree].
+This specification is written in a [Web IDL][webidl]-like grammar.
 
 ## Types
 
@@ -340,6 +341,8 @@ Yields:
 type PxastContent = FlowContent | PhrasingContent
 ```
 
+Each node in pxast falls into one or more categories of **Content** that group nodes with similar characteristics together.
+
 ### `FlowContent`
 
 ```idl
@@ -389,3 +392,4 @@ that is not intended for user interaction.
 [term-root]: https://github.com/syntax-tree/unist#root
 [term-tree]: https://github.com/syntax-tree/unist#tree
 [unist]: https://github.com/syntax-tree/unist
+[webidl]: https://webidl.spec.whatwg.org

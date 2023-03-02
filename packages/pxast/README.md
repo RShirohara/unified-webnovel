@@ -160,6 +160,11 @@ interface Text <: Literal {
 }
 ```
 
+**Text** ([**Literal**][dfn-literal]) represents everything that is just text.
+
+**Text** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
+Its content is represented by its `value` field.
+
 For example, the following text:
 
 ```text
@@ -180,6 +185,11 @@ interface Ruby <: Literal {
   ruby: string
 }
 ```
+
+**Ruby** ([**Literal**][dfn-literal]) represents a small annotations that are rendered above, below, or next to text.
+
+**Ruby** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
+Its content is represented by its `value` and `ruby` fields.
 
 For example, the following text:
 
@@ -204,6 +214,11 @@ interface Break <: Node {
   type: 'break'
 }
 ```
+
+**Break** ([**Node**][dfn-node]) represents a line break.
+
+**Break** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
+It has no content model.
 
 For example, the following text:
 
@@ -235,6 +250,11 @@ interface Link <: Parent {
 }
 ```
 
+**Link** ([**Parent**][dfn-parent]) represents a hyperlink.
+
+**Link** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
+Its content model is [**static phrasing**][dfn-static-phrasing-content] content.
+
 For example, the following text:
 
 ```text
@@ -261,6 +281,11 @@ interface Image <: Node {
 }
 ```
 
+**Image** ([**Node**][dfn-node]) represents a reference to pixiv image.
+
+**Image** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
+It has no content model.
+
 For example, the following text:
 
 ```text
@@ -285,6 +310,14 @@ interface PageReference <: Node {
   pageNumber: 1 <= number
 }
 ```
+
+**PageReference** ([**Node**][dfn-node]) represents a reference to [**PageHeading**][dfn-page-heading].
+
+**PageReference** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
+It has no content model.
+
+A `pageNumber` field must be present.
+A value of `1` is said to be the minimum value.
 
 For example, the following text:
 
@@ -340,7 +373,9 @@ that is not intended for user interaction.
 
 [dfn-content]: #contents
 [dfn-flow-content]: #flowcontent
+[dfn-literal]: #literal
 [dfn-node]: https://github.com/syntax-tree/unist#node
+[dfn-page-heading]: #pageheading
 [dfn-parent]: #parent
 [dfn-phrasing-content]: #phrasingcontent
 [dfn-pxast-content]: #content-model

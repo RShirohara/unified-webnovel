@@ -15,7 +15,8 @@
   "types": "src/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RShirohara/unified-pixiv.git"
+    "url": "https://github.com/RShirohara/unified-pixiv.git",
+    "directory": "packages/pxast"
   },
   "scripts": {},
   "dependencies": {

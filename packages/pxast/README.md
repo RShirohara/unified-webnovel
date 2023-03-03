@@ -164,15 +164,28 @@ A value of `1` is said to be the minimum value.
 For example, the following text:
 
 ```text
+ここは一ページ目。
 [newpage]
+ここが二ページ目。
 ```
 
 Yields:
 
 ```js
 {
-  type: 'pageHeading',
-  pageNumber: 1
+  type: "root",
+  children: [
+    { type: "pageHeading", pageNumber: 1 },
+    {
+      type: "paragraph",
+      children: [{ type: "text", value: "ここは一ページ目。" }],
+    },
+    { type: "pageHeading", pageNumber: 2 },
+    {
+      type: "paragraph",
+      children: [{ type: "text", value: "ここが二ページ目。" }],
+    },
+  ]
 }
 ```
 

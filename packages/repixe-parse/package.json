@@ -19,5 +19,8 @@
     "directory": "packages/repixe-parse"
   },
   "scripts": {},
-  "dependencies": {}
+  "dependencies": {
+    "@rshirohara/pxast": "^0.1.0",
+    "unified": "^10.1.2"
+  }
 }

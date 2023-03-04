@@ -1,0 +1,23 @@
+{
+  "name": "@rshirohara/repixe-parse",
+  "version": "0.1.0",
+  "description": "repixe plugin to add support for parsing pixiv novel input",
+  "homepage": "https://github.com/RShirohara/unified-pixiv#readme",
+  "bugs": {
+    "url": "https://github.com/RShirohara/unified-pixiv/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Ray Shirohara",
+    "url": "https://github.com/RShirohara"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RShirohara/unified-pixiv.git",
+    "directory": "packages/repixe-parse"
+  },
+  "scripts": {},
+  "dependencies": {}
+}

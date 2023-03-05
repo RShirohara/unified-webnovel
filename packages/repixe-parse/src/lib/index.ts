@@ -1,3 +1,3 @@
-import { Root } from "@/../../pxast/src";
+import { Root } from "@rshirohara/pxast";
 
 export function fromPixivNovel(doc: string): Root {}

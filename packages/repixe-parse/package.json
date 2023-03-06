@@ -23,5 +23,13 @@
     "@rshirohara/pxast": "^0.1.0",
     "pixiv-novel-parser": "^0.3.0",
     "unified": "^10.1.2"
+  },
+  "jest": {
+    "preset": "ts-jest/presets/default-esm",
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1",
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
   }
 }

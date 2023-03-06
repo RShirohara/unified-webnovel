@@ -18,7 +18,10 @@
     "url": "https://github.com/RShirohara/unified-pixiv.git",
     "directory": "packages/repixe-parse"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "tsc --build ./tsconfig.build.json",
+    "test": "jest"
+  },
   "dependencies": {
     "@rshirohara/pxast": "^0.1.0",
     "pixiv-novel-parser": "^0.3.0",

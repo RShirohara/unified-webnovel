@@ -35,11 +35,14 @@
       "project": [
         "./packages/*/tsconfig.json"
       ]
+    },
+    "rules": {
+      "@typescript-eslint/consistent-type-exports": "warn",
+      "@typescript-eslint/consistent-type-imports": "warn",
+      "@typescript-eslint/no-import-type-side-effects": "warn"
     }
   },
   "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
     "projects": [
       "./packages/*/package.json"
     ]
@@ -47,7 +50,6 @@
   "prettier": {
     "printWidth": 80,
     "tabWidth": 2,
-    "trailingComma": "es5",
     "endOfLine": "lf"
   }
 }

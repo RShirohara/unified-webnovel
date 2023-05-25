@@ -1,6 +1,10 @@
 // Type definitions for pxast.
 
-import { Parent as UnistParent, Literal as UnistLiteral, Node } from "unist";
+import type {
+  Node,
+  Literal as UnistLiteral,
+  Parent as UnistParent,
+} from "unist";
 
 // Node
 

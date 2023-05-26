@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { Root } from "@rshirohara/pxast";
+import type { Root } from "@rshirohara/pxast";
 
 import { fromPixivNovel } from "@/lib";
 
@@ -18,10 +18,10 @@ describe("FlowContent", () => {
               { type: "ruby", value: "使用", ruby: "しよう" },
               { type: "text", value: "できる" },
               { type: "ruby", value: "見出", ruby: "みだ" },
-              { type: "text", value: "し" }
-            ]
-          }
-        ]
+              { type: "text", value: "し" },
+            ],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -30,8 +30,8 @@ describe("FlowContent", () => {
       const expected: Root = {
         type: "root",
         children: [
-          { type: "heading", children: [{ type: "text", value: "見出し" }] }
-        ]
+          { type: "heading", children: [{ type: "text", value: "見出し" }] },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -46,14 +46,14 @@ describe("FlowContent", () => {
           { type: "pageHeading", pageNumber: 1 },
           {
             type: "paragraph",
-            children: [{ type: "text", value: "1ページ目" }]
+            children: [{ type: "text", value: "1ページ目" }],
           },
           { type: "pageHeading", pageNumber: 2 },
           {
             type: "paragraph",
-            children: [{ type: "text", value: "2ページ目" }]
-          }
-        ]
+            children: [{ type: "text", value: "2ページ目" }],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -65,25 +65,43 @@ describe("FlowContent", () => {
           { type: "pageHeading", pageNumber: 1 },
           {
             type: "paragraph",
-            children: [{ type: "text", value: "1ページ目" }]
+            children: [{ type: "text", value: "1ページ目" }],
           },
           { type: "pageHeading", pageNumber: 2 },
           {
             type: "paragraph",
-            children: [{ type: "text", value: "2ページ目" }]
+            children: [{ type: "text", value: "2ページ目" }],
           },
           { type: "pageHeading", pageNumber: 3 },
           {
             type: "paragraph",
-            children: [{ type: "text", value: "3ページ目" }]
-          }
-        ]
+            children: [{ type: "text", value: "3ページ目" }],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
   });
 
   describe("Paragraph", () => {
+    test("Image を格納できる", () => {
+      const source = "[pixivimage:000001]";
+      const expected: Root = {
+        type: "root",
+        children: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                type: "image",
+                illustId: "000001",
+              },
+            ],
+          },
+        ],
+      };
+      expect(fromPixivNovel(source)).toEqual(expected);
+    });
     test("Link を格納できる", () => {
       const source = "[[jumpurl:[example] > https://example.com/]]";
       const expected: Root = {
@@ -95,29 +113,11 @@ describe("FlowContent", () => {
               {
                 type: "link",
                 url: "https://example.com/",
-                children: [{ type: "text", value: "example" }]
-              }
-            ]
-          }
-        ]
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-    test("Image を格納できる", () => {
-      const source = "[pixivimage:000001]";
-      const expected: Root = {
-        type: "root",
-        children: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "image",
-                illustId: "000001"
-              }
-            ]
-          }
-        ]
+                children: [{ type: "text", value: "example" }],
+              },
+            ],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -132,10 +132,10 @@ describe("FlowContent", () => {
               { type: "ruby", value: "換言", ruby: "かんげん" },
               { type: "text", value: "すれば" },
               { type: "ruby", value: "畢竟", ruby: "ひっきょう" },
-              { type: "text", value: "ももんが" }
-            ]
-          }
-        ]
+              { type: "text", value: "ももんが" },
+            ],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -146,9 +146,9 @@ describe("FlowContent", () => {
         children: [
           {
             type: "paragraph",
-            children: [{ type: "text", value: "ただのテキスト" }]
-          }
-        ]
+            children: [{ type: "text", value: "ただのテキスト" }],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -162,10 +162,10 @@ describe("FlowContent", () => {
             children: [
               { type: "text", value: "一行目" },
               { type: "break" },
-              { type: "text", value: "二行目" }
-            ]
-          }
-        ]
+              { type: "text", value: "二行目" },
+            ],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -179,37 +179,14 @@ describe("FlowContent", () => {
             children: [
               { type: "text", value: "一行目" },
               { type: "break" },
-              { type: "text", value: "二行目" }
-            ]
-          },
-          { type: "paragraph", children: [{ type: "text", value: "二段落目" }] }
-        ]
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-    test("前後の改行を取り除く", () => {
-      const source = "\n\n一行目\n二行目\n\n\n二段落目\n二行目\n\n三段落目\n";
-      const expected: Root = {
-        type: "root",
-        children: [
-          {
-            type: "paragraph",
-            children: [
-              { type: "text", value: "一行目" },
-              { type: "break" },
-              { type: "text", value: "二行目" }
-            ]
+              { type: "text", value: "二行目" },
+            ],
           },
           {
             type: "paragraph",
-            children: [
-              { type: "text", value: "二段落目" },
-              { type: "break" },
-              { type: "text", value: "二行目" }
-            ]
+            children: [{ type: "text", value: "二段落目" }],
           },
-          { type: "paragraph", children: [{ type: "text", value: "三段落目" }] }
-        ]
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -217,6 +194,35 @@ describe("FlowContent", () => {
 });
 
 describe("PhrasingContent", () => {
+  describe("Image", () => {
+    test("画像形式の PixivImage をちゃんと変換できる", () => {
+      const source = "[pixivimage:000001]";
+      const expected: Root = {
+        type: "root",
+        children: [
+          {
+            type: "paragraph",
+            children: [{ type: "image", illustId: "000001" }],
+          },
+        ],
+      };
+      expect(fromPixivNovel(source)).toEqual(expected);
+    });
+    test("漫画形式の PixivImage をちゃんと変換できる", () => {
+      const source = "[pixivimage:000001-2";
+      const expected: Root = {
+        type: "root",
+        children: [
+          {
+            type: "paragraph",
+            children: [{ type: "image", illustId: "000001", pageNumber: 2 }],
+          },
+        ],
+      };
+      expect(fromPixivNovel(source)).toEqual(expected);
+    });
+  });
+
   describe("Link", () => {
     test("正常な URL をちゃんと Link にできる", () => {
       const source = "[[jumpurl: [example]]>https://example.com]";
@@ -229,11 +235,11 @@ describe("PhrasingContent", () => {
               {
                 type: "link",
                 url: "https://example.com",
-                children: [{ type: "text", value: "example" }]
-              }
-            ]
-          }
-        ]
+                children: [{ type: "text", value: "example" }],
+              },
+            ],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -251,12 +257,12 @@ describe("PhrasingContent", () => {
                 url: "https://example.com/",
                 children: [
                   { type: "text", value: "これが" },
-                  { type: "ruby", value: "例", ruby: "れい" }
-                ]
-              }
-            ]
-          }
-        ]
+                  { type: "ruby", value: "例", ruby: "れい" },
+                ],
+              },
+            ],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -271,40 +277,11 @@ describe("PhrasingContent", () => {
               {
                 type: "link",
                 url: "https://example.com",
-                children: [{ type: "text", value: "リンク例" }]
-              }
-            ]
-          }
-        ]
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-  });
-
-  describe("Image", () => {
-    test("画像形式の PixivImage をちゃんと変換できる", () => {
-      const source = "[pixivimage:000001]";
-      const expected: Root = {
-        type: "root",
-        children: [
-          {
-            type: "paragraph",
-            children: [{ type: "image", illustId: "000001" }]
-          }
-        ]
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-    test("漫画形式の PixivImage をちゃんと変換できる", () => {
-      const source = "[pixivimage:000001-2";
-      const expected: Root = {
-        type: "root",
-        children: [
-          {
-            type: "paragraph",
-            children: [{ type: "image", illustId: "000001", pageNumber: 2 }]
-          }
-        ]
+                children: [{ type: "text", value: "リンク例" }],
+              },
+            ],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -319,16 +296,16 @@ describe("PhrasingContent", () => {
           { type: "pageHeading", pageNumber: 1 },
           {
             type: "paragraph",
-            children: [{ type: "pageReference", pageNumber: 1 }]
-          }
-        ]
+            children: [{ type: "pageReference", pageNumber: 1 }],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
   });
 });
 
-describe("StaticPhrasingContent", () => {
+describe("PhrasingStaticContent", () => {
   describe("Break", () => {
     test("1個の改行は Break になる", () => {
       const source = "一行目\n二行目";
@@ -340,10 +317,10 @@ describe("StaticPhrasingContent", () => {
             children: [
               { type: "text", value: "一行目" },
               { type: "break" },
-              { type: "text", value: "二行目" }
-            ]
-          }
-        ]
+              { type: "text", value: "二行目" },
+            ],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -361,10 +338,10 @@ describe("StaticPhrasingContent", () => {
               { type: "ruby", value: "換言", ruby: "かんげん" },
               { type: "text", value: "すれば" },
               { type: "ruby", value: "畢竟", ruby: "ひっきょう" },
-              { type: "text", value: "ももんが" }
-            ]
-          }
-        ]
+              { type: "text", value: "ももんが" },
+            ],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
     });
@@ -378,11 +355,146 @@ describe("StaticPhrasingContent", () => {
         children: [
           {
             type: "paragraph",
-            children: [{ type: "text", value: "ただのテキスト" }]
-          }
-        ]
+            children: [{ type: "text", value: "ただのテキスト" }],
+          },
+        ],
       };
       expect(fromPixivNovel(source)).toEqual(expected);
+    });
+  });
+});
+
+describe("空要素の除去", () => {
+  describe("Parent", () => {
+    test("Parent の先頭にある空の Parent は除去される", () => {
+      const source = "";
+      const expected: Root = {
+        type: "root",
+        children: [],
+      };
+      // expect(fromPixivNovel(source)).toEqual(expected);
+    });
+    test("Parent の末尾にある空の Parent は除去される", () => {
+      const source = "";
+      const expected: Root = {
+        type: "root",
+        children: [],
+      };
+      // expect(fromPixivNovel(source)).toEqual(expected);
+    });
+  });
+
+  describe("Literal", () => {
+    test("Parent の先頭にある空の Literal は除去される", () => {
+      const source = "";
+      const expected: Root = {
+        type: "root",
+        children: [],
+      };
+      // expect(fromPixivNovel(source)).toEqual(expected);
+    });
+    test("Parent の末尾にある空の Literal は除去される", () => {
+      const source = "";
+      const expected: Root = {
+        type: "root",
+        children: [],
+      };
+      // expect(fromPixivNovel(source)).toEqual(expected);
+    });
+  });
+
+  describe("Break", () => {
+    test("Parent の先頭にある Break は除去される", () => {
+      const source = "\n一行目\n二行目\n\n\n二段落目\n\n三段落目";
+      const expected: Root = {
+        type: "root",
+        children: [
+          {
+            type: "paragraph",
+            children: [
+              { type: "text", value: "一行目" },
+              { type: "break" },
+              { type: "text", value: "二行目" },
+            ],
+          },
+          {
+            type: "paragraph",
+            children: [{ type: "text", value: "二段落目" }],
+          },
+          {
+            type: "paragraph",
+            children: [{ type: "text", value: "三段落目" }],
+          },
+        ],
+      };
+      expect(fromPixivNovel(source)).toEqual(expected);
+    });
+    test("Parent の末尾にある Break は除去される", () => {
+      const source = "一行目\n二行目\n\n二段落目\n二行目\n\n\n三段落目\n";
+      const expected: Root = {
+        type: "root",
+        children: [
+          {
+            type: "paragraph",
+            children: [
+              { type: "text", value: "一行目" },
+              { type: "break" },
+              { type: "text", value: "二行目" },
+            ],
+          },
+          {
+            type: "paragraph",
+            children: [
+              { type: "text", value: "二段落目" },
+              { type: "break" },
+              { type: "text", value: "二行目" },
+            ],
+          },
+          {
+            type: "paragraph",
+            children: [{ type: "text", value: "三段落目" }],
+          },
+        ],
+      };
+      expect(fromPixivNovel(source)).toEqual(expected);
+    });
+  });
+
+  describe("PageHeading", () => {
+    test("Parent の先頭にある PageHeading は除去されない", () => {
+      const source = "";
+      const expected: Root = {
+        type: "root",
+        children: [],
+      };
+      //  fromPixivNovel(source)).toEqual(expected);
+    });
+    test("Parent の末尾にある PageHeading は除去されない", () => {
+      const source = "";
+      const expected: Root = {
+        type: "root",
+        children: [],
+      };
+      //  fromPixivNovel(source)).toEqual(expected);
+    });
+  });
+
+  describe("PageReference", () => {
+    test("Parent の先頭にある PageReference は除去されない", () => {
+      const source = "";
+      const expected: Root = {
+        type: "root",
+        children: [],
+      };
+      //  fromPixivNovel(source)).toEqual(expected);
+    });
+    test("Parent の末尾にある PageReference は除去されない", () => {
+      const source = "";
+      const expected: Root = {
+        type: "root",
+        children: [],
+      };
+      //  fromPixivNovel(source)).toEqual(expected);
     });
   });
 });

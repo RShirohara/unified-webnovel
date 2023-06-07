@@ -113,7 +113,7 @@ describe("FlowContent", () => {
               {
                 type: "link",
                 url: "https://example.com/",
-                children: [{ type: "text", value: "example" }],
+                children: [{ type: "text", value: "[example]" }],
               },
             ],
           },

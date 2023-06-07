@@ -42,6 +42,23 @@ export function transform(nodes: PixivNode[]): PixivFlowContent[] {
         internalNodes = [];
       }
       result.push(node);
+    } else if (node.type === "text") {
+      const paragraphBorder = node.val
+        .replaceAll(/\n{2,}/gmu, "\n\n")
+        .split("\n\n");
+      if (paragraphBorder.length >= 2) {
+        paragraphBorder.forEach((text) => {
+          internalNodes.push({ ...node, val: text });
+          result.push({
+            type: "tag",
+            name: "paragraph",
+            elements: internalNodes,
+          });
+          internalNodes = [];
+        });
+      } else {
+        internalNodes.push(node);
+      }
     } else {
       internalNodes.push(node);
     }

@@ -229,6 +229,7 @@ const transpilers = {
             return node.val
               .replaceAll("\n", "\0\n\0")
               .split("\0")
+              .filter((val) => val.length >= 1)
               .map((val) => {
                 return { ...node, val };
               });
@@ -237,7 +238,17 @@ const transpilers = {
       };
     },
     postProcess: (node) => {
-      return node;
+      return {
+        ...node,
+        children: node.children.filter(
+          (value, index, array) =>
+            !(
+              (value.type === "break" ||
+                (value.type === "text" && value.value === "")) &&
+              (index === 0 || index === array.length - 1)
+            )
+        ),
+      };
     },
   } as NodeTranspiler<PixivParagraph, Paragraph>,
 
@@ -265,6 +276,19 @@ const transpilers = {
         type: "link",
         url: node.uri,
         children: transpilePhrasingContent(node.title),
+      };
+    },
+    postProcess: (node) => {
+      return {
+        ...node,
+        children: node.children.filter(
+          (value, index, array) =>
+            !(
+              (value.type === "break" ||
+                (value.type === "text" && value.value === "")) &&
+              (index === 0 || index === array.length - 1)
+            )
+        ),
       };
     },
   } as NodeTranspiler<PixivJumpUrl, Link>,

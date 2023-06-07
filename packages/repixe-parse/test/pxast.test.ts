@@ -367,136 +367,120 @@ describe("PhrasingStaticContent", () => {
 });
 
 describe("空要素の除去", () => {
-  describe("Parent", () => {
-    test("Parent の先頭にある空の Parent は除去される", () => {
-      const source = "";
-      const expected: Root = {
-        type: "root",
-        children: [],
-      };
-      // expect(fromPixivNovel(source)).toEqual(expected);
+  describe("Paragraph", () => {
+    describe("Break", () => {
+      test("Paragraph の先頭にある Break は削除される", () => {
+        const source = "\n一行目\n二行目\n\n\n二段落目\n\n三段落目";
+        const expected: Root = {
+          type: "root",
+          children: [
+            {
+              type: "paragraph",
+              children: [
+                { type: "text", value: "一行目" },
+                { type: "break" },
+                { type: "text", value: "二行目" },
+              ],
+            },
+            {
+              type: "paragraph",
+              children: [{ type: "text", value: "二段落目" }],
+            },
+            {
+              type: "paragraph",
+              children: [{ type: "text", value: "三段落目" }],
+            },
+          ],
+        };
+        expect(fromPixivNovel(source)).toEqual(expected);
+      });
+      test("Paragraph の末尾にある Break は削除される", () => {
+        const source = "一行目\n二行目\n\n二段落目\n二行目\n\n\n三段落目\n";
+        const expected: Root = {
+          type: "root",
+          children: [
+            {
+              type: "paragraph",
+              children: [
+                { type: "text", value: "一行目" },
+                { type: "break" },
+                { type: "text", value: "二行目" },
+              ],
+            },
+            {
+              type: "paragraph",
+              children: [
+                { type: "text", value: "二段落目" },
+                { type: "break" },
+                { type: "text", value: "二行目" },
+              ],
+            },
+            {
+              type: "paragraph",
+              children: [{ type: "text", value: "三段落目" }],
+            },
+          ],
+        };
+        expect(fromPixivNovel(source)).toEqual(expected);
+      });
     });
-    test("Parent の末尾にある空の Parent は除去される", () => {
-      const source = "";
-      const expected: Root = {
-        type: "root",
-        children: [],
-      };
-      // expect(fromPixivNovel(source)).toEqual(expected);
+
+    describe("Text", () => {
+      test("Paragraph の先頭にある空の Text は削除される", () => {
+        const source = "";
+        const expected: Root = {
+          type: "root",
+          children: [],
+        };
+        //  fromPixivNovel(source)).toEqual(expected);
+      });
+      test("Paragraph の末尾にある空の Text は削除される", () => {
+        const source = "";
+        const expected: Root = {
+          type: "root",
+          children: [],
+        };
+        //  fromPixivNovel(source)).toEqual(expected);
+      });
     });
   });
+  describe("Link", () => {
+    describe("Break", () => {
+      test("Link の先頭にある Break は削除される", () => {
+        const source = "";
+        const expected: Root = {
+          type: "root",
+          children: [],
+        };
+        //  fromPixivNovel(source)).toEqual(expected);
+      });
+      test("Link の末尾にある Break は削除される", () => {
+        const source = "";
+        const expected: Root = {
+          type: "root",
+          children: [],
+        };
+        //  fromPixivNovel(source)).toEqual(expected);
+      });
+    });
 
-  describe("Literal", () => {
-    test("Parent の先頭にある空の Literal は除去される", () => {
-      const source = "";
-      const expected: Root = {
-        type: "root",
-        children: [],
-      };
-      // expect(fromPixivNovel(source)).toEqual(expected);
-    });
-    test("Parent の末尾にある空の Literal は除去される", () => {
-      const source = "";
-      const expected: Root = {
-        type: "root",
-        children: [],
-      };
-      // expect(fromPixivNovel(source)).toEqual(expected);
-    });
-  });
-
-  describe("Break", () => {
-    test("Parent の先頭にある Break は除去される", () => {
-      const source = "\n一行目\n二行目\n\n\n二段落目\n\n三段落目";
-      const expected: Root = {
-        type: "root",
-        children: [
-          {
-            type: "paragraph",
-            children: [
-              { type: "text", value: "一行目" },
-              { type: "break" },
-              { type: "text", value: "二行目" },
-            ],
-          },
-          {
-            type: "paragraph",
-            children: [{ type: "text", value: "二段落目" }],
-          },
-          {
-            type: "paragraph",
-            children: [{ type: "text", value: "三段落目" }],
-          },
-        ],
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-    test("Parent の末尾にある Break は除去される", () => {
-      const source = "一行目\n二行目\n\n二段落目\n二行目\n\n\n三段落目\n";
-      const expected: Root = {
-        type: "root",
-        children: [
-          {
-            type: "paragraph",
-            children: [
-              { type: "text", value: "一行目" },
-              { type: "break" },
-              { type: "text", value: "二行目" },
-            ],
-          },
-          {
-            type: "paragraph",
-            children: [
-              { type: "text", value: "二段落目" },
-              { type: "break" },
-              { type: "text", value: "二行目" },
-            ],
-          },
-          {
-            type: "paragraph",
-            children: [{ type: "text", value: "三段落目" }],
-          },
-        ],
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-  });
-
-  describe("PageHeading", () => {
-    test("Parent の先頭にある PageHeading は除去されない", () => {
-      const source = "";
-      const expected: Root = {
-        type: "root",
-        children: [],
-      };
-      //  fromPixivNovel(source)).toEqual(expected);
-    });
-    test("Parent の末尾にある PageHeading は除去されない", () => {
-      const source = "";
-      const expected: Root = {
-        type: "root",
-        children: [],
-      };
-      //  fromPixivNovel(source)).toEqual(expected);
-    });
-  });
-
-  describe("PageReference", () => {
-    test("Parent の先頭にある PageReference は除去されない", () => {
-      const source = "";
-      const expected: Root = {
-        type: "root",
-        children: [],
-      };
-      //  fromPixivNovel(source)).toEqual(expected);
-    });
-    test("Parent の末尾にある PageReference は除去されない", () => {
-      const source = "";
-      const expected: Root = {
-        type: "root",
-        children: [],
-      };
-      //  fromPixivNovel(source)).toEqual(expected);
+    describe("Text", () => {
+      test("Link の先頭にある空の Text は削除される", () => {
+        const source = "";
+        const expected: Root = {
+          type: "root",
+          children: [],
+        };
+        //  fromPixivNovel(source)).toEqual(expected);
+      });
+      test("Link の末尾にある空の Text は削除される", () => {
+        const source = "";
+        const expected: Root = {
+          type: "root",
+          children: [],
+        };
+        //  fromPixivNovel(source)).toEqual(expected);
+      });
     });
   });
 });

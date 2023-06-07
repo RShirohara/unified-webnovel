@@ -261,7 +261,7 @@ const transpilers = {
       return {
         type: "image",
         illustId: node.illustID,
-        pageNumber: node.pageNumber,
+        pageNumber: node.pageNumber ?? undefined,
       };
     },
   } as NodeTranspiler<PixivImage, Image>,

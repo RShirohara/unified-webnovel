@@ -219,7 +219,22 @@ const transpilers = {
       };
     },
     preProcess: (node) => {
-      return node;
+      return {
+        ...node,
+        elements: node.elements
+          .map((node) => {
+            if (node.type !== "text") {
+              return node;
+            }
+            return node.val
+              .replaceAll("\n", "\0\n\0")
+              .split("\0")
+              .map((val) => {
+                return { ...node, val };
+              });
+          })
+          .flat(),
+      };
     },
     postProcess: (node) => {
       return node;
@@ -290,6 +305,9 @@ const transpilers = {
       return node.type === "text" || node.type === "break";
     },
     transpile: (node) => {
+      if (node.val === "\n") {
+        return { type: "break" };
+      }
       return { type: "text", value: node.val };
     },
   } as NodeTranspiler<PixivText, Text | Break>,

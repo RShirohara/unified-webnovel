@@ -1,21 +1,28 @@
 import type {
   Chapter,
-  NewPage,
-  Ruby,
-  Text,
-  PixivImage,
   JumpPage,
   JumpUrl,
+  NewPage,
+  PixivImage,
   PixivNode,
+  Ruby,
+  Text,
 } from "pixiv-novel-parser";
 
-export type PixivFlowContent = NewPage | Chapter | PixivPhrasingContent[];
+export type PixivContent = PixivFlowContent | PixivPhrasingContent;
+export type PixivFlowContent = Chapter | NewPage | Paragraph;
 export type PixivPhrasingContent =
-  | Text
-  | Ruby
-  | PixivImage
   | JumpPage
-  | JumpUrl;
+  | JumpUrl
+  | PixivImage
+  | Ruby
+  | Text;
+
+export type Paragraph = {
+  type: "tag";
+  name: "paragraph";
+  elements: PixivPhrasingContent[];
+};
 
 export function transform(nodes: PixivNode[]): PixivFlowContent[] {
   const result: PixivFlowContent[] = [];
@@ -27,7 +34,11 @@ export function transform(nodes: PixivNode[]): PixivFlowContent[] {
       (node.name === "newpage" || node.name === "chapter")
     ) {
       if (internalNodes.length >= 1) {
-        result.push(internalNodes);
+        result.push({
+          type: "tag",
+          name: "paragraph",
+          elements: internalNodes,
+        });
         internalNodes = [];
       }
       result.push(node);
@@ -36,7 +47,7 @@ export function transform(nodes: PixivNode[]): PixivFlowContent[] {
     }
   });
   if (internalNodes.length >= 1) {
-    result.push(internalNodes);
+    result.push({ type: "tag", name: "paragraph", elements: internalNodes });
     internalNodes = [];
   }
   return result;

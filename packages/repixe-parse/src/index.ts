@@ -1,5 +1,5 @@
-import { Processor, Plugin } from "unified";
-import { Root as PxastRoot } from "@rshirohara/pxast";
+import type { Root as PxastRoot } from "@rshirohara/pxast";
+import type { Plugin, Processor } from "unified";
 
 import { fromPixivNovel } from "./lib";
 

@@ -103,7 +103,7 @@ describe("FlowContent", () => {
       expect(fromPixivNovel(source)).toEqual(expected);
     });
     test("Link を格納できる", () => {
-      const source = "[[jumpurl:[example] > https://example.com/]]";
+      const source = "[[jumpuri:[example] > https://example.com/]]";
       const expected: Root = {
         type: "root",
         children: [
@@ -122,7 +122,8 @@ describe("FlowContent", () => {
       expect(fromPixivNovel(source)).toEqual(expected);
     });
     test("Ruby を格納できる", () => {
-      const source = "[[rb: 換言 > かんげん]すれば[rb:畢竟>ひっきょう]ももんが";
+      const source =
+        "[[rb: 換言 > かんげん]]すれば[[rb:畢竟>ひっきょう]]ももんが";
       const expected: Root = {
         type: "root",
         children: [
@@ -209,7 +210,7 @@ describe("PhrasingContent", () => {
       expect(fromPixivNovel(source)).toEqual(expected);
     });
     test("漫画形式の PixivImage をちゃんと変換できる", () => {
-      const source = "[pixivimage:000001-2";
+      const source = "[pixivimage:000001-2]";
       const expected: Root = {
         type: "root",
         children: [
@@ -225,7 +226,7 @@ describe("PhrasingContent", () => {
 
   describe("Link", () => {
     test("正常な URL をちゃんと Link にできる", () => {
-      const source = "[[jumpurl: [example]]>https://example.com]";
+      const source = "[[jumpuri:[example] > https://example.com]]";
       const expected: Root = {
         type: "root",
         children: [
@@ -245,7 +246,7 @@ describe("PhrasingContent", () => {
     });
     test("Ruby を格納できる", () => {
       const source =
-        "[[jumpurl: これが[rb: 例 > れい] > https://example.com/]]";
+        "[[jumpuri: これが[[rb: 例 > れい]] > https://example.com/]]";
       const expected: Root = {
         type: "root",
         children: [
@@ -267,7 +268,7 @@ describe("PhrasingContent", () => {
       expect(fromPixivNovel(source)).toEqual(expected);
     });
     test("Text を格納できる", () => {
-      const source = "[[jumpurl: [リンク例]]>https://example.com]";
+      const source = "[[jumpuri: [リンク例]>https://example.com]]";
       const expected: Root = {
         type: "root",
         children: [
@@ -328,7 +329,8 @@ describe("PhrasingStaticContent", () => {
 
   describe("Ruby", () => {
     test("ルビをちゃんと認識できる", () => {
-      const source = "[[rb: 換言 > かんげん]すれば[rb:畢竟>ひっきょう]ももんが";
+      const source =
+        "[[rb: 換言 > かんげん]]すれば[[rb:畢竟>ひっきょう]]ももんが";
       const expected: Root = {
         type: "root",
         children: [

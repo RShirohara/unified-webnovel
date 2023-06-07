@@ -226,7 +226,7 @@ describe("PhrasingContent", () => {
 
   describe("Link", () => {
     test("正常な URL をちゃんと Link にできる", () => {
-      const source = "[[jumpuri:[example] > https://example.com]]";
+      const source = "[[jumpuri: example > https://example.com]]";
       const expected: Root = {
         type: "root",
         children: [
@@ -268,7 +268,7 @@ describe("PhrasingContent", () => {
       expect(fromPixivNovel(source)).toEqual(expected);
     });
     test("Text を格納できる", () => {
-      const source = "[[jumpuri: [リンク例]>https://example.com]]";
+      const source = "[[jumpuri:[リンク例]>https://example.com]]";
       const expected: Root = {
         type: "root",
         children: [
@@ -278,7 +278,7 @@ describe("PhrasingContent", () => {
               {
                 type: "link",
                 url: "https://example.com",
-                children: [{ type: "text", value: "リンク例" }],
+                children: [{ type: "text", value: "[リンク例]" }],
               },
             ],
           },

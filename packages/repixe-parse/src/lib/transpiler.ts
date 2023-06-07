@@ -246,7 +246,11 @@ const transpilers = {
       return node.type === "link";
     },
     transpile: (node) => {
-      return { type: "link", url: node.uri };
+      return {
+        type: "link",
+        url: node.uri,
+        children: transpilePhrasingContent(node.title),
+      };
     },
   } as NodeTranspiler<PixivJumpUrl, Link>,
 

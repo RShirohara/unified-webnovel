@@ -28,6 +28,14 @@ export function transform(nodes: PixivNode[]): PixivFlowContent[] {
   const result: PixivFlowContent[] = [];
   let internalNodes: PixivPhrasingContent[] = [];
 
+  if (
+    [...nodes].filter(
+      (node) =>
+        node.type === "tag" && (node.name === "newpage" || node.name === "jump")
+    ).length >= 1
+  ) {
+    result.push({ type: "tag", name: "newpage" });
+  }
   [...nodes].forEach((node) => {
     if (
       node.type === "tag" &&

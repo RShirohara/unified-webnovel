@@ -39,53 +39,54 @@ type NodeTranspiler<T extends PixivContent, U extends PxastContent> = {
 
 export function transpile(nodes: PixivFlowContent[]): FlowContent[] {
   return [...nodes]
-    .map((node) => {
+    .map((node, index, array) => {
       // preprocess
       if (
         transpilers.chapter.matchPixiv(node) &&
         transpilers.chapter.preProcess
       ) {
-        return transpilers.chapter.preProcess(node);
+        return transpilers.chapter.preProcess(node, index, array);
       } else if (
         transpilers.newPage.matchPixiv(node) &&
         transpilers.newPage.preProcess
       ) {
-        return transpilers.newPage.preProcess(node);
+        return transpilers.newPage.preProcess(node, index, array);
       } else if (
         transpilers.paragraph.matchPixiv(node) &&
         transpilers.paragraph.preProcess
       ) {
-        return transpilers.paragraph.preProcess(node);
+        return transpilers.paragraph.preProcess(node, index, array);
+      } else {
+        return node;
       }
-      return node;
     })
-    .map((node) => {
+    .map((node, index, array) => {
       // transpile
       if (transpilers.chapter.matchPixiv(node)) {
-        return transpilers.chapter.transpile(node);
+        return transpilers.chapter.transpile(node, index, array);
       } else if (transpilers.newPage.matchPixiv(node)) {
-        return transpilers.newPage.transpile(node);
+        return transpilers.newPage.transpile(node, index, array);
       } else {
-        return transpilers.paragraph.transpile(node);
+        return transpilers.paragraph.transpile(node, index, array);
       }
     })
-    .map((node) => {
+    .map((node, index, array) => {
       // postprocess
       if (
         transpilers.chapter.matchPxast(node) &&
         transpilers.chapter.postProcess
       ) {
-        return transpilers.chapter.postProcess(node);
+        return transpilers.chapter.postProcess(node, index, array);
       } else if (
         transpilers.newPage.matchPxast(node) &&
         transpilers.newPage.postProcess
       ) {
-        return transpilers.newPage.postProcess(node);
+        return transpilers.newPage.postProcess(node, index, array);
       } else if (
         transpilers.paragraph.matchPxast(node) &&
         transpilers.paragraph.postProcess
       ) {
-        return transpilers.paragraph.postProcess(node);
+        return transpilers.paragraph.postProcess(node, index, array);
       } else {
         return node;
       }
@@ -96,78 +97,78 @@ function transpilePhrasingContent(
   nodes: PixivPhrasingContent[]
 ): PhrasingContent[] {
   return [...nodes]
-    .map((node) => {
+    .map((node, index, array) => {
       // preprocess
       if (
         transpilers.jumpPage.matchPixiv(node) &&
         transpilers.jumpPage.preProcess
       ) {
-        return transpilers.jumpPage.preProcess(node);
+        return transpilers.jumpPage.preProcess(node, index, array);
       } else if (
         transpilers.jumpUrl.matchPixiv(node) &&
         transpilers.jumpUrl.preProcess
       ) {
-        return transpilers.jumpUrl.preProcess(node);
+        return transpilers.jumpUrl.preProcess(node, index, array);
       } else if (
         transpilers.pixivImage.matchPixiv(node) &&
         transpilers.pixivImage.preProcess
       ) {
-        return transpilers.pixivImage.preProcess(node);
+        return transpilers.pixivImage.preProcess(node, index, array);
       } else if (
         transpilers.ruby.matchPixiv(node) &&
         transpilers.ruby.preProcess
       ) {
-        return transpilers.ruby.preProcess(node);
+        return transpilers.ruby.preProcess(node, index, array);
       } else if (
         transpilers.text.matchPixiv(node) &&
         transpilers.text.preProcess
       ) {
-        return transpilers.text.preProcess(node);
+        return transpilers.text.preProcess(node, index, array);
       } else {
         return node;
       }
     })
-    .map((node) => {
+    .map((node, index, array) => {
       // transpile
       if (transpilers.jumpPage.matchPixiv(node)) {
-        return transpilers.jumpPage.transpile(node);
+        return transpilers.jumpPage.transpile(node, index, array);
       } else if (transpilers.jumpUrl.matchPixiv(node)) {
-        return transpilers.jumpUrl.transpile(node);
+        return transpilers.jumpUrl.transpile(node, index, array);
       } else if (transpilers.pixivImage.matchPixiv(node)) {
-        return transpilers.pixivImage.transpile(node);
+        return transpilers.pixivImage.transpile(node, index, array);
       } else if (transpilers.ruby.matchPixiv(node)) {
-        return transpilers.ruby.transpile(node);
+        return transpilers.ruby.transpile(node, index, array);
       } else {
-        return transpilers.text.transpile(node);
+        return transpilers.text.transpile(node, index, array);
       }
     })
-    .map((node) => {
+    .map((node, index, array) => {
       // postprocess
       if (
         transpilers.jumpPage.matchPxast(node) &&
         transpilers.jumpPage.postProcess
       ) {
-        return transpilers.jumpPage.postProcess(node);
+        return transpilers.jumpPage.postProcess(node, index, array);
       } else if (
         transpilers.jumpUrl.matchPxast(node) &&
         transpilers.jumpUrl.postProcess
       ) {
-        return transpilers.jumpUrl.postProcess(node);
+        return transpilers.jumpUrl.postProcess(node, index, array);
       } else if (
         transpilers.pixivImage.matchPxast(node) &&
         transpilers.pixivImage.postProcess
       ) {
-        return transpilers.pixivImage.postProcess(node);
+        return transpilers.pixivImage.postProcess(node, index, array);
       } else if (
         transpilers.ruby.matchPxast(node) &&
         transpilers.ruby.postProcess
       ) {
-        return transpilers.ruby.postProcess(node);
+        return transpilers.ruby.postProcess(node, index, array);
       } else if (
         transpilers.text.matchPxast(node) &&
         transpilers.text.postProcess
       ) {
-        return transpilers.text.postProcess(node);
+        return transpilers.text.postProcess(node, index, array);
       } else {
         return node;
       }
@@ -201,7 +202,13 @@ const transpilers = {
       return { type: "pageHeading", pageNumber: 1 };
     },
     postProcess: (node, index, array) => {
-      return node;
+      const pageNumber = [...(array ?? [])]
+        .map((node, index) => {
+          return { node, index };
+        })
+        .filter((node) => node.node.type === "pageHeading")
+        .findIndex((node) => node.index === index ?? 0);
+      return { ...node, pageNumber: pageNumber + 1 };
     },
   } as NodeTranspiler<PixivNewPage, PageHeading>,
 

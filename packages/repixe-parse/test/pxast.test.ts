@@ -424,62 +424,35 @@ describe("空要素の除去", () => {
         expect(fromPixivNovel(source)).toEqual(expected);
       });
     });
-
-    describe("Text", () => {
-      test("Paragraph の先頭にある空の Text は削除される", () => {
-        const source = "";
-        const expected: Root = {
-          type: "root",
-          children: [],
-        };
-        //  fromPixivNovel(source)).toEqual(expected);
-      });
-      test("Paragraph の末尾にある空の Text は削除される", () => {
-        const source = "";
-        const expected: Root = {
-          type: "root",
-          children: [],
-        };
-        //  fromPixivNovel(source)).toEqual(expected);
-      });
-    });
   });
-  describe("Link", () => {
-    describe("Break", () => {
-      test("Link の先頭にある Break は削除される", () => {
-        const source = "";
-        const expected: Root = {
-          type: "root",
-          children: [],
-        };
-        //  fromPixivNovel(source)).toEqual(expected);
-      });
-      test("Link の末尾にある Break は削除される", () => {
-        const source = "";
-        const expected: Root = {
-          type: "root",
-          children: [],
-        };
-        //  fromPixivNovel(source)).toEqual(expected);
-      });
-    });
 
+  describe("Link", () => {
     describe("Text", () => {
-      test("Link の先頭にある空の Text は削除される", () => {
-        const source = "";
-        const expected: Root = {
-          type: "root",
-          children: [],
-        };
-        //  fromPixivNovel(source)).toEqual(expected);
-      });
       test("Link の末尾にある空の Text は削除される", () => {
-        const source = "";
+        const source =
+          "[[jumpuri:リンクの[[rb:中>なか]]でルビが[[rb: 使用> しよう]]できる> https://example.com]]";
         const expected: Root = {
           type: "root",
-          children: [],
+          children: [
+            {
+              type: "paragraph",
+              children: [
+                {
+                  type: "link",
+                  url: "https://example.com",
+                  children: [
+                    { type: "text", value: "リンクの" },
+                    { type: "ruby", value: "中", ruby: "なか" },
+                    { type: "text", value: "でルビが" },
+                    { type: "ruby", value: "使用", ruby: "しよう" },
+                    { type: "text", value: "できる" },
+                  ],
+                },
+              ],
+            },
+          ],
         };
-        //  fromPixivNovel(source)).toEqual(expected);
+        expect(fromPixivNovel(source)).toEqual(expected);
       });
     });
   });

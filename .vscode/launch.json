@@ -18,7 +18,6 @@
       "env": {
         "NODE_OPTIONS": "--experimental-vm-modules"
       },
-      "cwd": "/home/rshirohara/Projects/unified-pixiv",
       "console": "internalConsole",
       "outputCapture": "std"
     }

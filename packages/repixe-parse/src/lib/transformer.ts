@@ -55,14 +55,16 @@ export function transform(nodes: PixivNode[]): PixivFlowContent[] {
         .replaceAll(/\n{2,}/gmu, "\n\n")
         .split("\n\n");
       if (paragraphBorder.length >= 2) {
-        paragraphBorder.forEach((text) => {
+        paragraphBorder.forEach((text, index, array) => {
           internalNodes.push({ ...node, val: text });
-          result.push({
-            type: "tag",
-            name: "paragraph",
-            elements: internalNodes,
-          });
-          internalNodes = [];
+          if (index + 1 < array.length) {
+            result.push({
+              type: "tag",
+              name: "paragraph",
+              elements: internalNodes,
+            });
+            internalNodes = [];
+          }
         });
       } else {
         internalNodes.push(node);

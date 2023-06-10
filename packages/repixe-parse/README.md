@@ -85,19 +85,7 @@ Running that with `node example.js` yields:
         {type: "link", url: "https://example.com", children: [
           {type: "text", value: "リンク"}
         ]},
-        {type: "text": value: "も使える"}- [repixe-parse](#repixe-parse)
-  - [Contents](#contents)
-  - [What is this?](#what-is-this)
-  - [Install](#install)
-  - [Use](#use)
-  - [API](#api)
-    - [`unified().use(repixeParse)`](#unifieduserepixeparse)
-  - [Examples](#examples)
-  - [Syntax](#syntax)
-  - [Syntax tree](#syntax-tree)
-  - [Types](#types)
-  - [License](#license)
-
+        {type: "text": value: "も使える"}
       ]
     }
   ]

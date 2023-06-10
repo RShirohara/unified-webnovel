@@ -2,18 +2,25 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "vscode-jest-tests.v2",
       "type": "node",
+      "name": "vscode-jest-tests.v2",
       "request": "launch",
-      "runtimeArgs": [
-        "--inspect-brk",
-        "${workspaceRoot}/node_modules/.bin/jest",
-        "--runInBand"
+      "runtimeExecutable": "yarn",
+      "args": [
+        "jest",
+        "--runInBand",
+        "--watchAll=false",
+        "--runTestsByPath",
+        "${jest.testFile}",
+        "--testNamePattern",
+        "${jest.testNamePattern}"
       ],
-      "console": "internalConsole",
       "env": {
         "NODE_OPTIONS": "--experimental-vm-modules"
-      }
+      },
+      "cwd": "/home/rshirohara/Projects/unified-pixiv",
+      "console": "internalConsole",
+      "outputCapture": "std"
     }
   ]
 }

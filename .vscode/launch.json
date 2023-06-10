@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "name": "vscode-jest-tests.v2",
+      "request": "launch",
+      "runtimeExecutable": "yarn",
+      "args": [
+        "jest",
+        "--runInBand",
+        "--watchAll=false",
+        "--runTestsByPath",
+        "${jest.testFile}",
+        "--testNamePattern",
+        "${jest.testNamePattern}"
+      ],
+      "env": {
+        "NODE_OPTIONS": "--experimental-vm-modules"
+      },
+      "cwd": "/home/rshirohara/Projects/unified-pixiv",
+      "console": "internalConsole",
+      "outputCapture": "std"
+    }
+  ]
+}

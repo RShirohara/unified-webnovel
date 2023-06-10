@@ -6,6 +6,11 @@
 
 **Warning**: This project still in draft.
 
+## Packages
+
+- [pxast](./packages/pxast)
+- [repixe-parse](./packages/repixe-parse)
+
 ## License
 
 [MIT][license]

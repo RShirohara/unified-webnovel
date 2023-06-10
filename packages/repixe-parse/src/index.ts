@@ -1,0 +1,13 @@
+import type { Root as PxastRoot } from "@rshirohara/pxast";
+import type { Plugin, Processor } from "unified";
+
+import { fromPixivNovel } from "./lib";
+
+export const repixeParse: Plugin<[], string, PxastRoot> = function (
+  this: Processor
+) {
+  const parser = (doc: string) => {
+    return fromPixivNovel(doc);
+  };
+  Object.assign(this, { Parser: parser });
+};

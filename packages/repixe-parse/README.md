@@ -122,7 +122,7 @@ This package is fully typed with [TypeScript][typescript]. There are no extra ex
 <!-- Link Definitions -->
 
 [license-badge]: https://img.shields.io/github/license/RShirohara/unified-pixiv
-[license]: [./LICENSE]
+[license]: ./LICENSE
 [npm]: https://docs.npmjs.com/cli/install
 [pixiv-novel-parser]: https://github.com/pixiv/pixiv-novel-parser
 [pixiv-novel]: https://www.pixiv.net/novel/

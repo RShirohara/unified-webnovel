@@ -1,0 +1,6 @@
+{
+  "name": "@unified-pixiv/tsconfig",
+  "version": "1.0.0",
+  "description": "tsconfig.json definition for unified-pixiv.",
+  "private": true
+}

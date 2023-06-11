@@ -1,8 +1,8 @@
 {
-  "name": "@rshirohara/repixe-parse",
+  "name": "@rshirohara/repixe-stringify",
   "version": "0.1.0",
-  "description": "repixe plugin to add support for parsing pixiv novel format",
-  "homepage": "https://github.com/RShirohara/unified-pixiv/tree/main/packages/repixe-parse#readme",
+  "description": "repixe plugin to add support for serializing pixiv novel format",
+  "homepage": "https://github.com/RShirohara/unified-pixiv/tree/main/packages/repixe-stringify#readme",
   "bugs": {
     "url": "https://github.com/RShirohara/unified-pixiv/issues"
   },
@@ -17,11 +17,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/RShirohara/unified-pixiv.git",
-    "directory": "packages/repixe-parse"
+    "directory": "packages/repixe-stringify"
   },
   "dependencies": {
     "@rshirohara/pxast": "^0.1.0",
-    "pixiv-novel-parser": "^0.3.0",
     "unified": "^10.1.2"
   },
   "devDependencies": {

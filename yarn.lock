@@ -850,6 +850,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@rshirohara/repixe-stringify@workspace:packages/repixe-stringify":
+  version: 0.0.0-use.local
+  resolution: "@rshirohara/repixe-stringify@workspace:packages/repixe-stringify"
+  dependencies:
+    "@rshirohara/pxast": ^0.1.0
+    "@unified-pixiv/tsconfig": ^1.0.0
+    unified: ^10.1.2
+  languageName: unknown
+  linkType: soft
+
 "@sinclair/typebox@npm:^0.25.16":
   version: 0.25.24
   resolution: "@sinclair/typebox@npm:0.25.24"

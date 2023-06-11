@@ -2,7 +2,7 @@
 
 [![LICENSE][license-badge]][license]
 
-**repixe** plugin to add support for parsing pixiv novel input.
+**repixe** plugin to add support for parsing pixiv novel format.
 
 ## Contents
 
@@ -21,10 +21,10 @@
 
 ## What is this?
 
-This package is a [unified][unified] plugin that defines how to take [pixiv-novel format text][pixiv-novel] as input and turn it into a syntax tree.
+This package is a [unified][unified] plugin that defines how to take [pixiv novel][pixiv-novel] format text as input and turn it into a syntax tree.
 
 This plugin uses [`pixiv-novel-parser`][pixiv-novel-parser]
-for parsing pixiv-novel format text into tokens
+for parsing pixiv novel format text into tokens
 and turns those into [pxast][pxast] syntax trees.
 
 ## Install
@@ -96,8 +96,8 @@ Running that with `node example.js` yields:
 
 ### `unified().use(repixeParse)`
 
-Add support for parsing pixiv-novel format Input.
-There are no Options
+Add support for parsing pixiv novel format input.
+There are no options.
 
 ## Examples
 

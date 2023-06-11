@@ -6,8 +6,8 @@ import { toPixivNovel } from "./lib";
 export const repixeStringify: Plugin<[], PxastRoot, string> = function (
   this: Processor
 ) {
-  const parser = (doc: PxastRoot) => {
+  const compiler = (doc: PxastRoot) => {
     return toPixivNovel(doc);
   };
-  Object.assign(this, { Parser: parser });
+  Object.assign(this, { Compiler: compiler });
 };

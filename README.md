@@ -10,6 +10,7 @@
 
 - [pxast](./packages/pxast)
 - [repixe-parse](./packages/repixe-parse)
+- [repixe-stringify](./packages/repixe-stringify)
 
 ## License
 

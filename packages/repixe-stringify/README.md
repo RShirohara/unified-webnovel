@@ -8,7 +8,7 @@
 
 ## What is this?
 
-This package is a [unified][unified] plugin that defines how to take a syntax tree as input and turn it into serialized [pixiv-novel format text][pixiv-novel].
+This package is a [unified][unified] plugin that defines how to take a syntax tree as input and turn it into serialized [pixiv novel][pixiv-novel] format text.
 
 ## Install
 
@@ -107,7 +107,7 @@ Running that with `node example.js` yields:
 
 ### `unified().use(repixeStringify)`
 
-Add support for serializing pixiv-novel format input.
+Add support for serializing pixiv novel format input.
 There are no options.
 
 ## Syntax

@@ -61,7 +61,7 @@ test("repixeStringify", async () => {
     "[[jumpuri: リンク > https://example.com]]も使える。\n",
     "[newpage]\n",
     "ここからページが変わる。",
-    "[jump:01]ページへの参照。",
+    "[jump:1]ページへの参照。",
   ].join("\n");
   expect(await unified().use(repixeStringify).stringify(source)).toEqual(
     expected

@@ -175,7 +175,7 @@ describe("PhrasingContent", () => {
           },
         ],
       };
-      const expected = "[[jumpurl: example > https://example.com]]";
+      const expected = "[[jumpuri: example > https://example.com]]";
       expect(toPixivNovel(source)).toEqual(expected);
     });
 
@@ -188,7 +188,7 @@ describe("PhrasingContent", () => {
             children: [
               {
                 type: "link",
-                url: "https://example.com/",
+                url: "https://example.com",
                 children: [
                   { type: "text", value: "これが" },
                   { type: "ruby", value: "例", ruby: "れい" },

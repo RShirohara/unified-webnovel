@@ -2,7 +2,7 @@
 
 [![LICENSE][license-badge]][license]
 
-**repixe** plugin to add support for parsing pixiv novel input.
+**repixe** plugin to add support for parsing pixiv novel format.
 
 ## Contents
 
@@ -96,8 +96,8 @@ Running that with `node example.js` yields:
 
 ### `unified().use(repixeParse)`
 
-Add support for parsing pixiv-novel format Input.
-There are no Options
+Add support for parsing pixiv-novel format input.
+There are no options.
 
 ## Examples
 

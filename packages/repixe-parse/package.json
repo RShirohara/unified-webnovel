@@ -24,6 +24,9 @@
     "pixiv-novel-parser": "^0.3.0",
     "unified": "^10.1.2"
   },
+  "devDependencies": {
+    "@unified-pixiv/tsconfig": "^1.0.0"
+  },
   "jest": {
     "preset": "ts-jest/presets/default-esm",
     "testEnvironment": "node",

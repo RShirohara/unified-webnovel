@@ -835,6 +835,7 @@ __metadata:
   resolution: "@rshirohara/pxast@workspace:packages/pxast"
   dependencies:
     "@types/unist": ^2.0.6
+    "@unified-pixiv/tsconfig": ^1.0.0
   languageName: unknown
   linkType: soft
 
@@ -843,6 +844,7 @@ __metadata:
   resolution: "@rshirohara/repixe-parse@workspace:packages/repixe-parse"
   dependencies:
     "@rshirohara/pxast": ^0.1.0
+    "@unified-pixiv/tsconfig": ^1.0.0
     pixiv-novel-parser: ^0.3.0
     unified: ^10.1.2
   languageName: unknown
@@ -1206,6 +1208,12 @@ __metadata:
   checksum: 2909ce761f7fe546592cd3c43e33263d8a5fa619375fd2fdffbc72ffc33e40d6feacafb28c79f36c638fcc2225048e7cc08c61cbac6ca63723dc68610d80e3e6
   languageName: node
   linkType: hard
+
+"@unified-pixiv/tsconfig@^1.0.0, @unified-pixiv/tsconfig@workspace:packages/tsconfig":
+  version: 0.0.0-use.local
+  resolution: "@unified-pixiv/tsconfig@workspace:packages/tsconfig"
+  languageName: unknown
+  linkType: soft
 
 "abbrev@npm:^1.0.0":
   version: 1.1.1

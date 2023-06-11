@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@unified-pixiv/tsconfig/tsconfig.esm.json",
   "compilerOptions": {
     "baseUrl": "./src"
   }

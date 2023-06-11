@@ -1,14 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "composite": false,
-    "declaration": true,
+    "composite": true,
     "declarationMap": true,
     "esModuleInterop": true,
+    "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "inlineSources": false,
-    "moduleResolution": "node",
     "preserveWatchOutput": true,
     "strict": true
   },

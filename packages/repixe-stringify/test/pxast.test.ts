@@ -41,7 +41,7 @@ describe("FlowContent", () => {
           { type: "heading", children: [{ type: "text", value: "見出し" }] },
         ],
       };
-      const expected = "[chapter:見出し]";
+      const expected = "[chapter: 見出し]";
       expect(toPixivNovel(source)).toEqual(expected);
     });
 
@@ -151,7 +151,7 @@ describe("FlowContent", () => {
         ],
       };
       const expected =
-        "[[rb: 換言 > かんげん]]すれば[[rb:畢竟>ひっきょう]]ももんが";
+        "[[rb: 換言 > かんげん]]すれば[[rb: 畢竟 > ひっきょう]]ももんが";
       expect(toPixivNovel(source)).toEqual(expected);
     });
   });

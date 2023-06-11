@@ -1,0 +1,10 @@
+{
+  "extends": "@unified-pixiv/tsconfig/tsconfig.esm.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
+  "include": ["./src", "./test"]
+}

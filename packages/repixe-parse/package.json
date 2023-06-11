@@ -2,7 +2,7 @@
   "name": "@rshirohara/repixe-parse",
   "version": "0.1.0",
   "description": "repixe plugin to add support for parsing pixiv novel input",
-  "homepage": "https://github.com/RShirohara/unified-pixiv#readme",
+  "homepage": "https://github.com/RShirohara/unified-pixiv/tree/main/packages/repixe-parse#readme",
   "bugs": {
     "url": "https://github.com/RShirohara/unified-pixiv/issues"
   },

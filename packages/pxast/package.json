@@ -2,7 +2,7 @@
   "name": "@rshirohara/pxast",
   "version": "0.1.0",
   "description": "Pixiv novel ast definition",
-  "homepage": "https://github.com/RShirohara/unified-pixiv#readme",
+  "homepage": "https://github.com/RShirohara/unified-pixiv/tree/main/packages/pxast#readme",
   "bugs": {
     "url": "https://github.com/RShirohara/unified-pixiv/issues"
   },

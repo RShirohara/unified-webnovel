@@ -12,8 +12,6 @@ This package is a [unified][unified] plugin that defines how to take a syntax tr
 
 ## Install
 
-**Working**.
-
 This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
 in Node.js (16.0+), Install with [npm][npm]:
 

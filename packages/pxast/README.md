@@ -6,8 +6,6 @@
 
 **pxast** is a specification for representing [pixiv novel][pixiv-novel] in a syntax tree. It implements [unist][unist].
 
-**Warning**: This project still in draft.
-
 ## Contents
 
 - [`pxast`](#pxast)

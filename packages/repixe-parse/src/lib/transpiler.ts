@@ -27,7 +27,7 @@ import type {
   PixivFlowContent,
   Paragraph as PixivParagraph,
   PixivPhrasingContent,
-} from "./transformer";
+} from "./transformer.js";
 
 type NodeTranspiler<T extends PixivContent, U extends PxastContent> = {
   matchPixiv: (node: PixivContent) => node is T;

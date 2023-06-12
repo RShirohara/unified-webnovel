@@ -6,6 +6,18 @@
 
 ## Contents
 
+- [repixe-stringify](#repixe-stringify)
+  - [Contents](#contents)
+  - [What is this?](#what-is-this)
+  - [Install](#install)
+  - [Use](#use)
+  - [API](#api)
+    - [`unified().use(repixeStringify)`](#unifieduserepixestringify)
+  - [Syntax](#syntax)
+  - [Syntax tree](#syntax-tree)
+  - [Types](#types)
+  - [License](#license)
+
 ## What is this?
 
 This package is a [unified][unified] plugin that defines how to take a syntax tree as input and turn it into serialized [pixiv novel][pixiv-novel] format text.

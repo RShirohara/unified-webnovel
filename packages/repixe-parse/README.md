@@ -32,7 +32,7 @@ and turns those into [pxast][pxast] syntax trees.
 **Working**.
 
 This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
-in Node.js (16.0+), Install with npm[npm]:
+in Node.js (16.0+), Install with [npm][npm]:
 
 ```shell
 npm install @rshirohara/repixe-parse

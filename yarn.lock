@@ -846,6 +846,7 @@ __metadata:
     "@rshirohara/pxast": ^0.1.0
     "@unified-pixiv/tsconfig": ^1.0.0
     pixiv-novel-parser: ^0.3.0
+    typescript: ^5.1.3
     unified: ^10.1.2
   languageName: unknown
   linkType: soft
@@ -856,6 +857,7 @@ __metadata:
   dependencies:
     "@rshirohara/pxast": ^0.1.0
     "@unified-pixiv/tsconfig": ^1.0.0
+    typescript: ^5.1.3
     unified: ^10.1.2
   languageName: unknown
   linkType: soft

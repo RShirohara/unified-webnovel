@@ -11,13 +11,16 @@
     "name": "Ray Shirohara",
     "url": "https://github.com/RShirohara"
   },
-  "main": "",
-  "types": "src/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/RShirohara/unified-pixiv.git",
     "directory": "packages/pxast"
   },
+  "main": "",
+  "types": "./src/index.d.ts",
+  "files": [
+    "./src"
+  ],
   "dependencies": {
     "@types/unist": "^2.0.6"
   },

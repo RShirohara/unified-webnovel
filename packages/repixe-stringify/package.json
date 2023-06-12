@@ -11,20 +11,28 @@
     "name": "Ray Shirohara",
     "url": "https://github.com/RShirohara"
   },
-  "type": "module",
-  "exports": "./dist/index.js",
-  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/RShirohara/unified-pixiv.git",
     "directory": "packages/repixe-stringify"
   },
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist",
+    "./src"
+  ],
   "dependencies": {
     "@rshirohara/pxast": "^0.1.0",
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@unified-pixiv/tsconfig": "^1.0.0"
+    "@unified-pixiv/tsconfig": "^1.0.0",
+    "typescript": "^5.1.3"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json"
   },
   "jest": {
     "preset": "ts-jest/presets/default-esm",

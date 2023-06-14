@@ -4,13 +4,21 @@
 
 [unified][unified] packages for [pixiv novel][pixiv-novel].
 
-**Warning**: This project still in draft.
-
 ## Packages
 
 - [pxast](./packages/pxast)
 - [repixe-parse](./packages/repixe-parse)
 - [repixe-stringify](./packages/repixe-stringify)
+
+## Development
+
+This package requires yarn v3+ and [workspace-tools][yarn-workspace-tools].
+
+```shell
+corepack prepare yarn@stable --activate
+# in repo
+yarn plugin import workspace-tools
+```
 
 ## License
 
@@ -22,3 +30,4 @@
 [license]: ./LICENSE
 [pixiv-novel]: https://www.pixiv.net/novel/
 [unified]: https://github.com/unifiedjs/unified/
+[yarn-workspace-tools]: https://github.com/yarnpkg/berry/blob/HEAD/packages/plugin-workspace-tools/README.md

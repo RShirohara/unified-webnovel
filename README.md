@@ -12,12 +12,10 @@
 
 ## Development
 
-This package requires yarn v3+ and [workspace-tools][yarn-workspace-tools].
+This package requires yarn v3+.
 
 ```shell
 corepack prepare yarn@stable --activate
-# in repo
-yarn plugin import workspace-tools
 ```
 
 ## License
@@ -30,4 +28,3 @@ yarn plugin import workspace-tools
 [license]: ./LICENSE
 [pixiv-novel]: https://www.pixiv.net/novel/
 [unified]: https://github.com/unifiedjs/unified/
-[yarn-workspace-tools]: https://github.com/yarnpkg/berry/blob/HEAD/packages/plugin-workspace-tools/README.md

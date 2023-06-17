@@ -1,0 +1,100 @@
+name: Pull Request (Node.js package)
+
+on:
+  pull_request:
+    types: [opened, ready_for_review, review_requested]
+    paths: ["package.json", "./packages/**/*.(js|json|ts)"]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  build:
+    name: Build for nodejs-v${{ matrix.node-version }} on ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [16, 18, latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install yarn and dependency
+        uses: ./.github/actions/setup-yarn.yml
+        with:
+          enable-corepack: true
+          cache-node-modules: true
+
+      - name: Build
+        run: yarn run build
+
+  test:
+    name: Test for nodejs-v${{ matrix.node-version }} on ${{ matrix.os }}
+    needs: build
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [16, 18, latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install yarn and dependency
+        uses: ./.github/actions/setup-yarn.yml
+        with:
+          enable-corepack: true
+          cache-node-modules: true
+
+      - name: Run test
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          package-manager: yarn
+          test-script: yarn run test
+
+  lint:
+    name: Lint
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install yarn and dependency
+        uses: ./.github/actions/setup-yarn.yml
+        with:
+          enable-corepack: true
+          cache-node-modules: true
+
+      - name: Setup reviewdog
+        uses: reviewdog/action-setup@v1
+
+      - name: Run eslint
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          yarn run lint -f compact |
+          reviewdog -f eslint-compact -reporter github-pr-review

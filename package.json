@@ -26,6 +26,7 @@
   },
   "scripts": {
     "build": "yarn run lerna run build",
+    "lint": "yarn run eslint ./packages",
     "publish": "yarn run lerna publish from-git",
     "test": "NODE_OPTIONS=--experimental-vm-modules yarn run jest",
     "version:check": "yarn run lerna changed",
@@ -51,6 +52,9 @@
         "./packages/*/tsconfig.json"
       ]
     },
+    "ignorePatterns": [
+      "**/dist/**"
+    ],
     "rules": {
       "@typescript-eslint/consistent-type-exports": "warn",
       "@typescript-eslint/consistent-type-imports": "warn",

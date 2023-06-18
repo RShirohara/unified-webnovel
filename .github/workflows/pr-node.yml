@@ -38,12 +38,12 @@ jobs:
         run: yarn run build
 
   test:
-    name: Test for nodejs-v${{ matrix.node-version }} on ${{ matrix.os }}
+    name: Test for nodejs-${{ matrix.node-version }} on ${{ matrix.os }}
     needs: build
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node-version: [16, 18, latest]
+        node-version: [latest]
     runs-on: ${{ matrix.os }}
 
     steps:

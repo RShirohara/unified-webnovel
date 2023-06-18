@@ -8,12 +8,13 @@ permissions:
   contents: write
 
 jobs:
-  check_if_executable:
+  retrieve_repository_info:
     name: Check if action executable
     runs-on: ubuntu_latest
 
     outputs:
-      can_exec: ${{ contains(fromJson(steps.retrieve_info.outputs.labels), 'Type: Dependencies') }}
+      id: ${{ steps.retrieve_info.outputs.id }}
+      labels: ${{ steps.retrieve_info.outputs.labels }}
 
     steps:
       - name: Retrieve pull request info
@@ -45,9 +46,9 @@ jobs:
 
   retrieve_target:
     name: Retrieve release target packages.
-    needs: check_if_executable
+    needs: retrieve_repository_info
     runs-on: ubuntu-latest
-    if: needs.check_if_executable.outputs.can_exec == true
+    if: contains(fromJson(needs.retrieve_repository_info.outputs.labels), 'Type: Dependencies')
 
     outputs:
       packages: ${{ steps.retrieve-package.outputs.packages }}

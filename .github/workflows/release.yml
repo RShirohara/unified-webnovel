@@ -48,7 +48,7 @@ jobs:
     name: Retrieve release target packages.
     needs: retrieve_repository_info
     runs-on: ubuntu-latest
-    if: contains(fromJson(needs.retrieve_repository_info.outputs.labels), 'Type: Dependencies')
+    if: contains(fromJson(needs.retrieve_repository_info.outputs.labels), 'Release')
 
     outputs:
       packages: ${{ steps.retrieve-package.outputs.packages }}

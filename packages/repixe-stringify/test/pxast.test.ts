@@ -26,7 +26,7 @@ describe("Root", () => {
       "一段落目",
       "二段落目\n二行目",
       "[newpage]",
-      "[chapter: 見出し],",
+      "[chapter: 見出し]",
     ].join("\n\n");
     expect(toPixivNovel(source)).toEqual(expected);
   });

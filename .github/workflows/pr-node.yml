@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   build:
-    name: Build for nodejs-v${{ matrix.node-version }} on ${{ matrix.os }}
+    name: Build for nodejs-${{ matrix.node-version }} on ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -70,11 +70,7 @@ jobs:
 
   lint:
     name: Lint
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node-version: [latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -83,7 +79,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: latest
 
       - name: Install yarn and dependency
         uses: ./.github/actions/setup-yarn

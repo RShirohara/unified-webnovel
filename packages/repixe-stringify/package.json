@@ -32,7 +32,8 @@
     "typescript": "^5.1.3"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json"
+    "build": "tsc -p tsconfig.build.json",
+    "prepublish": "run build"
   },
   "jest": {
     "preset": "ts-jest/presets/default-esm",

@@ -4,13 +4,19 @@
 
 [unified][unified] packages for [pixiv novel][pixiv-novel].
 
-**Warning**: This project still in draft.
-
 ## Packages
 
 - [pxast](./packages/pxast)
 - [repixe-parse](./packages/repixe-parse)
 - [repixe-stringify](./packages/repixe-stringify)
+
+## Development
+
+This package requires yarn v3+.
+
+```shell
+corepack prepare yarn@stable --activate
+```
 
 ## License
 

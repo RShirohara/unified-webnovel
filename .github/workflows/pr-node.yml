@@ -27,7 +27,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install yarn and dependency
-        uses: ./.github/actions/setup-yarn.yml
+        uses: ./.github/actions/setup-yarn
         with:
           enable-corepack: true
           cache-node-modules: true
@@ -54,7 +54,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install yarn and dependency
-        uses: ./.github/actions/setup-yarn.yml
+        uses: ./.github/actions/setup-yarn
         with:
           enable-corepack: true
           cache-node-modules: true
@@ -84,7 +84,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install yarn and dependency
-        uses: ./.github/actions/setup-yarn.yml
+        uses: ./.github/actions/setup-yarn
         with:
           enable-corepack: true
           cache-node-modules: true

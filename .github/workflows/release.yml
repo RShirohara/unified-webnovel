@@ -62,7 +62,7 @@ jobs:
           node-version: latest
 
       - name: Install yarn and dependency
-        uses: ./.github/actions/setup-yarn.yml
+        uses: ./.github/actions/setup-yarn
         with:
           enable-corepack: true
           cache-node-modules: true
@@ -114,7 +114,7 @@ jobs:
           node-version: latest
 
       - name: Install yarn and dependency
-        uses: ./.github/actions/setup-yarn.yml
+        uses: ./.github/actions/setup-yarn
         with:
           enable-corepack: true
           cache-node-modules: true

@@ -8,16 +8,18 @@ permissions:
   contents: write
 
 jobs:
-  retrieve_repository_info:
+  check_action_executable:
     name: Check if action executable
     runs-on: ubuntu_latest
 
     outputs:
-      id: ${{ steps.retrieve_info.outputs.id }}
-      labels: ${{ steps.retrieve_info.outputs.labels }}
+      can_exec: ${{ contains(fromJson(steps.retrieve_info.outputs.labels), 'Release') }}
 
     steps:
-      - name: Retrieve pull request info
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Check if action executable
         id: retrieve_info
         run: |
           REPO_NAME=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}
@@ -46,9 +48,9 @@ jobs:
 
   retrieve_target:
     name: Retrieve release target packages.
-    needs: retrieve_repository_info
+    needs: check_action_executable
     runs-on: ubuntu-latest
-    if: contains(fromJson(needs.retrieve_repository_info.outputs.labels), 'Release')
+    if: needs.check_action_executable.outputs.can_exec == true
 
     outputs:
       packages: ${{ steps.retrieve-package.outputs.packages }}

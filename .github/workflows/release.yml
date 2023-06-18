@@ -1,0 +1,127 @@
+name: Release and Publish
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  check_if_executable:
+    name: Check if action executable
+    runs-on: ubuntu_latest
+
+    outputs:
+      can_exec: ${{ contains(fromJson(steps.retrieve_info.outputs.labels), 'Type: Dependencies') }}
+
+    steps:
+      - name: Retrieve pull request info
+        id: retrieve_info
+        run: |
+          REPO_NAME=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}
+          QUERY_RESULT=$(gh api graphql --paginate -f query="
+          {
+            repository(owner: \"${{ github.repository_owner }}\", name: \"${REPO_NAME}\") {
+              object(expression: \"${{ github.sha }}\") {
+                ... on Commit {
+                  associatedPullRequests(first: 1) {
+                    nodes {
+                      number
+                      labels(first: 5) {
+                        nodes {
+                          name
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          " | jq -c)
+          echo "id=$("${QUERY_RESULT}" | jq -c ".data.repository.object.associatedPullRequests.nodes[].number")" > ${GITHUB_OUTPUT}
+          echo "labels=$("${QUERY_RESULT}" | jq -c "[.data.repository.object.associatedPullRequests.nodes[].labels.nodes[].name]")" > ${GITHUB_OUTPUT}
+
+  retrieve_target:
+    name: Retrieve release target packages.
+    needs: check_if_executable
+    runs-on: ubuntu-latest
+    if: needs.check_if_executable.outputs.can_exec == true
+
+    outputs:
+      packages: ${{ steps.retrieve-package.outputs.packages }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+
+      - name: Install yarn and dependency
+        uses: ./.github/actions/setup-yarn.yml
+        with:
+          enable-corepack: true
+          cache-node-modules: true
+
+      - name: Retrieve changed package list
+        id: retrieve-package
+        run: |
+          set -eux
+          PACKAGES=$(yarn run version:check --json | jq -c '.')
+          echo "packages=${PACKAGES}" > ${GITHUB_OUTPUT}
+
+  create_release:
+    name: Create release for ${{ matrix.name }}@${{ matrix.version }}
+    needs: retrieve_target
+    strategy:
+      matrix:
+        include: ${{ fromJson(needs.retrieve_target.outputs.packages) }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create tag
+        uses: mathieudutour/github-tag-action@v6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: false
+          custom_tag: ${{ matrix.name }}@${{ matrix.version }}
+
+      - name: Create release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          name: ${{ matrix.name }} v${{matrix.version}}
+          body_path: ${{ matrix.location }}/CHANGELOG.md
+
+  publish:
+    name: Publish packages
+    needs: create_release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+
+      - name: Install yarn and dependency
+        uses: ./.github/actions/setup-yarn.yml
+        with:
+          enable-corepack: true
+          cache-node-modules: true
+
+      - name: Publish packages
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          yarn run publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -43,8 +43,8 @@ jobs:
             }
           }
           " | jq -c)
-          echo "id=$("${QUERY_RESULT}" | jq -c ".data.repository.object.associatedPullRequests.nodes[].number")" > ${GITHUB_OUTPUT}
-          echo "labels=$("${QUERY_RESULT}" | jq -c "[.data.repository.object.associatedPullRequests.nodes[].labels.nodes[].name]")" > ${GITHUB_OUTPUT}
+          echo "id=$(echo "${QUERY_RESULT}" | jq -c ".data.repository.object.associatedPullRequests.nodes[].number")" > ${GITHUB_OUTPUT}
+          echo "labels=$(echo "${QUERY_RESULT}" | jq -c "[.data.repository.object.associatedPullRequests.nodes[].labels.nodes[].name]")" > ${GITHUB_OUTPUT}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

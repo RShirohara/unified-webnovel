@@ -10,7 +10,7 @@ permissions:
 jobs:
   check_action_executable:
     name: Check if action executable
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
 
     outputs:
       can_exec: ${{ contains(fromJson(steps.retrieve_info.outputs.labels), 'Release') }}

@@ -24,7 +24,7 @@ corepack prepare yarn@stable --activate
 
 [MIT][license]
 
-<!-- Link Definitions-->
+<!-- Link Definitions -->
 
 [license-badge]: https://img.shields.io/github/license/RShirohara/unified-webnovel
 [license]: ./LICENSE

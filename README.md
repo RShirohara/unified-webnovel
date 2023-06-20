@@ -1,4 +1,4 @@
-# `unified-webnovels`
+# `unified-webnovel`
 
 [![LICENSE][license-badge]][license]
 

@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      can_exec: ${{ contains(fromJson(steps.retrieve_info.outputs.labels), 'Release') }}
+      can_exec: ${{ contains(steps.retrieve_info.outputs.labels, 'Release') }}
 
     steps:
       - name: Checkout repository
@@ -44,7 +44,7 @@ jobs:
           }
           " | jq -c)
           echo "id=$(echo "${QUERY_RESULT}" | jq -c ".data.repository.object.associatedPullRequests.nodes[].number")" > ${GITHUB_OUTPUT}
-          echo "labels=$(echo "${QUERY_RESULT}" | jq -c "[.data.repository.object.associatedPullRequests.nodes[].labels.nodes[].name]")" > ${GITHUB_OUTPUT}
+          echo "labels=$(echo "${QUERY_RESULT}" | jq -cr ".data.repository.object.associatedPullRequests.nodes[].labels.nodes[].name")" > ${GITHUB_OUTPUT}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

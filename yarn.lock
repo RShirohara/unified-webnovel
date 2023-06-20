@@ -7124,9 +7124,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unified-webnovels@workspace:.":
+"unified-webnovel@workspace:.":
   version: 0.0.0-use.local
-  resolution: "unified-webnovels@workspace:."
+  resolution: "unified-webnovel@workspace:."
   dependencies:
     "@lerna-lite/changed": ^2.4.1
     "@lerna-lite/cli": ^2.4.1

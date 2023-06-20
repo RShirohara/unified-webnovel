@@ -3,7 +3,7 @@ name: Pull Request (Node.js package)
 on:
   pull_request:
     types: [opened, ready_for_review, review_requested]
-    paths: ["package.json", "./packages/**/*.(js|json|ts)"]
+    paths: ["**/package.json", "./packages/**/*.(js|json|ts)"]
 
 permissions:
   checks: write

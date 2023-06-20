@@ -1,6 +1,6 @@
 {
-  "name": "@unified-pixiv/tsconfig",
+  "name": "@unified-webnovel/tsconfig",
   "version": "1.0.0",
-  "description": "tsconfig.json definition for unified-pixiv.",
+  "description": "tsconfig.json definition for unified-webnovel.",
   "private": true
 }

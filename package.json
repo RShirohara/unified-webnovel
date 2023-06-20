@@ -1,6 +1,6 @@
 {
-  "name": "unified-pixiv",
-  "description": "unified packages for pixiv novel",
+  "name": "unified-webnovel",
+  "description": "unified packages for web novel.",
   "license": "MIT",
   "private": true,
   "packageManager": "yarn@3.5.1",

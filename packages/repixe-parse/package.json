@@ -1,10 +1,10 @@
 {
   "name": "@rshirohara/repixe-parse",
   "version": "0.1.0",
-  "description": "repixe plugin to add support for parsing pixiv novel format",
-  "homepage": "https://github.com/RShirohara/unified-pixiv/tree/main/packages/repixe-parse#readme",
+  "description": "repixe plugin to add support for parsing pixiv novel format.",
+  "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/repixe-parse#readme",
   "bugs": {
-    "url": "https://github.com/RShirohara/unified-pixiv/issues"
+    "url": "https://github.com/RShirohara/unified-webnovel/issues"
   },
   "license": "MIT",
   "author": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RShirohara/unified-pixiv.git",
+    "url": "https://github.com/RShirohara/unified-webnovel.git",
     "directory": "packages/repixe-parse"
   },
   "type": "module",
@@ -29,7 +29,7 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@unified-pixiv/tsconfig": "^1.0.0",
+    "@unified-webnovel/tsconfig": "^1.0.0",
     "typescript": "^5.1.3"
   },
   "scripts": {

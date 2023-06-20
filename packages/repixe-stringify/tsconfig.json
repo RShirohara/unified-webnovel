@@ -1,5 +1,5 @@
 {
-  "extends": "@unified-pixiv/tsconfig/tsconfig.esm.json",
+  "extends": "@unified-webnovel/tsconfig/tsconfig.esm.json",
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {

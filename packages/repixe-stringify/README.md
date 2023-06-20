@@ -138,10 +138,10 @@ This package is fully typed with [TypeScript][typescript]. There are no extra ex
 
 <!-- Link Definitions -->
 
-[license-badge]: https://img.shields.io/github/license/RShirohara/unified-pixiv
+[license-badge]: https://img.shields.io/github/license/RShirohara/unified-webnovel
 [license]: ./LICENSE
 [npm]: https://docs.npmjs.com/cli/install
 [pixiv-novel]: https://www.pixiv.net/novel/
-[pxast]: https://github.com/RShirohara/unified-pixiv/tree/main/packages/pxast
+[pxast]: https://github.com/RShirohara/unified-webnovel/tree/main/packages/pxast
 [typescript]: https://www.typescriptlang.org
 [unified]: https://github.com/unifiedjs/unified/

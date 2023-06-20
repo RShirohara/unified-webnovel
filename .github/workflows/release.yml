@@ -97,6 +97,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           default_bump: false
           custom_tag: ${{ matrix.name }}@${{ matrix.version }}
+          tag_prefix: ""
 
       - name: Create release
         uses: softprops/action-gh-release@v0.1.15

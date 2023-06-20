@@ -52,7 +52,7 @@ jobs:
     name: Retrieve release target packages.
     needs: check_action_executable
     runs-on: ubuntu-latest
-    if: needs.check_action_executable.outputs.can_exec == true
+    if: needs.check_action_executable.outputs.can_exec == 'true'
 
     outputs:
       packages: ${{ steps.retrieve-package.outputs.packages }}

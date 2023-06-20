@@ -127,6 +127,6 @@ jobs:
       - name: Publish packages
         run: |
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-          yarn run publish
+          yarn run publish --yes
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

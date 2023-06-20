@@ -1,6 +1,6 @@
 {
   "name": "@rshirohara/pxast",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pixiv novel ast definition.",
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/pxast#readme",
   "bugs": {

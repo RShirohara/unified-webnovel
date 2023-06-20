@@ -1378,7 +1378,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rshirohara/pxast@^0.1.0, @rshirohara/pxast@workspace:packages/pxast":
+"@rshirohara/pxast@^0.1.1, @rshirohara/pxast@workspace:packages/pxast":
   version: 0.0.0-use.local
   resolution: "@rshirohara/pxast@workspace:packages/pxast"
   dependencies:
@@ -1391,7 +1391,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rshirohara/repixe-parse@workspace:packages/repixe-parse"
   dependencies:
-    "@rshirohara/pxast": ^0.1.0
+    "@rshirohara/pxast": ^0.1.1
     "@unified-webnovel/tsconfig": ^1.0.0
     pixiv-novel-parser: ^0.3.0
     typescript: ^5.1.3
@@ -1403,7 +1403,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rshirohara/repixe-stringify@workspace:packages/repixe-stringify"
   dependencies:
-    "@rshirohara/pxast": ^0.1.0
+    "@rshirohara/pxast": ^0.1.1
     "@unified-webnovel/tsconfig": ^1.0.0
     typescript: ^5.1.3
     unified: ^10.1.2

@@ -45,7 +45,7 @@ describe("FlowContent", () => {
         children: [
           { type: "pageHeading", pageNumber: 1 },
           {
-            type: "paragraph ",
+            type: "paragraph",
             children: [{ type: "text", value: "1ページ目" }],
           },
           { type: "pageHeading", pageNumber: 2 },

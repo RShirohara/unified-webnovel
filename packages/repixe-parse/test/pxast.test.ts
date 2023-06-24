@@ -16,7 +16,7 @@ describe("FlowContent", () => {
             children: [
               { type: "text", value: "ルビが" },
               { type: "ruby", value: "使用", ruby: "しよう" },
-              { type: "text", value: "できる " },
+              { type: "text", value: "できる" },
               { type: "ruby", value: "見出", ruby: "みだ" },
               { type: "text", value: "し" },
             ],

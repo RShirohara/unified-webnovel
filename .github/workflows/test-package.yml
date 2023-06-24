@@ -36,7 +36,7 @@ jobs:
     needs: install
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         os: [ubuntu-latest]
         node-version: [16, 18, latest]

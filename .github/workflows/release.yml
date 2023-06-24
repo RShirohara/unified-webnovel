@@ -49,9 +49,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   retrieve_target:
-    name: Retrieve release target packages.
+    name: Retrieve release target
     needs: check_action_executable
     runs-on: ubuntu-latest
+
     if: needs.check_action_executable.outputs.can_exec == 'true'
 
     outputs:
@@ -70,7 +71,6 @@ jobs:
         uses: ./.github/actions/setup-yarn
         with:
           enable-corepack: true
-          cache-node-modules: true
 
       - name: Retrieve changed package list
         id: retrieve-package
@@ -82,22 +82,22 @@ jobs:
   create_release:
     name: Create release for ${{ matrix.name }}@${{ matrix.version }}
     needs: retrieve_target
+    runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         include: ${{ fromJson(needs.retrieve_target.outputs.packages) }}
-    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Create tag
-        uses: mathieudutour/github-tag-action@v6.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          default_bump: false
-          custom_tag: ${{ matrix.name }}@${{ matrix.version }}
-          tag_prefix: ""
+        run: |
+          git tag "${TAG_PREFIX}" "${{ github.sha }}" -a -m "${TAG_PREFIX}"
+          git push origin "${TAG_PREFIX}"
+        env:
+          TAG_PREFIX: "${{ matrix.name }}@${{ matrix.version }}"
 
       - name: Create release
         uses: softprops/action-gh-release@v0.1.15
@@ -124,7 +124,6 @@ jobs:
         uses: ./.github/actions/setup-yarn
         with:
           enable-corepack: true
-          cache-node-modules: true
 
       - name: Publish packages
         run: |

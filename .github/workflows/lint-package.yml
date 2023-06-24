@@ -3,7 +3,13 @@ name: Lint (Node.js package)
 on:
   pull_request:
     types: [opened, ready_for_review, review_requested]
-    paths: ["**/package.json", "**/tsconfig.json", "packages/**/*.(js|ts)"]
+    paths:
+      [
+        "**/package.json",
+        "**/tsconfig.json",
+        "packages/**/*.js",
+        "packages/**/*.ts",
+      ]
   push:
     branches: [main]
 

@@ -940,8 +940,8 @@ __metadata:
   linkType: hard
 
 "@lerna-lite/publish@npm:^2.4.1":
-  version: 2.4.2
-  resolution: "@lerna-lite/publish@npm:2.4.2"
+  version: 2.4.3
+  resolution: "@lerna-lite/publish@npm:2.4.3"
   dependencies:
     "@lerna-lite/cli": 2.4.2
     "@lerna-lite/core": 2.4.2
@@ -969,7 +969,7 @@ __metadata:
     ssri: ^10.0.4
     tar: ^6.1.15
     temp-dir: ^3.0.0
-  checksum: 5d9798d7caa4c4a413d9016b39697f8cad9fc6af2aec5aded1c55ed6c812c12f127a30f9c91db7f2940fe5b698e8dedeef6b09e610d8a36e0d757897dc1111bd
+  checksum: c497a9cfa0aa84714579fb3a92be781039f432655d4da02fe8c14eb78340d42d46406dfd255a30ca1bb336865900744c0b5a141f29e66400d70807aa5f9b459c
   languageName: node
   linkType: hard
 

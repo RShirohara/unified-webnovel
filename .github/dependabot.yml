@@ -22,7 +22,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "saturday"
-      time: "09:00"
+      time: "03:00"
       timezone: "Asia/Tokyo"
     labels:
       - "Type: CI"

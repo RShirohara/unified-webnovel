@@ -29,7 +29,7 @@
     "lint": "yarn run eslint ./packages",
     "publish": "yarn run lerna publish from-git",
     "test": "NODE_OPTIONS=--experimental-vm-modules yarn run jest",
-    "version:check": "yarn run lerna changed ",
+    "version:check": "yarn run lerna changed",
     "version:update": "yarn run lerna version --conventional-commits --no-git-tag-version --sync-workspace-lock"
   },
   "eslintConfig": {

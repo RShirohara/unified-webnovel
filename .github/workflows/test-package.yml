@@ -1,0 +1,70 @@
+name: Test (Node.js package)
+
+on:
+  pull_request:
+    types: [opened, ready_for_review, review_requested]
+    paths:
+      [
+        "**/package.json",
+        "**/tsconfig.json",
+        "packages/**/*.js",
+        "packages/**/*.ts",
+      ]
+  push:
+    branches: [main]
+
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  install:
+    name: Install dependency
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+
+      - name: Install yarn and dependency
+        uses: ./.github/actions/setup-yarn
+        with:
+          enable-corepack: true
+
+  test:
+    name: Test for nodejs-${{ matrix.node-version }} on ${{ matrix.os }}
+    needs: install
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [16, 18, latest]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install yarn and dependency
+        uses: ./.github/actions/setup-yarn
+        with:
+          enable-corepack: true
+
+      - name: Run test
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          package-manager: yarn
+          test-script: yarn run test
+          skip-step: install

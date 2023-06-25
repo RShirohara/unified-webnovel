@@ -1,0 +1,66 @@
+name: Lint (Node.js package)
+
+on:
+  pull_request:
+    types: [opened, ready_for_review, review_requested]
+    paths:
+      [
+        "**/package.json",
+        "**/tsconfig.json",
+        "packages/**/*.js",
+        "packages/**/*.ts",
+      ]
+  push:
+    branches: [main]
+
+permissions:
+  checks: write
+  contents: read
+
+jobs:
+  install:
+    name: Install dependency
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+
+      - name: Install yarn and dependency
+        uses: ./.github/actions/setup-yarn
+        with:
+          enable-corepack: true
+
+  lint:
+    name: Lint
+    needs: install
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+
+      - name: Install yarn and dependency
+        uses: ./.github/actions/setup-yarn
+        with:
+          enable-corepack: true
+
+      - name: Setup reviewdog
+        uses: reviewdog/action-setup@v1
+
+      - name: Run eslint
+        run: |
+          yarn run lint |
+          reviewdog -f eslint -reporter github-pr-check -level warning
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -10,8 +10,6 @@ on:
         "packages/**/*.js",
         "packages/**/*.ts",
       ]
-  push:
-    branches: [main]
 
 permissions:
   checks: write

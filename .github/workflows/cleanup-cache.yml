@@ -20,6 +20,8 @@ jobs:
       - name: Setup gh-action-cache
         run: |
           gh extension install actions/gh-action-cache
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cleanup cache
         run: |

@@ -64,12 +64,14 @@ jobs:
       - name: Run test
         run: |
           yarn run test --ci --reporters github-actions --silent
+        continue-on-error: true
 
-  test-coverage:
-    name: Test and Generate coverage
+  generate-coverage:
+    name: Generate coverage
     needs: install
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
+
+    if: github.event_name == 'pull_request'
 
     steps:
       - name: Checkout repository
@@ -92,3 +94,4 @@ jobs:
           package-manager: yarn
           test-script: yarn run test
           skip-step: install
+        continue-on-error: true

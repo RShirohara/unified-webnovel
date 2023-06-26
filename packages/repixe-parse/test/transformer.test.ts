@@ -31,10 +31,7 @@ describe("Text", () => {
         },
         {
           type: "paragraph",
-          children: [
-            { type: "text", value: "二つ目の段落" },
-            { type: "break" },
-          ],
+          children: [{ type: "text", value: "二つ目の段落" }],
         },
       ],
     };

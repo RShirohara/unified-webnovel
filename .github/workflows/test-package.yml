@@ -64,7 +64,6 @@ jobs:
       - name: Run test
         run: |
           yarn run test --ci --reporters github-actions --silent
-        continue-on-error: true
 
   generate-coverage:
     name: Generate coverage
@@ -87,7 +86,7 @@ jobs:
         with:
           enable-corepack: true
 
-      - name: Run test
+      - name: Run test and generate coverage
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

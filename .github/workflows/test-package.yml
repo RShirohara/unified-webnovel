@@ -15,7 +15,7 @@ on:
 
 permissions:
   checks: write
-  contents: write
+  contents: read
   pull-requests: write
 
 jobs:
@@ -55,6 +55,30 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Install yarn and dependency
+        uses: ./.github/actions/setup-yarn
+        with:
+          enable-corepack: true
+
+      - name: Run test
+        run: |
+          yarn run test --ci --reporters github-actions --silent
+
+  test-coverage:
+    name: Test and Generate coverage
+    needs: install
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
 
       - name: Install yarn and dependency
         uses: ./.github/actions/setup-yarn

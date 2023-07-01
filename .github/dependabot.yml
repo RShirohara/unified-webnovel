@@ -15,6 +15,7 @@ updates:
       - "RShirohara"
     reviewers:
       - "RShirohara"
+    versioning-strategy: increase
 
   # GitHub Actions
   - package-ecosystem: "github-actions"

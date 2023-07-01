@@ -5,6 +5,7 @@ on:
     types: [opened, ready_for_review, review_requested]
     paths:
       [
+        "yarn.lock",
         "**/package.json",
         "**/tsconfig.json",
         "packages/**/*.js",

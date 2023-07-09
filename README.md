@@ -12,14 +12,6 @@
 - [repixe-parse](./packages/repixe-parse)
 - [repixe-stringify](./packages/repixe-stringify)
 
-## Development
-
-This package requires yarn v3+.
-
-```shell
-corepack prepare yarn@stable --activate
-```
-
 ## License
 
 [MIT][license]

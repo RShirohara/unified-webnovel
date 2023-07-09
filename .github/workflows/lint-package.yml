@@ -5,7 +5,7 @@ on:
     types: [opened, ready_for_review, review_requested]
     paths:
       [
-        "yarn.lock",
+        "pnpm-lock.yaml",
         "**/package.json",
         "**/tsconfig.json",
         "packages/**/*.js",
@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   install:
-    name: Install dependency
+    name: Install dependencies
     runs-on: ubuntu-latest
 
     steps:
@@ -32,10 +32,8 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install yarn and dependency
-        uses: ./.github/actions/setup-yarn
-        with:
-          enable-corepack: true
+      - name: Install pnpm and dependencies
+        uses: ./.github/actions/setup-pnpm
 
   lint:
     name: Lint
@@ -51,17 +49,15 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install yarn and dependency
-        uses: ./.github/actions/setup-yarn
-        with:
-          enable-corepack: true
+      - name: Install pnpm and dependencies
+        uses: ./.github/actions/setup-pnpm
 
       - name: Setup reviewdog
         uses: reviewdog/action-setup@v1
 
       - name: Run eslint
         run: |
-          yarn run lint |
+          pnpm run lint |
           reviewdog -f eslint -reporter github-check -level warning
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}

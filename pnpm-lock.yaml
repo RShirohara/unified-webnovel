@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       '@lerna-lite/changed':
-        specifier: ^2.4.1
-        version: 2.4.1(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+        specifier: ^2.5.0
+        version: 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/cli':
         specifier: ^2.4.1
-        version: 2.4.1(@lerna-lite/list@2.4.1)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+        version: 2.4.1(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/publish':
         specifier: ^2.5.0
         version: 2.5.0(@lerna-lite/run@2.5.0)
@@ -790,14 +790,14 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@lerna-lite/changed@2.4.1(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0):
-    resolution: {integrity: sha512-lAX2Y3ne3lViH4NfpLNWmthF9DEFKyKB9wOaEMxRjHD/xgF7LFPcJI+HFlbm7ilGnaXPjgZPwXFhQ5kuyq2n+g==}
+  /@lerna-lite/changed@2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0):
+    resolution: {integrity: sha512-kdV1CEhabuYSMo9hxT+q1dtg7bd3TfTCk48t8z/rho7Ki5DldVV6166fJ4UtQXcZW9ut9zo5G8WoGYeT4WyAvg==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     dependencies:
-      '@lerna-lite/cli': 2.4.1(@lerna-lite/list@2.4.1)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
-      '@lerna-lite/core': 2.4.1
-      '@lerna-lite/list': 2.4.1(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
-      '@lerna-lite/listable': 2.4.1
+      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+      '@lerna-lite/core': 2.5.0
+      '@lerna-lite/list': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+      '@lerna-lite/listable': 2.5.0
     transitivePeerDependencies:
       - '@lerna-lite/exec'
       - '@lerna-lite/publish'
@@ -807,7 +807,7 @@ packages:
       - supports-color
     dev: true
 
-  /@lerna-lite/cli@2.4.1(@lerna-lite/list@2.4.1)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0):
+  /@lerna-lite/cli@2.4.1(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0):
     resolution: {integrity: sha512-i/Hd3tWYcK4bD9ZGz5ZdNUbxJG9KRbK7kXO14qRteKRA0NXBmSz/pbldhg59jj/YpA0bA3z8TloTsDPmD+nHJw==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     hasBin: true
@@ -834,7 +834,6 @@ packages:
     dependencies:
       '@lerna-lite/core': 2.4.1
       '@lerna-lite/init': 2.4.1
-      '@lerna-lite/list': 2.4.1(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/publish': 2.5.0(@lerna-lite/run@2.5.0)
       '@lerna-lite/run': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/version': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)
@@ -848,7 +847,7 @@ packages:
       - supports-color
     dev: true
 
-  /@lerna-lite/cli@2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0):
+  /@lerna-lite/cli@2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0):
     resolution: {integrity: sha512-u1PVmX/qZZnct1fL7IGTkobF/7y6jp/uhFJrDplpW7eLVS8Jkw5OI2qVFD4W+RBKU94t12non7zOvVAoBCdyvQ==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     hasBin: true
@@ -875,6 +874,7 @@ packages:
     dependencies:
       '@lerna-lite/core': 2.5.0
       '@lerna-lite/init': 2.5.0
+      '@lerna-lite/list': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/publish': 2.5.0(@lerna-lite/run@2.5.0)
       '@lerna-lite/run': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/version': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)
@@ -956,17 +956,6 @@ packages:
       - supports-color
     dev: true
 
-  /@lerna-lite/filter-packages@2.4.1:
-    resolution: {integrity: sha512-8yKb/gVTpllbcKgS182CL/GiuiSmqINbjka4B8/fGryyzkaqWshfLbSiR2p+YMP0BlKz5qhoMPxt29u7ClhN0A==}
-    engines: {node: '>=16.15.0', npm: '>=8.5.0'}
-    dependencies:
-      '@lerna-lite/core': 2.4.1
-      multimatch: 6.0.0
-      npmlog: 7.0.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /@lerna-lite/filter-packages@2.5.0:
     resolution: {integrity: sha512-fmaeGlyZuCM9MJyk8e9yqhCZ7F+X3F49pnQReRrWM0mXxow/d6qN0tGsnNB3pgBRKiFtl8rAGWQmWNg3Iu9xTQ==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
@@ -1002,14 +991,14 @@ packages:
       - supports-color
     dev: true
 
-  /@lerna-lite/list@2.4.1(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0):
-    resolution: {integrity: sha512-9sO1sqS69Jie4oLxwmIg17MiFTUOPwbMnBGoAx5+8HT0dILx97LvX3TsHaUTNhe9LMTuORjkKTKdqbnaphJskA==}
+  /@lerna-lite/list@2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0):
+    resolution: {integrity: sha512-sUgVOuFw3tignTIJnCBhquID2lqLvkAOYskw3Old7gbIL73AS9rD+T3UCr6q32I+YBamuM+W7MgUQCITcKW15A==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     dependencies:
-      '@lerna-lite/cli': 2.4.1(@lerna-lite/list@2.4.1)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
-      '@lerna-lite/core': 2.4.1
-      '@lerna-lite/filter-packages': 2.4.1
-      '@lerna-lite/listable': 2.4.1
+      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+      '@lerna-lite/core': 2.5.0
+      '@lerna-lite/filter-packages': 2.5.0
+      '@lerna-lite/listable': 2.5.0
     transitivePeerDependencies:
       - '@lerna-lite/exec'
       - '@lerna-lite/publish'
@@ -1019,11 +1008,11 @@ packages:
       - supports-color
     dev: true
 
-  /@lerna-lite/listable@2.4.1:
-    resolution: {integrity: sha512-dwwz648pK39GtMrHr3E9H3hXgIYT3sApKPLtdjOr94zX61lb50aewY7brL0O4GhvgL/7a2KOq/2Z0dEoDxwi2Q==}
+  /@lerna-lite/listable@2.5.0:
+    resolution: {integrity: sha512-0fM4CCrHCEpb9cFUEj3EHNuPdGFH79++s21pWuP2iX3Tqv660Xpn3cQWkVBN3eK6McJF2vROR4hI6O486eWAOg==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     dependencies:
-      '@lerna-lite/core': 2.4.1
+      '@lerna-lite/core': 2.5.0
       chalk: 5.3.0
       columnify: 1.6.0
     transitivePeerDependencies:
@@ -1046,7 +1035,7 @@ packages:
     resolution: {integrity: sha512-ihvrLah30VqcQSDk8pP4Xn0AAOkH0DsnGzlJLMAGBoY3n5dTOLaLm6nSSdQzKXoBc9mhGi9jcAWeHZqUoG5E2g==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     dependencies:
-      '@lerna-lite/cli': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/core': 2.5.0
       '@lerna-lite/version': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)
       '@npmcli/arborist': 6.3.0
@@ -1086,7 +1075,7 @@ packages:
     resolution: {integrity: sha512-L818wGMU21EjZzJwxW0WAstzyCCsXgyetMSxIbAzg/ftq0g5oAcfCTrB63k73XO4n2XV6WAUfQ8HBB+G2xNpCQ==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     dependencies:
-      '@lerna-lite/cli': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/core': 2.5.0
       '@lerna-lite/filter-packages': 2.5.0
       '@lerna-lite/profiler': 2.5.0
@@ -1107,7 +1096,7 @@ packages:
     resolution: {integrity: sha512-hDwlNx57X+JW8A96lieQHDpDIGMhZZh5nuUm78sSwcYAL8hhwNrBcbkvaxjggc3MTsbZp9G416vU7P4gleuMRw==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     dependencies:
-      '@lerna-lite/cli': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/core': 2.5.0
       '@octokit/plugin-enterprise-rest': 6.0.1
       '@octokit/rest': 19.0.13

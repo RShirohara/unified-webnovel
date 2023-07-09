@@ -67,16 +67,14 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install yarn and dependency
-        uses: ./.github/actions/setup-yarn
-        with:
-          enable-corepack: true
+      - name: Install pnpm and dependencies
+        uses: ./.github/actions/setup-pnpm
 
       - name: Retrieve changed package list
         id: retrieve-package
         run: |
           set -eux
-          PACKAGES=$(yarn run version:check --json | jq -c '.')
+          PACKAGES=$(pnpm run version:check --json | jq -c '.')
           echo "packages=${PACKAGES}" > ${GITHUB_OUTPUT}
 
   create_release:
@@ -120,14 +118,12 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install yarn and dependency
-        uses: ./.github/actions/setup-yarn
-        with:
-          enable-corepack: true
+      - name: Install pnpm and dependencies
+        uses: ./.github/actions/setup-pnpm
 
       - name: Publish packages
         run: |
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-          yarn run publish
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+          pnpm run publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

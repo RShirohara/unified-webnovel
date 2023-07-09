@@ -5,7 +5,7 @@ on:
     types: [opened, ready_for_review, review_requested]
     paths:
       [
-        "yarn.lock",
+        "pnpm-lock.yaml",
         "**/package.json",
         "**/tsconfig.json",
         "packages/**/*.js",
@@ -33,10 +33,8 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install yarn and dependency
-        uses: ./.github/actions/setup-yarn
-        with:
-          enable-corepack: true
+      - name: Install pnpm and dependencies
+        uses: ./.github/actions/setup-pnpm
 
   test:
     name: Test for nodejs-${{ matrix.node-version }} on ${{ matrix.os }}
@@ -57,14 +55,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install yarn and dependency
-        uses: ./.github/actions/setup-yarn
-        with:
-          enable-corepack: true
+      - name: Install pnpm and dependencies
+        uses: ./.github/actions/setup-pnpm
 
       - name: Run test
         run: |
-          yarn run test --ci --reporters github-actions --silent
+          pnpm run test --ci --reporters github-actions --silent
 
   generate-coverage:
     name: Generate coverage
@@ -82,16 +78,14 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install yarn and dependency
-        uses: ./.github/actions/setup-yarn
-        with:
-          enable-corepack: true
+      - name: Install pnpm and dependencies
+        uses: ./.github/actions/setup-pnpm
 
       - name: Run test and generate coverage
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          package-manager: yarn
-          test-script: yarn run test
+          package-manager: pnpm
+          test-script: pnpm run test
           skip-step: install
         continue-on-error: true

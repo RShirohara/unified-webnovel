@@ -15,5 +15,6 @@
     "rshirohara",
     "webnovel"
   ],
-  "javascript.format.enable": false
+  "javascript.format.enable": false,
+  "npm.packageManager": "pnpm"
 }

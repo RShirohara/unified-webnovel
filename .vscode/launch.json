@@ -7,7 +7,7 @@
       "request": "launch",
       "runtimeExecutable": "pnpm",
       "args": [
-        "run",
+        "exec",
         "jest",
         "--runInBand",
         "--watchAll=false",

@@ -16,5 +16,6 @@
     "webnovel"
   ],
   "javascript.format.enable": false,
+  "jest.jestCommandLine": "pnpm run test",
   "npm.packageManager": "pnpm"
 }

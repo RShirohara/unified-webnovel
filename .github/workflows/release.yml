@@ -8,59 +8,74 @@ permissions:
   contents: write
 
 jobs:
-  check_action_executable:
-    name: Check if action executable
+  retrieve_pullrequest_label:
+    name: Retrieve pull request label
     runs-on: ubuntu-latest
 
     outputs:
-      can_exec: ${{ contains(steps.retrieve_info.outputs.labels, 'Release') }}
+      labels: ${{ steps.retrieve_label.outputs.result }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Check if action executable
-        id: retrieve_info
-        run: |
-          REPO_NAME=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}
-          QUERY_RESULT=$(gh api graphql --paginate -f query="
-          {
-            repository(owner: \"${{ github.repository_owner }}\", name: \"${REPO_NAME}\") {
-              object(expression: \"${{ github.sha }}\") {
-                ... on Commit {
-                  associatedPullRequests(first: 1) {
-                    nodes {
-                      number
-                      labels(first: 5) {
-                        nodes {
-                          name
+      - name: Retrieve pull request label
+        id: retrieve_label
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const query = `query($owner:String!, $repo:String!, $sha:String!) {
+              repository(owner: $owner, name: $repo) {
+                object(expression: $sha) {
+                  ... on Commit {
+                    associatedPullRequests(first:1 ) {
+                      nodes {
+                        labels(first:100) {
+                          nodes{
+                            name
+                          }
                         }
                       }
                     }
                   }
                 }
               }
-            }
-          }
-          " | jq -c)
-          echo "id=$(echo "${QUERY_RESULT}" | jq -c ".data.repository.object.associatedPullRequests.nodes[].number")" > ${GITHUB_OUTPUT}
-          echo "labels=$(echo "${QUERY_RESULT}" | jq -cr "[.data.repository.object.associatedPullRequests.nodes[].labels.nodes[].name] | join(\", \")")" > ${GITHUB_OUTPUT}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            }`;
+            const variables = {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha
+            };
+            const queryResult = await github.graphql(query, variables);
+            const labels = [
+              ...(queryResult.repository.object.associatedPullRequests?.nodes ?? []),
+            ]
+              .map((node) => {
+                return node.labels.nodes.map((node) => {
+                  {
+                    return node.name;
+                  }
+                });
+              })
+              .flat()
+              .join(", ");
+            return labels;
 
   retrieve_target:
     name: Retrieve release target
-    needs: check_action_executable
+    needs: retrieve_pullrequest_label
     runs-on: ubuntu-latest
 
-    if: needs.check_action_executable.outputs.can_exec == 'true'
+    if: ${{ contains( needs.retrieve_pullrequest_label.outputs.labels, 'Release') }}
 
     outputs:
-      packages: ${{ steps.retrieve-package.outputs.packages }}
+      packages: ${{ steps.retrieve_packages.outputs.packages }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -71,10 +86,10 @@ jobs:
         uses: ./.github/actions/setup-pnpm
 
       - name: Retrieve changed package list
-        id: retrieve-package
+        id: retrieve_packages
         run: |
           set -eux
-          PACKAGES=$(pnpm run version:check --json | jq -c '.')
+          PACKAGES=$(pnpm run --silent version:check --json | jq -c '.')
           echo "packages=${PACKAGES}" > ${GITHUB_OUTPUT}
 
   create_release:
@@ -89,13 +104,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Create tag
+        env:
+          TAG_PREFIX: "${{ matrix.name }}@${{ matrix.version }}"
         run: |
           git tag "${TAG_PREFIX}" "${{ github.sha }}" -a -m "${TAG_PREFIX}"
           git push origin "${TAG_PREFIX}"
-        env:
-          TAG_PREFIX: "${{ matrix.name }}@${{ matrix.version }}"
 
       - name: Create release
         uses: softprops/action-gh-release@v0.1.15
@@ -112,6 +129,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -122,8 +141,8 @@ jobs:
         uses: ./.github/actions/setup-pnpm
 
       - name: Publish packages
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
           pnpm run publish
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

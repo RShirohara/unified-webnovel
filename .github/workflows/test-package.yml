@@ -67,7 +67,7 @@ jobs:
     needs: install
     runs-on: ubuntu-latest
 
-    if: github.event_name == 'pull_request'
+    if: ${{ github.event_name == 'pull_request' }}
 
     steps:
       - name: Checkout repository
@@ -82,10 +82,10 @@ jobs:
         uses: ./.github/actions/setup-pnpm
 
       - name: Run test and generate coverage
+        continue-on-error: true
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           package-manager: pnpm
           test-script: pnpm test
           skip-step: install
-        continue-on-error: true

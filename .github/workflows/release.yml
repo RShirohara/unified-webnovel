@@ -89,7 +89,7 @@ jobs:
         id: retrieve_packages
         run: |
           set -eux
-          PACKAGES=$(pnpm run version:check --json | jq -c '.')
+          PACKAGES=$(pnpm run --silent version:check --json | jq -c '.')
           echo "packages=${PACKAGES}" > ${GITHUB_OUTPUT}
 
   create_release:

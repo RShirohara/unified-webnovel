@@ -32,6 +32,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^5.62.0
         version: 5.62.0(eslint@8.45.0)(typescript@5.1.6)
+      '@unified-webnovel/prettier-config':
+        specifier: workspace:*
+        version: link:packages/prettier-config
       eslint:
         specifier: ^8.45.0
         version: 8.45.0
@@ -53,6 +56,12 @@ importers:
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
+
+  packages/prettier-config:
+    dependencies:
+      prettier:
+        specifier: ^3.0.0
+        version: 3.0.0
 
   packages/pxast:
     dependencies:
@@ -4956,7 +4965,6 @@ packages:
     resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
     engines: {node: '>=14'}
     hasBin: true
-    dev: true
 
   /pretty-format@29.6.1:
     resolution: {integrity: sha512-7jRj+yXO0W7e4/tSJKoR7HRIHLPPjtNaUGG2xxKQnGvPNRkgWcQ0AZX6P4KBRJN4FcTBWb3sa7DVUJmocYuoog==}

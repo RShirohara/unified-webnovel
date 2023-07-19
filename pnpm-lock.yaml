@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@eslint/js':
+        specifier: ^8.45.0
+        version: 8.45.0
       '@lerna-lite/changed':
         specifier: ^2.5.0
         version: 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
@@ -492,6 +495,11 @@ packages:
 
   /@eslint/js@8.44.0:
     resolution: {integrity: sha512-Ag+9YM4ocKQx9AarydN0KY2j0ErMHNIocPDrVo8zAE44xLTjEtz81OdR68/cydGtk6m6jDb5Za3r2useMzYmSw==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: true
+
+  /@eslint/js@8.45.0:
+    resolution: {integrity: sha512-p/4a2uaWVHCbAPLxPcv9rkhooU1FVfUUiLoZq09v1dOgtLym/Qlsyw2L3JWr9inVRt1XaLKPP5PBcDtTxRUJPg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 

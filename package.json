@@ -3,11 +3,13 @@
   "description": "unified packages for web novel.",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "packageManager": "pnpm@8.6.6",
   "workspaces": [
     "./packages/*"
   ],
   "devDependencies": {
+    "@eslint/js": "^8.45.0",
     "@lerna-lite/changed": "^2.5.0",
     "@lerna-lite/cli": "^2.5.0",
     "@lerna-lite/publish": "^2.5.0",
@@ -32,33 +34,6 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "version:check": "lerna changed",
     "version:update": "lerna version --conventional-commits --no-git-tag-version --sync-workspace-lock"
-  },
-  "eslintConfig": {
-    "root": true,
-    "plugins": [
-      "jest"
-    ],
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "prettier",
-      "plugin:jest/recommended",
-      "plugin:jest/style"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": [
-        "./packages/*/tsconfig.json"
-      ]
-    },
-    "ignorePatterns": [
-      "**/dist/**"
-    ],
-    "rules": {
-      "@typescript-eslint/consistent-type-exports": "warn",
-      "@typescript-eslint/consistent-type-imports": "warn",
-      "@typescript-eslint/no-import-type-side-effects": "warn"
-    }
   },
   "jest": {
     "projects": [

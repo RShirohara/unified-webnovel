@@ -2,7 +2,7 @@ import js from "@eslint/js";
 import ts from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import prettier from "eslint-config-prettier";
-import jest from "eslint-plugin-jest";
+import vitest from "eslint-plugin-vitest";
 
 export default [
   { ignores: ["**/dist"] },
@@ -28,13 +28,8 @@ export default [
   },
   {
     files: ["**/test/*.test.ts"],
-    plugins: {
-      jest: jest
-    },
-    rules: {
-      ...jest.configs.recommended.rules,
-      ...jest.configs.style.rules
-    }
+    plugins: { vitest: vitest },
+    rules: { ...vitest.configs.recommended.rules }
   },
   {
     rules: {

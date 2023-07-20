@@ -1,7 +1,7 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from "vitest";
 import type { Root } from "@rshirohara/pxast";
 
-import { toPixivNovel } from "@/lib";
+import { toPixivNovel } from "~/lib";
 
 describe("Root", () => {
   test("複数の子要素は '\\n\\n' で結合される", () => {

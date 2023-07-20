@@ -1,7 +1,8 @@
-import { expect, test } from "@jest/globals";
+import { expect, test } from "vitest";
+
 import { unified } from "unified";
 
-import { repixeParse } from "@/index";
+import { repixeParse } from "~/";
 import type { Root } from "@rshirohara/pxast";
 
 test("repixeParse", async () => {

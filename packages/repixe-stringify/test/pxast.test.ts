@@ -15,18 +15,18 @@ describe("Root", () => {
           children: [
             { type: "text", value: "二段落目" },
             { type: "break" },
-            { type: "text", value: "二行目" },
-          ],
+            { type: "text", value: "二行目" }
+          ]
         },
         { type: "pageHeading", pageNumber: 2 },
-        { type: "heading", children: [{ type: "text", value: "見出し" }] },
-      ],
+        { type: "heading", children: [{ type: "text", value: "見出し" }] }
+      ]
     };
     const expected = [
       "一段落目",
       "二段落目\n二行目",
       "[newpage]",
-      "[chapter: 見出し]",
+      "[chapter: 見出し]"
     ].join("\n\n");
     expect(toPixivNovel(source)).toEqual(expected);
   });
@@ -38,8 +38,8 @@ describe("FlowContent", () => {
       const source: Root = {
         type: "root",
         children: [
-          { type: "heading", children: [{ type: "text", value: "見出し" }] },
-        ],
+          { type: "heading", children: [{ type: "text", value: "見出し" }] }
+        ]
       };
       const expected = "[chapter: 見出し]";
       expect(toPixivNovel(source)).toEqual(expected);
@@ -56,10 +56,10 @@ describe("FlowContent", () => {
               { type: "ruby", value: "使用", ruby: "しよう" },
               { type: "text", value: "できる" },
               { type: "ruby", value: "見出", ruby: "みだ" },
-              { type: "text", value: "し" },
-            ],
-          },
-        ],
+              { type: "text", value: "し" }
+            ]
+          }
+        ]
       };
       const expected =
         "[chapter: ルビが[[rb: 使用 > しよう]]できる[[rb: 見出 > みだ]]し]";
@@ -75,14 +75,14 @@ describe("FlowContent", () => {
           { type: "pageHeading", pageNumber: 1 },
           {
             type: "paragraph",
-            children: [{ type: "text", value: "1ページ目" }],
+            children: [{ type: "text", value: "1ページ目" }]
           },
           { type: "pageHeading", pageNumber: 2 },
           {
             type: "paragraph",
-            children: [{ type: "text", value: "2ページ目" }],
-          },
-        ],
+            children: [{ type: "text", value: "2ページ目" }]
+          }
+        ]
       };
       const expected = ["1ページ目", "[newpage]", "2ページ目"].join("\n\n");
       expect(toPixivNovel(source)).toEqual(expected);
@@ -95,26 +95,26 @@ describe("FlowContent", () => {
           { type: "pageHeading", pageNumber: 1 },
           {
             type: "paragraph",
-            children: [{ type: "text", value: "1ページ目" }],
+            children: [{ type: "text", value: "1ページ目" }]
           },
           { type: "pageHeading", pageNumber: 2 },
           {
             type: "paragraph",
-            children: [{ type: "text", value: "2ページ目" }],
+            children: [{ type: "text", value: "2ページ目" }]
           },
           { type: "pageHeading", pageNumber: 3 },
           {
             type: "paragraph",
-            children: [{ type: "text", value: "3ページ目" }],
-          },
-        ],
+            children: [{ type: "text", value: "3ページ目" }]
+          }
+        ]
       };
       const expected = [
         "1ページ目",
         "[newpage]",
         "2ページ目",
         "[newpage]",
-        "3ページ目",
+        "3ページ目"
       ].join("\n\n");
       expect(toPixivNovel(source)).toEqual(expected);
     });
@@ -127,9 +127,9 @@ describe("FlowContent", () => {
         children: [
           {
             type: "paragraph",
-            children: [{ type: "text", value: "これは段落。" }],
-          },
-        ],
+            children: [{ type: "text", value: "これは段落。" }]
+          }
+        ]
       };
       const expected = "これは段落。";
       expect(toPixivNovel(source)).toEqual(expected);
@@ -145,10 +145,10 @@ describe("FlowContent", () => {
               { type: "ruby", value: "換言", ruby: "かんげん" },
               { type: "text", value: "すれば" },
               { type: "ruby", value: "畢竟", ruby: "ひっきょう" },
-              { type: "text", value: "ももんが" },
-            ],
-          },
-        ],
+              { type: "text", value: "ももんが" }
+            ]
+          }
+        ]
       };
       const expected =
         "[[rb: 換言 > かんげん]]すれば[[rb: 畢竟 > ひっきょう]]ももんが";
@@ -169,11 +169,11 @@ describe("PhrasingContent", () => {
               {
                 type: "link",
                 url: "https://example.com",
-                children: [{ type: "text", value: "example" }],
-              },
-            ],
-          },
-        ],
+                children: [{ type: "text", value: "example" }]
+              }
+            ]
+          }
+        ]
       };
       const expected = "[[jumpuri: example > https://example.com]]";
       expect(toPixivNovel(source)).toEqual(expected);
@@ -191,12 +191,12 @@ describe("PhrasingContent", () => {
                 url: "https://example.com",
                 children: [
                   { type: "text", value: "これが" },
-                  { type: "ruby", value: "例", ruby: "れい" },
-                ],
-              },
-            ],
-          },
-        ],
+                  { type: "ruby", value: "例", ruby: "れい" }
+                ]
+              }
+            ]
+          }
+        ]
       };
       const expected =
         "[[jumpuri: これが[[rb: 例 > れい]] > https://example.com]]";
@@ -211,9 +211,9 @@ describe("PhrasingContent", () => {
         children: [
           {
             type: "paragraph",
-            children: [{ type: "image", illustId: "000001" }],
-          },
-        ],
+            children: [{ type: "image", illustId: "000001" }]
+          }
+        ]
       };
       const expected = "[pixivimage:000001]";
       expect(toPixivNovel(source)).toEqual(expected);
@@ -225,9 +225,9 @@ describe("PhrasingContent", () => {
         children: [
           {
             type: "paragraph",
-            children: [{ type: "image", illustId: "000001", pageNumber: 2 }],
-          },
-        ],
+            children: [{ type: "image", illustId: "000001", pageNumber: 2 }]
+          }
+        ]
       };
       const expected = "[pixivimage:000001-2]";
       expect(toPixivNovel(source)).toEqual(expected);
@@ -244,10 +244,10 @@ describe("PhrasingContent", () => {
             children: [
               { type: "text", value: "これは" },
               { type: "pageReference", pageNumber: 1 },
-              { type: "text", value: "ページへの参照。" },
-            ],
-          },
-        ],
+              { type: "text", value: "ページへの参照。" }
+            ]
+          }
+        ]
       };
       const expected = "これは[jump:1]ページへの参照。";
       expect(toPixivNovel(source)).toEqual(expected);
@@ -266,10 +266,10 @@ describe("StaticPhrasingContent", () => {
             children: [
               { type: "text", value: "これは" },
               { type: "break" },
-              { type: "text", value: "改行。" },
-            ],
-          },
-        ],
+              { type: "text", value: "改行。" }
+            ]
+          }
+        ]
       };
       const expected = "これは\n改行。";
       expect(toPixivNovel(source)).toEqual(expected);
@@ -286,10 +286,10 @@ describe("StaticPhrasingContent", () => {
             children: [
               { type: "text", value: "これは" },
               { type: "ruby", value: "例文", ruby: "れいぶん" },
-              { type: "text", value: "。" },
-            ],
-          },
-        ],
+              { type: "text", value: "。" }
+            ]
+          }
+        ]
       };
       const expected = "これは[[rb: 例文 > れいぶん]]。";
       expect(toPixivNovel(source)).toEqual(expected);
@@ -303,9 +303,9 @@ describe("StaticPhrasingContent", () => {
         children: [
           {
             type: "paragraph",
-            children: [{ type: "text", value: "これはテスト。" }],
-          },
-        ],
+            children: [{ type: "text", value: "これはテスト。" }]
+          }
+        ]
       };
       const expected = "これはテスト。";
       expect(toPixivNovel(source)).toEqual(expected);

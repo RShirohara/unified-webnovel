@@ -6,7 +6,7 @@ import type {
   PixivImage,
   PixivNode,
   Ruby,
-  Text,
+  Text
 } from "pixiv-novel-parser";
 
 export type PixivContent = PixivFlowContent | PixivPhrasingContent;
@@ -45,7 +45,7 @@ export function transform(nodes: PixivNode[]): PixivFlowContent[] {
         result.push({
           type: "tag",
           name: "paragraph",
-          elements: internalNodes,
+          elements: internalNodes
         });
         internalNodes = [];
       }
@@ -61,7 +61,7 @@ export function transform(nodes: PixivNode[]): PixivFlowContent[] {
             result.push({
               type: "tag",
               name: "paragraph",
-              elements: internalNodes,
+              elements: internalNodes
             });
             internalNodes = [];
           }

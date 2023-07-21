@@ -51,9 +51,9 @@ async function main() {
         children: [
           {
             type: "text",
-            value: "ここが一段落目。",
-          },
-        ],
+            value: "ここが一段落目。"
+          }
+        ]
       },
       {
         type: "paragraph",
@@ -62,8 +62,8 @@ async function main() {
           { type: "ruby", value: "段落", ruby: "だんらく" },
           { type: "text", value: "目。" },
           { type: "break" },
-          { type: "text", value: "ここが二行目。" },
-        ],
+          { type: "text", value: "ここが二行目。" }
+        ]
       },
       {
         type: "paragraph",
@@ -73,10 +73,10 @@ async function main() {
           {
             type: "link",
             url: "https://example.com",
-            children: [{ type: "text", value: "リンク" }],
+            children: [{ type: "text", value: "リンク" }]
           },
-          { type: "text", value: "も使える。" },
-        ],
+          { type: "text", value: "も使える。" }
+        ]
       },
       { type: "pageHeading", pageNumber: 2 },
       {
@@ -85,10 +85,10 @@ async function main() {
           { type: "text", value: "ここからページが変わる。" },
           { type: "break" },
           { type: "pageReference", pageNumber: 1 },
-          { type: "text", value: "ページへの参照。" },
-        ],
-      },
-    ],
+          { type: "text", value: "ページへの参照。" }
+        ]
+      }
+    ]
   };
   const result = await unified().use(repixeStringify).compile(source);
 

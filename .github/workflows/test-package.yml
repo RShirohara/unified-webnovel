@@ -9,13 +9,12 @@ on:
         "**/package.json",
         "**/tsconfig.json",
         "packages/**/*.js",
-        "packages/**/*.ts",
+        "packages/**/*.ts"
       ]
   push:
     branches: [main]
 
 permissions:
-  checks: write
   contents: read
   pull-requests: write
 
@@ -83,9 +82,9 @@ jobs:
 
       - name: Run test and generate coverage
         continue-on-error: true
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          package-manager: pnpm
-          test-script: pnpm test
-          skip-step: install
+        run: |
+          pnpm run test:coverage
+
+      - name: Report coverage
+        continue-on-error: true
+        uses: davelosert/vitest-coverage-report-action@v2

@@ -9,7 +9,7 @@ on:
         "**/package.json",
         "**/tsconfig.json",
         "packages/**/*.js",
-        "packages/**/*.ts",
+        "packages/**/*.ts"
       ]
   push:
     branches: [main]

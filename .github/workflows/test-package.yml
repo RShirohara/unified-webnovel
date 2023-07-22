@@ -15,6 +15,7 @@ on:
     branches: [main]
 
 permissions:
+  checks: write
   contents: read
   pull-requests: write
 
@@ -58,32 +59,13 @@ jobs:
         uses: ./.github/actions/setup-pnpm
 
       - name: Run test
-        run: |
-          pnpm run test --ci --reporters github-actions --silent
-
-  generate-coverage:
-    name: Generate coverage
-    needs: install
-    runs-on: ubuntu-latest
-
-    if: ${{ github.event_name == 'pull_request' }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: latest
-
-      - name: Install pnpm and dependencies
-        uses: ./.github/actions/setup-pnpm
-
-      - name: Run test and generate coverage
         continue-on-error: true
         run: |
-          pnpm run test:coverage
+          pnpm run test:coverage --reporter vitest-github-actions-reporter --silent
 
-      - name: Report coverage
+      - name: Report converage
+        if: ${{ github.event_name == 'pull_request' }}
         uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          vite-config-path: ./vitest.workspace.js
+          name: nodejs-${{ matrix.node-version }} on ${{ matrix.os }}

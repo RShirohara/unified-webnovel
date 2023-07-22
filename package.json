@@ -26,15 +26,15 @@
     "eslint-plugin-vitest": "^0.2.6",
     "prettier": "^3.0.0",
     "typescript": "^5.1.6",
-    "vitest": "^0.33.0"
+    "vitest": "^0.33.0",
+    "vitest-github-actions-reporter": "^0.10.0"
   },
   "scripts": {
     "build": "lerna run build",
     "lint": "eslint ./packages",
     "publish": "lerna publish from-git",
-    "test": "vitest run",
-    "test:coverage": "vitest run --coverage.enabled --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
-    "test:watch": "vitest -w",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage.enabled --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
     "version:check": "lerna changed",
     "version:update": "lerna version --conventional-commits --no-git-tag-version --sync-workspace-lock"
   },

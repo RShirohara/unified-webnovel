@@ -1,7 +1,7 @@
 {
   "name": "@unified-webnovel/prettier-config",
   "description": "prettier config for unified-webnovel.",
-  "version": "0.0.0-local",
+  "version": "1.0.0",
   "private": "true",
   "main": ".prettierrc.json",
   "peerDependencies": {

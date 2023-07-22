@@ -68,7 +68,7 @@ jobs:
         with:
           name: Test report (nodejs-${{ matrix.node-version}} on ${{ matrix.os }})
           path: ./coverage/test-result.xml
-          reporter: jest-junit
+          reporter: java-junit
 
       - name: Report test converage
         if: ${{ (success() || failure()) && (github.event_name == 'pull_request') && (matrix.os == 'ubuntu-latest') && (matrix.node-version == 'latest') }}

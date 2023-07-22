@@ -64,13 +64,13 @@ jobs:
 
       - name: Report test result
         if: ${{ (success() || failure()) }}
-        uses: Dorny/test-reporter@v1.6.0
+        uses: EnricoMi/publish-unit-test-result-action@v2.8.0
         with:
-          name: Test report (nodejs-${{ matrix.node-version}} on ${{ matrix.os }})
-          path: ./coverage/test-result.xml
-          reporter: java-junit
+          check_name: Test result (nodejs-${{ matrix.node-version }} on ${{ matrix.os }})
+          files: ./coverage/test-result.xml
+          comment_mode: ${{ ((github.event_name == 'pull_request') && 'always') || 'off' }}
 
-      - name: Report test converage
+      - name: Report test coverage
         if: ${{ (success() || failure()) && (github.event_name == 'pull_request') && (matrix.os == 'ubuntu-latest') && (matrix.node-version == 'latest') }}
         uses: davelosert/vitest-coverage-report-action@v2
         with:

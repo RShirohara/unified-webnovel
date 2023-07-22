@@ -64,8 +64,7 @@ jobs:
           pnpm run test:coverage --reporter vitest-github-actions-reporter --silent
 
       - name: Report converage
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ (github.event_name == 'pull_request') && (matrix.os == 'ubuntu-latest') && (matrix.node-version == 'latest') }}
         uses: davelosert/vitest-coverage-report-action@v2
         with:
           vite-config-path: ./vitest.workspace.js
-          name: nodejs-${{ matrix.node-version }} on ${{ matrix.os }}

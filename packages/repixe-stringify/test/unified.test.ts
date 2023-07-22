@@ -22,7 +22,7 @@ test("repixeStringify", async () => {
         type: "paragraph",
         children: [
           { type: "text", value: "ここが二" },
-          { type: "ruby", value: "段落", ruby: "だんらく" },
+          { type: "ruby", value: "段 落", ruby: "だんらく" },
           { type: "text", value: "目。" },
           { type: "break" },
           { type: "text", value: "ここが二行目。" }

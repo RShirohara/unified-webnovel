@@ -10,7 +10,7 @@ import type {
   PhrasingContent,
   PxastContent,
   Ruby,
-  Text,
+  Text
 } from "@rshirohara/pxast";
 import type {
   Chapter as PixivChapter,
@@ -19,14 +19,14 @@ import type {
   JumpUrl as PixivJumpUrl,
   NewPage as PixivNewPage,
   Ruby as PixivRuby,
-  Text as PixivText,
+  Text as PixivText
 } from "pixiv-novel-parser";
 
 import type {
   PixivContent,
   PixivFlowContent,
   Paragraph as PixivParagraph,
-  PixivPhrasingContent,
+  PixivPhrasingContent
 } from "./transformer.js";
 
 type NodeTranspiler<T extends PixivContent, U extends PxastContent> = {
@@ -186,9 +186,9 @@ const transpilers = {
     transpile: (node) => {
       return {
         type: "heading",
-        children: transpilePhrasingContent(node.title),
+        children: transpilePhrasingContent(node.title)
       };
-    },
+    }
   } as NodeTranspiler<PixivChapter, Heading>,
 
   newPage: {
@@ -209,7 +209,7 @@ const transpilers = {
         .filter((node) => node.node.type === "pageHeading")
         .findIndex((node) => node.index === index ?? 0);
       return { ...node, pageNumber: pageNumber + 1 };
-    },
+    }
   } as NodeTranspiler<PixivNewPage, PageHeading>,
 
   paragraph: {
@@ -222,7 +222,7 @@ const transpilers = {
     transpile: (node) => {
       return {
         type: "paragraph",
-        children: transpilePhrasingContent(node.elements),
+        children: transpilePhrasingContent(node.elements)
       };
     },
     preProcess: (node) => {
@@ -241,7 +241,7 @@ const transpilers = {
                 return { ...node, val };
               });
           })
-          .flat(),
+          .flat()
       };
     },
     postProcess: (node) => {
@@ -254,9 +254,9 @@ const transpilers = {
                 (value.type === "text" && value.value === "")) &&
               (index === 0 || index === array.length - 1)
             )
-        ),
+        )
       };
-    },
+    }
   } as NodeTranspiler<PixivParagraph, Paragraph>,
 
   jumpPage: {
@@ -268,7 +268,7 @@ const transpilers = {
     },
     transpile: (node) => {
       return { type: "pageReference", pageNumber: node.pageNumber };
-    },
+    }
   } as NodeTranspiler<PixivJumpPage, PageReference>,
 
   jumpUrl: {
@@ -282,7 +282,7 @@ const transpilers = {
       return {
         type: "link",
         url: node.uri,
-        children: transpilePhrasingContent(node.title),
+        children: transpilePhrasingContent(node.title)
       };
     },
     postProcess: (node) => {
@@ -295,9 +295,9 @@ const transpilers = {
                 (value.type === "text" && value.value === "")) &&
               (index === 0 || index === array.length - 1)
             )
-        ),
+        )
       };
-    },
+    }
   } as NodeTranspiler<PixivJumpUrl, Link>,
 
   pixivImage: {
@@ -311,9 +311,9 @@ const transpilers = {
       return {
         type: "image",
         illustId: node.illustID,
-        pageNumber: node.pageNumber ?? undefined,
+        pageNumber: node.pageNumber ?? undefined
       };
-    },
+    }
   } as NodeTranspiler<PixivImage, Image>,
 
   ruby: {
@@ -325,7 +325,7 @@ const transpilers = {
     },
     transpile: (node) => {
       return { type: "ruby", value: node.rubyBase, ruby: node.rubyText };
-    },
+    }
   } as NodeTranspiler<PixivRuby, Ruby>,
 
   text: {
@@ -340,6 +340,6 @@ const transpilers = {
         return { type: "break" };
       }
       return { type: "text", value: node.val };
-    },
-  } as NodeTranspiler<PixivText, Text | Break>,
+    }
+  } as NodeTranspiler<PixivText, Text | Break>
 };

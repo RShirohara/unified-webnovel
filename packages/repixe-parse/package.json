@@ -29,21 +29,10 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@unified-webnovel/tsconfig": "^1.0.0",
+    "@unified-webnovel/tsconfig": "workspace:*",
     "typescript": "^5.1.6"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json"
-  },
-  "jest": {
-    "preset": "ts-jest/presets/default-esm",
-    "testEnvironment": "node",
-    "moduleNameMapper": {
-      "^(\\.{1,2}/.*)\\.js$": "$1",
-      "^@/(.*)$": "<rootDir>/src/$1"
-    },
-    "extensionsToTreatAsEsm": [
-      ".ts"
-    ]
   }
 }

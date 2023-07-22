@@ -3,11 +3,13 @@
   "description": "unified packages for web novel.",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "packageManager": "pnpm@8.6.6",
   "workspaces": [
     "./packages/*"
   ],
   "devDependencies": {
+    "@eslint/js": "^8.45.0",
     "@lerna-lite/changed": "^2.5.0",
     "@lerna-lite/cli": "^2.5.0",
     "@lerna-lite/publish": "^2.5.0",
@@ -16,57 +18,24 @@
     "@types/jest": "^29.5.3",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
+    "@unified-webnovel/prettier-config": "workspace:*",
+    "@vitest/coverage-v8": "^0.33.0",
+    "conventional-changelog-conventionalcommits": "^6.1.0",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-jest": "^27.2.3",
-    "jest": "^29.6.1",
+    "eslint-plugin-vitest": "^0.2.6",
     "prettier": "^3.0.0",
-    "ts-jest": "^29.1.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
   },
   "scripts": {
     "build": "lerna run build",
     "lint": "eslint ./packages",
     "publish": "lerna publish from-git",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage.enabled --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
     "version:check": "lerna changed",
     "version:update": "lerna version --conventional-commits --no-git-tag-version --sync-workspace-lock"
   },
-  "eslintConfig": {
-    "root": true,
-    "plugins": [
-      "jest"
-    ],
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "prettier",
-      "plugin:jest/recommended",
-      "plugin:jest/style"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": [
-        "./packages/*/tsconfig.json"
-      ]
-    },
-    "ignorePatterns": [
-      "**/dist/**"
-    ],
-    "rules": {
-      "@typescript-eslint/consistent-type-exports": "warn",
-      "@typescript-eslint/consistent-type-imports": "warn",
-      "@typescript-eslint/no-import-type-side-effects": "warn"
-    }
-  },
-  "jest": {
-    "projects": [
-      "./packages/*/package.json"
-    ]
-  },
-  "prettier": {
-    "printWidth": 80,
-    "tabWidth": 2,
-    "endOfLine": "lf"
-  }
+  "prettier": "@unified-webnovel/prettier-config"
 }

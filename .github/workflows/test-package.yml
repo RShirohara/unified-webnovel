@@ -9,7 +9,7 @@ on:
         "**/package.json",
         "**/tsconfig.json",
         "packages/**/*.js",
-        "packages/**/*.ts",
+        "packages/**/*.ts"
       ]
   push:
     branches: [main]
@@ -26,10 +26,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: latest
 
@@ -37,7 +37,7 @@ jobs:
         uses: ./.github/actions/setup-pnpm
 
   test:
-    name: Test for nodejs-${{ matrix.node-version }} on ${{ matrix.os }}
+    name: Test (nodejs-${{ matrix.node-version }} on ${{ matrix.os }})
     needs: install
     runs-on: ${{ matrix.os }}
     strategy:
@@ -48,10 +48,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -60,32 +60,17 @@ jobs:
 
       - name: Run test
         run: |
-          pnpm run test --ci --reporters github-actions --silent
+          pnpm run test:coverage --reporter junit --outputFile ./result.xml --silent
 
-  generate-coverage:
-    name: Generate coverage
-    needs: install
-    runs-on: ubuntu-latest
-
-    if: ${{ github.event_name == 'pull_request' }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Report test result
+        if: ${{ (success() || failure()) }}
+        uses: mikepenz/action-junit-report@v3.8.0
         with:
-          node-version: latest
+          check_name: Test report (nodejs-${{ matrix.node-version }} on ${{ matrix.os }})
+          report_paths: ./result.xml
 
-      - name: Install pnpm and dependencies
-        uses: ./.github/actions/setup-pnpm
-
-      - name: Run test and generate coverage
-        continue-on-error: true
-        uses: ArtiomTr/jest-coverage-report-action@v2
+      - name: Report test coverage
+        if: ${{ (success() || failure()) && (github.event_name == 'pull_request') && (matrix.os == 'ubuntu-latest') && (matrix.node-version == 'latest') }}
+        uses: davelosert/vitest-coverage-report-action@v2.1.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          package-manager: pnpm
-          test-script: pnpm test
-          skip-step: install
+          vite-config-path: ./vitest.workspace.js

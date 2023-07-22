@@ -1,7 +1,7 @@
-import { expect, test } from "@jest/globals";
+import { expect, test } from "vitest";
 import { unified } from "unified";
 
-import { repixeStringify } from "@/index";
+import { repixeStringify } from "~/";
 import type { Root } from "@rshirohara/pxast";
 
 test("repixeStringify", async () => {
@@ -14,9 +14,9 @@ test("repixeStringify", async () => {
         children: [
           {
             type: "text",
-            value: "unified で Pixiv 小説構文をレンダリングできるかのテスト。",
-          },
-        ],
+            value: "unified で Pixiv 小説構文をレンダリングできるかのテスト。"
+          }
+        ]
       },
       {
         type: "paragraph",
@@ -25,8 +25,8 @@ test("repixeStringify", async () => {
           { type: "ruby", value: "段落", ruby: "だんらく" },
           { type: "text", value: "目。" },
           { type: "break" },
-          { type: "text", value: "ここが二行目。" },
-        ],
+          { type: "text", value: "ここが二行目。" }
+        ]
       },
       {
         type: "paragraph",
@@ -36,10 +36,10 @@ test("repixeStringify", async () => {
           {
             type: "link",
             url: "https://example.com",
-            children: [{ type: "text", value: "リンク" }],
+            children: [{ type: "text", value: "リンク" }]
           },
-          { type: "text", value: "も使える。" },
-        ],
+          { type: "text", value: "も使える。" }
+        ]
       },
       { type: "pageHeading", pageNumber: 2 },
       {
@@ -48,10 +48,10 @@ test("repixeStringify", async () => {
           { type: "text", value: "ここからページが変わる。" },
           { type: "break" },
           { type: "pageReference", pageNumber: 1 },
-          { type: "text", value: "ページへの参照。" },
-        ],
-      },
-    ],
+          { type: "text", value: "ページへの参照。" }
+        ]
+      }
+    ]
   };
   const expected = [
     "unified で Pixiv 小説構文をレンダリングできるかのテスト。\n",
@@ -61,7 +61,7 @@ test("repixeStringify", async () => {
     "[[jumpuri: リンク > https://example.com]]も使える。\n",
     "[newpage]\n",
     "ここからページが変わる。",
-    "[jump:1]ページへの参照。",
+    "[jump:1]ページへの参照。"
   ].join("\n");
   expect(await unified().use(repixeStringify).stringify(source)).toEqual(
     expected

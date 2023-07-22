@@ -43,7 +43,7 @@ Say we have the following module `example.js`:
 import { unified } from "unified";
 import { repixeParse } from "@rshirohara/repixe-parse";
 
-main()
+main();
 
 async function main() {
   const source = [
@@ -51,12 +51,10 @@ async function main() {
     "ここから二段落目",
     "[[rb:二行目>にぎょうめ]]",
     "[[jumpuri:リンク>https://example.com]]も使える。"
-  ].join("\n")
-  const ast = await unified()
-    .use(repixeParse)
-    .parse(source)
+  ].join("\n");
+  const ast = await unified().use(repixeParse).parse(source);
 
-  console.log(ast)
+  console.log(ast);
 }
 ```
 

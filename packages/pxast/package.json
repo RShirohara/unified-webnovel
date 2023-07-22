@@ -25,6 +25,6 @@
     "@types/unist": "^2.0.6"
   },
   "devDependencies": {
-    "@unified-webnovel/tsconfig": "^1.0.0"
+    "@unified-webnovel/tsconfig": "workspace:*"
   }
 }

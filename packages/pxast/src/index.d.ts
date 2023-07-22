@@ -3,7 +3,7 @@
 import type {
   Node,
   Literal as UnistLiteral,
-  Parent as UnistParent,
+  Parent as UnistParent
 } from "unist";
 
 // Node

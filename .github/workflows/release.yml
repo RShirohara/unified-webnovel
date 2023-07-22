@@ -17,11 +17,11 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
 
       - name: Retrieve pull request label
         id: retrieve_label
-        uses: actions/github-script@v6
+        uses: actions/github-script@v6.4.1
         with:
           script: |
             const query = `query($owner:String!, $repo:String!, $sha:String!) {
@@ -73,12 +73,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: latest
 
@@ -93,7 +93,7 @@ jobs:
           echo "packages=${PACKAGES}" > ${GITHUB_OUTPUT}
 
   create_release:
-    name: Create release for ${{ matrix.name }}@${{ matrix.version }}
+    name: Create release (${{ matrix.name }}@${{ matrix.version }})
     needs: retrieve_target
     runs-on: ubuntu-latest
     strategy:
@@ -103,7 +103,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
         with:
           fetch-depth: 0
 
@@ -128,12 +128,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: latest
 

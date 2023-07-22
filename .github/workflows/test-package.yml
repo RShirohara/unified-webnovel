@@ -60,15 +60,14 @@ jobs:
 
       - name: Run test
         run: |
-          pnpm run test:coverage --reporter junit --outputFile ./coverage/test-result.xml --silent
+          pnpm run test:coverage --reporter junit --outputFile ./result.xml --silent
 
       - name: Report test result
         if: ${{ (success() || failure()) }}
-        uses: EnricoMi/publish-unit-test-result-action@v2.8.0
+        uses: mikepenz/action-junit-report@v3.8.0
         with:
-          check_name: Test result (nodejs-${{ matrix.node-version }} on ${{ matrix.os }})
-          files: ./coverage/test-result.xml
-          comment_mode: ${{ ((github.event_name == 'pull_request') && 'always') || 'off' }}
+          check_name: Test report (nodejs-${{ matrix.node-version }} on ${{ matrix.os }})
+          report_paths: ./result.xml
 
       - name: Report test coverage
         if: ${{ (success() || failure()) && (github.event_name == 'pull_request') && (matrix.os == 'ubuntu-latest') && (matrix.node-version == 'latest') }}

@@ -16,6 +16,7 @@ updates:
     reviewers:
       - "RShirohara"
     versioning-strategy: increase
+    open-pull-request-limits: 10
 
   # GitHub Actions
   - package-ecosystem: "github-actions"

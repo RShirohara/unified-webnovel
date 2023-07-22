@@ -26,10 +26,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: latest
 
@@ -48,10 +48,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -71,6 +71,6 @@ jobs:
 
       - name: Report test coverage
         if: ${{ (success() || failure()) && (github.event_name == 'pull_request') && (matrix.os == 'ubuntu-latest') && (matrix.node-version == 'latest') }}
-        uses: davelosert/vitest-coverage-report-action@v2
+        uses: davelosert/vitest-coverage-report-action@v2.1.0
         with:
           vite-config-path: ./vitest.workspace.js

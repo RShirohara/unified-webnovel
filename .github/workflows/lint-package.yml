@@ -25,10 +25,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: latest
 
@@ -42,10 +42,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: latest
 
@@ -53,11 +53,11 @@ jobs:
         uses: ./.github/actions/setup-pnpm
 
       - name: Setup reviewdog
-        uses: reviewdog/action-setup@v1
+        uses: reviewdog/action-setup@v1.0.5
 
       - name: Run eslint
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pnpm run lint |
-          reviewdog -f eslint -reporter github-check -level warning
+          reviewdog -f eslint -name "Lint report" -reporter github-check -level warning

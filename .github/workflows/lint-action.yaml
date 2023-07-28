@@ -22,14 +22,17 @@ jobs:
 
       - name: Install actionlint
         env:
-          INSTALL_SCRIPT: https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash
-          INSTALL_DIR: ${{ runner.temp }}/actionlint/bin
-          VERSION: latest
+          ACTIONLINT_INSTALL_SCRIPT: https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash
+          ACTIONLINT_INSTALL_DIR: ${{ runner.temp }}/actionlint/bin
+          ACTIONLINT_VERSION: latest
         run: |
-          wget -O - -q "${INSTALL_SCRIPT}" \
-          | bash -s -- "${VERSION}" "${INSTALL_DIR}"
+          mkdir "${ACTIONLINT_INSTALL_DIR}"
+          echo "${ACTIONLINT_INSTALL_DIR}" >> "${GITHUB_PATH}"
 
-          echo "${INSTALL_DIR}" >> "${GITHUB_PATH}"
+          wget -O - -q "${ACTIONLINT_INSTALL_SCRIPT}" \
+          | bash -s -- \
+              "${ACTIONLINT_VERSION}" \
+              "${ACTIONLINT_INSTALL_DIR}"
 
       - name: Install reviewdog
         uses: reviewdog/action-setup@v1.0.5

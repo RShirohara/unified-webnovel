@@ -1,5 +1,5 @@
-name: Pnpm setup
-description: "Install pnpm and install dependencies"
+name: pnpm setup
+description: "Setup pnpm and install dependencies"
 
 inputs:
   cwd:
@@ -16,7 +16,7 @@ runs:
   using: "composite"
 
   steps:
-    - name: Install pnpm
+    - name: Setup pnpm
       uses: pnpm/action-setup@v2.2.4
       with:
         run_install: false

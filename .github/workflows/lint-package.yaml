@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install pnpm and dependencies
+      - name: Setup pnpm and install dependencies
         uses: ./.github/actions/setup-pnpm
 
   lint:
@@ -49,7 +49,7 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install pnpm and dependencies
+      - name: Setup pnpm and install dependencies
         uses: ./.github/actions/setup-pnpm
 
       - name: Setup reviewdog

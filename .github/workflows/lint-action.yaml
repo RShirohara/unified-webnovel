@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3.5.3
 
-      - name: Install actionlint
+      - name: Setup actionlint
         env:
           ACTIONLINT_INSTALL_SCRIPT: https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash
           ACTIONLINT_INSTALL_DIR: ${{ runner.temp }}/actionlint/bin
@@ -34,7 +34,7 @@ jobs:
               "${ACTIONLINT_VERSION}" \
               "${ACTIONLINT_INSTALL_DIR}"
 
-      - name: Install reviewdog
+      - name: Setup reviewdog
         uses: reviewdog/action-setup@v1.0.5
 
       - name: Run actionlint

@@ -82,7 +82,7 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install pnpm and dependencies
+      - name: Setup pnpm and install dependencies
         uses: ./.github/actions/setup-pnpm
 
       - name: Retrieve changed package list
@@ -140,7 +140,7 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install pnpm and dependencies
+      - name: Setup pnpm and install dependencies
         uses: ./.github/actions/setup-pnpm
 
       - name: Publish packages

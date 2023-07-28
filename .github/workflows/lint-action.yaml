@@ -26,7 +26,7 @@ jobs:
           ACTIONLINT_INSTALL_DIR: ${{ runner.temp }}/actionlint/bin
           ACTIONLINT_VERSION: latest
         run: |
-          mkdir "${ACTIONLINT_INSTALL_DIR}"
+          mkdir -p "${ACTIONLINT_INSTALL_DIR}"
           echo "${ACTIONLINT_INSTALL_DIR}" >> "${GITHUB_PATH}"
 
           wget -O - -q "${ACTIONLINT_INSTALL_SCRIPT}" \

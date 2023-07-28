@@ -57,7 +57,12 @@ jobs:
 
       - name: Run eslint
         env:
+          REVIEWDOG_FORMAT: eslint
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REVIEWDOG_REPORTER: github-check
         run: |
-          pnpm run lint |
-          reviewdog -f eslint -name "Lint report" -reporter github-check -level warning
+          pnpm run lint \
+          | reviewdog \
+              -f="${REVIEWDOG_FORMAT}" \
+              --name="Lint result (${REVIEWDOG_FORMAT})" \
+              --reporter="${REVIEWDOG_REPORTER}"

@@ -52,9 +52,9 @@ function compileContent(nodes: PxastContent[]): string[] {
   });
 }
 
-type NodeCompiler<T extends PxastContent> = {
+interface NodeCompiler<T extends PxastContent> {
   compile: (node: T, index?: number, array?: PxastContent[]) => string;
-};
+}
 
 const compilers = {
   heading: {

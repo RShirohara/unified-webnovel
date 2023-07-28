@@ -29,13 +29,13 @@ import type {
   PixivPhrasingContent
 } from "./transformer.js";
 
-type NodeTranspiler<T extends PixivContent, U extends PxastContent> = {
+interface NodeTranspiler<T extends PixivContent, U extends PxastContent> {
   matchPixiv: (node: PixivContent) => node is T;
   matchPxast: (node: PxastContent) => node is U;
   transpile: (node: T, index?: number, array?: PixivContent[]) => U;
   preProcess?: (node: T, index?: number, array?: PixivContent[]) => T;
   postProcess?: (node: U, index?: number, array?: PxastContent[]) => U;
-};
+}
 
 export function transpile(nodes: PixivFlowContent[]): FlowContent[] {
   return [...nodes]
@@ -207,7 +207,7 @@ const transpilers = {
           return { node, index };
         })
         .filter((node) => node.node.type === "pageHeading")
-        .findIndex((node) => node.index === index ?? 0);
+        .findIndex((node) => node.index === (index ?? 0));
       return { ...node, pageNumber: pageNumber + 1 };
     }
   } as NodeTranspiler<PixivNewPage, PageHeading>,

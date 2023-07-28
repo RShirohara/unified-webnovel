@@ -18,11 +18,11 @@ export type PixivPhrasingContent =
   | Ruby
   | Text;
 
-export type Paragraph = {
+export interface Paragraph {
   type: "tag";
   name: "paragraph";
   elements: PixivPhrasingContent[];
-};
+}
 
 export function transform(nodes: PixivNode[]): PixivFlowContent[] {
   const result: PixivFlowContent[] = [];

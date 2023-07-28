@@ -21,7 +21,7 @@ permissions:
 
 jobs:
   install:
-    name: Install dependency
+    name: Install dependencies
     runs-on: ubuntu-latest
 
     steps:
@@ -33,7 +33,7 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install pnpm and dependencies
+      - name: Setup pnpm and install dependencies
         uses: ./.github/actions/setup-pnpm
 
   test:
@@ -55,7 +55,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install pnpm and dependencies
+      - name: Setup pnpm and install dependencies
         uses: ./.github/actions/setup-pnpm
 
       - name: Run test
@@ -66,7 +66,7 @@ jobs:
         if: ${{ (success() || failure()) }}
         uses: mikepenz/action-junit-report@v3.8.0
         with:
-          check_name: Test report (nodejs-${{ matrix.node-version }} on ${{ matrix.os }})
+          check_name: Test result (nodejs-${{ matrix.node-version }} on ${{ matrix.os }})
           report_paths: ./result.xml
 
       - name: Report test coverage

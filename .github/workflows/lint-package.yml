@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   install:
-    name: Install dependency
+    name: Install dependencies
     runs-on: ubuntu-latest
 
     steps:

@@ -24,7 +24,7 @@
     "./src"
   ],
   "dependencies": {
-    "@rshirohara/pxast": "^0.1.1",
+    "@rshirohara/pxast": "workspace:^",
     "unified": "^10.1.2"
   },
   "devDependencies": {

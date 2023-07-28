@@ -46,5 +46,5 @@ jobs:
           actionlint --oneline \
           | reviewdog \
               --efm="%f:%l:%c: %m" \
-              --name="Lint result (${REVIEWDOG_FORMAT})"
+              --name="Lint result (${REVIEWDOG_FORMAT})" \
               --reporter="${REVIEWDOG_REPORTER}"

@@ -22,49 +22,53 @@ function compileContent(nodes: PxastContent[]): string[] {
   return [...nodes].map((node) => {
     switch (node.type) {
       case "heading": {
-        return compilers.heading.compile(node);
+        return compilers.heading.compile({ node });
       }
       case "pageHeading": {
-        return compilers.pageHeading.compile(node);
+        return compilers.pageHeading.compile({ node });
       }
       case "paragraph": {
-        return compilers.paragraph.compile(node);
+        return compilers.paragraph.compile({ node });
       }
       case "link": {
-        return compilers.link.compile(node);
+        return compilers.link.compile({ node });
       }
       case "image": {
-        return compilers.image.compile(node);
+        return compilers.image.compile({ node });
       }
       case "pageReference": {
-        return compilers.pageReference.compile(node);
+        return compilers.pageReference.compile({ node });
       }
       case "break": {
-        return compilers.break.compile(node);
+        return compilers.break.compile({ node });
       }
       case "ruby": {
-        return compilers.ruby.compile(node);
+        return compilers.ruby.compile({ node });
       }
       case "text": {
-        return compilers.text.compile(node);
+        return compilers.text.compile({ node });
       }
     }
   });
 }
 
-type NodeCompiler<T extends PxastContent> = {
-  compile: (node: T, index?: number, array?: PxastContent[]) => string;
-};
+interface NodeCompiler<T extends PxastContent> {
+  compile: (options: {
+    node: T;
+    index?: number;
+    array?: PxastContent[];
+  }) => string;
+}
 
 const compilers = {
   heading: {
-    compile: (node) => {
+    compile: ({ node }) => {
       return `[chapter: ${compileContent(node.children).join("")}]`;
     }
   } as NodeCompiler<Heading>,
 
   pageHeading: {
-    compile: (node) => {
+    compile: ({ node }) => {
       if (node.pageNumber === 1) {
         return "";
       } else {
@@ -74,13 +78,13 @@ const compilers = {
   } as NodeCompiler<PageHeading>,
 
   paragraph: {
-    compile: (node) => {
+    compile: ({ node }) => {
       return compileContent(node.children).join("");
     }
   } as NodeCompiler<Paragraph>,
 
   link: {
-    compile: (node) => {
+    compile: ({ node }) => {
       return `[[jumpuri: ${compileContent(node.children).join("")} > ${
         node.url
       }]]`;
@@ -88,7 +92,7 @@ const compilers = {
   } as NodeCompiler<Link>,
 
   image: {
-    compile: (node) => {
+    compile: ({ node }) => {
       return `[pixivimage:${node.illustId}${
         node.pageNumber !== undefined ? "-" + node.pageNumber.toString() : ""
       }]`;
@@ -96,25 +100,25 @@ const compilers = {
   } as NodeCompiler<Image>,
 
   pageReference: {
-    compile: (node) => {
+    compile: ({ node }) => {
       return `[jump:${node.pageNumber}]`;
     }
   } as NodeCompiler<PageReference>,
 
   break: {
-    compile: (_) => {
+    compile: () => {
       return "\n";
     }
   } as NodeCompiler<Break>,
 
   ruby: {
-    compile: (node) => {
+    compile: ({ node }) => {
       return `[[rb: ${node.value} > ${node.ruby}]]`;
     }
   } as NodeCompiler<Ruby>,
 
   text: {
-    compile: (node) => {
+    compile: ({ node }) => {
       return node.value;
     }
   } as NodeCompiler<Text>

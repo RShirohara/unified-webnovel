@@ -4,7 +4,7 @@ import { unified } from "unified";
 import { repixeStringify } from "~/";
 import type { Root } from "@rshirohara/pxast";
 
-test("repixeStringify", async () => {
+test("repixeStringify", () => {
   const source: Root = {
     type: "root",
     children: [
@@ -63,7 +63,5 @@ test("repixeStringify", async () => {
     "ここからページが変わる。",
     "[jump:1]ページへの参照。"
   ].join("\n");
-  expect(await unified().use(repixeStringify).stringify(source)).toEqual(
-    expected
-  );
+  expect(unified().use(repixeStringify).stringify(source)).toEqual(expected);
 });

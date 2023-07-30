@@ -5,7 +5,7 @@ import { unified } from "unified";
 import { repixeParse } from "~/";
 import type { Root } from "@rshirohara/pxast";
 
-test("repixeParse", async () => {
+test("repixeParse", () => {
   const source = [
     "unified で Pixiv 小説構文をパースできるかのテスト。\n",
     "ここが二[[rb:段落>だんらく]]目。",
@@ -64,5 +64,5 @@ test("repixeParse", async () => {
       }
     ]
   };
-  expect(await unified().use(repixeParse).parse(source)).toEqual(expected);
+  expect(unified().use(repixeParse).parse(source)).toEqual(expected);
 });

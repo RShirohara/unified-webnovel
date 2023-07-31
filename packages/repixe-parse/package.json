@@ -1,6 +1,6 @@
 {
   "name": "@rshirohara/repixe-parse",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "repixe plugin to add support for parsing pixiv novel format.",
   "keywords": [
     "unified",

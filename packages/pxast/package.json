@@ -26,5 +26,8 @@
   },
   "devDependencies": {
     "@unified-webnovel/tsconfig": "workspace:*"
+  },
+  "publishConfig": {
+    "provenance": true
   }
 }

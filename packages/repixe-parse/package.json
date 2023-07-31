@@ -34,5 +34,8 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json"
+  },
+  "publishConfig": {
+    "provenance": true
   }
 }

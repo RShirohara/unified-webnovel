@@ -146,6 +146,10 @@ jobs:
       - name: Setup pnpm and install dependencies
         uses: ./.github/actions/setup-pnpm
 
+      - name: Build packages
+        run: |
+          pnpm build
+
       - name: Publish packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

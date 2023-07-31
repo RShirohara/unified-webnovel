@@ -115,6 +115,8 @@ jobs:
         env:
           TAG_PREFIX: "${{ matrix.name }}@${{ matrix.version }}"
         run: |
+          git config user.name "${{ vars.RELEASE_USER_NAME }}"
+          git config user.email "${{ vars.RELEASE_USER_EMAIL }}"
           git tag "${TAG_PREFIX}" "${{ github.sha }}" -a -m "${TAG_PREFIX}"
           git push origin "${TAG_PREFIX}"
 

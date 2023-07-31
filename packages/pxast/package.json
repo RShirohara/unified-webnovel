@@ -2,6 +2,11 @@
   "name": "@rshirohara/pxast",
   "version": "0.1.1",
   "description": "Pixiv novel ast definition.",
+  "keywords": [
+    "unified",
+    "repixe",
+    "pixiv"
+  ],
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/pxast#readme",
   "bugs": {
     "url": "https://github.com/RShirohara/unified-webnovel/issues"

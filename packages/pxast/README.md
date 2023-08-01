@@ -41,7 +41,7 @@ This specification is written in a [Web IDL][webidl]-like grammar.
 If you are using TypeScript, you can use the unist types by installing them with npm:
 
 ```shell
-npm install @RShirohara/pxast
+npm install @rshirohara/pxast
 ```
 
 ## Nodes

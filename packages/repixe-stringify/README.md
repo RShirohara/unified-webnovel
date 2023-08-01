@@ -37,7 +37,7 @@ Say we have the following module `example.js`
 
 ```js
 import { unified } from "unified";
-import { repixeStringify } from "@rshirohara/repixeStringify";
+import { repixeStringify } from "@rshirohara/repixe-stringify";
 
 main();
 

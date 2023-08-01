@@ -2,7 +2,7 @@
 
 **P**i**x**iv novel **A**bstract **S**yntax **T**ree
 
-----------
+---
 
 **pxast** is a specification for representing [pixiv novel][pixiv-novel] in a syntax tree. It implements [unist][unist].
 
@@ -54,7 +54,7 @@ interface Parent <: UnistParent {
 }
 ```
 
-**Parent** ([**UnistParent**][dfn-unist-parent]) represents an abstract interface in pxast containing other nodes (said to be [*children*][term-child]).
+**Parent** ([**UnistParent**][dfn-unist-parent]) represents an abstract interface in pxast containing other nodes (said to be [_children_][term-child]).
 
 Its content is limited to only other [pxast content][dfn-pxast-content].
 
@@ -80,7 +80,7 @@ interface Root <: Parent {
 
 **Root** ([**Parent**][dfn-parent]) represents a document.
 
-**Root** can be used as the [*root*][term-root] of a [*tree*][term-tree], never as a [*child*][term-child].
+**Root** can be used as the [_root_][term-root] of a [_tree_][term-tree], never as a [_child_][term-child].
 
 ### `Paragraph`
 
@@ -106,10 +106,8 @@ Yields:
 
 ```js
 {
-  type: 'paragraph',
-  children: [
-    {type: 'text', value: 'たとえば私はこの文章を書く。'}
-  ]
+  type: "paragraph",
+  children: [{ type: "text", value: "たとえば私はこの文章を書く。" }]
 }
 ```
 
@@ -137,8 +135,8 @@ Yields:
 
 ```js
 {
-  type: 'heading'
-  children: [{type: 'text', value: 'まえがき'}]
+  type: "heading";
+  children: [{ type: "text", value: "まえがき" }];
 }
 ```
 
@@ -176,13 +174,13 @@ Yields:
     { type: "pageHeading", pageNumber: 1 },
     {
       type: "paragraph",
-      children: [{ type: "text", value: "ここは一ページ目。" }],
+      children: [{ type: "text", value: "ここは一ページ目。" }]
     },
     { type: "pageHeading", pageNumber: 2 },
     {
       type: "paragraph",
-      children: [{ type: "text", value: "ここが二ページ目。" }],
-    },
+      children: [{ type: "text", value: "ここが二ページ目。" }]
+    }
   ]
 }
 ```
@@ -209,7 +207,7 @@ For example, the following text:
 Yields:
 
 ```js
-{type: 'text', value: 'たとえば私はこの文章を書く。'}
+{ type: "text", value: "たとえば私はこの文章を書く。" }
 ```
 
 ### `Ruby`
@@ -236,9 +234,9 @@ Yields:
 
 ```js
 {
-  type: 'ruby',
-  value: '私',
-  ruby: 'わたし'
+  type: "ruby",
+  value: "私",
+  ruby: "わたし"
 }
 ```
 
@@ -266,11 +264,11 @@ Yields:
 
 ```js
 {
-  type: 'paragraph',
+  type: "paragraph",
   children: [
-    {type: 'text', value: 'これは一行目。'},
-    {type: 'break'},
-    {type: 'text', value: 'これが二行目。'}
+    { type: "text", value: "これは一行目。" },
+    { type: "break" },
+    { type: "text", value: "これが二行目。" }
   ]
 }
 ```
@@ -300,9 +298,9 @@ Yields:
 
 ```js
 {
-  type: 'link',
-  url: 'https://example.com',
-  children: [{type: 'text', value: 'リンク例'}]
+  type: "link",
+  url: "https://example.com",
+  children: [{ type: "text", value: "リンク例" }]
 }
 ```
 
@@ -331,8 +329,8 @@ Yields:
 
 ```js
 {
-  type: 'image',
-  illustId: '000001',
+  type: "image",
+  illustId: "000001",
   pageNumber: 2
 }
 ```
@@ -364,7 +362,7 @@ Yields:
 
 ```js
 {
-  type: 'pageReference',
+  type: "pageReference",
   pageNumber: 1
 }
 ```

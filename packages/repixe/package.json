@@ -1,6 +1,6 @@
 {
   "name": "@rshirohara/repixe",
-  "version": "0.1.0-alpha",
+  "version": "0.1.0-alpha.0",
   "description": "unified processor with support for parsing pixiv-novel format input and serializing pixiv-novel format as output.",
   "keywords": [
     "unified",

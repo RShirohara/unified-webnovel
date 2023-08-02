@@ -82,6 +82,28 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
 
+  packages/repixe:
+    dependencies:
+      '@rshirohara/pxast':
+        specifier: workspace:^
+        version: link:../pxast
+      '@rshirohara/repixe-parse':
+        specifier: workspace:^
+        version: link:../repixe-parse
+      '@rshirohara/repixe-stringify':
+        specifier: workspace:^
+        version: link:../repixe-stringify
+      unified:
+        specifier: ^10.1.2
+        version: 10.1.2
+    devDependencies:
+      '@unified-webnovel/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
+
   packages/repixe-parse:
     dependencies:
       '@rshirohara/pxast':

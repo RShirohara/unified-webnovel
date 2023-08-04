@@ -4,7 +4,9 @@
 
 ---
 
-**pxast** is a specification for representing [pixiv novel][pixiv-novel] in a syntax tree. It implements [unist][unist].
+**pxast** is a specification for representing [pixiv novel][pixiv-novel] format
+in a syntax tree.
+It implements [unist][].
 
 ## Contents
 
@@ -33,12 +35,14 @@
 
 ## Introduction
 
-This document defines a format for representing [pixiv novel][pixiv-novel] as an [abstract syntax tree][syntax-tree].
-This specification is written in a [Web IDL][webidl]-like grammar.
+This document defines a format for representing [pixiv novel][pixiv-novel] format
+as an [abstract syntax tree][syntax-tree].
+This specification is written in a [Web IDL][web-idl]-like grammar.
 
 ## Types
 
-If you are using TypeScript, you can use the unist types by installing them with npm:
+If you are using [TypeScript][],
+you can use the unist types by installing them with [npm][]:
 
 ```shell
 npm install @rshirohara/pxast
@@ -54,7 +58,8 @@ interface Parent <: UnistParent {
 }
 ```
 
-**Parent** ([**UnistParent**][dfn-unist-parent]) represents an abstract interface in pxast containing other nodes (said to be [_children_][term-child]).
+**Parent** ([**UnistParent**][dfn-unist-parent]) represents an abstract interface
+in pxast containing other nodes (said to be [_children_][term-child]).
 
 Its content is limited to only other [pxast content][dfn-pxast-content].
 
@@ -66,7 +71,8 @@ interface Literal <: UnistLiteral {
 }
 ```
 
-**Literal** ([**UnistLiteral**][dfn-unist-literal]) represents an abstract interface in pxast containing a value.
+**Literal** ([**UnistLiteral**][dfn-unist-literal]) represents an abstract interface
+in pxast containing a value.
 
 Its `value` field is a `string`.
 
@@ -80,7 +86,8 @@ interface Root <: Parent {
 
 **Root** ([**Parent**][dfn-parent]) represents a document.
 
-**Root** can be used as the [_root_][term-root] of a [_tree_][term-tree], never as a [_child_][term-child].
+**Root** can be used as the [_root_][term-root] of a [_tree_][term-tree],
+never as a [_child_][term-child].
 
 ### `Paragraph`
 
@@ -418,10 +425,12 @@ that is not intended for user interaction.
 [dfn-unist-literal]: https://github.com/syntax-tree/unist#literal
 [dfn-unist-parent]: https://github.com/syntax-tree/unist#parent
 [license]: ./LICENSE
+[npm]: https://docs.npmjs.com/cli/install
 [pixiv-novel]: https://www.pixiv.net/novel/
 [syntax-tree]: https://github.com/syntax-tree/unist#syntax-tree
 [term-child]: https://github.com/syntax-tree/unist#child
 [term-root]: https://github.com/syntax-tree/unist#root
 [term-tree]: https://github.com/syntax-tree/unist#tree
+[typescript]: https://www.typescriptlang.org
 [unist]: https://github.com/syntax-tree/unist
-[webidl]: https://webidl.spec.whatwg.org
+[web-idl]: https://webidl.spec.whatwg.org

@@ -2,7 +2,7 @@
 
 [![LICENSE][license-badge]][license]
 
-**[unified][]** processor with support for parsing pixiv-novel format input and serializing pixiv-novel format as output.
+[**unified**][unified] processor with support for parsing and serializing [pixiv novel][pixiv-novel] format input/output.
 
 ## Contents
 
@@ -21,12 +21,12 @@
 ## What is this?
 
 This package is a [unified][] processor with support
-for parsing [pixiv-novel][] format input and serializing [pixiv-novel] format as output
+for parsing and serializing [pixiv novel][pixiv-novel] format input/output
 by using unified with [`repixe-parse`][repixe-parse] and [`repixe-stringify`][repixe-stringify].
 
 - **unified** is a project that transforms content with abstract syntax trees (ASTs).
-- **repixe** adds support for [pixiv-novel][] format to unified.
-- **pxast** is the [pixiv-novel][] AST that repixe uses.
+- **repixe** adds support for [pixiv novel][pixiv-novel] format to unified.
+- [**pxast**][pxast] is the [pixiv novel][pixiv-novel] AST that repixe uses.
 
 ## Install
 
@@ -79,7 +79,7 @@ See [`unified`][unified] for more information.
 
 ## Syntax
 
-Pixiv-novel format is parsed and serialized according
+Pixiv novel format is parsed and serialized according
 to [official article][pixiv-novel-syntax]
 and [`pixiv-novel-parser`][pixiv-novel-parser].
 

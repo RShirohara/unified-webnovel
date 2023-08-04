@@ -2,7 +2,7 @@
 
 [![LICENSE][license-badge]][license]
 
-**repixe** plugin to add support for serializing pixiv novel format.
+[**repixe**][repixe] plugin to add support for serializing [pixiv novel][pixiv-novel] format.
 
 ## Contents
 
@@ -20,12 +20,13 @@
 
 ## What is this?
 
-This package is a [unified][unified] plugin that defines how to take a syntax tree as input and turn it into serialized [pixiv novel][pixiv-novel] format text.
+This package is a [unified][] plugin that defines how to take a syntax tree
+as input and turn it into serialized [pixiv novel][pixiv-novel] format.
 
 ## Install
 
 This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
-in Node.js (16.0+), Install with [npm][npm]:
+in Node.js (16.0+), Install with [npm][]:
 
 ```shell
 npm install @rshirohara/repixe-stringify
@@ -126,11 +127,12 @@ This package serializes according to [pixiv novel][pixiv-novel] format.
 
 ## Syntax tree
 
-The syntax tree format used in repixe is [pxast][pxast].
+The syntax tree format used in repixe is [pxast][].
 
 ## Types
 
-This package is fully typed with [TypeScript][typescript]. There are no extra exported types.
+This package is fully typed with [TypeScript][].
+There are no extra exported types.
 
 ## License
 
@@ -143,5 +145,6 @@ This package is fully typed with [TypeScript][typescript]. There are no extra ex
 [npm]: https://docs.npmjs.com/cli/install
 [pixiv-novel]: https://www.pixiv.net/novel/
 [pxast]: https://github.com/RShirohara/unified-webnovel/tree/main/packages/pxast
+[repixe]: ../repixe
 [typescript]: https://www.typescriptlang.org
 [unified]: https://github.com/unifiedjs/unified/

@@ -15,7 +15,6 @@
     "@lerna-lite/publish": "^2.5.0",
     "@lerna-lite/run": "^2.5.0",
     "@lerna-lite/version": "^2.5.0",
-    "@types/jest": "^29.5.3",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",
     "@unified-webnovel/prettier-config": "workspace:*",

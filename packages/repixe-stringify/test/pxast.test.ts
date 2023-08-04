@@ -1,5 +1,5 @@
-import { describe, expect, test } from "vitest";
 import type { Root } from "@rshirohara/pxast";
+import { describe, expect, test } from "vitest";
 
 import { toPixivNovel } from "~/lib";
 

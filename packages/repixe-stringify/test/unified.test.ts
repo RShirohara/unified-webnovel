@@ -1,8 +1,8 @@
-import { expect, test } from "vitest";
+import type { Root } from "@rshirohara/pxast";
 import { unified } from "unified";
+import { expect, test } from "vitest";
 
 import { repixeStringify } from "~/";
-import type { Root } from "@rshirohara/pxast";
 
 test("repixeStringify", () => {
   const source: Root = {

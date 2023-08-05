@@ -13,19 +13,16 @@ importers:
         version: 8.46.0
       '@lerna-lite/changed':
         specifier: ^2.5.0
-        version: 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+        version: 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/cli':
         specifier: ^2.5.0
-        version: 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+        version: 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/publish':
         specifier: ^2.5.0
-        version: 2.5.0(@lerna-lite/run@2.5.0)
-      '@lerna-lite/run':
-        specifier: ^2.5.0
-        version: 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0)
+        version: 2.5.0
       '@lerna-lite/version':
         specifier: ^2.5.0
-        version: 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)
+        version: 2.5.0(@lerna-lite/publish@2.5.0)
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.2.1
         version: 6.2.1(@typescript-eslint/parser@6.2.1)(eslint@8.46.0)(typescript@5.1.6)
@@ -500,13 +497,13 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@lerna-lite/changed@2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0):
+  /@lerna-lite/changed@2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0):
     resolution: {integrity: sha512-kdV1CEhabuYSMo9hxT+q1dtg7bd3TfTCk48t8z/rho7Ki5DldVV6166fJ4UtQXcZW9ut9zo5G8WoGYeT4WyAvg==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     dependencies:
-      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/core': 2.5.0
-      '@lerna-lite/list': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+      '@lerna-lite/list': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/listable': 2.5.0
     transitivePeerDependencies:
       - '@lerna-lite/exec'
@@ -517,7 +514,7 @@ packages:
       - supports-color
     dev: true
 
-  /@lerna-lite/cli@2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0):
+  /@lerna-lite/cli@2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0):
     resolution: {integrity: sha512-u1PVmX/qZZnct1fL7IGTkobF/7y6jp/uhFJrDplpW7eLVS8Jkw5OI2qVFD4W+RBKU94t12non7zOvVAoBCdyvQ==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     hasBin: true
@@ -544,10 +541,9 @@ packages:
     dependencies:
       '@lerna-lite/core': 2.5.0
       '@lerna-lite/init': 2.5.0
-      '@lerna-lite/list': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
-      '@lerna-lite/publish': 2.5.0(@lerna-lite/run@2.5.0)
-      '@lerna-lite/run': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0)
-      '@lerna-lite/version': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)
+      '@lerna-lite/list': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0)
+      '@lerna-lite/publish': 2.5.0
+      '@lerna-lite/version': 2.5.0(@lerna-lite/publish@2.5.0)
       dedent: 0.7.0
       dotenv: 16.3.1
       import-local: 3.1.0
@@ -615,11 +611,11 @@ packages:
       - supports-color
     dev: true
 
-  /@lerna-lite/list@2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0):
+  /@lerna-lite/list@2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0):
     resolution: {integrity: sha512-sUgVOuFw3tignTIJnCBhquID2lqLvkAOYskw3Old7gbIL73AS9rD+T3UCr6q32I+YBamuM+W7MgUQCITcKW15A==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     dependencies:
-      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/core': 2.5.0
       '@lerna-lite/filter-packages': 2.5.0
       '@lerna-lite/listable': 2.5.0
@@ -643,25 +639,13 @@ packages:
       - supports-color
     dev: true
 
-  /@lerna-lite/profiler@2.5.0:
-    resolution: {integrity: sha512-Or39VY5xa2Vv2mQVAkDjpLQO06cSbvZ08mqhyKV1i4VkFfsh/JYVRSyZ0hdds6MuP2ufQKmHEnTunJNZkgjSQw==}
-    engines: {node: '>=16.15.0', npm: '>=8.5.0'}
-    dependencies:
-      '@lerna-lite/core': 2.5.0
-      fs-extra: 11.1.1
-      npmlog: 7.0.1
-      upath: 2.0.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /@lerna-lite/publish@2.5.0(@lerna-lite/run@2.5.0):
+  /@lerna-lite/publish@2.5.0:
     resolution: {integrity: sha512-ihvrLah30VqcQSDk8pP4Xn0AAOkH0DsnGzlJLMAGBoY3n5dTOLaLm6nSSdQzKXoBc9mhGi9jcAWeHZqUoG5E2g==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     dependencies:
-      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/core': 2.5.0
-      '@lerna-lite/version': 2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)
+      '@lerna-lite/version': 2.5.0(@lerna-lite/publish@2.5.0)
       '@npmcli/arborist': 6.3.0
       byte-size: 8.1.1
       chalk: 5.3.0
@@ -695,32 +679,11 @@ packages:
       - supports-color
     dev: true
 
-  /@lerna-lite/run@2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0):
-    resolution: {integrity: sha512-L818wGMU21EjZzJwxW0WAstzyCCsXgyetMSxIbAzg/ftq0g5oAcfCTrB63k73XO4n2XV6WAUfQ8HBB+G2xNpCQ==}
-    engines: {node: '>=16.15.0', npm: '>=8.5.0'}
-    dependencies:
-      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
-      '@lerna-lite/core': 2.5.0
-      '@lerna-lite/filter-packages': 2.5.0
-      '@lerna-lite/profiler': 2.5.0
-      chalk: 5.3.0
-      fs-extra: 11.1.1
-      npmlog: 7.0.1
-      p-map: 6.0.0
-    transitivePeerDependencies:
-      - '@lerna-lite/exec'
-      - '@lerna-lite/list'
-      - '@lerna-lite/publish'
-      - '@lerna-lite/version'
-      - '@lerna-lite/watch'
-      - supports-color
-    dev: true
-
-  /@lerna-lite/version@2.5.0(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0):
+  /@lerna-lite/version@2.5.0(@lerna-lite/publish@2.5.0):
     resolution: {integrity: sha512-hDwlNx57X+JW8A96lieQHDpDIGMhZZh5nuUm78sSwcYAL8hhwNrBcbkvaxjggc3MTsbZp9G416vU7P4gleuMRw==}
     engines: {node: '>=16.15.0', npm: '>=8.5.0'}
     dependencies:
-      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/run@2.5.0)(@lerna-lite/version@2.5.0)
+      '@lerna-lite/cli': 2.5.0(@lerna-lite/list@2.5.0)(@lerna-lite/publish@2.5.0)(@lerna-lite/version@2.5.0)
       '@lerna-lite/core': 2.5.0
       '@octokit/plugin-enterprise-rest': 6.0.1
       '@octokit/rest': 19.0.13
@@ -4846,11 +4809,6 @@ packages:
   /universalify@2.0.0:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
-    dev: true
-
-  /upath@2.0.1:
-    resolution: {integrity: sha512-1uEe95xksV1O0CYKXo8vQvN1JEbtJp7lb7C5U9HMsIp6IVwntkH/oNUzyVNQSd4S1sYk2FpSSW44FqMc8qee5w==}
-    engines: {node: '>=4'}
     dev: true
 
   /uri-js@4.4.1:

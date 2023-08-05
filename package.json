@@ -13,7 +13,6 @@
     "@lerna-lite/changed": "^2.5.0",
     "@lerna-lite/cli": "^2.5.0",
     "@lerna-lite/publish": "^2.5.0",
-    "@lerna-lite/run": "^2.5.0",
     "@lerna-lite/version": "^2.5.0",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
@@ -29,7 +28,7 @@
     "vitest": "^0.34.1"
   },
   "scripts": {
-    "build": "lerna run build",
+    "build": "pnpm run -r build",
     "lint": "eslint ./packages",
     "publish": "lerna publish from-git",
     "test": "vitest",

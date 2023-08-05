@@ -9,7 +9,8 @@ on:
         "**/package.json",
         "**/tsconfig.json",
         "packages/**/*.js",
-        "packages/**/*.ts"
+        "packages/**/*.ts",
+        ".github/workflows/test-package.yaml"
       ]
   push:
     branches: [main]
@@ -20,8 +21,8 @@ permissions:
   pull-requests: write
 
 jobs:
-  install:
-    name: Install dependencies
+  build:
+    name: Build packages
     runs-on: ubuntu-latest
 
     steps:
@@ -36,9 +37,13 @@ jobs:
       - name: Setup pnpm and install dependencies
         uses: ./.github/actions/setup-pnpm
 
+      - name: Build packages
+        run: |
+          pnpm run build
+
   test:
     name: Test (nodejs-${{ matrix.node-version }} on ${{ matrix.os }})
-    needs: install
+    needs: build
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -60,7 +65,7 @@ jobs:
 
       - name: Run test
         run: |
-          pnpm run test:coverage --reporter junit --outputFile ./result.xml --silent
+          pnpm run test:coverage --reporter basic --reporter junit --outputFile ./result.xml
 
       - name: Report test result
         if: ${{ (success() || failure()) }}

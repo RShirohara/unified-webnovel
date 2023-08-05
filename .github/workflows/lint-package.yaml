@@ -9,7 +9,8 @@ on:
         "**/package.json",
         "**/tsconfig.json",
         "packages/**/*.js",
-        "packages/**/*.ts"
+        "packages/**/*.ts",
+        ".github/workflows/lint-package.yaml"
       ]
   push:
     branches: [main]
@@ -19,8 +20,8 @@ permissions:
   contents: read
 
 jobs:
-  install:
-    name: Install dependencies
+  build:
+    name: Build packages
     runs-on: ubuntu-latest
 
     steps:
@@ -35,9 +36,13 @@ jobs:
       - name: Setup pnpm and install dependencies
         uses: ./.github/actions/setup-pnpm
 
+      - name: Build packages
+        run: |
+          pnpm run build
+
   lint:
     name: Lint
-    needs: install
+    needs: build
     runs-on: ubuntu-latest
 
     steps:

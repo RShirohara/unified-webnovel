@@ -26,14 +26,14 @@
     "prettier": "^3.0.1",
     "typescript": "^5.1.6",
     "vite-tsconfig-paths": "^4.2.0",
-    "vitest": "^0.33.0"
+    "vitest": "^0.34.1"
   },
   "scripts": {
     "build": "lerna run build",
     "lint": "eslint ./packages",
     "publish": "lerna publish from-git",
     "test": "vitest",
-    "test:coverage": "vitest --coverage.enabled --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
+    "test:coverage": "vitest --coverage.enabled --coverage.reportOnFailure --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
     "version:check": "lerna changed",
     "version:update": "lerna version --conventional-commits --no-git-tag-version --sync-workspace-lock"
   },

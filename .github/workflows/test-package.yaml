@@ -60,12 +60,7 @@ jobs:
 
       - name: Run test
         run: |
-          pnpm run test:coverage --reporter junit --outputFile ./result.xml
-
-      - name: Check test result file (Debug Only!)
-        if: ${{ (success() || failure()) }}
-        run: |
-          ls -lR ./
+          pnpm run test:coverage --reporter junit --outputFile ./result.xml --reporter verbose
 
       - name: Report test result
         if: ${{ (success() || failure()) }}

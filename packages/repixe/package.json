@@ -39,7 +39,8 @@
     "typescript": "^5.1.6"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json"
+    "build": "tsc -p tsconfig.build.json",
+    "prepack": "pnpm run build"
   },
   "publishConfig": {
     "provenance": true

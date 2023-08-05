@@ -60,7 +60,7 @@ jobs:
 
       - name: Run test
         run: |
-          pnpm run test:coverage --reporter junit --outputFile ./result.xml --silent
+          pnpm run test:coverage --reporter basic --reporter junit --outputFile ./result.xml
 
       - name: Report test result
         if: ${{ (success() || failure()) }}

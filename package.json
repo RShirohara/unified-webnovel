@@ -33,7 +33,7 @@
     "lint": "eslint ./packages",
     "publish": "lerna publish from-git",
     "test": "vitest",
-    "test:coverage": "vitest --coverage.enabled --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
+    "test:coverage": "vitest --coverage.enabled --coverage.reportOnFailure --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
     "version:check": "lerna changed",
     "version:update": "lerna version --conventional-commits --no-git-tag-version --sync-workspace-lock"
   },

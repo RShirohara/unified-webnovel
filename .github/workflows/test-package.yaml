@@ -63,9 +63,17 @@ jobs:
       - name: Setup pnpm and install dependencies
         uses: ./.github/actions/setup-pnpm
 
+      - name: Build packages
+        run: |
+          pnpm run build
+
       - name: Run test
         run: |
-          pnpm run test:coverage --reporter basic --reporter junit --outputFile ./result.xml
+          pnpm run test \
+            --reporter basic \
+            --reporter junit \
+            --outputFile ./result.xml \
+            --silent
 
       - name: Report test result
         if: ${{ (success() || failure()) }}

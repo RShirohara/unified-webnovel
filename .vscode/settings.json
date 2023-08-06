@@ -17,6 +17,5 @@
   ],
   "eslint.experimental.useFlatConfig": true,
   "javascript.format.enable": false,
-  "npm.packageManager": "pnpm",
-  "vitest.commandLine": "pnpm test -- run"
+  "npm.packageManager": "pnpm"
 }

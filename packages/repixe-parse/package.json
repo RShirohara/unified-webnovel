@@ -35,8 +35,7 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@unified-webnovel/tsconfig": "workspace:*",
-    "typescript": "^5.1.6"
+    "@unified-webnovel/tsconfig": "workspace:*"
   },
   "scripts": {
     "build": "tsc -b tsconfig.build.json",

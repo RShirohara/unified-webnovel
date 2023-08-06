@@ -4,8 +4,9 @@
   "license": "MIT",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@8.6.10",
+  "packageManager": "pnpm@8.6.11",
   "workspaces": [
+    "./configs/*",
     "./packages/*"
   ],
   "devDependencies": {
@@ -31,7 +32,7 @@
     "build": "pnpm run -r build",
     "build:watch": "pnpm run -r build -w",
     "dev": "pnpm run --stream \"/.*:watch$/\"",
-    "lint": "eslint ./packages",
+    "lint": "eslint .",
     "publish": "lerna publish from-git",
     "test": "vitest run --coverage.enabled --coverage.reportOnFailure --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
     "test:watch": "vitest watch",

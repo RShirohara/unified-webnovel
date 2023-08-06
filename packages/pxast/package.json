@@ -33,6 +33,7 @@
     "@unified-webnovel/tsconfig": "workspace:*"
   },
   "publishConfig": {
+    "access": "public",
     "provenance": true
   }
 }

@@ -41,6 +41,7 @@
     "prepack": "pnpm run build"
   },
   "publishConfig": {
+    "access": "public",
     "provenance": true
   }
 }

@@ -94,9 +94,6 @@ importers:
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
-      typescript:
-        specifier: ^5.1.6
-        version: 5.1.6
 
   packages/repixe-parse:
     dependencies:
@@ -113,9 +110,6 @@ importers:
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
-      typescript:
-        specifier: ^5.1.6
-        version: 5.1.6
 
   packages/repixe-stringify:
     dependencies:
@@ -129,9 +123,6 @@ importers:
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
-      typescript:
-        specifier: ^5.1.6
-        version: 5.1.6
 
   packages/tsconfig: {}
 

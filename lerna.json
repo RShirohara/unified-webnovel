@@ -3,7 +3,6 @@
   "version": "independent",
   "npmClient": "pnpm",
   "packages": [
-    "./configs/*",
     "./packages/*"
   ],
   "useWorkspaces": true,

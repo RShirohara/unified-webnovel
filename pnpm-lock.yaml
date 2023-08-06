@@ -31,7 +31,7 @@ importers:
         version: 6.2.1(eslint@8.46.0)(typescript@5.1.6)
       '@unified-webnovel/prettier-config':
         specifier: workspace:*
-        version: link:configs/prettier-config
+        version: link:packages/prettier-config
       '@vitest/coverage-v8':
         specifier: ^0.34.1
         version: 0.34.1(vitest@0.34.1)
@@ -60,13 +60,11 @@ importers:
         specifier: ^0.34.1
         version: 0.34.1
 
-  configs/prettier-config:
+  packages/prettier-config:
     dependencies:
       prettier:
         specifier: ^3.0.0
         version: 3.0.0
-
-  configs/tsconfig: {}
 
   packages/pxast:
     dependencies:
@@ -76,7 +74,7 @@ importers:
     devDependencies:
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
-        version: link:../../configs/tsconfig
+        version: link:../tsconfig
 
   packages/repixe:
     dependencies:
@@ -95,7 +93,7 @@ importers:
     devDependencies:
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
-        version: link:../../configs/tsconfig
+        version: link:../tsconfig
 
   packages/repixe-parse:
     dependencies:
@@ -111,7 +109,7 @@ importers:
     devDependencies:
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
-        version: link:../../configs/tsconfig
+        version: link:../tsconfig
 
   packages/repixe-stringify:
     dependencies:
@@ -124,7 +122,9 @@ importers:
     devDependencies:
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
-        version: link:../../configs/tsconfig
+        version: link:../tsconfig
+
+  packages/tsconfig: {}
 
 packages:
 

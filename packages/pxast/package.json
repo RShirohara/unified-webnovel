@@ -1,6 +1,6 @@
 {
   "name": "@rshirohara/pxast",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Pixiv novel ast definition.",
   "keywords": [
     "unified",

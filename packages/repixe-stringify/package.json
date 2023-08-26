@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "@rshirohara/pxast": "workspace:^",
-    "unified": "^10.1.2"
+    "unified": "^11.0.2"
   },
   "devDependencies": {
     "@unified-webnovel/tsconfig": "workspace:*"

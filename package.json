@@ -15,7 +15,7 @@
     "@lerna-lite/publish": "^2.5.0",
     "@lerna-lite/version": "^2.5.0",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
-    "@typescript-eslint/parser": "^6.3.0",
+    "@typescript-eslint/parser": "^6.4.1",
     "@unified-webnovel/prettier-config": "workspace:*",
     "@vitest/coverage-v8": "^0.34.3",
     "conventional-changelog-conventionalcommits": "^6.1.0",

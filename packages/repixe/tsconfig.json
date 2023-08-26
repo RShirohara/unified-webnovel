@@ -5,7 +5,8 @@
     "baseUrl": "./src",
     "paths": {
       "~*": [".*"]
-    }
+    },
+    "types": ["@rshirohara/pxast"]
   },
   "include": ["./src", "./test"]
 }

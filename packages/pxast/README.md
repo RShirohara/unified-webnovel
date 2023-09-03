@@ -80,7 +80,7 @@ Its `value` field is a `string`.
 
 ```idl
 interface Root <: Parent {
-  type: 'root'
+  type: "root"
 }
 ```
 
@@ -93,7 +93,7 @@ never as a [_child_][term-child].
 
 ```idl
 interface Paragraph <: Parent {
-  type: 'paragraph'
+  type: "paragraph"
   children: [PhrasingContent]
 }
 ```
@@ -122,7 +122,7 @@ Yields:
 
 ```idl
 interface Heading <: Parent {
-  type: 'heading'
+  type: "heading"
   children: [InlinePhrasingContent]
 }
 ```
@@ -151,7 +151,7 @@ Yields:
 
 ```idl
 interface Page <: Node {
-  type: 'pageHeading'
+  type: "pageHeading"
   pageNumber: 1 <= number
 }
 ```
@@ -196,7 +196,7 @@ Yields:
 
 ```idl
 interface Text <: Literal {
-  type: 'text'
+  type: "text"
 }
 ```
 
@@ -221,7 +221,7 @@ Yields:
 
 ```idl
 interface Ruby <: Literal {
-  type: 'ruby'
+  type: "ruby"
   ruby: string
 }
 ```
@@ -251,7 +251,7 @@ Yields:
 
 ```idl
 interface Break <: Node {
-  type: 'break'
+  type: "break"
 }
 ```
 
@@ -284,7 +284,7 @@ Yields:
 
 ```idl
 interface Link <: Parent {
-  type: 'link'
+  type: "link"
   url: string
   children: [InlinePhrasingContent]
 }
@@ -315,7 +315,7 @@ Yields:
 
 ```idl
 interface Image <: Node {
-  type: 'image'
+  type: "image"
   illustId: string
   pageNumber: 1 <= number?
 }
@@ -346,7 +346,7 @@ Yields:
 
 ```idl
 interface PageReference <: Node {
-  type: 'pageReference'
+  type: "pageReference"
   pageNumber: 1 <= number
 }
 ```

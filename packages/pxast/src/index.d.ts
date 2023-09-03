@@ -27,7 +27,7 @@ export interface Paragraph extends Parent {
 
 export interface Heading extends Parent {
   type: "heading";
-  children: StaticPhrasingContent[];
+  children: InlinePhrasingContent[];
 }
 
 export interface PageHeading extends Node {
@@ -51,7 +51,7 @@ export interface Break extends Node {
 export interface Link extends Parent {
   type: "link";
   url: string;
-  children: StaticPhrasingContent[];
+  children: InlinePhrasingContent[];
 }
 
 export interface Image extends Node {
@@ -72,9 +72,10 @@ export type PxastContent = FlowContent | PhrasingContent;
 export type FlowContent = Heading | PageHeading | Paragraph;
 
 export type PhrasingContent =
-  | Link
+  | Break
   | Image
+  | Link
   | PageReference
-  | StaticPhrasingContent;
+  | InlinePhrasingContent;
 
-export type StaticPhrasingContent = Break | Ruby | Text;
+export type InlinePhrasingContent = Ruby | Text;

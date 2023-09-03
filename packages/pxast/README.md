@@ -30,7 +30,7 @@ It implements [unist][].
   - [Content model](#content-model)
     - [`FlowContent`](#flowcontent)
     - [`PhrasingContent`](#phrasingcontent)
-    - [`StaticPhrasingContent`](#staticphrasingcontent)
+    - [`InlinePhrasingContent`](#inlinephrasingcontent)
   - [License](#license)
 
 ## Introduction
@@ -123,14 +123,14 @@ Yields:
 ```idl
 interface Heading <: Parent {
   type: 'heading'
-  children: [StaticPhrasingContent]
+  children: [InlinePhrasingContent]
 }
 ```
 
 **Heading** ([**Parent**][dfn-parent]) represents a heading of a section.
 
 **Heading** can be used where [**flow**][dfn-flow-content] content is expected.
-Its content model is [**static phrasing**][dfn-static-phrasing-content] content.
+Its content model is [**inline phrasing**][dfn-inline-phrasing-content] content.
 
 For example, the following text:
 
@@ -286,14 +286,14 @@ Yields:
 interface Link <: Parent {
   type: 'link'
   url: string
-  children: [StaticPhrasingContent]
+  children: [InlinePhrasingContent]
 }
 ```
 
 **Link** ([**Parent**][dfn-parent]) represents a hyperlink.
 
 **Link** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
-Its content model is [**static phrasing**][dfn-static-phrasing-content] content.
+Its content model is [**inline phrasing**][dfn-inline-phrasing-content] content.
 
 For example, the following text:
 
@@ -393,19 +393,19 @@ type FlowContent = Heading | PageHeading | Paragraph
 ### `PhrasingContent`
 
 ```idl
-type PhrasingContent = Link | Image | PageReference | StaticPhrasingContent
+type PhrasingContent = Break | Image | Link | PageReference | InlinePhrasingContent
 ```
 
 **Phrasing** content represent the text in a document, and its markup.
 
-### `StaticPhrasingContent`
+### `InlinePhrasingContent`
 
 ```idl
-type StaticPhrasingContent = Break | Ruby | Text
+type InlinePhrasingContent = Ruby | Text
 ```
 
-**StaticPhrasing** content represent the text in a document, and its markup,
-that is not intended for user interaction.
+**Inline Phrasing** content represent the text in a document, and its markup,
+that is intended to be stored in [**phrasing**][dfn-phrasing-content] content.
 
 ## License
 
@@ -415,13 +415,13 @@ that is not intended for user interaction.
 
 [dfn-content]: #contents
 [dfn-flow-content]: #flowcontent
+[dfn-inline-phrasing-content]: #inlinephrasingcontent
 [dfn-literal]: #literal
 [dfn-node]: https://github.com/syntax-tree/unist#node
 [dfn-page-heading]: #pageheading
 [dfn-parent]: #parent
 [dfn-phrasing-content]: #phrasingcontent
 [dfn-pxast-content]: #content-model
-[dfn-static-phrasing-content]: #staticphrasingcontent
 [dfn-unist-literal]: https://github.com/syntax-tree/unist#literal
 [dfn-unist-parent]: https://github.com/syntax-tree/unist#parent
 [license]: ./LICENSE

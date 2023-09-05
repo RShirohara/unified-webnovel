@@ -30,7 +30,7 @@ It implements [unist][].
   - [Content model](#content-model)
     - [`FlowContent`](#flowcontent)
     - [`PhrasingContent`](#phrasingcontent)
-    - [`StaticPhrasingContent`](#staticphrasingcontent)
+    - [`InlinePhrasingContent`](#inlinephrasingcontent)
   - [License](#license)
 
 ## Introduction
@@ -80,7 +80,7 @@ Its `value` field is a `string`.
 
 ```idl
 interface Root <: Parent {
-  type: 'root'
+  type: "root"
 }
 ```
 
@@ -93,7 +93,7 @@ never as a [_child_][term-child].
 
 ```idl
 interface Paragraph <: Parent {
-  type: 'paragraph'
+  type: "paragraph"
   children: [PhrasingContent]
 }
 ```
@@ -122,15 +122,15 @@ Yields:
 
 ```idl
 interface Heading <: Parent {
-  type: 'heading'
-  children: [StaticPhrasingContent]
+  type: "heading"
+  children: [InlinePhrasingContent]
 }
 ```
 
 **Heading** ([**Parent**][dfn-parent]) represents a heading of a section.
 
 **Heading** can be used where [**flow**][dfn-flow-content] content is expected.
-Its content model is [**static phrasing**][dfn-static-phrasing-content] content.
+Its content model is [**inline phrasing**][dfn-inline-phrasing-content] content.
 
 For example, the following text:
 
@@ -151,7 +151,7 @@ Yields:
 
 ```idl
 interface Page <: Node {
-  type: 'pageHeading'
+  type: "pageHeading"
   pageNumber: 1 <= number
 }
 ```
@@ -196,7 +196,7 @@ Yields:
 
 ```idl
 interface Text <: Literal {
-  type: 'text'
+  type: "text"
 }
 ```
 
@@ -221,7 +221,7 @@ Yields:
 
 ```idl
 interface Ruby <: Literal {
-  type: 'ruby'
+  type: "ruby"
   ruby: string
 }
 ```
@@ -251,7 +251,7 @@ Yields:
 
 ```idl
 interface Break <: Node {
-  type: 'break'
+  type: "break"
 }
 ```
 
@@ -284,16 +284,16 @@ Yields:
 
 ```idl
 interface Link <: Parent {
-  type: 'link'
+  type: "link"
   url: string
-  children: [StaticPhrasingContent]
+  children: [InlinePhrasingContent]
 }
 ```
 
 **Link** ([**Parent**][dfn-parent]) represents a hyperlink.
 
 **Link** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
-Its content model is [**static phrasing**][dfn-static-phrasing-content] content.
+Its content model is [**inline phrasing**][dfn-inline-phrasing-content] content.
 
 For example, the following text:
 
@@ -315,7 +315,7 @@ Yields:
 
 ```idl
 interface Image <: Node {
-  type: 'image'
+  type: "image"
   illustId: string
   pageNumber: 1 <= number?
 }
@@ -346,7 +346,7 @@ Yields:
 
 ```idl
 interface PageReference <: Node {
-  type: 'pageReference'
+  type: "pageReference"
   pageNumber: 1 <= number
 }
 ```
@@ -393,19 +393,19 @@ type FlowContent = Heading | PageHeading | Paragraph
 ### `PhrasingContent`
 
 ```idl
-type PhrasingContent = Link | Image | PageReference | StaticPhrasingContent
+type PhrasingContent = Break | Image | Link | PageReference | InlinePhrasingContent
 ```
 
 **Phrasing** content represent the text in a document, and its markup.
 
-### `StaticPhrasingContent`
+### `InlinePhrasingContent`
 
 ```idl
-type StaticPhrasingContent = Break | Ruby | Text
+type InlinePhrasingContent = Ruby | Text
 ```
 
-**StaticPhrasing** content represent the text in a document, and its markup,
-that is not intended for user interaction.
+**Inline Phrasing** content represent the text in a document, and its markup,
+that is intended to be stored in [**phrasing**][dfn-phrasing-content] content.
 
 ## License
 
@@ -415,13 +415,13 @@ that is not intended for user interaction.
 
 [dfn-content]: #contents
 [dfn-flow-content]: #flowcontent
+[dfn-inline-phrasing-content]: #inlinephrasingcontent
 [dfn-literal]: #literal
 [dfn-node]: https://github.com/syntax-tree/unist#node
 [dfn-page-heading]: #pageheading
 [dfn-parent]: #parent
 [dfn-phrasing-content]: #phrasingcontent
 [dfn-pxast-content]: #content-model
-[dfn-static-phrasing-content]: #staticphrasingcontent
 [dfn-unist-literal]: https://github.com/syntax-tree/unist#literal
 [dfn-unist-parent]: https://github.com/syntax-tree/unist#parent
 [license]: ./LICENSE

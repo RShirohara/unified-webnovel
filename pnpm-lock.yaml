@@ -88,8 +88,8 @@ importers:
         specifier: workspace:^
         version: link:../repixe-stringify
       unified:
-        specifier: ^11.0.2
-        version: 11.0.2
+        specifier: ^11.0.3
+        version: 11.0.3
     devDependencies:
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
@@ -104,8 +104,8 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0
       unified:
-        specifier: ^11.0.2
-        version: 11.0.2
+        specifier: ^11.0.3
+        version: 11.0.3
     devDependencies:
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
@@ -117,8 +117,8 @@ importers:
         specifier: workspace:^
         version: link:../pxast
       unified:
-        specifier: ^11.0.2
-        version: 11.0.2
+        specifier: ^11.0.3
+        version: 11.0.3
     devDependencies:
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
@@ -1244,10 +1244,6 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: true
 
-  /@ungap/structured-clone@1.2.0:
-    resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
-    dev: false
-
   /@vitest/coverage-v8@0.34.4(vitest@0.34.4):
     resolution: {integrity: sha512-TZ5ghzhmg3COQqfBShL+zRQEInHmV9TSwghTdfkHpCTyTOr+rxo6x41vCNcVfWysWULtqtBVpY6YFNovxnESfA==}
     peerDependencies:
@@ -2268,6 +2264,10 @@ packages:
   /exponential-backoff@3.1.1:
     resolution: {integrity: sha512-dX7e/LHVJ6W3DE1MHWi9S1EYzDESENfLrYohG2G++ovZrYOkm4Knwa0mc1cn84xJOR4KEU0WSchhLbd0UklbHw==}
     dev: true
+
+  /extend@3.0.2:
+    resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
+    dev: false
 
   /external-editor@3.1.0:
     resolution: {integrity: sha512-hMQ4CX1p1izmuLYyZqLMO/qGNw10wSv9QDCPfzXfyFrOaCSSoRfqE1Kf1s5an66J5JZC62NewG+mK49jOCtQew==}
@@ -4703,13 +4703,13 @@ packages:
     dev: true
     optional: true
 
-  /unified@11.0.2:
-    resolution: {integrity: sha512-Zta++onvS/dJ6xUvXQOR5q8XJZOkiMCE5wQ8Yv9mLR25pxRS567EX0GO6HZRxxNV/lznwfsvRZ/1pqe9K9QLeQ==}
+  /unified@11.0.3:
+    resolution: {integrity: sha512-jlCV402P+YDcFcB2VcN/n8JasOddqIiaxv118wNBoZXEhOn+lYG7BR4Bfg2BwxvlK58dwbuH2w7GX2esAjL6Mg==}
     dependencies:
       '@types/unist': 3.0.0
-      '@ungap/structured-clone': 1.2.0
       bail: 2.0.2
       devlop: 1.1.0
+      extend: 3.0.2
       is-plain-obj: 4.1.0
       trough: 2.1.0
       vfile: 6.0.1

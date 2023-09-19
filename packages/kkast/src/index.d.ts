@@ -3,8 +3,7 @@
 import type {
   Node,
   Literal as UnistLiteral,
-  Parent as UnistParent,
-  Data as UnistData
+  Parent as UnistParent
 } from "unist";
 
 // Node
@@ -24,7 +23,11 @@ export interface Root extends Parent {
 export interface Paragraph extends Parent {
   type: "paragraph";
   children: PhrasingContent[];
-  data?: ParagraphData;
+}
+
+export interface ParagraphMargin extends Node {
+  type: "paragraphMargin";
+  size: number;
 }
 
 export interface Text extends Literal {
@@ -44,14 +47,10 @@ export interface Break extends Node {
   type: "break";
 }
 
-export interface ParagraphData extends UnistData {
-  empty: boolean;
-}
-
 // Content model
 
 export type KkastContent = FlowContent | PhrasingContent;
 
-export type FlowContent = Paragraph;
+export type FlowContent = Paragraph | ParagraphMargin;
 
 export type PhrasingContent = Text | Ruby | Emphasis | Break;

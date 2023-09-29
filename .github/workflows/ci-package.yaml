@@ -81,7 +81,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        node-version: [16, 18, latest]
+        node-version: [18, 20, latest]
 
     permissions:
       checks: write

@@ -31,7 +31,7 @@ by using unified with [`repixe-parse`][repixe-parse] and [`repixe-stringify`][re
 ## Install
 
 This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
-in Node.js (16.0+), Install with [npm][]:
+in Node.js (18.0+), Install with [npm][]:
 
 ```shell
 npm install @rshirohara/repixe

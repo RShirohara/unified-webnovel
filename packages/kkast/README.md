@@ -97,7 +97,7 @@ interface Paragraph <: Parent {
 **Paragraph** ([**Parent**][dfn-parent]) represents a unit of discource dealing
 with a particular point.
 
-**Paragraph** can be used where [**Content**][dfn-content] is expected.
+**Paragraph** can be used where [**content**][dfn-content] is expected.
 Its content model is [**phrasing**][dfn-phrasing-content] content.
 
 ### `ParagraphMargin`
@@ -112,7 +112,8 @@ interface ParagraphMargin <: Node {
 **ParagraphMargin** ([**Node**][dfn-node]) represents the margins between
 paragraphs.
 
-**ParagraphMargin** can only be used between two [**paragraph**][dfn-paragraph]s.
+**ParagraphMargin** can only be used between two
+[**paragraphs**][dfn-paragraph].
 It has no content model.
 
 A `size` field must be present.

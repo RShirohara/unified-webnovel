@@ -29,6 +29,18 @@ export default [
   },
   {
     files: ["**/test/*.test.ts"],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        project: ["./packages/*/test/tsconfig.json"]
+      }
+    },
+    plugins: {
+      "@typescript-eslint": ts
+    }
+  },
+  {
+    files: ["**/test/*.test.ts"],
     plugins: { vitest: vitest },
     rules: { ...vitest.configs.recommended.rules }
   },

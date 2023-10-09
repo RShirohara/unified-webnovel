@@ -5,12 +5,13 @@ on:
     types: [opened, ready_for_review, review_requested]
     paths:
       [
-        "pnpm-lock.yaml",
+        ".github/workflows/ci-package.yaml",
         "**/package.json",
         "**/tsconfig.json",
         "packages/**/*.js",
         "packages/**/*.ts",
-        ".github/workflows/ci-package.yaml"
+        "eslint.config.js",
+        "pnpm-lock.yaml"
       ]
   push:
     branches: [main]

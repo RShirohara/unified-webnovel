@@ -60,6 +60,16 @@ importers:
         specifier: ^0.34.6
         version: 0.34.6
 
+  packages/kkast:
+    dependencies:
+      '@types/unist':
+        specifier: ^3.0.0
+        version: 3.0.0
+    devDependencies:
+      '@unified-webnovel/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+
   packages/prettier-config:
     dependencies:
       prettier:

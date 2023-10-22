@@ -27,7 +27,7 @@
     "./src"
   ],
   "dependencies": {
-    "@types/unist": "^3.0.0"
+    "@types/unist": "^3.0.1"
   },
   "devDependencies": {
     "@unified-webnovel/tsconfig": "workspace:*"

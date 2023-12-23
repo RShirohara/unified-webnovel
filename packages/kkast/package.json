@@ -1,6 +1,6 @@
 {
   "name": "@rshirohara/kkast",
-  "version": "0.1.0-alpha0",
+  "version": "0.1.0-alpha.0",
   "description": "Kakuyomu novel ast definition.",
   "keywords": [
     "unified",

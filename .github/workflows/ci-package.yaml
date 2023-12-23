@@ -101,10 +101,6 @@ jobs:
       - name: Setup pnpm and install dependencies
         uses: ./.github/actions/setup-pnpm
 
-      - name: Build packages
-        run: |
-          pnpm run build
-
       - name: Run test
         run: |
           pnpm run test \

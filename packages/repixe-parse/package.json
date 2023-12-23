@@ -12,15 +12,15 @@
   "bugs": {
     "url": "https://github.com/RShirohara/unified-webnovel/issues"
   },
-  "license": "MIT",
-  "author": {
-    "name": "Ray Shirohara",
-    "url": "https://github.com/RShirohara"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/RShirohara/unified-webnovel.git",
     "directory": "packages/repixe-parse"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Ray Shirohara",
+    "url": "https://github.com/RShirohara"
   },
   "type": "module",
   "exports": "./dist/index.js",
@@ -29,6 +29,10 @@
     "./dist",
     "./src"
   ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "prepack": "pnpm run build"
+  },
   "dependencies": {
     "@rshirohara/pxast": "workspace:^",
     "pixiv-novel-parser": "^0.3.0",
@@ -36,10 +40,6 @@
   },
   "devDependencies": {
     "@unified-webnovel/tsconfig": "workspace:*"
-  },
-  "scripts": {
-    "build": "tsc -b tsconfig.build.json",
-    "prepack": "pnpm run build"
   },
   "publishConfig": {
     "access": "public",

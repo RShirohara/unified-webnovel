@@ -40,7 +40,8 @@
     "unified": "^11.0.4"
   },
   "devDependencies": {
-    "@unified-webnovel/tsconfig": "workspace:*"
+    "@unified-webnovel/tsconfig": "workspace:*",
+    "@types/pixiv-novel-parser": "workspace:*"
   },
   "publishConfig": {
     "access": "public",

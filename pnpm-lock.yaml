@@ -73,6 +73,16 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
 
+  packages/pixiv-novel-parser-types:
+    dependencies:
+      pixiv-novel-parser:
+        specifier: ^0.3.0
+        version: 0.3.0
+    devDependencies:
+      '@unified-webnovel/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+
   packages/prettier-config:
     dependencies:
       prettier:
@@ -104,6 +114,9 @@ importers:
         specifier: ^11.0.4
         version: 11.0.4
     devDependencies:
+      '@types/pixiv-novel-parser':
+        specifier: workspace:*
+        version: link:../pixiv-novel-parser-types
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -120,6 +133,9 @@ importers:
         specifier: ^11.0.4
         version: 11.0.4
     devDependencies:
+      '@types/pixiv-novel-parser':
+        specifier: workspace:*
+        version: link:../pixiv-novel-parser-types
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig

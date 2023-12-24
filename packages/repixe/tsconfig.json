@@ -6,7 +6,7 @@
     "paths": {
       "~*": [".*"]
     },
-    "types": ["@rshirohara/pxast"]
+    "types": ["@rshirohara/pxast", "@types/pixiv-novel-parser"]
   },
   "include": ["./src", "./test"]
 }

@@ -1,0 +1,17 @@
+{
+  "name": "@types/pixiv-novel-parser",
+  "version": "0.0.0-local.1",
+  "private": true,
+  "description": "Type definition for pixiv-novel-parser.",
+  "main": "",
+  "types": "./src/index.d.ts",
+  "files": [
+    "./src"
+  ],
+  "devDependencies": {
+    "@unified-webnovel/tsconfig": "workspace:*"
+  },
+  "peerDependencies": {
+    "pixiv-novel-parser": "^0.3.0"
+  }
+}

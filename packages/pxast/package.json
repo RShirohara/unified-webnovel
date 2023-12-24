@@ -11,21 +11,25 @@
   "bugs": {
     "url": "https://github.com/RShirohara/unified-webnovel/issues"
   },
-  "license": "MIT",
-  "author": {
-    "name": "Ray Shirohara",
-    "url": "https://github.com/RShirohara"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/RShirohara/unified-webnovel.git",
     "directory": "packages/pxast"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Ray Shirohara",
+    "url": "https://github.com/RShirohara"
   },
   "main": "",
   "types": "./src/index.d.ts",
   "files": [
     "./src"
   ],
+  "scripts": {
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
   "dependencies": {
     "@types/unist": "^3.0.2"
   },
@@ -35,5 +39,13 @@
   "publishConfig": {
     "access": "public",
     "provenance": true
+  },
+  "clean-package": {
+    "remove": [
+      "scripts",
+      "devDependencies",
+      "publishConfig",
+      "clean-package"
+    ]
   }
 }

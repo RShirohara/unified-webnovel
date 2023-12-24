@@ -1,7 +1,7 @@
 {
   "name": "@rshirohara/kkast",
-  "version": "0.1.0-alpha0",
-  "dependency": "Kakuyomu novel ast definition.",
+  "version": "0.1.0-alpha.0",
+  "description": "Kakuyomu novel ast definition.",
   "keywords": [
     "unified",
     "rekurke",
@@ -11,21 +11,25 @@
   "bugs": {
     "url": "https://github.com/RShirohara/unified-webnovel/issues"
   },
-  "license": "MIT",
-  "author": {
-    "name": "Ray Shirohara",
-    "url": "https://github.com/RShirohara"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/RShirohara/unified-webnovel.git",
     "directory": "packages/kkast"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Ray Shirohara",
+    "url": "https://github.com/RShirohara"
   },
   "main": "",
   "types": "./src/index.d.ts",
   "files": [
     "./src"
   ],
+  "scripts": {
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
   "dependencies": {
     "@types/unist": "^3.0.2"
   },
@@ -35,5 +39,13 @@
   "publishConfig": {
     "access": "public",
     "provenance": true
+  },
+  "clean-package": {
+    "remove": [
+      "scripts",
+      "devDependencies",
+      "publishConfig",
+      "clean-package"
+    ]
   }
 }

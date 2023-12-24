@@ -35,6 +35,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^1.1.0
         version: 1.1.0(vitest@1.1.0)
+      clean-package:
+        specifier: ^2.2.0
+        version: 2.2.0
       conventional-changelog-conventionalcommits:
         specifier: ^7.0.2
         version: 7.0.2
@@ -65,6 +68,16 @@ importers:
       '@types/unist':
         specifier: ^3.0.2
         version: 3.0.2
+    devDependencies:
+      '@unified-webnovel/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+
+  packages/pixiv-novel-parser-types:
+    dependencies:
+      pixiv-novel-parser:
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
@@ -101,6 +114,9 @@ importers:
         specifier: ^11.0.4
         version: 11.0.4
     devDependencies:
+      '@types/pixiv-novel-parser':
+        specifier: workspace:*
+        version: link:../pixiv-novel-parser-types
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -117,6 +133,9 @@ importers:
         specifier: ^11.0.4
         version: 11.0.4
     devDependencies:
+      '@types/pixiv-novel-parser':
+        specifier: workspace:*
+        version: link:../pixiv-novel-parser-types
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -1774,6 +1793,13 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /clean-package@2.2.0:
+    resolution: {integrity: sha512-vLv8kRqvh4smPDpqAYFPLEijTppAd/cfCz4yBcUGoVl/JKu6ZWKhlo+G/cAmwlSa29RudfBeuyiNEzas8bTwEQ==}
+    hasBin: true
+    dependencies:
+      dot-prop: 6.0.1
+    dev: true
+
   /clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
@@ -2104,6 +2130,13 @@ packages:
   /dot-prop@5.3.0:
     resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
     engines: {node: '>=8'}
+    dependencies:
+      is-obj: 2.0.0
+    dev: true
+
+  /dot-prop@6.0.1:
+    resolution: {integrity: sha512-tE7ztYzXHIeyvc7N+hR3oi7FIbf/NIjVP9hmAt3yMXzrQ072/fpjGLx2GxNxGxUl5V73MEqYzioOMoVhGMJ5cA==}
+    engines: {node: '>=10'}
     dependencies:
       is-obj: 2.0.0
     dev: true

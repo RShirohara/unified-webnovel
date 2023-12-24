@@ -1,13 +1,23 @@
 {
   "name": "unified-webnovel",
+  "private": true,
   "description": "unified packages for web novel.",
   "license": "MIT",
-  "private": true,
   "type": "module",
   "packageManager": "pnpm@8.11.0",
   "workspaces": [
     "./packages/*"
   ],
+  "scripts": {
+    "build": "pnpm run -r build",
+    "lint": "eslint .",
+    "publish": "lerna publish from-git",
+    "test": "vitest run --coverage.enabled --coverage.reportOnFailure --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
+    "test:watch": "vitest watch",
+    "version:check": "lerna changed",
+    "version:update": "lerna version --conventional-commits --no-git-tag-version --sync-workspace-lock"
+  },
+  "prettier": "@unified-webnovel/prettier-config",
   "devDependencies": {
     "@eslint/js": "^8.56.0",
     "@lerna-lite/changed": "^3.1.0",
@@ -18,6 +28,7 @@
     "@typescript-eslint/parser": "^6.15.0",
     "@unified-webnovel/prettier-config": "workspace:*",
     "@vitest/coverage-v8": "^1.1.0",
+    "clean-package": "^2.2.0",
     "conventional-changelog-conventionalcommits": "^7.0.2",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
@@ -26,17 +37,5 @@
     "typescript": "^5.3.3",
     "vite-tsconfig-paths": "^4.2.2",
     "vitest": "^1.1.0"
-  },
-  "scripts": {
-    "build": "pnpm run -r build",
-    "build:watch": "pnpm run -r build -w",
-    "dev": "pnpm run --stream \"/.*:watch$/\"",
-    "lint": "eslint .",
-    "publish": "lerna publish from-git",
-    "test": "vitest run --coverage.enabled --coverage.reportOnFailure --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
-    "test:watch": "vitest watch",
-    "version:check": "lerna changed",
-    "version:update": "lerna version --conventional-commits --no-git-tag-version --sync-workspace-lock"
-  },
-  "prettier": "@unified-webnovel/prettier-config"
+  }
 }

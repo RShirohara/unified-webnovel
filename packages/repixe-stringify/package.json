@@ -52,6 +52,7 @@
     },
     "remove": [
       "scripts",
+      "devDependencies",
       "publishConfig",
       "clean-package"
     ]

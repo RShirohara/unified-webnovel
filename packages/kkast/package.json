@@ -26,6 +26,10 @@
   "files": [
     "./src"
   ],
+  "scripts": {
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
   "dependencies": {
     "@types/unist": "^3.0.2"
   },
@@ -35,5 +39,13 @@
   "publishConfig": {
     "access": "public",
     "provenance": true
+  },
+  "clean-package": {
+    "remove": [
+      "scripts",
+      "devDependencies",
+      "publishConfig",
+      "clean-package"
+    ]
   }
 }

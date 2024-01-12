@@ -111,7 +111,7 @@ jobs:
 
       - name: Report test result
         if: ${{ (success() || failure()) }}
-        uses: mikepenz/action-junit-report@v4.0.3
+        uses: mikepenz/action-junit-report@v4.0.4
         with:
           check_name: Test result (nodejs-${{ matrix.node-version }} on ${{ matrix.os }})
           report_paths: ./result.xml

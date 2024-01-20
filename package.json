@@ -5,12 +5,10 @@
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@8.14.0",
-  "workspaces": [
-    "./packages/*"
-  ],
+  "workspaces": ["./packages/*"],
   "scripts": {
     "build": "pnpm run -r build",
-    "lint": "eslint .",
+    "check": "biome check .",
     "publish": "lerna publish from-git",
     "test": "vitest run --coverage.enabled --coverage.reportOnFailure --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
     "test:watch": "vitest watch",

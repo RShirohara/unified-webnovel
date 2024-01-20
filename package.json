@@ -27,7 +27,7 @@
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
     "@unified-webnovel/prettier-config": "workspace:*",
-    "@vitest/coverage-v8": "^1.2.0",
+    "@vitest/coverage-v8": "^1.2.1",
     "clean-package": "^2.2.0",
     "conventional-changelog-conventionalcommits": "^7.0.2",
     "eslint": "^8.56.0",
@@ -36,6 +36,6 @@
     "prettier": "^3.2.1",
     "typescript": "^5.3.3",
     "vite-tsconfig-paths": "^4.2.3",
-    "vitest": "^1.2.0"
+    "vitest": "^1.2.1"
   }
 }

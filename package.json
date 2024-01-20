@@ -19,6 +19,7 @@
   },
   "prettier": "@unified-webnovel/prettier-config",
   "devDependencies": {
+    "@biomejs/biome": "^1.5.2",
     "@eslint/js": "^8.56.0",
     "@lerna-lite/changed": "^3.2.1",
     "@lerna-lite/cli": "^3.2.1",

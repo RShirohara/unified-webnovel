@@ -58,34 +58,12 @@ jobs:
       - name: Setup pnpm and install dependencies
         uses: ./.github/actions/setup-pnpm
 
-      - name: Setup reviewdog
-        uses: reviewdog/action-setup@v1.1.0
-
       - name: Run biome
-        env:
-          REVIEWDOG_FORMAT: Biome
-          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REVIEWDOG_REPORTER: github-check
-        run: |
-          echo '::group:: Running Biome with reviewdog'
-          pnpm exec biome ci --max-diagnostics=30 . 2>&1 1>/dev/null \
-          | sed 's/ *$//' \
-          | sed -z 's/\n\n\([^\n]*│\)/\n\n  ```\n\1/g' \
-          | sed -z 's/\(│[^\n]*\)\n\n/\1\n  ```\n\n/g' \
-          | reviewdog \
-              --efm="%-G%f ci ━%#" \
-              --efm="%-G%f lint ━%#" \
-              --efm="%-Gci ━%#" \
-              --efm="%E%f:%l:%c %.%#" \
-              --efm="%E%f %.%#" \
-              --efm="%C" \
-              --efm="%C  × %m" \
-              --efm="%C  %m" \
-              --efm="%-G%.%#" \
-              --name="Lint result (${REVIEWDOG_FORMAT})" \
-              --reporter="${REVIEWDOG_REPORTER}" \
-              --tee
-          echo '::endgroup::'
+        uses: mongolyy/reviewdog-action-biome@v1.0.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tool_name: Check result (Biome)
+          reporter: github-check
 
   test:
     name: Test (nodejs-${{ matrix.node-version }} on ${{ matrix.os }})

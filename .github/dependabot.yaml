@@ -18,16 +18,9 @@ updates:
     versioning-strategy: increase
     open-pull-requests-limit: 10
     groups:
-      eslint:
-        patterns:
-          - "eslint"
-          - "@eslint/*"
       lerna-lite:
         patterns:
           - "@lerna-lite/*"
-      typescript-eslint:
-        patterns:
-          - "@typescript-eslint/*"
       vitest:
         patterns:
           - "vitest"

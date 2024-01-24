@@ -47,6 +47,7 @@ declare module "pixiv-novel-parser" {
 
   export interface PixivImage extends Tag {
     name: "pixivimage";
+    // biome-ignore lint/style/useNamingConvention: interface defined in external module
     illustID: string;
     pageNumber?: number;
   }

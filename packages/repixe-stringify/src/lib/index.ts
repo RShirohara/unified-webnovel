@@ -9,7 +9,7 @@ import type {
   PxastContent,
   Root,
   Ruby,
-  Text
+  Text,
 } from "@rshirohara/pxast";
 
 export function toPixivNovel(tree: Root): string {
@@ -64,23 +64,22 @@ const compilers = {
   heading: {
     compile: ({ node }) => {
       return `[chapter: ${compileContent(node.children).join("")}]`;
-    }
+    },
   } as NodeCompiler<Heading>,
 
   pageHeading: {
     compile: ({ node }) => {
       if (node.pageNumber === 1) {
         return "";
-      } else {
-        return "[newpage]";
       }
-    }
+      return "[newpage]";
+    },
   } as NodeCompiler<PageHeading>,
 
   paragraph: {
     compile: ({ node }) => {
       return compileContent(node.children).join("");
-    }
+    },
   } as NodeCompiler<Paragraph>,
 
   link: {
@@ -88,38 +87,38 @@ const compilers = {
       return `[[jumpuri: ${compileContent(node.children).join("")} > ${
         node.url
       }]]`;
-    }
+    },
   } as NodeCompiler<Link>,
 
   image: {
     compile: ({ node }) => {
       return `[pixivimage:${node.illustId}${
-        node.pageNumber !== undefined ? "-" + node.pageNumber.toString() : ""
+        node.pageNumber !== undefined ? `-${node.pageNumber.toString()}` : ""
       }]`;
-    }
+    },
   } as NodeCompiler<Image>,
 
   pageReference: {
     compile: ({ node }) => {
       return `[jump:${node.pageNumber}]`;
-    }
+    },
   } as NodeCompiler<PageReference>,
 
   break: {
     compile: () => {
       return "\n";
-    }
+    },
   } as NodeCompiler<Break>,
 
   ruby: {
     compile: ({ node }) => {
       return `[[rb: ${node.value} > ${node.ruby}]]`;
-    }
+    },
   } as NodeCompiler<Ruby>,
 
   text: {
     compile: ({ node }) => {
       return node.value;
-    }
-  } as NodeCompiler<Text>
+    },
+  } as NodeCompiler<Text>,
 };

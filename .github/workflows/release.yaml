@@ -122,11 +122,12 @@ jobs:
 
       - name: Extract release notes of the target version
         run: |
-          cat ${{ matrix.location }}/CHANGELOG.md \
-          | awk '
+          awk '
               (s == 0) && /^## \[?${{ matrix.version }}\]?/ {s=1; print; next}
               (s == 1) && /^## / {s=0; next}
-              s == 1 {print}' - \
+              s == 1 {print}
+            ' \
+            ${{ matrix.location }}/CHANGELOG.md \
             > ${{ matrix.location }}/CHANGELOG-${{ matrix.version }}.md
 
       - name: Create release

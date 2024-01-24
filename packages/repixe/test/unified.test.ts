@@ -11,7 +11,7 @@ test("repixe", async () => {
     "[[jumpuri:リンク>https://example.com]]も使える。",
     "[newpage]",
     "ここからページが変わる。",
-    "[jump:01]ページへの参照。"
+    "[jump:01]ページへの参照。",
   ].join("\r\n");
   const expected = [
     "unified で Pixiv 小説構文を処理できるかのテスト。\n",
@@ -21,7 +21,7 @@ test("repixe", async () => {
     "[[jumpuri: リンク > https://example.com]]も使える。\n",
     "[newpage]\n",
     "ここからページが変わる。",
-    "[jump:1]ページへの参照。"
+    "[jump:1]ページへの参照。",
   ].join("\n");
 
   expect((await repixe().process(source)).toString()).toEqual(expected);

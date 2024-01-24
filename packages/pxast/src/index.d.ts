@@ -1,9 +1,9 @@
 // Type definitions for pxast.
 
 import type {
-  Node,
   Literal as UnistLiteral,
-  Parent as UnistParent
+  Node,
+  Parent as UnistParent,
 } from "unist";
 
 // Node

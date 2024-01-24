@@ -6,7 +6,7 @@ import type {
   PixivImage,
   PixivNode,
   Ruby,
-  Text
+  Text,
 } from "pixiv-novel-parser";
 
 export type PixivContent = PixivFlowContent | PixivPhrasingContent;
@@ -24,11 +24,12 @@ export interface Paragraph {
   elements: PixivPhrasingContent[];
 }
 
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: TODO refactor
 export function transform(nodes: PixivNode[]): PixivFlowContent[] {
   const result: PixivFlowContent[] = [];
   let internalNodes: PixivPhrasingContent[] = [];
 
-  [...nodes].forEach((node) => {
+  for (const node of [...nodes]) {
     if (
       node.type === "tag" &&
       (node.name === "newpage" || node.name === "chapter")
@@ -37,7 +38,7 @@ export function transform(nodes: PixivNode[]): PixivFlowContent[] {
         result.push({
           type: "tag",
           name: "paragraph",
-          elements: internalNodes
+          elements: internalNodes,
         });
         internalNodes = [];
       }
@@ -53,7 +54,7 @@ export function transform(nodes: PixivNode[]): PixivFlowContent[] {
             result.push({
               type: "tag",
               name: "paragraph",
-              elements: internalNodes
+              elements: internalNodes,
             });
             internalNodes = [];
           }
@@ -64,7 +65,7 @@ export function transform(nodes: PixivNode[]): PixivFlowContent[] {
     } else {
       internalNodes.push(node);
     }
-  });
+  }
   if (internalNodes.length >= 1) {
     result.push({ type: "tag", name: "paragraph", elements: internalNodes });
     internalNodes = [];

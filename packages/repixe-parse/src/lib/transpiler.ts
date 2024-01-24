@@ -10,23 +10,23 @@ import type {
   PhrasingContent,
   PxastContent,
   Ruby,
-  Text
+  Text,
 } from "@rshirohara/pxast";
 import type {
   Chapter as PixivChapter,
-  PixivImage,
   JumpPage as PixivJumpPage,
   JumpUrl as PixivJumpUrl,
   NewPage as PixivNewPage,
+  PixivImage,
   Ruby as PixivRuby,
-  Text as PixivText
+  Text as PixivText,
 } from "pixiv-novel-parser";
 
 import type {
+  Paragraph as PixivParagraph,
   PixivContent,
   PixivFlowContent,
-  Paragraph as PixivParagraph,
-  PixivPhrasingContent
+  PixivPhrasingContent,
 } from "./transformer.js";
 
 interface NodeTranspiler<T extends PixivContent, U extends PxastContent> {
@@ -39,24 +39,24 @@ interface NodeTranspiler<T extends PixivContent, U extends PxastContent> {
 }
 
 type NodeProcessor<T extends "pre" | "post"> = (
-  nodes: T extends "pre" ? PixivFlowContent[] : FlowContent[]
+  nodes: T extends "pre" ? PixivFlowContent[] : FlowContent[],
 ) => T extends "pre" ? PixivFlowContent[] : FlowContent[];
 
 export function transpile(nodes: PixivFlowContent[]): FlowContent[] {
   // preProcess
   let preProcessedNodes = [...nodes];
-  preProcessors.forEach((processor) => {
+  for (const processor of preProcessors) {
     preProcessedNodes = processor(preProcessedNodes);
-  });
+  }
 
   // transpile
   const transpiledNodes = transpileFlowContent(preProcessedNodes);
 
   // postProcess
   let postProcessedNodes = [...transpiledNodes];
-  postProcessors.forEach((processor) => {
+  for (const processor of postProcessors) {
     postProcessedNodes = processor(postProcessedNodes);
-  });
+  }
   return postProcessedNodes;
 }
 
@@ -66,29 +66,31 @@ function transpileFlowContent(nodes: PixivFlowContent[]): FlowContent[] {
   return [...nodes].map((node, index, array) => {
     if (transpilers.chapter.match(node)) {
       return transpilers.chapter.transpile({ node, index, array });
-    } else if (transpilers.newPage.match(node)) {
-      return transpilers.newPage.transpile({ node, index, array });
-    } else {
-      return transpilers.paragraph.transpile({ node, index, array });
     }
+    if (transpilers.newPage.match(node)) {
+      return transpilers.newPage.transpile({ node, index, array });
+    }
+    return transpilers.paragraph.transpile({ node, index, array });
   });
 }
 
 function transpilePhrasingContent(
-  nodes: PixivPhrasingContent[]
+  nodes: PixivPhrasingContent[],
 ): PhrasingContent[] {
   return [...nodes].map((node, index, array) => {
     if (transpilers.jumpPage.match(node)) {
       return transpilers.jumpPage.transpile({ node, index, array });
-    } else if (transpilers.jumpUrl.match(node)) {
-      return transpilers.jumpUrl.transpile({ node, index, array });
-    } else if (transpilers.pixivImage.match(node)) {
-      return transpilers.pixivImage.transpile({ node, index, array });
-    } else if (transpilers.ruby.match(node)) {
-      return transpilers.ruby.transpile({ node, index, array });
-    } else {
-      return transpilers.text.transpile({ node, index, array });
     }
+    if (transpilers.jumpUrl.match(node)) {
+      return transpilers.jumpUrl.transpile({ node, index, array });
+    }
+    if (transpilers.pixivImage.match(node)) {
+      return transpilers.pixivImage.transpile({ node, index, array });
+    }
+    if (transpilers.ruby.match(node)) {
+      return transpilers.ruby.transpile({ node, index, array });
+    }
+    return transpilers.text.transpile({ node, index, array });
   });
 }
 
@@ -100,9 +102,9 @@ const transpilers = {
     transpile: ({ node }) => {
       return {
         type: "heading",
-        children: transpilePhrasingContent(node.title)
+        children: transpilePhrasingContent(node.title),
       };
-    }
+    },
   } as NodeTranspiler<PixivChapter, Heading>,
 
   newPage: {
@@ -116,11 +118,11 @@ const transpilers = {
             return { node, index };
           })
           .filter(
-            (node) => node.node.type === "tag" && node.node.name === "newpage"
+            (node) => node.node.type === "tag" && node.node.name === "newpage",
           )
           .findIndex((node) => node.index === (index ?? 0)) + 1;
       return { type: "pageHeading", pageNumber };
-    }
+    },
   } as NodeTranspiler<PixivNewPage, PageHeading>,
 
   paragraph: {
@@ -130,9 +132,9 @@ const transpilers = {
     transpile: ({ node }) => {
       return {
         type: "paragraph",
-        children: transpilePhrasingContent(node.elements)
+        children: transpilePhrasingContent(node.elements),
       };
-    }
+    },
   } as NodeTranspiler<PixivParagraph, Paragraph>,
 
   jumpPage: {
@@ -141,7 +143,7 @@ const transpilers = {
     },
     transpile: ({ node }) => {
       return { type: "pageReference", pageNumber: node.pageNumber };
-    }
+    },
   } as NodeTranspiler<PixivJumpPage, PageReference>,
 
   jumpUrl: {
@@ -152,9 +154,9 @@ const transpilers = {
       return {
         type: "link",
         url: node.uri,
-        children: transpilePhrasingContent(node.title)
+        children: transpilePhrasingContent(node.title),
       };
-    }
+    },
   } as NodeTranspiler<PixivJumpUrl, Link>,
 
   pixivImage: {
@@ -165,9 +167,9 @@ const transpilers = {
       return {
         type: "image",
         illustId: node.illustID,
-        pageNumber: node.pageNumber ?? undefined
+        pageNumber: node.pageNumber ?? undefined,
       };
-    }
+    },
   } as NodeTranspiler<PixivImage, Image>,
 
   ruby: {
@@ -176,7 +178,7 @@ const transpilers = {
     },
     transpile: ({ node }) => {
       return { type: "ruby", value: node.rubyBase, ruby: node.rubyText };
-    }
+    },
   } as NodeTranspiler<PixivRuby, Ruby>,
 
   text: {
@@ -188,8 +190,8 @@ const transpilers = {
         return { type: "break" };
       }
       return { type: "text", value: node.val };
-    }
-  } as NodeTranspiler<PixivText, Text | Break>
+    },
+  } as NodeTranspiler<PixivText, Text | Break>,
 };
 
 // preProcessors
@@ -202,12 +204,12 @@ const preProcessors: NodeProcessor<"pre">[] = [
           node.name === "newpage" ||
           (node.name === "paragraph" &&
             node.elements.filter(
-              (node) => node.type === "tag" && node.name === "jump"
-            ).length >= 1)
+              (node) => node.type === "tag" && node.name === "jump",
+            ).length >= 1),
       ).length >= 1;
     return [
       containsPageHeadingRef ? { type: "tag", name: "newpage" } : undefined,
-      ...nodes
+      ...nodes,
     ].filter((node): node is PixivFlowContent => node !== undefined);
   },
 
@@ -219,23 +221,21 @@ const preProcessors: NodeProcessor<"pre">[] = [
       }
       return {
         ...node,
-        elements: node.elements
-          .map((node) => {
-            if (node.type !== "text") {
-              return node;
-            }
-            return node.val
-              .replaceAll("\n", "\0\n\0")
-              .split("\0")
-              .filter((val) => val.length >= 1)
-              .map((val) => {
-                return { ...node, val };
-              });
-          })
-          .flat()
+        elements: node.elements.flatMap((node): typeof node | PixivText[] => {
+          if (node.type !== "text") {
+            return node;
+          }
+          return node.val
+            .replaceAll("\n", "\0\n\0")
+            .split("\0")
+            .filter((val) => val.length >= 1)
+            .map((val) => {
+              return { ...node, val };
+            });
+        }),
       };
     });
-  }
+  },
 ];
 
 // postProcessors
@@ -254,18 +254,18 @@ const postProcessors: NodeProcessor<"post">[] = [
           }
           return {
             ...node,
-            children: node.children.filter(emptyElementsFilter)
+            children: node.children.filter(emptyElementsFilter),
           };
-        })
+        }),
       };
     });
-  }
+  },
 ];
 
 const emptyElementsFilter = (
   value: PxastContent,
   index: number,
-  array: PxastContent[]
+  array: PxastContent[],
 ) => {
   return !(
     (value.type === "break" || (value.type === "text" && value.value === "")) &&

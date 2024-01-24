@@ -2,8 +2,8 @@ import { describe, expect, test } from "vitest";
 
 import type { Root } from "@rshirohara/pxast";
 
-import { fromPixivNovel } from "~/lib";
 import { Parser } from "pixiv-novel-parser";
+import { fromPixivNovel } from "~/lib";
 
 describe("Text", () => {
   test("改行を持たない場合はそのまま追加される", () => {
@@ -13,9 +13,9 @@ describe("Text", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "一つの段落" }]
-        }
-      ]
+          children: [{ type: "text", value: "一つの段落" }],
+        },
+      ],
     };
     console.info("pixiv-novel-parser output", Parser.parse(source));
     expect(fromPixivNovel(source)).toEqual(expected);
@@ -28,13 +28,13 @@ describe("Text", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "一つ目の段落" }]
+          children: [{ type: "text", value: "一つ目の段落" }],
         },
         {
           type: "paragraph",
-          children: [{ type: "text", value: "二つ目の段落" }]
-        }
-      ]
+          children: [{ type: "text", value: "二つ目の段落" }],
+        },
+      ],
     };
     console.info("pixiv-novel-parser output", Parser.parse(source));
     expect(fromPixivNovel(source)).toEqual(expected);
@@ -48,25 +48,25 @@ describe("Text", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "一つ目の段落" }]
+          children: [{ type: "text", value: "一つ目の段落" }],
         },
         {
           type: "paragraph",
-          children: [{ type: "text", value: "二つ目の段落" }]
+          children: [{ type: "text", value: "二つ目の段落" }],
         },
         {
           type: "paragraph",
-          children: [{ type: "text", value: "三つ目の段落" }]
+          children: [{ type: "text", value: "三つ目の段落" }],
         },
         {
           type: "paragraph",
           children: [
             { type: "text", value: "四つ目の段落" },
             { type: "break" },
-            { type: "text", value: "四つ目の段落の二つ目の行" }
-          ]
-        }
-      ]
+            { type: "text", value: "四つ目の段落の二つ目の行" },
+          ],
+        },
+      ],
     };
     console.info("pixiv-novel-parser output", Parser.parse(source));
     expect(fromPixivNovel(source)).toEqual(expected);
@@ -81,16 +81,16 @@ describe("Mixed", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "一つ目の段落" }]
+          children: [{ type: "text", value: "一つ目の段落" }],
         },
         {
           type: "paragraph",
           children: [
             { type: "ruby", value: "二", ruby: "ふた" },
-            { type: "text", value: "つ目の段落" }
-          ]
-        }
-      ]
+            { type: "text", value: "つ目の段落" },
+          ],
+        },
+      ],
     };
     console.info("pixiv-novel-parser output", Parser.parse(source));
     expect(fromPixivNovel(source)).toEqual(expected);
@@ -103,16 +103,16 @@ describe("Mixed", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "一つ目の段落" }]
+          children: [{ type: "text", value: "一つ目の段落" }],
         },
         {
           type: "paragraph",
           children: [
             { type: "text", value: "二つ目の" },
-            { type: "ruby", value: "段落", ruby: "だんらく" }
-          ]
-        }
-      ]
+            { type: "ruby", value: "段落", ruby: "だんらく" },
+          ],
+        },
+      ],
     };
     console.info("pixiv-novel-parser output", Parser.parse(source));
     expect(fromPixivNovel(source)).toEqual(expected);
@@ -126,7 +126,7 @@ describe("Mixed", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "一つ目の段落" }]
+          children: [{ type: "text", value: "一つ目の段落" }],
         },
         {
           type: "paragraph",
@@ -135,14 +135,14 @@ describe("Mixed", () => {
             { type: "ruby", value: "段落", ruby: "だんらく" },
             { type: "text", value: "の中の" },
             { type: "break" },
-            { type: "text", value: "改行" }
-          ]
+            { type: "text", value: "改行" },
+          ],
         },
         {
           type: "paragraph",
-          children: [{ type: "text", value: "三つ目の段落" }]
-        }
-      ]
+          children: [{ type: "text", value: "三つ目の段落" }],
+        },
+      ],
     };
     console.info("pixiv-novel-parser output", Parser.parse(source));
     expect(fromPixivNovel(source)).toEqual(expected);
@@ -156,20 +156,20 @@ describe("Mixed", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "一つ目の段落" }]
+          children: [{ type: "text", value: "一つ目の段落" }],
         },
         {
           type: "paragraph",
           children: [
             { type: "text", value: "二つ目の" },
-            { type: "ruby", value: "段落", ruby: "だんらく" }
-          ]
+            { type: "ruby", value: "段落", ruby: "だんらく" },
+          ],
         },
         {
           type: "paragraph",
-          children: [{ type: "text", value: "三つ目の段落" }]
-        }
-      ]
+          children: [{ type: "text", value: "三つ目の段落" }],
+        },
+      ],
     };
     console.info("pixiv-novel-parser output", Parser.parse(source));
     expect(fromPixivNovel(source)).toEqual(expected);

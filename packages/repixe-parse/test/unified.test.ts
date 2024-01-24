@@ -2,8 +2,8 @@ import { expect, test } from "vitest";
 
 import { unified } from "unified";
 
-import { repixeParse } from "~/";
 import type { Root } from "@rshirohara/pxast";
+import { repixeParse } from "~/";
 
 test("repixeParse", () => {
   const source = [
@@ -14,7 +14,7 @@ test("repixeParse", () => {
     "[[jumpuri:リンク>https://example.com]]も使える。",
     "[newpage]",
     "ここからページが変わる。",
-    "[jump:01]ページへの参照。"
+    "[jump:01]ページへの参照。",
   ].join("\r\n");
   const expected: Root = {
     type: "root",
@@ -25,9 +25,9 @@ test("repixeParse", () => {
         children: [
           {
             type: "text",
-            value: "unified で Pixiv 小説構文をパースできるかのテスト。"
-          }
-        ]
+            value: "unified で Pixiv 小説構文をパースできるかのテスト。",
+          },
+        ],
       },
       {
         type: "paragraph",
@@ -36,8 +36,8 @@ test("repixeParse", () => {
           { type: "ruby", value: "段落", ruby: "だんらく" },
           { type: "text", value: "目。" },
           { type: "break" },
-          { type: "text", value: "ここが二行目。" }
-        ]
+          { type: "text", value: "ここが二行目。" },
+        ],
       },
       {
         type: "paragraph",
@@ -47,10 +47,10 @@ test("repixeParse", () => {
           {
             type: "link",
             url: "https://example.com",
-            children: [{ type: "text", value: "リンク" }]
+            children: [{ type: "text", value: "リンク" }],
           },
-          { type: "text", value: "も使える。" }
-        ]
+          { type: "text", value: "も使える。" },
+        ],
       },
       { type: "pageHeading", pageNumber: 2 },
       {
@@ -59,10 +59,10 @@ test("repixeParse", () => {
           { type: "text", value: "ここからページが変わる。" },
           { type: "break" },
           { type: "pageReference", pageNumber: 1 },
-          { type: "text", value: "ページへの参照。" }
-        ]
-      }
-    ]
+          { type: "text", value: "ページへの参照。" },
+        ],
+      },
+    ],
   };
   expect(unified().use(repixeParse).parse(source)).toEqual(expected);
 });

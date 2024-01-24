@@ -2,9 +2,7 @@
   "$schema": "./node_modules/@lerna-lite/cli/schemas/lerna-schema.json",
   "version": "independent",
   "npmClient": "pnpm",
-  "packages": [
-    "./packages/*"
-  ],
+  "packages": ["./packages/*"],
   "useWorkspaces": true,
   "changelogPreset": {
     "name": "conventionalcommits",

@@ -120,12 +120,21 @@ jobs:
           git tag "${TAG_PREFIX}" "${{ github.sha }}" -a -m "${TAG_PREFIX}"
           git push origin "${TAG_PREFIX}"
 
+      - name: Extract release notes of the target version
+        run: |
+          cat ${{ matrix.location }}/CHANGELOG.md \
+          | awk '
+              (s == 0) && /^## \[?${{ matrix.version }}\]?/ {s=1; print; next}
+              (s == 1) && /^## / {s=0; next}
+              s == 1 {print}' - \
+            > ${{ matrix.location }}/CHANGELOG-${{ matrix.version }}.md
+
       - name: Create release
         uses: softprops/action-gh-release@v0.1.15
         with:
           name: ${{ matrix.name }} v${{ matrix.version }}
           tag_name: ${{ matrix.name }}@${{ matrix.version }}
-          body_path: ${{ matrix.location }}/CHANGELOG.md
+          body_path: ${{ matrix.location }}/CHANGELOG-${{ matrix.version }}.md
 
   publish:
     name: Publish packages

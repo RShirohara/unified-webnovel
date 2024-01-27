@@ -23,11 +23,11 @@
     "@lerna-lite/cli": "^3.2.1",
     "@lerna-lite/publish": "^3.2.1",
     "@lerna-lite/version": "^3.2.1",
-    "@vitest/coverage-v8": "^1.2.1",
+    "@vitest/coverage-v8": "^1.2.2",
     "clean-package": "^2.2.0",
     "conventional-changelog-conventionalcommits": "^7.0.2",
     "typescript": "^5.3.3",
     "vite-tsconfig-paths": "^4.3.1",
-    "vitest": "^1.2.1"
+    "vitest": "^1.2.2"
   }
 }

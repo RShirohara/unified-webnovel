@@ -1,8 +1,6 @@
-import { describe, expect, test } from "vitest";
-
 import type { Root } from "@rshirohara/pxast";
-
 import { Parser } from "pixiv-novel-parser";
+import { describe, expect, test } from "vitest";
 import { fromPixivNovel } from "~/lib";
 
 describe("Text", () => {

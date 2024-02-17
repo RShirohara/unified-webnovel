@@ -1,9 +1,7 @@
-import { expect, test } from "vitest";
-
-import { unified } from "unified";
-
 import type { Root } from "@rshirohara/pxast";
-import { repixeParse } from "~/";
+import { unified } from "unified";
+import { expect, test } from "vitest";
+import { repixeParse } from "~/index";
 
 test("repixeParse", () => {
   const source = [

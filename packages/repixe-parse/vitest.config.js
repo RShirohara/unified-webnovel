@@ -8,7 +8,7 @@ export default defineConfig({
     include: ["./test/**/*.test.ts"],
     environment: "node",
     alias: {
-      "~": new URL("./src", import.meta.url).pathname,
+      "~/": new URL("./src/", import.meta.url).pathname,
     },
   },
   plugins: [tsconfigPaths({ root: "./test" })],

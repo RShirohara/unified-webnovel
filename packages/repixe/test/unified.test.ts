@@ -1,6 +1,5 @@
 import { expect, test } from "vitest";
-
-import { repixe } from "~/";
+import { repixe } from "~/index";
 
 test("repixe", async () => {
   const source = [

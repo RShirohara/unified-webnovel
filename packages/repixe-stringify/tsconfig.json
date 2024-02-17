@@ -4,7 +4,7 @@
     "rootDir": "./",
     "baseUrl": "./src",
     "paths": {
-      "~*": [".*"]
+      "~/*": ["./*"]
     }
   },
   "include": ["./src", "./test"]

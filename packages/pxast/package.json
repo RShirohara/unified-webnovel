@@ -35,6 +35,6 @@
     "provenance": true
   },
   "clean-package": {
-    "remove": ["scripts", "devDependencies", "publishConfig", "clean-package"]
+    "remove": ["devDependencies", "publishConfig", "clean-package"]
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@rshirohara/repixe-parse",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "repixe plugin to add support for parsing pixiv novel format.",
   "keywords": [
     "unified",
@@ -40,8 +40,8 @@
     "unified": "^11.0.4"
   },
   "devDependencies": {
-    "@unified-webnovel/tsconfig": "workspace:*",
-    "@types/pixiv-novel-parser": "workspace:*"
+    "@types/pixiv-novel-parser": "workspace:*",
+    "@unified-webnovel/tsconfig": "workspace:*"
   },
   "publishConfig": {
     "access": "public",

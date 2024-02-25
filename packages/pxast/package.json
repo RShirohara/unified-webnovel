@@ -1,12 +1,8 @@
 {
   "name": "@rshirohara/pxast",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Pixiv novel ast definition.",
-  "keywords": [
-    "unified",
-    "repixe",
-    "pixiv"
-  ],
+  "keywords": ["unified", "repixe", "pixiv"],
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/pxast#readme",
   "bugs": {
     "url": "https://github.com/RShirohara/unified-webnovel/issues"
@@ -23,9 +19,7 @@
   },
   "main": "",
   "types": "./src/index.d.ts",
-  "files": [
-    "./src"
-  ],
+  "files": ["./src"],
   "scripts": {
     "prepack": "clean-package",
     "postpack": "clean-package restore"
@@ -41,11 +35,6 @@
     "provenance": true
   },
   "clean-package": {
-    "remove": [
-      "scripts",
-      "devDependencies",
-      "publishConfig",
-      "clean-package"
-    ]
+    "remove": ["scripts", "devDependencies", "publishConfig", "clean-package"]
   }
 }

@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.0](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/pxast@0.1.5...@rshirohara/pxast@0.2.0) (2024-02-25)
+
+### ⚠ BREAKING CHANGES
+
+* definition of pxast content model stored in other phrasing content (#131)
+
+### Bug Fixes
+
+* definition of pxast content model stored in other phrasing content ([#131](https://github.com/RShirohara/unified-webnovel/issues/131)) ([4a84564](https://github.com/RShirohara/unified-webnovel/commit/4a84564eba310c24bc257738a6c0c2525e6545b4))
+
+### Code Refactoring
+
+* fix code reported by biome ([#244](https://github.com/RShirohara/unified-webnovel/issues/244)) ([59900d0](https://github.com/RShirohara/unified-webnovel/commit/59900d08e01e4d6ce25cdb5da2e5ab85b18e8129)), closes [#190](https://github.com/RShirohara/unified-webnovel/issues/190)
+
+### Build System
+
+* **deps:** bump @types/unist from 3.0.0 to 3.0.1 ([#174](https://github.com/RShirohara/unified-webnovel/issues/174)) ([dd6369c](https://github.com/RShirohara/unified-webnovel/commit/dd6369c85d61100afc0c1ec7a8f72ff42669ed11))
+* **deps:** bump @types/unist from 3.0.1 to 3.0.2 ([#185](https://github.com/RShirohara/unified-webnovel/issues/185)) ([fc02cef](https://github.com/RShirohara/unified-webnovel/commit/fc02cef92a702c7625029959a13c64735f9623e8))
+* use `*.ts` files with exports. ([#220](https://github.com/RShirohara/unified-webnovel/issues/220)) ([e1a4784](https://github.com/RShirohara/unified-webnovel/commit/e1a478402b68331636da1fc9c46cb9274004ba87)), closes [#191](https://github.com/RShirohara/unified-webnovel/issues/191)
+
 ## [0.1.5](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/pxast@0.1.4...@rshirohara/pxast@0.1.5) (2023-08-06)
 
 **Note:** Version bump only for package @rshirohara/pxast

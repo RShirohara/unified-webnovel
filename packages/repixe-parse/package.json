@@ -1,13 +1,8 @@
 {
   "name": "@rshirohara/repixe-parse",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "repixe plugin to add support for parsing pixiv novel format.",
-  "keywords": [
-    "unified",
-    "repixe",
-    "repixe-plugin",
-    "pixiv"
-  ],
+  "keywords": ["unified", "repixe", "repixe-plugin", "pixiv"],
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/repixe-parse#readme",
   "bugs": {
     "url": "https://github.com/RShirohara/unified-webnovel/issues"
@@ -25,10 +20,7 @@
   "type": "module",
   "exports": "./src/index.ts",
   "types": "./src/index.ts",
-  "files": [
-    "./dist",
-    "./src"
-  ],
+  "files": ["./dist", "./src"],
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
     "prepack": "pnpm run build && clean-package",
@@ -40,8 +32,8 @@
     "unified": "^11.0.4"
   },
   "devDependencies": {
-    "@unified-webnovel/tsconfig": "workspace:*",
-    "@types/pixiv-novel-parser": "workspace:*"
+    "@types/pixiv-novel-parser": "workspace:*",
+    "@unified-webnovel/tsconfig": "workspace:*"
   },
   "publishConfig": {
     "access": "public",
@@ -52,11 +44,6 @@
       "exports": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "remove": [
-      "scripts",
-      "devDependencies",
-      "publishConfig",
-      "clean-package"
-    ]
+    "remove": ["scripts", "devDependencies", "publishConfig", "clean-package"]
   }
 }

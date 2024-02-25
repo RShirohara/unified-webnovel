@@ -1,4 +1,4 @@
-name: CI (Node.js package)
+name: CI (npm package)
 
 on:
   pull_request:

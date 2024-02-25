@@ -2,7 +2,7 @@
 
 [![LICENSE][license-badge]][license]
 [![Release and Publish](https://github.com/RShirohara/unified-webnovel/actions/workflows/release.yaml/badge.svg?branch=main)](https://github.com/RShirohara/unified-webnovel/actions/workflows/release.yaml)
-[![CI (Node.js package)](https://github.com/RShirohara/unified-webnovel/actions/workflows/ci-package.yaml/badge.svg?branch=main)](https://github.com/RShirohara/unified-webnovel/actions/workflows/ci-package.yaml)
+[![CI (npm package)](https://github.com/RShirohara/unified-webnovel/actions/workflows/ci-package.yaml/badge.svg?branch=main)](https://github.com/RShirohara/unified-webnovel/actions/workflows/ci-package.yaml)
 
 [unified][] packages for web novel.
 

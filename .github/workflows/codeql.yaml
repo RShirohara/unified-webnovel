@@ -4,15 +4,15 @@ on:
   push:
     branches: ["main"]
   pull_request:
-    types: [opened, ready_for_review, review_requested]
+    types: [ready_for_review, review_requested]
     paths:
       [
-        "pnpm-lock.yaml",
+        ".github/workflows/codeql.yaml",
         "**/package.json",
         "**/tsconfig.json",
         "packages/**/*.js",
         "packages/**/*.ts",
-        ".github/workflows/codeql.yaml"
+        "pnpm-lock.yaml"
       ]
   schedule:
     - cron: "31 13 * * 5"
@@ -35,7 +35,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["javascript"]
+        language: ["javascript-typescript"]
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby', 'swift' ]
         # Use only 'java' to analyze code written in Java, Kotlin or both
         # Use only 'javascript' to analyze code written in JavaScript, TypeScript or both

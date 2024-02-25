@@ -1,7 +1,7 @@
 import type { Root } from "@rshirohara/pxast";
 import { Parser } from "pixiv-novel-parser";
 import { describe, expect, test } from "vitest";
-import { fromPixivNovel } from "~/lib";
+import { fromPixivNovel } from "~/lib/index.js";
 
 describe("Text", () => {
   test("改行を持たない場合はそのまま追加される", () => {

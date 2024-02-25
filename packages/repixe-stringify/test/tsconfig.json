@@ -1,6 +1,0 @@
-{
-  "extends": [
-    "../tsconfig.json",
-    "@unified-webnovel/tsconfig/tsconfig.test.json"
-  ]
-}

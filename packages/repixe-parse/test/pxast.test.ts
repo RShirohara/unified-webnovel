@@ -1,6 +1,6 @@
 import type { Root } from "@rshirohara/pxast";
 import { describe, expect, test } from "vitest";
-import { fromPixivNovel } from "~/lib";
+import { fromPixivNovel } from "~/lib/index.js";
 
 describe("FlowContent", () => {
   describe("Heading", () => {

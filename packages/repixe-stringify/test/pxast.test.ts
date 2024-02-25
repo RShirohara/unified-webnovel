@@ -1,6 +1,6 @@
 import type { Root } from "@rshirohara/pxast";
 import { describe, expect, test } from "vitest";
-import { toPixivNovel } from "~/lib";
+import { toPixivNovel } from "~/lib/index.js";
 
 describe("Root", () => {
   test("複数の子要素は '\\n\\n' で結合される", () => {

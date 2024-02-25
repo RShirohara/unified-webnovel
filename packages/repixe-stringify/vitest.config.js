@@ -6,7 +6,7 @@ export default defineConfig({
   test: {
     name: "repixe-stringify",
     include: ["./test/**/*.test.ts"],
-    environment: "node",
+    environment: "edge-runtime",
     alias: {
       "~/": new URL("./src/", import.meta.url).pathname,
     },

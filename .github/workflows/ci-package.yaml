@@ -2,15 +2,15 @@ name: CI (Node.js package)
 
 on:
   pull_request:
-    types: [opened, ready_for_review, review_requested]
+    types: [ready_for_review, review_requested]
     paths:
       [
         ".github/workflows/ci-package.yaml",
         "**/package.json",
         "**/tsconfig.json",
+        "biome.json",
         "packages/**/*.js",
         "packages/**/*.ts",
-        "eslint.config.js",
         "pnpm-lock.yaml"
       ]
   push:

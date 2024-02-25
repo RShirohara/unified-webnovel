@@ -2,7 +2,7 @@ name: CI (GitHub Actions)
 
 on:
   pull_request:
-    types: [opened, ready_for_review, review_requested]
+    types: [ready_for_review, review_requested]
     paths: [".github/**/*.yaml"]
   push:
     branches: [main]

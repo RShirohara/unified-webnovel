@@ -74,7 +74,12 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        node-version: [18, 20, latest]
+        label: [
+          edge-runtime,
+          nodejs-latest,
+          nodejs-20,
+          nodejs-18
+        ]
         include:
           - label: edge-runtime
             node-version: latest

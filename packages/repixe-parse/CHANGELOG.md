@@ -3,7 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.1.6](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-parse@0.1.5...@rshirohara/repixe-parse@0.1.6) (2024-02-25)
+## [0.2.0](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-parse@0.1.5...@rshirohara/repixe-parse@0.2.0) (2024-02-25)
+
+### ⚠ BREAKING CHANGES
+
+* definition of pxast content model stored in other phrasing content (#131)
+* drop Node.js v16 support (#158)
 
 ### Code Refactoring
 

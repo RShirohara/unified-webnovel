@@ -3,7 +3,11 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.1.1](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe@0.1.0...@rshirohara/repixe@0.1.1) (2024-02-25)
+## [0.2.0](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe@0.1.0...@rshirohara/repixe@0.2.0) (2024-02-25)
+
+### ⚠ BREAKING CHANGES
+
+* drop Node.js v16 support (#158)
 
 ### Code Refactoring
 

@@ -66,7 +66,7 @@ jobs:
           reporter: github-check
 
   test:
-    name: Test (nodejs-${{ matrix.node-version }} on ${{ matrix.os }})
+    name: Test (${{ matrix.label }})
     runs-on: ${{ matrix.os }}
     needs: build
 
@@ -74,7 +74,19 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        node-version: [18, 20, latest]
+        include:
+          - label: edge-runtime
+            node-version: latest
+            test-environment: edge-runtime
+          - label: nodejs-latest
+            node-version: latest
+            test-environment: node
+          - label: nodejs-20
+            node-version: 20
+            test-environment: node
+          - label: nodejs-18
+            node-version: 18
+            test-environment: node
 
     permissions:
       checks: write
@@ -96,20 +108,21 @@ jobs:
       - name: Run test
         run: |
           pnpm run test \
-            --reporter basic \
-            --reporter junit \
-            --outputFile ./result.xml \
+            --environment=${{ matrix.test-environment }} \
+            --reporter=basic \
+            --reporter=junit \
+            --outputFile=./result.xml \
             --silent
 
       - name: Report test result
         if: ${{ (success() || failure()) }}
         uses: mikepenz/action-junit-report@v4.1.0
         with:
-          check_name: Test result (nodejs-${{ matrix.node-version }} on ${{ matrix.os }})
+          check_name: Test result (${{ matrix.label }})
           report_paths: ./result.xml
 
       - name: Report test coverage
-        if: ${{ (success() || failure()) && (github.event_name == 'pull_request') && (matrix.os == 'ubuntu-latest') && (matrix.node-version == 'latest') }}
+        if: ${{ (success() || failure()) && (github.event_name == 'pull_request') && (matrix.os == 'ubuntu-latest') && (matrix.label == 'edge-runtime') }}
         uses: davelosert/vitest-coverage-report-action@v2.2.1
         with:
           vite-config-path: ./vitest.workspace.js

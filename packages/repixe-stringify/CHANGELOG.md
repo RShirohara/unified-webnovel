@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-stringify@0.2.0...@rshirohara/repixe-stringify@0.2.1) (2024-02-25)
+
+### Build System
+
+* fix section to be deleted by clean-package ([#260](https://github.com/RShirohara/unified-webnovel/issues/260)) ([a7b8c84](https://github.com/RShirohara/unified-webnovel/commit/a7b8c840872ac99be29995da743100d7be68281a))
+
 ## [0.2.0](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-stringify@0.1.5...@rshirohara/repixe-stringify@0.2.0) (2024-02-25)
 
 ### ⚠ BREAKING CHANGES

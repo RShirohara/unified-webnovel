@@ -15,12 +15,17 @@
 - [repixe-parse](./packages/repixe-parse)
 - [repixe-stringify](./packages/repixe-stringify)
 
+### [Kakuyomu][kakuyomu]
+
+- [kkast](./packages/kkast)
+
 ## License
 
 [MIT][license]
 
 <!-- Link Definitions -->
 
+[kakuyomu]: https://kakuyomu.jp/
 [license-badge]: https://img.shields.io/github/license/RShirohara/unified-webnovel
 [license]: ./LICENSE
 [pixiv-novel]: https://www.pixiv.net/novel/

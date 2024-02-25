@@ -1,6 +1,6 @@
 {
   "name": "@rshirohara/repixe",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "unified processor with support for parsing and serializing pixiv novel format input/output.",
   "keywords": ["unified", "repixe", "pixiv"],
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/repixe#readme",

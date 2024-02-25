@@ -2,12 +2,7 @@
   "name": "@rshirohara/repixe-stringify",
   "version": "0.1.6",
   "description": "repixe plugin to add support for serializing pixiv novel format.",
-  "keywords": [
-    "unified",
-    "repixe",
-    "repixe-plugin",
-    "pixiv"
-  ],
+  "keywords": ["unified", "repixe", "repixe-plugin", "pixiv"],
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/repixe-stringify#readme",
   "bugs": {
     "url": "https://github.com/RShirohara/unified-webnovel/issues"
@@ -25,10 +20,7 @@
   "type": "module",
   "exports": "./src/index.ts",
   "types": "./src/index.ts",
-  "files": [
-    "./dist",
-    "./src"
-  ],
+  "files": ["./dist", "./src"],
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
     "prepack": "pnpm run build && clean-package",
@@ -50,11 +42,6 @@
       "exports": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "remove": [
-      "scripts",
-      "devDependencies",
-      "publishConfig",
-      "clean-package"
-    ]
+    "remove": ["scripts", "devDependencies", "publishConfig", "clean-package"]
   }
 }

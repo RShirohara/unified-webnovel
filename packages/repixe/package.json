@@ -2,11 +2,7 @@
   "name": "@rshirohara/repixe",
   "version": "0.1.1",
   "description": "unified processor with support for parsing and serializing pixiv novel format input/output.",
-  "keywords": [
-    "unified",
-    "repixe",
-    "pixiv"
-  ],
+  "keywords": ["unified", "repixe", "pixiv"],
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/repixe#readme",
   "bugs": {
     "url": "https://github.com/RShirohara/unified-webnovel/issues"
@@ -24,10 +20,7 @@
   "type": "module",
   "exports": "./src/index.ts",
   "types": "./src/index.ts",
-  "files": [
-    "./dist",
-    "./src"
-  ],
+  "files": ["./dist", "./src"],
   "scripts": {
     "build": "tsc -b tsconfig.build.json",
     "prepack": "pnpm run build && clean-package",
@@ -52,11 +45,6 @@
       "exports": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "remove": [
-      "scripts",
-      "devDependencies",
-      "publishConfig",
-      "clean-package"
-    ]
+    "remove": ["scripts", "devDependencies", "publishConfig", "clean-package"]
   }
 }

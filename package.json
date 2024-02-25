@@ -5,7 +5,9 @@
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@8.15.3",
-  "workspaces": ["./packages/*"],
+  "workspaces": [
+    "./packages/*"
+  ],
   "scripts": {
     "build": "pnpm run -r build",
     "check": "biome check .",
@@ -17,6 +19,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.5.3",
+    "@edge-runtime/vm": "^3.2.0",
     "@lerna-lite/changed": "^3.3.0",
     "@lerna-lite/cli": "^3.3.0",
     "@lerna-lite/publish": "^3.3.0",

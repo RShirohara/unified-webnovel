@@ -22,7 +22,9 @@
   "types": "./src/index.ts",
   "files": ["./dist", "./src"],
   "scripts": {
-    "build": "tsc -b tsconfig.build.json",
+    "build": "pnpm run build:peg && pnpm run build:ts",
+    "build:peg": "peggy --cache --format=es --plugin=./node_modules/ts-pegjs/dist/tspegjs.js -o ./src/lib/parser.peg.ts ./syntax/kakuyomu.peggy",
+    "build:ts": "tsc -b tsconfig.build.json",
     "prepack": "pnpm run build && clean-package",
     "postpack": "clean-package restore"
   },
@@ -31,7 +33,9 @@
     "unified": "^11.0.4"
   },
   "devDependencies": {
-    "@unified-webnovel/tsconfig": "workspace:*"
+    "@unified-webnovel/tsconfig": "workspace:*",
+    "peggy": "^3.0.2",
+    "ts-pegjs": "^4.2.1"
   },
   "publishConfig": {
     "access": "public",

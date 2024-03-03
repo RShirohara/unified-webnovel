@@ -88,11 +88,11 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
       peggy:
-        specifier: ^3.0.2
-        version: 3.0.2
+        specifier: ^4.0.2
+        version: 4.0.2
       ts-pegjs:
         specifier: ^4.2.1
-        version: 4.2.1(peggy@3.0.2)
+        version: 4.2.1(peggy@4.0.2)
 
   packages/repixe:
     dependencies:
@@ -1129,6 +1129,13 @@ packages:
       '@octokit/openapi-types': 19.1.0
     dev: true
 
+  /@peggyjs/from-mem@1.2.1:
+    resolution: {integrity: sha512-qh5zG8WKT36142/FqOYtpF0scRR3ZJ3H5XST1bJ/KV2FvyB5MvUB/tB9ZjihRe1iKjJD4PBOZczzwEx7hJtgMw==}
+    engines: {node: '>=18'}
+    dependencies:
+      semver: 7.6.0
+    dev: true
+
   /@pkgjs/parseargs@0.11.0:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
@@ -1780,9 +1787,9 @@ packages:
       wcwidth: 1.0.1
     dev: true
 
-  /commander@10.0.1:
-    resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
-    engines: {node: '>=14'}
+  /commander@12.0.0:
+    resolution: {integrity: sha512-MwVNWlYjDTtOjX5PiD7o5pK0UrFU/OYgcJfjjK4RaHZETNtjJqrZa9Y9ds88+A+f+d5lv+561eZ+yCKoS3gbAA==}
+    engines: {node: '>=18'}
     dev: true
 
   /common-ancestor-path@1.0.1:
@@ -3511,12 +3518,13 @@ packages:
     resolution: {integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==}
     dev: true
 
-  /peggy@3.0.2:
-    resolution: {integrity: sha512-n7chtCbEoGYRwZZ0i/O3t1cPr6o+d9Xx4Zwy2LYfzv0vjchMBU0tO+qYYyvZloBPcgRgzYvALzGWHe609JjEpg==}
-    engines: {node: '>=14'}
+  /peggy@4.0.2:
+    resolution: {integrity: sha512-j4cepPgB20V7honmTAI+7U022y/n/wVi7Rbbd2QrMl2nifFECpngvA6Zhrz/JdmZ5LIBoTdkgHcDzzaA6C4ABg==}
+    engines: {node: '>=18'}
     hasBin: true
     dependencies:
-      commander: 10.0.1
+      '@peggyjs/from-mem': 1.2.1
+      commander: 12.0.0
       source-map-generator: 0.8.0
     dev: true
 
@@ -4094,13 +4102,13 @@ packages:
       code-block-writer: 12.0.0
     dev: true
 
-  /ts-pegjs@4.2.1(peggy@3.0.2):
+  /ts-pegjs@4.2.1(peggy@4.0.2):
     resolution: {integrity: sha512-mK/O2pu6lzWUeKpEMA/wsa0GdYblfjJI1y0s0GqH6xCTvugQDOWPJbm5rY6AHivpZICuXIriCb+a7Cflbdtc2w==}
     hasBin: true
     peerDependencies:
       peggy: ^3.0.2
     dependencies:
-      peggy: 3.0.2
+      peggy: 4.0.2
       prettier: 2.8.8
       ts-morph: 18.0.0
     dev: true

@@ -20,6 +20,10 @@ updates:
       lerna-lite:
         patterns:
           - "@lerna-lite/*"
+      peggy:
+        patterns:
+          - "peggy"
+          - "ts-pegjs"
       vitest:
         patterns:
           - "vitest"

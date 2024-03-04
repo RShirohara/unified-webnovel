@@ -44,6 +44,12 @@
       "exports": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "remove": ["devDependencies", "publishConfig", "clean-package"]
+    "remove": [
+      "scripts.build",
+      "devDependencies.@types/pixiv-novel-parser",
+      "devDependencies.@unified-webnovel/tsconfig",
+      "publishConfig",
+      "clean-package"
+    ]
   }
 }

@@ -35,6 +35,10 @@
     "provenance": true
   },
   "clean-package": {
-    "remove": ["devDependencies", "publishConfig", "clean-package"]
+    "remove": [
+      "devDependencies.@unified-webnovel/tsconfig",
+      "publishConfig",
+      "clean-package"
+    ]
   }
 }

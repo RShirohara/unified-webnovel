@@ -18,6 +18,7 @@
 ### [Kakuyomu][kakuyomu]
 
 - [kkast](./packages/kkast)
+- [rekurke-parse](./packages/rekurke-parse)
 
 ## License
 
@@ -25,8 +26,8 @@
 
 <!-- Link Definitions -->
 
-[kakuyomu]: https://kakuyomu.jp/
+[kakuyomu]: https://kakuyomu.jp
 [license-badge]: https://img.shields.io/github/license/RShirohara/unified-webnovel
-[license]: ./LICENSE
-[pixiv-novel]: https://www.pixiv.net/novel/
-[unified]: https://github.com/unifiedjs/unified/
+[license]: ./LICENSE.md
+[pixiv-novel]: https://www.pixiv.net/novel
+[unified]: https://github.com/unifiedjs/unified

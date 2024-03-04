@@ -424,9 +424,9 @@ that is intended to be stored in [**phrasing**][dfn-phrasing-content] content.
 [dfn-pxast-content]: #content-model
 [dfn-unist-literal]: https://github.com/syntax-tree/unist#literal
 [dfn-unist-parent]: https://github.com/syntax-tree/unist#parent
-[license]: ./LICENSE
+[license]: ./LICENSE.md
 [npm]: https://docs.npmjs.com/cli/install
-[pixiv-novel]: https://www.pixiv.net/novel/
+[pixiv-novel]: https://www.pixiv.net/novel
 [syntax-tree]: https://github.com/syntax-tree/unist#syntax-tree
 [term-child]: https://github.com/syntax-tree/unist#child
 [term-root]: https://github.com/syntax-tree/unist#root

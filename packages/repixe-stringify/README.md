@@ -141,10 +141,10 @@ There are no extra exported types.
 <!-- Link Definitions -->
 
 [license-badge]: https://img.shields.io/github/license/RShirohara/unified-webnovel
-[license]: ./LICENSE
+[license]: ./LICENSE.md
 [npm]: https://docs.npmjs.com/cli/install
-[pixiv-novel]: https://www.pixiv.net/novel/
-[pxast]: https://github.com/RShirohara/unified-webnovel/tree/main/packages/pxast
+[pixiv-novel]: https://www.pixiv.net/novel
+[pxast]: ../pxast
 [repixe]: ../repixe
 [typescript]: https://www.typescriptlang.org
-[unified]: https://github.com/unifiedjs/unified/
+[unified]: https://github.com/unifiedjs/unified

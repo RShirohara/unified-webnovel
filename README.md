@@ -18,6 +18,7 @@
 ### [Kakuyomu][kakuyomu]
 
 - [kkast](./packages/kkast)
+- [rekurke-parse](./packages/rekurke-parse)
 
 ## License
 

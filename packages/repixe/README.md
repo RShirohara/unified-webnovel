@@ -99,13 +99,13 @@ There are no extra exported types.
 <!-- Lind definitions -->
 
 [license-badge]: https://img.shields.io/github/license/RShirohara/unified-webnovel
-[license]: ./LICENSE
+[license]: ./LICENSE.md
 [npm]: https://docs.npmjs.com/cli/install
 [pixiv-novel-parser]: https://github.com/pixiv/pixiv-novel-parser
 [pixiv-novel-syntax]: https://www.pixiv.help/hc/ja/articles/235584168-%E5%B0%8F%E8%AA%AC%E4%BD%9C%E5%93%81%E3%81%AE%E6%9C%AC%E6%96%87%E5%86%85%E3%81%AB%E4%BD%BF%E3%81%88%E3%82%8B%E7%89%B9%E6%AE%8A%E3%82%BF%E3%82%B0%E3%81%A8%E3%81%AF-
-[pixiv-novel]: https://www.pixiv.net/novel/
+[pixiv-novel]: https://www.pixiv.net/novel
 [pxast]: ../pxast
 [repixe-parse]: ../repixe-parse
 [repixe-stringify]: ../repixe-stringify
 [typescript]: https://www.typescriptlang.org
-[unified]: https://github.com/unifiedjs/unified/
+[unified]: https://github.com/unifiedjs/unified

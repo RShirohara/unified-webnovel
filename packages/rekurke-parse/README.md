@@ -116,7 +116,7 @@ The are no extra exported types.
 [kakuyomu-novel]: https://kakuyomu.jp
 [kkast]: ../kkast
 [license-badge]: https://img.shields.io/github/license/RShirohara/unified-webnovel
-[license]: ./LICENSE
+[license]: ./LICENSE.md
 [npm]: https://docs.npmjs.com/cli/install
 [rekurke]: ../rekurke
 [typescript]: https://www.typescriptlang.org

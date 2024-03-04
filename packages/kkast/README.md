@@ -329,8 +329,8 @@ type PhrasingContent = Text | Ruby | Emphasis | Break;
 [dfn-text]: #text
 [dfn-unist-literal]: https://github.com/syntax-tree/unist#literal
 [dfn-unist-parent]: https://github.com/syntax-tree/unist#parent
-[kakuyomu-novel]: https://kakuyomu.jp/
-[license]: ./LICENSE
+[kakuyomu-novel]: https://kakuyomu.jp
+[license]: ./LICENSE.md
 [npm]: https://docs.npmjs.com/cli/install
 [syntax-tree]: https://github.com/syntax-tree/unist#syntax-tree
 [term-child]: https://github.com/syntax-tree/unist#child

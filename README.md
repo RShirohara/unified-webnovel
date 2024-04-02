@@ -19,6 +19,7 @@
 
 - [kkast](./packages/kkast)
 - [rekurke-parse](./packages/rekurke-parse)
+- [rekurke-stringify](./packages/rekurke-stringify)
 
 ## License
 

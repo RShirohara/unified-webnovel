@@ -94,6 +94,19 @@ importers:
         specifier: ^4.2.1
         version: 4.2.1(peggy@4.0.2)
 
+  packages/rekurke-stringify:
+    dependencies:
+      '@rshirohara/kkast':
+        specifier: workspace:^
+        version: link:../kkast
+      unified:
+        specifier: ^11.0.4
+        version: 11.0.4
+    devDependencies:
+      '@unified-webnovel/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+
   packages/repixe:
     dependencies:
       '@rshirohara/pxast':

@@ -102,7 +102,7 @@ The are no options.
 
 ## Syntax
 
-The package serializes according ot [kakuyomu novel][kakuyomu-novel] format.
+The package serializes according to [kakuyomu novel][kakuyomu-novel] format.
 
 ## Syntax tree
 

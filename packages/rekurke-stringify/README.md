@@ -21,7 +21,7 @@
 
 ## What is this?
 
-This package is a [unified][] plugin that defines how to take a syntax tree as input and turn it to serialized [kakuyomu novel][kakuyomu-novel] format.
+This package is a [unified][] plugin that defines how to take a syntax tree as input and turn into serialized [kakuyomu novel][kakuyomu-novel] format.
 
 ## Install
 

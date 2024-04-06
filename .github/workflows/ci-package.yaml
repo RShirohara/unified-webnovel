@@ -2,19 +2,20 @@ name: CI (npm package)
 
 on:
   pull_request:
-    types: [ready_for_review, review_requested]
+    types:
+      - ready_for_review
+      - review_requested
     paths:
-      [
-        ".github/workflows/ci-package.yaml",
-        "**/package.json",
-        "**/tsconfig.json",
-        "biome.json",
-        "packages/**/*.js",
-        "packages/**/*.ts",
-        "pnpm-lock.yaml"
-      ]
+      - ".github/workflows/ci-package.yaml"
+      - "**/package.json"
+      - "**/tsconfig.json"
+      - "biome.json"
+      - "packages/**/*.js"
+      - "packages/**/*.ts"
+      - "pnpm-lock.yaml"
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   build:
@@ -73,24 +74,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest]
-        label: [
-          edge-runtime,
-          nodejs-latest,
-          nodejs-20,
-          nodejs-18
-        ]
         include:
           - label: edge-runtime
+            os: ubuntu-latest
             node-version: latest
             test-environment: edge-runtime
           - label: nodejs-latest
+            os: ubuntu-latest
             node-version: latest
             test-environment: node
           - label: nodejs-20
+            os: ubuntu-latest
             node-version: 20
             test-environment: node
           - label: nodejs-18
+            os: ubuntu-latest
             node-version: 18
             test-environment: node
 

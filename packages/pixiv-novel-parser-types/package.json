@@ -5,9 +5,7 @@
   "description": "Type definition for pixiv-novel-parser.",
   "main": "",
   "types": "./src/index.d.ts",
-  "files": [
-    "./src"
-  ],
+  "files": ["./src"],
   "devDependencies": {
     "@unified-webnovel/tsconfig": "workspace:*"
   },

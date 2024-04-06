@@ -3,7 +3,5 @@
   "version": "0.0.0-local.4",
   "private": true,
   "description": "tsconfig.json definition for unified-webnovel.",
-  "files": [
-    "./tsconfig.*.json"
-  ]
+  "files": ["./tsconfig.*.json"]
 }

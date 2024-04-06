@@ -14,18 +14,18 @@ import type {
 } from "@rshirohara/pxast";
 import type {
   Chapter as PixivChapter,
+  PixivImage,
   JumpPage as PixivJumpPage,
   JumpUrl as PixivJumpUrl,
   NewPage as PixivNewPage,
-  PixivImage,
   Ruby as PixivRuby,
   Text as PixivText,
 } from "pixiv-novel-parser";
 
 import type {
-  Paragraph as PixivParagraph,
   PixivContent,
   PixivFlowContent,
+  Paragraph as PixivParagraph,
   PixivPhrasingContent,
 } from "./transformer.js";
 

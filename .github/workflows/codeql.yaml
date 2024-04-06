@@ -1,19 +1,20 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: ["main"]
   pull_request:
-    types: [ready_for_review, review_requested]
+    types:
+      - ready_for_review
+      - review_requested
     paths:
-      [
-        ".github/workflows/codeql.yaml",
-        "**/package.json",
-        "**/tsconfig.json",
-        "packages/**/*.js",
-        "packages/**/*.ts",
-        "pnpm-lock.yaml"
-      ]
+      - ".github/workflows/codeql.yaml"
+      - "**/package.json"
+      - "**/tsconfig.json"
+      - "packages/**/*.js"
+      - "packages/**/*.ts"
+      - "pnpm-lock.yaml"
+  push:
+    branches:
+      - main
   schedule:
     - cron: "31 13 * * 5"
 

@@ -98,7 +98,7 @@ Running that with `node example.js` yields:
 ### `unified().use(rekurkeStringify)`
 
 Add support for serializing kakuyomu novel format input.
-The are no options.
+There are no options.
 
 ## Syntax
 

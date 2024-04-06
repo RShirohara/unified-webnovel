@@ -105,7 +105,7 @@ The syntax tree format uses in rekurke is [kkast][].
 ## Types
 
 This package is fully typed with [TypeScript][].
-The are no extra exported types.
+There are no extra exported types.
 
 ## License
 

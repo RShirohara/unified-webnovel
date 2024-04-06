@@ -94,7 +94,7 @@ interface Paragraph <: Parent {
 }
 ```
 
-**Paragraph** ([**Parent**][dfn-parent]) represents a unit of discource dealing
+**Paragraph** ([**Parent**][dfn-parent]) represents a unit of discourse dealing
 with a particular point.
 
 **Paragraph** can be used where [**content**][dfn-content] is expected.

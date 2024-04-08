@@ -51,7 +51,7 @@ async function main() {
     "これが一段落目。\n",
     "これが二段落目。",
     "これは｜ルビ振《るびふ》り。\r\n\n",
-    "ここから三段落目。",
+    "ここから三段落《さんだんらく》目。",
     "これは《《強調》》。",
   ].join("\n");
   const file = await rekurke.process(source);
@@ -69,7 +69,7 @@ Running that with `node example.js` yields:
 これは|ルビ振《るびふ》り。
 
 
-ここから三段落目。
+ここから|三段落《さんだんらく》目。
 これは《《強調》》。
 ```
 

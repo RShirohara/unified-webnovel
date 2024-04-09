@@ -75,6 +75,25 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
 
+  packages/rekurke:
+    dependencies:
+      '@rshirohara/kkast':
+        specifier: workspace:^
+        version: link:../kkast
+      '@rshirohara/rekurke-parse':
+        specifier: workspace:^
+        version: link:../rekurke-parse
+      '@rshirohara/rekurke-stringify':
+        specifier: workspace:^
+        version: link:../rekurke-stringify
+      unified:
+        specifier: ^11.0.4
+        version: 11.0.4
+    devDependencies:
+      '@unified-webnovel/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+
   packages/rekurke-parse:
     dependencies:
       '@rshirohara/kkast':

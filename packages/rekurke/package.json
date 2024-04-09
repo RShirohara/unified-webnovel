@@ -1,6 +1,6 @@
 {
   "name": "@rshirohara/rekurke",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0",
   "description": "unified processor with support for parsing and serializing kakuyomu novel format input/output.",
   "keywords": ["unified", "rekurke", "kakuyomu"],
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/rekurke#readme",

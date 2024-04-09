@@ -1,6 +1,6 @@
 {
   "name": "@rshirohara/repixe-parse",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "repixe plugin to add support for parsing pixiv novel format.",
   "keywords": ["unified", "repixe", "repixe-plugin", "pixiv"],
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/repixe-parse#readme",

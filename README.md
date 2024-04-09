@@ -18,6 +18,7 @@
 ### [Kakuyomu][kakuyomu]
 
 - [kkast](./packages/kkast)
+- [rekurke](./packages/rekurke)
 - [rekurke-parse](./packages/rekurke-parse)
 - [rekurke-stringify](./packages/rekurke-stringify)
 

@@ -77,7 +77,7 @@ Running that with `node example.js` yields:
 
 ### `rekurke()`
 
-Create a new (unfrozen) unified processor that already uses
+Create a new (frozen) unified processor that already uses
 `rekurke-parse` and `rekurke-stringify`.
 See [`unified`][unified] for more information.
 

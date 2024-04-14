@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-parse@0.2.2...@rshirohara/repixe-parse@0.2.3) (2024-04-14)
+
+### Documents
+
+* fix package description and keyword ([#284](https://github.com/RShirohara/unified-webnovel/issues/284)) ([5772405](https://github.com/RShirohara/unified-webnovel/commit/5772405051d050e8e7a6f9fbf2e03c6b88304e54))
+
 ## [0.2.2](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-parse@0.2.1...@rshirohara/repixe-parse@0.2.2) (2024-04-09)
 
 ### Documents

@@ -2,7 +2,7 @@
   "name": "@rshirohara/repixe-stringify",
   "version": "0.2.2",
   "description": "repixe plugin to add support for serializing pixiv novel format.",
-  "keywords": ["unified", "repixe", "repixe-plugin", "pixiv"],
+  "keywords": ["unified", "repixe", "pixiv"],
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/repixe-stringify#readme",
   "bugs": {
     "url": "https://github.com/RShirohara/unified-webnovel/issues"

@@ -1,7 +1,7 @@
 {
   "name": "@rshirohara/rekurke-stringify",
   "version": "0.1.0",
-  "description": "repixe plugin to add support for serializing kakuyomu novel format.",
+  "description": "rekurke plugin to add support for serializing kakuyomu novel format.",
   "keywords": ["unified", "rekurke", "kakuyomu"],
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/rekurke-stringify#readme",
   "bugs": {

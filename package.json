@@ -4,7 +4,7 @@
   "description": "unified packages for web novel.",
   "license": "MIT",
   "type": "module",
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@9.0.6",
   "workspaces": ["./packages/*"],
   "scripts": {
     "build": "pnpm run -r build",

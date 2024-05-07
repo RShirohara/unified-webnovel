@@ -16,7 +16,7 @@
     "version:update": "lerna version --conventional-commits --no-git-tag-version --sync-workspace-lock"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.7.2",
+    "@biomejs/biome": "^1.7.3",
     "@edge-runtime/vm": "^3.2.0",
     "@lerna-lite/changed": "^3.3.3",
     "@lerna-lite/cli": "^3.3.3",

@@ -120,7 +120,7 @@ jobs:
 
       - name: Report test result
         if: ${{ (success() || failure()) }}
-        uses: mikepenz/action-junit-report@v4.2.1
+        uses: mikepenz/action-junit-report@v4.2.2
         with:
           check_name: Test result (${{ matrix.label }})
           report_paths: ./result.xml

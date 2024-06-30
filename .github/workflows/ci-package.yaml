@@ -127,6 +127,6 @@ jobs:
 
       - name: Report test coverage
         if: ${{ (success() || failure()) && (github.event_name == 'pull_request') && (matrix.os == 'ubuntu-latest') && (matrix.label == 'edge-runtime') }}
-        uses: davelosert/vitest-coverage-report-action@v2.3.1
+        uses: davelosert/vitest-coverage-report-action@v2.5.0
         with:
           vite-config-path: ./vitest.workspace.js

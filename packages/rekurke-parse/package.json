@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@rshirohara/kkast": "workspace:^",
-    "unified": "^11.0.4"
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@unified-webnovel/tsconfig": "workspace:*",

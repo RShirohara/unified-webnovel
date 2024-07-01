@@ -29,7 +29,7 @@
   "dependencies": {
     "@rshirohara/pxast": "workspace:^",
     "pixiv-novel-parser": "^0.3.0",
-    "unified": "^11.0.4"
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@types/pixiv-novel-parser": "workspace:*",

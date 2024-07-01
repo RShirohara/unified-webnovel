@@ -30,7 +30,7 @@
     "@rshirohara/pxast": "workspace:^",
     "@rshirohara/repixe-parse": "workspace:^",
     "@rshirohara/repixe-stringify": "workspace:^",
-    "unified": "^11.0.4"
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@types/pixiv-novel-parser": "workspace:*",

@@ -167,6 +167,22 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
 
+  packages/repixe-rekurke:
+    dependencies:
+      '@rshirohara/kkast':
+        specifier: workspace:^
+        version: link:../kkast
+      '@rshirohara/pxast':
+        specifier: workspace:^
+        version: link:../pxast
+      unified:
+        specifier: ^11.0.5
+        version: 11.0.5
+    devDependencies:
+      '@unified-webnovel/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+
   packages/repixe-stringify:
     dependencies:
       '@rshirohara/pxast':

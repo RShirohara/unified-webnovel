@@ -25,7 +25,7 @@
     "@vitest/coverage-v8": "^2.0.5",
     "clean-package": "^2.2.0",
     "conventional-changelog-conventionalcommits": "^8.0.0",
-    "typescript": "^5.5.2",
+    "typescript": "^5.5.4",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^2.0.5"
   }

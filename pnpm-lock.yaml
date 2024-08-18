@@ -182,6 +182,15 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2
     devDependencies:
+      '@rshirohara/rekurke-stringify':
+        specifier: workspace:*
+        version: link:../rekurke-stringify
+      '@rshirohara/repixe-parse':
+        specifier: workspace:*
+        version: link:../repixe-parse
+      '@rshirohara/repixe-stringify':
+        specifier: workspace:*
+        version: link:../repixe-stringify
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig

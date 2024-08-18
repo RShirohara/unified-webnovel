@@ -33,6 +33,9 @@
     "vfile": "^6.0.2"
   },
   "devDependencies": {
+    "@rshirohara/repixe-parse": "workspace:*",
+    "@rshirohara/repixe-stringify": "workspace:*",
+    "@rshirohara/rekurke-stringify": "workspace:*",
     "@unified-webnovel/tsconfig": "workspace:*"
   },
   "publishConfig": {

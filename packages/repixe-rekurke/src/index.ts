@@ -50,5 +50,5 @@ export function repixeRekurke(
     };
   }
 
-  return (tree, _file) => toKkast(tree, options);
+  return (tree, _file) => toKkast(tree, destination ?? options);
 }

@@ -32,7 +32,7 @@ function removeEmptyNode<T extends Root>(node: T, _: Options): T {
   };
 }
 
-function insertParagraphMargin<T extends Root>(node: T, options: Options): T {
+function insertParagraphMargin<T extends Root>(node: T, _: Options): T {
   return {
     ...node,
     children: [...node.children].flatMap((value, index) =>

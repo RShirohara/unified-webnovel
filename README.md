@@ -14,6 +14,7 @@
 - [repixe](./packages/repixe)
 - [repixe-parse](./packages/repixe-parse)
 - [repixe-stringify](./packages/repixe-stringify)
+- [repixe-rekurke](./packages/repixe-rekurke)
 
 ### [Kakuyomu][kakuyomu]
 

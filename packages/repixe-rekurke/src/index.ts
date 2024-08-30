@@ -23,7 +23,9 @@ type TransformMutate = (tree: PxastRoot, file: VFile) => KkastRoot;
 /**
  * Turn pixiv novel format into Kakuyomu novel format.
  *
- * ## Notes
+ * ##### Notes
+ *
+ * ###### Sigunature
  *
  * - if a processor is given, runs the (rekurke) plugins used on it with a
  *   kkast tree, then discards the result. (*bridge mode*)

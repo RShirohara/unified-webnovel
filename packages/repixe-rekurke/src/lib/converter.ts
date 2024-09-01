@@ -122,8 +122,8 @@ function convertParagraph(
 }
 
 // PhrasingContent
-function convertBreak(node: PxastBreak, _: Options): KkastBreak {
-  return { ...node };
+function convertBreak(_node: PxastBreak, _options: Options): KkastBreak {
+  return { type: "break" };
 }
 
 function convertImage(
@@ -183,9 +183,9 @@ function convertPageReference(
 }
 
 function convertRuby(node: PxastRuby, _: Options): KkastRuby {
-  return { ...node };
+  return { type: "ruby", value: node.value, ruby: node.ruby };
 }
 
 function convertText(node: PxastText, _: Options): KkastText {
-  return { ...node };
+  return { type: "text", value: node.value };
 }

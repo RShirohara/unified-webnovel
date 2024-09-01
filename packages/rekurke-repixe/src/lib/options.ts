@@ -6,7 +6,7 @@ export interface Options {
   };
 }
 
-interface Option {
+export interface InternalOptions {
   preserveUnmatchedSyntax: boolean;
   convertEmphasisToRuby: {
     enable: boolean;
@@ -14,7 +14,7 @@ interface Option {
   };
 }
 
-export const defaultOptions: Option = {
+export const defaultOptions: InternalOptions = {
   preserveUnmatchedSyntax: false,
   convertEmphasisToRuby: {
     enable: false,
@@ -22,7 +22,7 @@ export const defaultOptions: Option = {
   },
 };
 
-export function buildOptions(options?: Options | null): Option {
+export function buildOptions(options?: Options | null): InternalOptions {
   return {
     ...defaultOptions,
     ...options,

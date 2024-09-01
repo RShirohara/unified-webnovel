@@ -25,7 +25,7 @@
     "postpack": "clean-package restore"
   },
   "dependencies": {
-    "@types/unist": "^3.0.2"
+    "@types/unist": "^3.0.3"
   },
   "devDependencies": {
     "@unified-webnovel/tsconfig": "workspace:*"

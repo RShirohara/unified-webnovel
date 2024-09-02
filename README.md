@@ -22,6 +22,7 @@
 - [rekurke](./packages/rekurke)
 - [rekurke-parse](./packages/rekurke-parse)
 - [rekurke-stringify](./packages/rekurke-stringify)
+- [rekurke-repixe](./packages/rekurke-repixe)
 
 ## License
 

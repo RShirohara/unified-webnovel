@@ -13,7 +13,7 @@
   - [Install](#install)
   - [Use](#use)
   - [API](#api)
-    - [`unified().use(repixeRehype[, destination][, options])`](#unifieduserepixerehype-destination-options)
+    - [`unified().use(repixeRekurke[, destination][, options])`](#unifieduserepixerekurke-destination-options)
       - [Parameters](#parameters)
         - [Notes](#notes)
           - [Sigunature](#sigunature)
@@ -81,7 +81,7 @@ Running that with `node example.js` yields:
 
 ## API
 
-### `unified().use(repixeRehype[, destination][, options])`
+### `unified().use(repixeRekurke[, destination][, options])`
 
 Turn pixiv novel format to kakuyomu novel format.
 

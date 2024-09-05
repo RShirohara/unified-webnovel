@@ -1,0 +1,57 @@
+{
+  "name": "@rshirohara/rekurke-repixe",
+  "version": "0.1.0-alpha.0",
+  "description": "rekurke plugin that turns kakuyomu novel format into pixiv novel format to support repixe.",
+  "keywords": ["unified", "rekurke", "kakuyomu", "repixe", "pixiv"],
+  "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/rekurke-repixe#readme",
+  "bugs": {
+    "url": "https://github.com/RShirohara/unified-webnovel/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RShirohara/unified-webnovel.git",
+    "directory": "packages/rekurke-repixe"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Ray Shirohara",
+    "url": "https://github.com/RShirohara"
+  },
+  "type": "module",
+  "exports": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": ["./dist", "./src"],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "prepack": "pnpm run build && clean-package",
+    "postpack": "clean-package restore"
+  },
+  "dependencies": {
+    "@rshirohara/kkast": "workspace:^",
+    "@rshirohara/pxast": "workspace:^",
+    "unified": "^11.0.5",
+    "vfile": "^6.0.3"
+  },
+  "devDependencies": {
+    "@rshirohara/repixe-stringify": "workspace:*",
+    "@rshirohara/rekurke-parse": "workspace:*",
+    "@rshirohara/rekurke-stringify": "workspace:*",
+    "@unified-webnovel/tsconfig": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "clean-package": {
+    "replace": {
+      "exports": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "remove": [
+      "scripts.build",
+      "devDependencies.@unified-webnovel/tsconfig",
+      "publishConfig",
+      "clean-package"
+    ]
+  }
+}

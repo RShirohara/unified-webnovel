@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/pxast@0.2.2...@rshirohara/pxast@0.2.3) (2024-09-08)
+
+* build(deps): bump @types/unist from 3.0.2 to 3.0.3 (#321) ([c16c922](https://github.com/RShirohara/unified-webnovel/commit/c16c922)), closes [#321](https://github.com/RShirohara/unified-webnovel/issues/321)
+
 ## [0.2.2](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/pxast@0.2.1...@rshirohara/pxast@0.2.2) (2024-04-09)
 
 ### Documents

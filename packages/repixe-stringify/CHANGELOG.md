@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-stringify@0.2.3...@rshirohara/repixe-stringify@0.2.4) (2024-09-08)
+
+* build(deps): bump unified from 11.0.4 to 11.0.5 (#308) ([2c675ee](https://github.com/RShirohara/unified-webnovel/commit/2c675ee)), closes [#308](https://github.com/RShirohara/unified-webnovel/issues/308)
+
 ## [0.2.3](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-stringify@0.2.2...@rshirohara/repixe-stringify@0.2.3) (2024-04-14)
 
 ### Documents

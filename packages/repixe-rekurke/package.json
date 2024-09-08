@@ -1,6 +1,6 @@
 {
   "name": "@rshirohara/repixe-rekurke",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0",
   "description": "repixe plugin that turns pixiv novel format into kakuyomu novel format to support rekurke.",
   "keywords": ["unified", "repixe", "pixiv", "rekurke", "kakuyomu"],
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/repixe-rekurke#readme",
@@ -33,9 +33,9 @@
     "vfile": "^6.0.3"
   },
   "devDependencies": {
+    "@rshirohara/rekurke-stringify": "workspace:*",
     "@rshirohara/repixe-parse": "workspace:*",
     "@rshirohara/repixe-stringify": "workspace:*",
-    "@rshirohara/rekurke-stringify": "workspace:*",
     "@unified-webnovel/tsconfig": "workspace:*"
   },
   "publishConfig": {

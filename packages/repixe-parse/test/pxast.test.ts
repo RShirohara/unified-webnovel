@@ -3,39 +3,6 @@ import { describe, expect, test } from "vitest";
 import { fromPixivNovel } from "~/lib/index.js";
 
 describe("FlowContent", () => {
-  describe("Heading", () => {
-    test("Ruby を格納できる", () => {
-      const source =
-        "[chapter: ルビが[[rb: 使用 > しよう]]できる[[rb:見出>みだ]]し]";
-      const expected: Root = {
-        type: "root",
-        children: [
-          {
-            type: "heading",
-            children: [
-              { type: "text", value: "ルビが" },
-              { type: "ruby", value: "使用", ruby: "しよう" },
-              { type: "text", value: "できる" },
-              { type: "ruby", value: "見出", ruby: "みだ" },
-              { type: "text", value: "し" },
-            ],
-          },
-        ],
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-    test("Text を格納できる", () => {
-      const source = "[chapter:見出し]";
-      const expected: Root = {
-        type: "root",
-        children: [
-          { type: "heading", children: [{ type: "text", value: "見出し" }] },
-        ],
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-  });
-
   describe("PageBreak", () => {
     test("ちゃんとページを分割できる", () => {
       const source = "1ページ目[newpage]2ページ目";

@@ -10,7 +10,7 @@ import type {
   Heading as PxastHeading,
   Image as PxastImage,
   Link as PxastLink,
-  PageHeading as PxastPageHeading,
+  PageBreak as PxastPageBreak,
   PageReference as PxastPageReference,
   Paragraph as PxastParagraph,
   Root as PxastRoot,
@@ -28,8 +28,8 @@ export function convertRoot(tree: PxastRoot, options: Options): KkastRoot {
           case "heading": {
             return convertHeading(node, options);
           }
-          case "pageHeading": {
-            return convertPageHeading(node, options);
+          case "pageBreak": {
+            return convertPageBreak(node, options);
           }
           case "paragraph": {
             return convertParagraph(node, options);
@@ -75,8 +75,8 @@ function convertHeading(node: PxastHeading, options: Options): KkastParagraph {
   };
 }
 
-function convertPageHeading(
-  _: PxastPageHeading,
+function convertPageBreak(
+  _: PxastPageBreak,
   options: Options,
 ): KkastParagraph | undefined {
   if (options.preserveUnmatchedSyntax) {

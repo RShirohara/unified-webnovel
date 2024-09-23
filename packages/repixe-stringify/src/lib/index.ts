@@ -3,7 +3,7 @@ import type {
   Heading,
   Image,
   Link,
-  PageHeading,
+  PageBreak,
   PageReference,
   Paragraph,
   PxastContent,
@@ -24,7 +24,7 @@ function compileContent(nodes: PxastContent[]): string[] {
       case "heading": {
         return compilers.heading.compile({ node });
       }
-      case "pageHeading": {
+      case "pageBreak": {
         return compilers.pageHeading.compile({ node });
       }
       case "paragraph": {
@@ -68,13 +68,10 @@ const compilers = {
   } as NodeCompiler<Heading>,
 
   pageHeading: {
-    compile: ({ node }) => {
-      if (node.pageNumber === 1) {
-        return "";
-      }
+    compile: (_) => {
       return "[newpage]";
     },
-  } as NodeCompiler<PageHeading>,
+  } as NodeCompiler<PageBreak>,
 
   paragraph: {
     compile: ({ node }) => {

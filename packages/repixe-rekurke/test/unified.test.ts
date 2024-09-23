@@ -49,9 +49,7 @@ describe("repixe-rekurke", () => {
         .use(rekurkeStringify)
         .process("たとえば[[rb:私>わたし]]はこの文章を書く。[newpage]"),
     );
-    expect(result).toEqual(
-      "[newpage]\n\nたとえば|私《わたし》はこの文章を書く。\n\n[newpage]",
-    );
+    expect(result).toEqual("たとえば|私《わたし》はこの文章を書く。\n\n[newpage]");
   });
 
   test("Mutate mode with `processor: undefined` and options", async () => {
@@ -62,9 +60,7 @@ describe("repixe-rekurke", () => {
         .use(rekurkeStringify)
         .process("たとえば[[rb:私>わたし]]はこの文章を書く。[newpage]"),
     );
-    expect(result).toEqual(
-      "[newpage]\n\nたとえば|私《わたし》はこの文章を書く。\n\n[newpage]",
-    );
+    expect(result).toEqual("たとえば|私《わたし》はこの文章を書く。\n\n[newpage]");
   });
 
   test("Understand bridge types", async () => {

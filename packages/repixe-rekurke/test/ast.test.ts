@@ -47,11 +47,11 @@ describe("FlowContent", () => {
     });
   });
 
-  describe("PageHeading", () => {
+  describe("pageBreak", () => {
     test("preserveUnmatchedSyntax が false の場合、PageHeading は削除される。", () => {
       const source: PxastRoot = {
         type: "root",
-        children: [{ type: "pageHeading", pageNumber: 1 }],
+        children: [{ type: "pageBreak" }],
       };
       const expected: KkastRoot = {
         type: "root",
@@ -65,7 +65,7 @@ describe("FlowContent", () => {
     test("preserveUnmatchedSyntax が true の場合、Pixiv の構文を保持したまま Paragraph へ変換される", () => {
       const source: PxastRoot = {
         type: "root",
-        children: [{ type: "pageHeading", pageNumber: 1 }],
+        children: [{ type: "pageBreak" }],
       };
       const expected: KkastRoot = {
         type: "root",

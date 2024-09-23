@@ -7,7 +7,6 @@ test("repixeStringify", () => {
   const source: Root = {
     type: "root",
     children: [
-      { type: "pageHeading", pageNumber: 1 },
       {
         type: "paragraph",
         children: [
@@ -40,7 +39,7 @@ test("repixeStringify", () => {
           { type: "text", value: "も使える。" },
         ],
       },
-      { type: "pageHeading", pageNumber: 2 },
+      { type: "pageBreak" },
       {
         type: "paragraph",
         children: [

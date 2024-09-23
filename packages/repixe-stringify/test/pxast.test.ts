@@ -7,7 +7,7 @@ describe("Root", () => {
     const source: Root = {
       type: "root",
       children: [
-        { type: "pageHeading", pageNumber: 1 },
+        { type: "pageBreak" },
         { type: "paragraph", children: [{ type: "text", value: "一段落目" }] },
         {
           type: "paragraph",
@@ -17,11 +17,12 @@ describe("Root", () => {
             { type: "text", value: "二行目" },
           ],
         },
-        { type: "pageHeading", pageNumber: 2 },
+        { type: "pageBreak" },
         { type: "heading", children: [{ type: "text", value: "見出し" }] },
       ],
     };
     const expected = [
+      "[newpage]",
       "一段落目",
       "二段落目\n二行目",
       "[newpage]",
@@ -66,17 +67,16 @@ describe("FlowContent", () => {
     });
   });
 
-  describe("PageHeading", () => {
+  describe("PageBreak", () => {
     test("ちゃんとレンダリングできる", () => {
       const source: Root = {
         type: "root",
         children: [
-          { type: "pageHeading", pageNumber: 1 },
           {
             type: "paragraph",
             children: [{ type: "text", value: "1ページ目" }],
           },
-          { type: "pageHeading", pageNumber: 2 },
+          { type: "pageBreak" },
           {
             type: "paragraph",
             children: [{ type: "text", value: "2ページ目" }],
@@ -84,37 +84,6 @@ describe("FlowContent", () => {
         ],
       };
       const expected = ["1ページ目", "[newpage]", "2ページ目"].join("\n\n");
-      expect(toPixivNovel(source)).toEqual(expected);
-    });
-
-    test("先頭の PageHeading は除去される", () => {
-      const source: Root = {
-        type: "root",
-        children: [
-          { type: "pageHeading", pageNumber: 1 },
-          {
-            type: "paragraph",
-            children: [{ type: "text", value: "1ページ目" }],
-          },
-          { type: "pageHeading", pageNumber: 2 },
-          {
-            type: "paragraph",
-            children: [{ type: "text", value: "2ページ目" }],
-          },
-          { type: "pageHeading", pageNumber: 3 },
-          {
-            type: "paragraph",
-            children: [{ type: "text", value: "3ページ目" }],
-          },
-        ],
-      };
-      const expected = [
-        "1ページ目",
-        "[newpage]",
-        "2ページ目",
-        "[newpage]",
-        "3ページ目",
-      ].join("\n\n");
       expect(toPixivNovel(source)).toEqual(expected);
     });
   });

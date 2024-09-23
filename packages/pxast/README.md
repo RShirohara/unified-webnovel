@@ -20,7 +20,7 @@ It implements [unist][].
     - [`Root`](#root)
     - [`Paragraph`](#paragraph)
     - [`Heading`](#heading)
-    - [`PageHeading`](#pageheading)
+    - [`PageBreak`](#pagebreak)
     - [`Text`](#text)
     - [`Ruby`](#ruby)
     - [`Break`](#break)
@@ -147,22 +147,18 @@ Yields:
 }
 ```
 
-### `PageHeading`
+### `PageBreak`
 
 ```idl
-interface Page <: Node {
-  type: "pageHeading"
-  pageNumber: 1 <= number
+interface PageBreak <: Node {
+  type: "pageBreak"
 }
 ```
 
-**PageHeading** ([**Node**][dfn-node]) represents a heading of a page.
+**PageBreak** ([**Node**][dfn-node]) represents a breaks of a page.
 
-**PageHeading** can be used where [**flow**][dfn-flow-content] content is expected.
+**PageBreak** can be used where [**flow**][dfn-flow-content] content is expected.
 It has no content model.
-
-A `pageNumber` field must be present.
-A value of `1` is said to be the minimum value.
 
 For example, the following text:
 
@@ -178,12 +174,11 @@ Yields:
 {
   type: "root",
   children: [
-    { type: "pageHeading", pageNumber: 1 },
     {
       type: "paragraph",
       children: [{ type: "text", value: "ここは一ページ目。" }]
     },
-    { type: "pageHeading", pageNumber: 2 },
+    { type: "pageBreak" },
     {
       type: "paragraph",
       children: [{ type: "text", value: "ここが二ページ目。" }]
@@ -351,7 +346,7 @@ interface PageReference <: Node {
 }
 ```
 
-**PageReference** ([**Node**][dfn-node]) represents a reference to [**PageHeading**][dfn-page-heading].
+**PageReference** ([**Node**][dfn-node]) represents a reference to page.
 
 **PageReference** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
 It has no content model.
@@ -385,7 +380,7 @@ Each node in pxast falls into one or more categories of **Content** that group n
 ### `FlowContent`
 
 ```idl
-type FlowContent = Heading | PageHeading | Paragraph
+type FlowContent = Heading | PageBreak | Paragraph
 ```
 
 **Flow** content represent the sections of document.
@@ -418,7 +413,6 @@ that is intended to be stored in [**phrasing**][dfn-phrasing-content] content.
 [dfn-inline-phrasing-content]: #inlinephrasingcontent
 [dfn-literal]: #literal
 [dfn-node]: https://github.com/syntax-tree/unist#node
-[dfn-page-heading]: #pageheading
 [dfn-parent]: #parent
 [dfn-phrasing-content]: #phrasingcontent
 [dfn-pxast-content]: #content-model

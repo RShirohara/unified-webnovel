@@ -30,9 +30,8 @@ export interface Heading extends Parent {
   children: InlinePhrasingContent[];
 }
 
-export interface PageHeading extends Node {
-  type: "pageHeading";
-  pageNumber: number;
+export interface PageBreak extends Node {
+  type: "pageBreak";
 }
 
 export interface Text extends Literal {
@@ -69,7 +68,7 @@ export interface PageReference extends Node {
 
 export type PxastContent = FlowContent | PhrasingContent;
 
-export type FlowContent = Heading | PageHeading | Paragraph;
+export type FlowContent = Heading | PageBreak | Paragraph;
 
 export type PhrasingContent =
   | Break

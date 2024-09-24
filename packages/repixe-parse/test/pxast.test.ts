@@ -36,45 +36,20 @@ describe("FlowContent", () => {
     });
   });
 
-  describe("PageHeading", () => {
+  describe("PageBreak", () => {
     test("ちゃんとページを分割できる", () => {
       const source = "1ページ目[newpage]2ページ目";
       const expected: Root = {
         type: "root",
         children: [
-          { type: "pageHeading", pageNumber: 1 },
           {
             type: "paragraph",
             children: [{ type: "text", value: "1ページ目" }],
           },
-          { type: "pageHeading", pageNumber: 2 },
+          { type: "pageBreak" },
           {
             type: "paragraph",
             children: [{ type: "text", value: "2ページ目" }],
-          },
-        ],
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-    test("ページ番号が連続で採番される", () => {
-      const source = "1ページ目[newpage]2ページ目\n[newpage]\n3ページ目";
-      const expected: Root = {
-        type: "root",
-        children: [
-          { type: "pageHeading", pageNumber: 1 },
-          {
-            type: "paragraph",
-            children: [{ type: "text", value: "1ページ目" }],
-          },
-          { type: "pageHeading", pageNumber: 2 },
-          {
-            type: "paragraph",
-            children: [{ type: "text", value: "2ページ目" }],
-          },
-          { type: "pageHeading", pageNumber: 3 },
-          {
-            type: "paragraph",
-            children: [{ type: "text", value: "3ページ目" }],
           },
         ],
       };
@@ -293,7 +268,6 @@ describe("PhrasingContent", () => {
       const expected: Root = {
         type: "root",
         children: [
-          { type: "pageHeading", pageNumber: 1 },
           {
             type: "paragraph",
             children: [{ type: "pageReference", pageNumber: 1 }],

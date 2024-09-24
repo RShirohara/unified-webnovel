@@ -17,7 +17,6 @@ test("repixeParse", () => {
   const expected: Root = {
     type: "root",
     children: [
-      { type: "pageHeading", pageNumber: 1 },
       {
         type: "paragraph",
         children: [
@@ -50,7 +49,7 @@ test("repixeParse", () => {
           { type: "text", value: "も使える。" },
         ],
       },
-      { type: "pageHeading", pageNumber: 2 },
+      { type: "pageBreak" },
       {
         type: "paragraph",
         children: [

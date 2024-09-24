@@ -4,7 +4,7 @@ import type {
   Heading,
   Image,
   Link,
-  PageHeading,
+  PageBreak,
   PageReference,
   Paragraph,
   PhrasingContent,
@@ -111,19 +111,10 @@ const transpilers = {
     match: (node) => {
       return node.type === "tag" && node.name === "newpage";
     },
-    transpile: ({ index, array }) => {
-      const pageNumber =
-        [...(array ?? [])]
-          .map((node, index) => {
-            return { node, index };
-          })
-          .filter(
-            (node) => node.node.type === "tag" && node.node.name === "newpage",
-          )
-          .findIndex((node) => node.index === (index ?? 0)) + 1;
-      return { type: "pageHeading", pageNumber };
+    transpile: (_) => {
+      return { type: "pageBreak" };
     },
-  } as NodeTranspiler<PixivNewPage, PageHeading>,
+  } as NodeTranspiler<PixivNewPage, PageBreak>,
 
   paragraph: {
     match: (node) => {
@@ -196,23 +187,6 @@ const transpilers = {
 
 // preProcessors
 const preProcessors: NodeProcessor<"pre">[] = [
-  // add first page headings
-  (nodes) => {
-    const containsPageHeadingRef =
-      [...nodes].filter(
-        (node) =>
-          node.name === "newpage" ||
-          (node.name === "paragraph" &&
-            node.elements.filter(
-              (node) => node.type === "tag" && node.name === "jump",
-            ).length >= 1),
-      ).length >= 1;
-    return [
-      containsPageHeadingRef ? { type: "tag", name: "newpage" } : undefined,
-      ...nodes,
-    ].filter((node): node is PixivFlowContent => node !== undefined);
-  },
-
   // split line breaks
   (nodes) => {
     return [...nodes].map((node) => {

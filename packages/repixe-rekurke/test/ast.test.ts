@@ -48,7 +48,7 @@ describe("FlowContent", () => {
   });
 
   describe("pageBreak", () => {
-    test("preserveUnmatchedSyntax が false の場合、PageHeading は削除される。", () => {
+    test("preserveUnmatchedSyntax が false の場合、PageBreak は削除される。", () => {
       const source: PxastRoot = {
         type: "root",
         children: [{ type: "pageBreak" }],

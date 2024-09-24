@@ -25,7 +25,7 @@ function compileContent(nodes: PxastContent[]): string[] {
         return compilers.heading.compile({ node });
       }
       case "pageBreak": {
-        return compilers.pageHeading.compile({ node });
+        return compilers.pageBreak.compile({ node });
       }
       case "paragraph": {
         return compilers.paragraph.compile({ node });
@@ -67,7 +67,7 @@ const compilers = {
     },
   } as NodeCompiler<Heading>,
 
-  pageHeading: {
+  pageBreak: {
     compile: (_) => {
       return "[newpage]";
     },

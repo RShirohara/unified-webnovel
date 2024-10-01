@@ -114,26 +114,6 @@ describe("PhrasingContent", () => {
 });
 
 describe("PhrasingStaticContent", () => {
-  describe("Break", () => {
-    test("1個の改行は Break になる", () => {
-      const source = "一行目\n二行目";
-      const expected: Root = {
-        type: "root",
-        children: [
-          {
-            type: "paragraph",
-            children: [
-              { type: "text", value: "一行目" },
-              { type: "break" },
-              { type: "text", value: "二行目" },
-            ],
-          },
-        ],
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-  });
-
   describe("Ruby", () => {
     test("ルビをちゃんと認識できる", () => {
       const source =

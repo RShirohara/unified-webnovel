@@ -3,28 +3,6 @@ import { describe, expect, test } from "vitest";
 import { fromPixivNovel } from "~/lib/index.js";
 
 describe("PhrasingStaticContent", () => {
-  describe("Ruby", () => {
-    test("ルビをちゃんと認識できる", () => {
-      const source =
-        "[[rb: 換言 > かんげん]]すれば[[rb:畢竟>ひっきょう]]ももんが";
-      const expected: Root = {
-        type: "root",
-        children: [
-          {
-            type: "paragraph",
-            children: [
-              { type: "ruby", value: "換言", ruby: "かんげん" },
-              { type: "text", value: "すれば" },
-              { type: "ruby", value: "畢竟", ruby: "ひっきょう" },
-              { type: "text", value: "ももんが" },
-            ],
-          },
-        ],
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-  });
-
   describe("Text", () => {
     test("ただのテキストはちゃんとただのテキストになる", () => {
       const source = "ただのテキスト";

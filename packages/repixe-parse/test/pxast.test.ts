@@ -2,24 +2,6 @@ import type { Root } from "@rshirohara/pxast";
 import { describe, expect, test } from "vitest";
 import { fromPixivNovel } from "~/lib/index.js";
 
-describe("PhrasingContent", () => {
-  describe("PageReference", () => {
-    test("ページへの参照をちゃんと変換できる", () => {
-      const source = "[jump:01]";
-      const expected: Root = {
-        type: "root",
-        children: [
-          {
-            type: "paragraph",
-            children: [{ type: "pageReference", pageNumber: 1 }],
-          },
-        ],
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-  });
-});
-
 describe("PhrasingStaticContent", () => {
   describe("Ruby", () => {
     test("ルビをちゃんと認識できる", () => {

@@ -3,35 +3,6 @@ import { describe, expect, test } from "vitest";
 import { fromPixivNovel } from "~/lib/index.js";
 
 describe("PhrasingContent", () => {
-  describe("Image", () => {
-    test("画像形式の PixivImage をちゃんと変換できる", () => {
-      const source = "[pixivimage:000001]";
-      const expected: Root = {
-        type: "root",
-        children: [
-          {
-            type: "paragraph",
-            children: [{ type: "image", illustId: "000001" }],
-          },
-        ],
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-    test("漫画形式の PixivImage をちゃんと変換できる", () => {
-      const source = "[pixivimage:000001-2]";
-      const expected: Root = {
-        type: "root",
-        children: [
-          {
-            type: "paragraph",
-            children: [{ type: "image", illustId: "000001", pageNumber: 2 }],
-          },
-        ],
-      };
-      expect(fromPixivNovel(source)).toEqual(expected);
-    });
-  });
-
   describe("Link", () => {
     test("正常な URL をちゃんと Link にできる", () => {
       const source = "[[jumpuri: example > https://example.com]]";

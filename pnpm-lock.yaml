@@ -194,6 +194,12 @@ importers:
       '@unified-webnovel/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      peggy:
+        specifier: ^4.0.3
+        version: 4.0.3
+      ts-pegjs:
+        specifier: ^4.2.1
+        version: 4.2.1(peggy@4.0.3)
 
   packages/repixe-rekurke:
     dependencies:

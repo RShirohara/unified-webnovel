@@ -10,9 +10,26 @@ describe("内部コンテンツ", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "ただのテキスト" }],
+          children: [
+            {
+              type: "text",
+              value: "ただのテキスト",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 8, offset: 7 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 8, offset: 7 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 8, offset: 7 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });

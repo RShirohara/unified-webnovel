@@ -1,10 +1,7 @@
 import type { Root } from "@rshirohara/pxast";
-import { Parser } from "pixiv-novel-parser";
-
-import { transform } from "./transformer.js";
-import { transpile } from "./transpiler.js";
+import { parse } from "./parser.peg.js";
+import { preprocess } from "./preprocessor.js";
 
 export function fromPixivNovel(doc: string): Root {
-  const pixivNodes = transform(Parser.parse(doc));
-  return { type: "root", children: transpile(pixivNodes) };
+  return parse(preprocess(doc));
 }

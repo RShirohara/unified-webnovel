@@ -26,7 +26,33 @@ Paragraph = match:(!break|2..| (PhrasingContent))+ {
 PhrasingContent = InlinePhrasingContent
 
 // InlinePhrasingContent
-InlinePhrasingContent = Text
+InlinePhrasingContent = Ruby / Text
+
+// InlinePhrasingContent:Ruby
+Ruby = RubyStart text:RubyText RubyNext ruby:RubyBody RubyEnd {
+  const { source: _, ...position } = location();
+  return {
+    type: "ruby",
+    value: {text}.text,
+    ruby: {ruby}.ruby,
+    position
+  };
+}
+RubyStart = left left "rb:" space*
+RubyText = match:(!RubyNext text)+ {
+  return {match}.match
+    .map((chars) => chars[1])
+    .flat(1)
+    .join("");
+}
+RubyNext = space* next space*
+RubyBody = match:(!RubyEnd text)+ {
+  return {match}.match
+    .map((chars) => chars[1])
+    .flat(1)
+    .join("");
+}
+RubyEnd = space* right right
 
 // InlinePhrasingContent:Text
 Text = text:$(text) {
@@ -40,3 +66,9 @@ Text = text:$(text) {
 
 break = "\r\n" / "\n"
 text = [^\n\r]
+left = "["
+right = "]"
+next = ">"
+fullWidthSpace = "　"
+halfWidthSpace = " "
+space = fullWidthSpace / halfWidthSpace

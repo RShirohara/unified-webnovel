@@ -359,7 +359,19 @@ function peg$parse(input, options) {
   };
 };// @ts-ignore
 
-  var peg$f2 = function(text, ruby) {
+  var peg$f2 = function() {
+// @ts-ignore
+  const { source: _, ...position } = location();
+// @ts-ignore
+  return {
+// @ts-ignore
+    type: "break",
+// @ts-ignore
+    position
+  };
+};// @ts-ignore
+
+  var peg$f3 = function(text, ruby) {
 // @ts-ignore
   const { source: _, ...position } = location();
 // @ts-ignore
@@ -375,17 +387,6 @@ function peg$parse(input, options) {
   };
 };// @ts-ignore
 
-  var peg$f3 = function(match) {
-// @ts-ignore
-  return {match}.match
-// @ts-ignore
-    .map((chars) => chars[1])
-// @ts-ignore
-    .flat(1)
-// @ts-ignore
-    .join("");
-};// @ts-ignore
-
   var peg$f4 = function(match) {
 // @ts-ignore
   return {match}.match
@@ -397,7 +398,18 @@ function peg$parse(input, options) {
     .join("");
 };// @ts-ignore
 
-  var peg$f5 = function(text) {
+  var peg$f5 = function(match) {
+// @ts-ignore
+  return {match}.match
+// @ts-ignore
+    .map((chars) => chars[1])
+// @ts-ignore
+    .flat(1)
+// @ts-ignore
+    .join("");
+};// @ts-ignore
+
+  var peg$f6 = function(text) {
 // @ts-ignore
   const { source: _, ...position } = location();
 // @ts-ignore
@@ -682,7 +694,7 @@ peg$parseRoot() {
     var s0, s1, s2;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 0;
+    var key = peg$currPos * 20 + 0;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -729,7 +741,7 @@ peg$parseParagraph() {
     var s0, s1, s2, s3, s4, s5, s6;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 1;
+    var key = peg$currPos * 20 + 1;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -792,7 +804,7 @@ peg$parseParagraph() {
 // @ts-ignore
     if (s3 !== peg$FAILED) {
 // @ts-ignore
-      s4 = peg$parseInlinePhrasingContent();
+      s4 = peg$parsePhrasingContent();
 // @ts-ignore
       if (s4 !== peg$FAILED) {
 // @ts-ignore
@@ -865,7 +877,7 @@ peg$parseParagraph() {
 // @ts-ignore
         if (s3 !== peg$FAILED) {
 // @ts-ignore
-          s4 = peg$parseInlinePhrasingContent();
+          s4 = peg$parsePhrasingContent();
 // @ts-ignore
           if (s4 !== peg$FAILED) {
 // @ts-ignore
@@ -911,12 +923,88 @@ peg$parseParagraph() {
 
 // @ts-ignore
   function // @ts-ignore
+peg$parsePhrasingContent() {
+// @ts-ignore
+    var s0;
+
+// @ts-ignore
+    var key = peg$currPos * 20 + 2;
+// @ts-ignore
+    var cached = peg$resultsCache[key];
+
+// @ts-ignore
+    if (cached) {
+// @ts-ignore
+      peg$currPos = cached.nextPos;
+
+// @ts-ignore
+      return cached.result;
+    }
+
+// @ts-ignore
+    s0 = peg$parseBreak();
+// @ts-ignore
+    if (s0 === peg$FAILED) {
+// @ts-ignore
+      s0 = peg$parseInlinePhrasingContent();
+    }
+
+// @ts-ignore
+    peg$resultsCache[key] = { nextPos: peg$currPos, result: s0 };
+
+// @ts-ignore
+    return s0;
+  }
+
+// @ts-ignore
+  function // @ts-ignore
+peg$parseBreak() {
+// @ts-ignore
+    var s0, s1;
+
+// @ts-ignore
+    var key = peg$currPos * 20 + 3;
+// @ts-ignore
+    var cached = peg$resultsCache[key];
+
+// @ts-ignore
+    if (cached) {
+// @ts-ignore
+      peg$currPos = cached.nextPos;
+
+// @ts-ignore
+      return cached.result;
+    }
+
+// @ts-ignore
+    s0 = peg$currPos;
+// @ts-ignore
+    s1 = peg$parsebreak();
+// @ts-ignore
+    if (s1 !== peg$FAILED) {
+// @ts-ignore
+      peg$savedPos = s0;
+// @ts-ignore
+      s1 = peg$f2();
+    }
+// @ts-ignore
+    s0 = s1;
+
+// @ts-ignore
+    peg$resultsCache[key] = { nextPos: peg$currPos, result: s0 };
+
+// @ts-ignore
+    return s0;
+  }
+
+// @ts-ignore
+  function // @ts-ignore
 peg$parseInlinePhrasingContent() {
 // @ts-ignore
     var s0;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 2;
+    var key = peg$currPos * 20 + 4;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -951,7 +1039,7 @@ peg$parseRuby() {
     var s0, s1, s2, s3, s4, s5;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 3;
+    var key = peg$currPos * 20 + 5;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -989,7 +1077,7 @@ peg$parseRuby() {
 // @ts-ignore
               peg$savedPos = s0;
 // @ts-ignore
-              s0 = peg$f2(s2, s4);
+              s0 = peg$f3(s2, s4);
 // @ts-ignore
             } else {
 // @ts-ignore
@@ -1040,7 +1128,7 @@ peg$parseRubyStart() {
     var s0, s1, s2, s3, s4, s5;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 4;
+    var key = peg$currPos * 20 + 6;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1129,7 +1217,7 @@ peg$parseRubyText() {
     var s0, s1, s2, s3, s4;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 5;
+    var key = peg$currPos * 20 + 7;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1253,7 +1341,7 @@ peg$parseRubyText() {
 // @ts-ignore
       peg$savedPos = s0;
 // @ts-ignore
-      s1 = peg$f3(s1);
+      s1 = peg$f4(s1);
     }
 // @ts-ignore
     s0 = s1;
@@ -1272,7 +1360,7 @@ peg$parseRubyNext() {
     var s0, s1, s2, s3, s4;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 6;
+    var key = peg$currPos * 20 + 8;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1339,7 +1427,7 @@ peg$parseRubyBody() {
     var s0, s1, s2, s3, s4;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 7;
+    var key = peg$currPos * 20 + 9;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1463,7 +1551,7 @@ peg$parseRubyBody() {
 // @ts-ignore
       peg$savedPos = s0;
 // @ts-ignore
-      s1 = peg$f4(s1);
+      s1 = peg$f5(s1);
     }
 // @ts-ignore
     s0 = s1;
@@ -1482,7 +1570,7 @@ peg$parseRubyEnd() {
     var s0, s1, s2, s3;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 8;
+    var key = peg$currPos * 20 + 10;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1549,7 +1637,7 @@ peg$parseText() {
     var s0, s1, s2;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 9;
+    var key = peg$currPos * 20 + 11;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1582,7 +1670,7 @@ peg$parseText() {
 // @ts-ignore
       peg$savedPos = s0;
 // @ts-ignore
-      s1 = peg$f5(s1);
+      s1 = peg$f6(s1);
     }
 // @ts-ignore
     s0 = s1;
@@ -1601,7 +1689,7 @@ peg$parsebreak() {
     var s0;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 10;
+    var key = peg$currPos * 20 + 12;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1658,7 +1746,7 @@ peg$parsetext() {
     var s0;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 11;
+    var key = peg$currPos * 20 + 13;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1699,7 +1787,7 @@ peg$parseleft() {
     var s0;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 12;
+    var key = peg$currPos * 20 + 14;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1740,7 +1828,7 @@ peg$parseright() {
     var s0;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 13;
+    var key = peg$currPos * 20 + 15;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1781,7 +1869,7 @@ peg$parsenext() {
     var s0;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 14;
+    var key = peg$currPos * 20 + 16;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1822,7 +1910,7 @@ peg$parsefullWidthSpace() {
     var s0;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 15;
+    var key = peg$currPos * 20 + 17;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1863,7 +1951,7 @@ peg$parsehalfWidthSpace() {
     var s0;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 16;
+    var key = peg$currPos * 20 + 18;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -1904,7 +1992,7 @@ peg$parsespace() {
     var s0;
 
 // @ts-ignore
-    var key = peg$currPos * 18 + 17;
+    var key = peg$currPos * 20 + 19;
 // @ts-ignore
     var cached = peg$resultsCache[key];
 
@@ -2098,6 +2186,14 @@ export type Paragraph = {
     end: { offset: number; line: number; column: number };
   };
 };
+export type PhrasingContent = Break | InlinePhrasingContent;
+export type Break = {
+  type: "break";
+  position: {
+    start: { offset: number; line: number; column: number };
+    end: { offset: number; line: number; column: number };
+  };
+};
 export type InlinePhrasingContent = Ruby | Text;
 export type Ruby = {
   type: "ruby";
@@ -2121,7 +2217,7 @@ export type Text = {
     end: { offset: number; line: number; column: number };
   };
 };
-export type Break = "\r\n" | "\n";
+export type Break_1 = "\r\n" | "\n";
 export type Text_1 = string;
 export type Left = "[";
 export type Right = "]";

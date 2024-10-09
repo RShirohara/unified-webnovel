@@ -23,7 +23,16 @@ Paragraph = match:(!break|2..| (PhrasingContent))+ {
 }
 
 // PhrasingContent
-PhrasingContent = InlinePhrasingContent
+PhrasingContent = Break / InlinePhrasingContent
+
+// PhrasingContent:Break
+Break = break {
+  const { source: _, ...position } = location();
+  return {
+    type: "break",
+    position
+  };
+}
 
 // InlinePhrasingContent
 InlinePhrasingContent = Ruby / Text

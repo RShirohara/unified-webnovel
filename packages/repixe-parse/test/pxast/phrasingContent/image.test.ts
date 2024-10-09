@@ -10,9 +10,26 @@ describe("Tokenize", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "image", illustId: "000001" }],
+          children: [
+            {
+              type: "image",
+              illustId: "000001",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 20, offset: 19 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 20, offset: 19 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 20, offset: 19 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -24,9 +41,26 @@ describe("Tokenize", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "[ pixivimage:000001]" }],
+          children: [
+            {
+              type: "text",
+              value: "[ pixivimage:000001]",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 21, offset: 20 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 21, offset: 20 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 21, offset: 20 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -38,9 +72,26 @@ describe("Tokenize", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "image", illustId: "000001" }],
+          children: [
+            {
+              type: "image",
+              illustId: "000001",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 20, offset: 19 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 20, offset: 19 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 20, offset: 19 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -52,9 +103,26 @@ describe("Tokenize", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "[pixivimage :000001]" }],
+          children: [
+            {
+              type: "text",
+              value: "[pixivimage :000001]",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 21, offset: 20 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 21, offset: 20 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 21, offset: 20 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -66,9 +134,26 @@ describe("Tokenize", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "image", illustId: "000001" }],
+          children: [
+            {
+              type: "image",
+              illustId: "000001",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 20, offset: 19 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 20, offset: 19 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 20, offset: 19 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -80,9 +165,26 @@ describe("Tokenize", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "[pixivimage: 000001]" }],
+          children: [
+            {
+              type: "text",
+              value: "[pixivimage: 000001]",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 21, offset: 20 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 21, offset: 20 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 21, offset: 20 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -94,9 +196,27 @@ describe("Tokenize", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "image", illustId: "000001", pageNumber: 1 }],
+          children: [
+            {
+              type: "image",
+              illustId: "000001",
+              pageNumber: 1,
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 22, offset: 21 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 22, offset: 21 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 22, offset: 21 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -108,9 +228,26 @@ describe("Tokenize", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "[pixivimage:000001 -1]" }],
+          children: [
+            {
+              type: "text",
+              value: "[pixivimage:000001 -1]",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 23, offset: 22 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 23, offset: 22 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 23, offset: 22 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -122,9 +259,27 @@ describe("Tokenize", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "image", illustId: "000001", pageNumber: 1 }],
+          children: [
+            {
+              type: "image",
+              illustId: "000001",
+              pageNumber: 1,
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 22, offset: 21 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 22, offset: 21 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 22, offset: 21 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -136,9 +291,26 @@ describe("Tokenize", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "[pixivimage:000001- 1]" }],
+          children: [
+            {
+              type: "text",
+              value: "[pixivimage:000001- 1]",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 23, offset: 22 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 23, offset: 22 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 23, offset: 22 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -150,9 +322,26 @@ describe("Tokenize", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "image", illustId: "000001" }],
+          children: [
+            {
+              type: "image",
+              illustId: "000001",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 20, offset: 19 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 20, offset: 19 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 20, offset: 19 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -164,9 +353,26 @@ describe("Tokenize", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "text", value: "[pixivimage:000001 ]" }],
+          children: [
+            {
+              type: "text",
+              value: "[pixivimage:000001 ]",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 21, offset: 20 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 21, offset: 20 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 21, offset: 20 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -180,9 +386,26 @@ describe("内部コンテンツ", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "image", illustId: "000001" }],
+          children: [
+            {
+              type: "image",
+              illustId: "000001",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 20, offset: 19 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 20, offset: 19 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 20, offset: 19 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });
@@ -194,9 +417,27 @@ describe("内部コンテンツ", () => {
       children: [
         {
           type: "paragraph",
-          children: [{ type: "image", illustId: "000001", pageNumber: 1 }],
+          children: [
+            {
+              type: "image",
+              illustId: "000001",
+              pageNumber: 1,
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 22, offset: 21 },
+              },
+            },
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 22, offset: 21 },
+          },
         },
       ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 1, column: 22, offset: 21 },
+      },
     };
     expect(fromPixivNovel(source)).toEqual(expected);
   });

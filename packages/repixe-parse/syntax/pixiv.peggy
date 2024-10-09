@@ -23,7 +23,7 @@ Paragraph = match:(!break|2..| (PhrasingContent))+ {
 }
 
 // PhrasingContent
-PhrasingContent = Break / InlinePhrasingContent
+PhrasingContent = Break / Image / InlinePhrasingContent
 
 // PhrasingContent:Break
 Break = break {
@@ -33,6 +33,33 @@ Break = break {
     position
   };
 }
+
+// PhrasingContent:Image
+Image = ImageStart id:ImageId page:(ImageNext $ImagePage)? ImageEnd {
+  const { source: _, ...position } = location();
+  const result =  {
+    type: "image",
+    illustId: {id}.id,
+    pageNumber: parseInt({page}?.page?.[1]),
+    position
+  };
+  return Object.fromEntries(Object.entries(result).filter(([key, value]) => value));
+}
+ImageStart = left "pixivimage:"
+ImageId = match:(!(ImageNext / ImageEnd) [0-9])+ {
+  return {match}.match
+    .map((chars) => chars[1])
+    .flat(1)
+    .join("");
+}
+ImageNext = hyphen
+ImagePage = match:(!ImageEnd [0-9])+ {
+  return {match}.match
+    .map((chars) => chars[1])
+    .flat(1)
+    .join("");
+}
+ImageEnd = right
 
 // InlinePhrasingContent
 InlinePhrasingContent = Ruby / Text
@@ -78,6 +105,7 @@ text = [^\n\r]
 left = "["
 right = "]"
 next = ">"
+hyphen = "-"
 fullWidthSpace = "　"
 halfWidthSpace = " "
 space = fullWidthSpace / halfWidthSpace

@@ -23,7 +23,7 @@ Paragraph = match:(!break|2..| (PhrasingContent))+ {
 }
 
 // PhrasingContent
-PhrasingContent = Break / Image / InlinePhrasingContent
+PhrasingContent = Break / Image / Link / InlinePhrasingContent
 
 // PhrasingContent:Break
 Break = break {
@@ -60,6 +60,30 @@ ImagePage = match:(!ImageEnd [0-9])+ {
     .join("");
 }
 ImageEnd = right
+
+// PhrasingContent:Link
+Link = LinkStart text:LinkText LinkNext url:LinkUrl LinkEnd {
+  const { source: _, ...position } = location();
+  return {
+    type: "link",
+    url: {url}.url,
+    children: {text}.text,
+    position
+  };
+}
+LinkStart = left left "jumpuri:" space*
+LinkText = match:(!LinkNext InlinePhrasingContent)+ {
+  return {match}.match
+    .map((nodes) => nodes[1]);
+}
+LinkNext = space * next halfWidthSpace*
+LinkUrl = match:(!LinkEnd urlText)+ {
+  return {match}.match
+    .map((chars) => chars[1])
+    .flat(1)
+    .join("");
+}
+LinkEnd = halfWidthSpace* right right
 
 // InlinePhrasingContent
 InlinePhrasingContent = Ruby / Text
@@ -109,3 +133,4 @@ hyphen = "-"
 fullWidthSpace = "　"
 halfWidthSpace = " "
 space = fullWidthSpace / halfWidthSpace
+urlText = [\[\^\-\\\]_.~!*'\(\);:@&=+$,/?%#A-z0-9]

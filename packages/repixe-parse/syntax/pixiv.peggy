@@ -23,7 +23,7 @@ Paragraph = match:(!break|2..| (PhrasingContent))+ {
 }
 
 // PhrasingContent
-PhrasingContent = Break / Image / Link / InlinePhrasingContent
+PhrasingContent = Break / Image / Link / PageReference / InlinePhrasingContent
 
 // PhrasingContent:Break
 Break = break {
@@ -84,6 +84,24 @@ LinkUrl = match:(!LinkEnd urlText)+ {
     .join("");
 }
 LinkEnd = halfWidthSpace* right right
+
+// PhrasingContent:PageReference
+PageReference = PRStart pageNumber:PRPage PREnd {
+  const { source: _, ...position } = location();
+  return {
+    type: "pageReference",
+    pageNumber: parseInt({pageNumber}.pageNumber),
+    position
+  };
+}
+PRStart = left "jump:"
+PRPage = match:(!PREnd [0-9])+ {
+  return {match}.match
+    .map((chars) => chars[1])
+    .flat(1)
+    .join("")
+}
+PREnd = right
 
 // InlinePhrasingContent
 InlinePhrasingContent = Ruby / Text

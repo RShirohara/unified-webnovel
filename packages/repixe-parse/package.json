@@ -30,11 +30,9 @@
   },
   "dependencies": {
     "@rshirohara/pxast": "workspace:^",
-    "pixiv-novel-parser": "^0.3.0",
     "unified": "^11.0.5"
   },
   "devDependencies": {
-    "@types/pixiv-novel-parser": "workspace:*",
     "@unified-webnovel/tsconfig": "workspace:*",
     "peggy": "^4.0.3",
     "ts-pegjs": "^4.2.1"
@@ -50,7 +48,6 @@
     },
     "remove": [
       "scripts.build",
-      "devDependencies.@types/pixiv-novel-parser",
       "devDependencies.@unified-webnovel/tsconfig",
       "publishConfig",
       "clean-package"

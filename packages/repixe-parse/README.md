@@ -23,10 +23,6 @@
 This package is a [unified][] plugin that defines how to take [pixiv novel][pixiv-novel] format
 as input and turn it into a syntax tree.
 
-This plugin uses [`pixiv-novel-parser`][pixiv-novel-parser]
-for parsing pixiv novel format text into tokens
-and turns those into [pxast][] syntax trees.
-
 ## Install
 
 This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
@@ -97,7 +93,7 @@ There are no options.
 
 ## Syntax
 
-Pixiv novel format text is parsed according uses [`pixiv-novel-parser`][pixiv-novel-parser].
+Pixiv novel format text is parsed according to the [official documentation][pixiv-novel-notation].
 
 ## Syntax tree
 
@@ -117,7 +113,7 @@ There are no extra exported types.
 [license-badge]: https://img.shields.io/github/license/RShirohara/unified-webnovel
 [license]: ./LICENSE.md
 [npm]: https://docs.npmjs.com/cli/install
-[pixiv-novel-parser]: https://github.com/pixiv/pixiv-novel-parser
+[pixiv-novel-notation]: https://www.pixiv.help/hc/ja/articles/235584168-%E5%B0%8F%E8%AA%AC%E4%BD%9C%E5%93%81%E3%81%AE%E6%9C%AC%E6%96%87%E5%86%85%E3%81%AB%E4%BD%BF%E3%81%88%E3%82%8B%E7%89%B9%E6%AE%8A%E3%82%BF%E3%82%B0%E3%81%A8%E3%81%AF
 [pixiv-novel]: https://www.pixiv.net/novel
 [pxast]: ../pxast
 [repixe]: ../repixe

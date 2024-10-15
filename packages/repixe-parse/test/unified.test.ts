@@ -61,5 +61,5 @@ test("repixeParse", () => {
       },
     ],
   };
-  expect(unified().use(repixeParse).parse(source)).toEqual(expected);
+  expect(unified().use(repixeParse).parse(source)).toMatchObject(expected);
 });

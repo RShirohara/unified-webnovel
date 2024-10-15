@@ -5,8 +5,7 @@
     "baseUrl": "./src",
     "paths": {
       "~/*": ["./*"]
-    },
-    "types": ["@types/pixiv-novel-parser"]
+    }
   },
   "include": ["./src", "./test"]
 }

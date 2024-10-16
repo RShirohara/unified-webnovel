@@ -320,7 +320,7 @@ function peg$parse(input, options) {
   var peg$r1 = /^[0-9]/;
   var peg$r2 = /^[^\n\r]/;
   var peg$r3 = /^[ \u3000]/;
-  var peg$r4 = /^[[\^\-\\\]_.~!*'();:@&=+$,\/?%#A-z0-9]/;
+  var peg$r4 = /^[!#$%&'()*+,\/:;=?@[\]A-Za-z0-9\-._~]/;
 
   var peg$e0 = peg$literalExpectation("chapter:", false);
   var peg$e1 = peg$literalExpectation("[newpage]", false);
@@ -340,7 +340,7 @@ function peg$parse(input, options) {
   var peg$e15 = peg$literalExpectation("\u3000", false);
   var peg$e16 = peg$literalExpectation(" ", false);
   var peg$e17 = peg$classExpectation([" ", "\u3000"], false, false);
-  var peg$e18 = peg$classExpectation(["[", "^", "-", "\\", "]", "_", ".", "~", "!", "*", "'", "(", ")", ";", ":", "@", "&", "=", "+", "$", ",", "/", "?", "%", "#", ["A", "z"], ["0", "9"]], false, false);
+  var peg$e18 = peg$classExpectation(["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "/", ":", ";", "=", "?", "@", "[", "]", ["A", "Z"], ["a", "z"], ["0", "9"], "-", ".", "_", "~"], false, false);
 // @ts-ignore
 
   var peg$f0 = function(children) {

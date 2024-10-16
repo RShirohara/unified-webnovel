@@ -179,4 +179,4 @@ hyphen = "-"
 fullWidthSpace = "　"
 halfWidthSpace = " "
 space = fullWidthSpace / halfWidthSpace
-urlText = [\[\^\-\\\]_.~!*'\(\);:@&=+$,/?%#A-z0-9]
+urlText = [!#$%&'\(\)*+,/:;=?@\[\]A-Za-z0-9-._~]

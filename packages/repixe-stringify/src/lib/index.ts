@@ -17,7 +17,7 @@ import type {
 
 export function toPixivNovel(tree: Root): string {
   return [...tree.children]
-    .map(compileRootChildren)
+    .map((node) => compileRootChildren(node))
     .filter((text) => text !== "")
     .join("\n\n");
 }

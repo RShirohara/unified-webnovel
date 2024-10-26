@@ -7,7 +7,6 @@ import type {
 } from "unist";
 
 // Node
-
 export interface Parent extends UnistParent {
   children: PxastContent[];
 }
@@ -20,11 +19,6 @@ export interface Root extends Parent {
   type: "root";
 }
 
-export interface Paragraph extends Parent {
-  type: "paragraph";
-  children: PhrasingContent[];
-}
-
 export interface Heading extends Parent {
   type: "heading";
   children: InlinePhrasingContent[];
@@ -34,23 +28,13 @@ export interface PageBreak extends Node {
   type: "pageBreak";
 }
 
-export interface Text extends Literal {
-  type: "text";
-}
-
-export interface Ruby extends Literal {
-  type: "ruby";
-  ruby: string;
+export interface Paragraph extends Parent {
+  type: "paragraph";
+  children: PhrasingContent[];
 }
 
 export interface Break extends Node {
   type: "break";
-}
-
-export interface Link extends Parent {
-  type: "link";
-  url: string;
-  children: InlinePhrasingContent[];
 }
 
 export interface Image extends Node {
@@ -59,13 +43,27 @@ export interface Image extends Node {
   pageNumber?: number;
 }
 
+export interface Link extends Parent {
+  type: "link";
+  url: string;
+  children: InlinePhrasingContent[];
+}
+
 export interface PageReference extends Node {
   type: "pageReference";
   pageNumber: number;
 }
 
-// Content model
+export interface Ruby extends Literal {
+  type: "ruby";
+  ruby: string;
+}
 
+export interface Text extends Literal {
+  type: "text";
+}
+
+// Content model
 export type PxastContent = FlowContent | PhrasingContent;
 
 export type FlowContent = Heading | PageBreak | Paragraph;

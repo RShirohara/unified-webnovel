@@ -18,15 +18,15 @@ It implements [unist][].
     - [`Parent`](#parent)
     - [`Literal`](#literal)
     - [`Root`](#root)
-    - [`Paragraph`](#paragraph)
     - [`Heading`](#heading)
     - [`PageBreak`](#pagebreak)
-    - [`Text`](#text)
-    - [`Ruby`](#ruby)
+    - [`Paragraph`](#paragraph)
     - [`Break`](#break)
-    - [`Link`](#link)
     - [`Image`](#image)
+    - [`Link`](#link)
     - [`PageReference`](#pagereference)
+    - [`Ruby`](#ruby)
+    - [`Text`](#text)
   - [Content model](#content-model)
     - [`FlowContent`](#flowcontent)
     - [`PhrasingContent`](#phrasingcontent)
@@ -88,35 +88,6 @@ interface Root <: Parent {
 
 **Root** can be used as the [_root_][term-root] of a [_tree_][term-tree],
 never as a [_child_][term-child].
-
-### `Paragraph`
-
-```idl
-interface Paragraph <: Parent {
-  type: "paragraph"
-  children: [PhrasingContent]
-}
-```
-
-**Paragraph** ([**Parent**][dfn-parent]) represents a unit of discourse dealing with a particular point.
-
-**Paragraph** can be used where [**content**][dfn-content] is expected.
-Its content model is [**phrasing**][dfn-phrasing-content] content.
-
-For example, the following text:
-
-```text
-たとえば私はこの文章を書く。
-```
-
-Yields:
-
-```js
-{
-  type: "paragraph",
-  children: [{ type: "text", value: "たとえば私はこの文章を書く。" }]
-}
-```
 
 ### `Heading`
 
@@ -187,18 +158,19 @@ Yields:
 }
 ```
 
-### `Text`
+### `Paragraph`
 
 ```idl
-interface Text <: Literal {
-  type: "text"
+interface Paragraph <: Parent {
+  type: "paragraph"
+  children: [PhrasingContent]
 }
 ```
 
-**Text** ([**Literal**][dfn-literal]) represents everything that is just text.
+**Paragraph** ([**Parent**][dfn-parent]) represents a unit of discourse dealing with a particular point.
 
-**Text** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
-Its content is represented by its `value` field.
+**Paragraph** can be used where [**content**][dfn-content] is expected.
+Its content model is [**phrasing**][dfn-phrasing-content] content.
 
 For example, the following text:
 
@@ -209,36 +181,9 @@ For example, the following text:
 Yields:
 
 ```js
-{ type: "text", value: "たとえば私はこの文章を書く。" }
-```
-
-### `Ruby`
-
-```idl
-interface Ruby <: Literal {
-  type: "ruby"
-  ruby: string
-}
-```
-
-**Ruby** ([**Literal**][dfn-literal]) represents a small annotations that are rendered above, below, or next to text.
-
-**Ruby** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
-Its content is represented by its `value` and `ruby` fields.
-
-For example, the following text:
-
-```text
-[[rb:私>わたし]]
-```
-
-Yields:
-
-```js
 {
-  type: "ruby",
-  value: "私",
-  ruby: "わたし"
+  type: "paragraph",
+  children: [{ type: "text", value: "たとえば私はこの文章を書く。" }]
 }
 ```
 
@@ -275,37 +220,6 @@ Yields:
 }
 ```
 
-### `Link`
-
-```idl
-interface Link <: Parent {
-  type: "link"
-  url: string
-  children: [InlinePhrasingContent]
-}
-```
-
-**Link** ([**Parent**][dfn-parent]) represents a hyperlink.
-
-**Link** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
-Its content model is [**inline phrasing**][dfn-inline-phrasing-content] content.
-
-For example, the following text:
-
-```text
-[[jumpurl:リンク例>https://example.com]]
-```
-
-Yields:
-
-```js
-{
-  type: "link",
-  url: "https://example.com",
-  children: [{ type: "text", value: "リンク例" }]
-}
-```
-
 ### `Image`
 
 ```idl
@@ -334,6 +248,37 @@ Yields:
   type: "image",
   illustId: "000001",
   pageNumber: 2
+}
+```
+
+### `Link`
+
+```idl
+interface Link <: Parent {
+  type: "link"
+  url: string
+  children: [InlinePhrasingContent]
+}
+```
+
+**Link** ([**Parent**][dfn-parent]) represents a hyperlink.
+
+**Link** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
+Its content model is [**inline phrasing**][dfn-inline-phrasing-content] content.
+
+For example, the following text:
+
+```text
+[[jumpurl:リンク例>https://example.com]]
+```
+
+Yields:
+
+```js
+{
+  type: "link",
+  url: "https://example.com",
+  children: [{ type: "text", value: "リンク例" }]
 }
 ```
 
@@ -367,6 +312,61 @@ Yields:
   type: "pageReference",
   pageNumber: 1
 }
+```
+
+### `Ruby`
+
+```idl
+interface Ruby <: Literal {
+  type: "ruby"
+  ruby: string
+}
+```
+
+**Ruby** ([**Literal**][dfn-literal]) represents a small annotations that are rendered above, below, or next to text.
+
+**Ruby** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
+Its content is represented by its `value` and `ruby` fields.
+
+For example, the following text:
+
+```text
+[[rb:私>わたし]]
+```
+
+Yields:
+
+```js
+{
+  type: "ruby",
+  value: "私",
+  ruby: "わたし"
+}
+```
+
+### `Text`
+
+```idl
+interface Text <: Literal {
+  type: "text"
+}
+```
+
+**Text** ([**Literal**][dfn-literal]) represents everything that is just text.
+
+**Text** can be used where [**phrasing**][dfn-phrasing-content] content is expected.
+Its content is represented by its `value` field.
+
+For example, the following text:
+
+```text
+たとえば私はこの文章を書く。
+```
+
+Yields:
+
+```js
+{ type: "text", value: "たとえば私はこの文章を書く。" }
 ```
 
 ## Content model

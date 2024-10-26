@@ -16,7 +16,7 @@
     - [`unified().use(repixeRekurke[, destination][, options])`](#unifieduserepixerekurke-destination-options)
       - [Parameters](#parameters)
         - [Notes](#notes)
-          - [Sigunature](#sigunature)
+          - [Signature](#signature)
       - [Returns](#returns)
     - [Options](#options)
       - [Fields](#fields)
@@ -92,7 +92,7 @@ Turn pixiv novel format to kakuyomu novel format.
 
 ##### Notes
 
-###### Sigunature
+###### Signature
 
 - if a [processor][unified-processor] is given, runs the (rekurke) plugins
   used on it with a kkast tree, then discards the result.

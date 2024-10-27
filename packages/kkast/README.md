@@ -20,10 +20,10 @@ It implements [unist][].
     - [`Root`](#root)
     - [`Paragraph`](#paragraph)
     - [`ParagraphMargin`](#paragraphmargin)
-    - [`Text`](#text)
-    - [`Ruby`](#ruby)
-    - [`Emphasis`](#emphasis)
     - [`Break`](#break)
+    - [`Emphasis`](#emphasis)
+    - [`Ruby`](#ruby)
+    - [`Text`](#text)
   - [Content model](#content-model)
     - [`FlowContent`](#flowcontent)
     - [`PhrasingContent`](#phrasingcontent)
@@ -148,30 +148,70 @@ Yields:
 }
 ```
 
-### `Text`
+### `Break`
 
 ```idl
-interface text <: Literal {
-  type: "text"
+interface Break <: Node {
+  type: "break"
 }
 ```
 
-**Text** ([**Literal**][dfn-literal]) represents everything that is just text.
+**Break** ([**Node**][dfn-node]) represents a line break.
 
-**Text** can be used where [**phrasing**][dfn-phrasing-content] content is
+**Break** can be used where [**phrasing**][dfn-phrasing-content] content is
+expected.
+It has no content model.
+
+For example, the following text:
+
+```text
+これは一行目。
+これが二行目。
+```
+
+Yields:
+
+```js
+{
+  type: "paragraph",
+  children: [
+    { type: "text", value: "これは一行目。" },
+    { type: "break" },
+    { type: "text", value: "これが二行目。" }
+  ]
+}
+```
+
+### `Emphasis`
+
+```idl
+interface Emphasis <: Literal {
+  type: "emphasis"
+}
+```
+
+**Emphasis** ([**Literal**][dfn-literal]) represents a highlighted text.
+
+**Emphasis** can be used where [**phrasing**][dfn-phrasing-content] content is
 expected.
 Its content is represented by its `value` field.
 
 For example, the following text:
 
 ```text
-たとえば私はこの文章を書く。
+《《強調された》》テキスト
 ```
 
 Yields:
 
 ```js
-{ type: "text", value: "たとえば私はこの文章を書く。" }
+{
+  type: "paragraph",
+  children: [
+    { type: "emphasis", value: "強調された" },
+    { type: "text", value: "テキスト" }
+  ]
+}
 ```
 
 ### `Ruby`
@@ -222,70 +262,30 @@ Yields:
 }
 ```
 
-### `Emphasis`
+### `Text`
 
 ```idl
-interface Emphasis <: Literal {
-  type: "emphasis"
+interface text <: Literal {
+  type: "text"
 }
 ```
 
-**Emphasis** ([**Literal**][dfn-literal]) represents a highlighted text.
+**Text** ([**Literal**][dfn-literal]) represents everything that is just text.
 
-**Emphasis** can be used where [**phrasing**][dfn-phrasing-content] content is
+**Text** can be used where [**phrasing**][dfn-phrasing-content] content is
 expected.
 Its content is represented by its `value` field.
 
 For example, the following text:
 
 ```text
-《《強調された》》テキスト
+たとえば私はこの文章を書く。
 ```
 
 Yields:
 
 ```js
-{
-  type: "paragraph",
-  children: [
-    { type: "emphasis", value: "強調された" },
-    { type: "text", value: "テキスト" }
-  ]
-}
-```
-
-### `Break`
-
-```idl
-interface Break <: Node {
-  type: "break"
-}
-```
-
-**Break** ([**Node**][dfn-node]) represents a line break.
-
-**Break** can be used where [**phrasing**][dfn-phrasing-content] content is
-expected.
-It has no content model.
-
-For example, the following text:
-
-```text
-これは一行目。
-これが二行目。
-```
-
-Yields:
-
-```js
-{
-  type: "paragraph",
-  children: [
-    { type: "text", value: "これは一行目。" },
-    { type: "break" },
-    { type: "text", value: "これが二行目。" }
-  ]
-}
+{ type: "text", value: "たとえば私はこの文章を書く。" }
 ```
 
 ## Content model

@@ -1,4 +1,4 @@
-// Type definition for kkast.
+// Type definitions for kkast.
 
 import type {
   Node,
@@ -7,7 +7,6 @@ import type {
 } from "unist";
 
 // Node
-
 export interface Parent extends UnistParent {
   children: KkastContent[];
 }
@@ -30,8 +29,12 @@ export interface ParagraphMargin extends Node {
   size: number;
 }
 
-export interface Text extends Literal {
-  type: "text";
+export interface Break extends Node {
+  type: "break";
+}
+
+export interface Emphasis extends Literal {
+  type: "emphasis";
 }
 
 export interface Ruby extends Literal {
@@ -39,18 +42,13 @@ export interface Ruby extends Literal {
   ruby: string;
 }
 
-export interface Emphasis extends Literal {
-  type: "emphasis";
-}
-
-export interface Break extends Node {
-  type: "break";
+export interface Text extends Literal {
+  type: "text";
 }
 
 // Content model
-
 export type KkastContent = FlowContent | PhrasingContent;
 
 export type FlowContent = Paragraph | ParagraphMargin;
 
-export type PhrasingContent = Text | Ruby | Emphasis | Break;
+export type PhrasingContent = Break | Emphasis | Ruby | Text;

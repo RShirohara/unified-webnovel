@@ -24,7 +24,7 @@ function removeLastBreaks<T extends KkastNode>(node: T): T {
     }
     case "paragraph": {
       if (
-        node.children.length >= 1 &&
+        node.children.length > 0 &&
         node.children[node.children.length - 1].type === "break"
       ) {
         return { ...node, children: node.children.slice(0, -1) };

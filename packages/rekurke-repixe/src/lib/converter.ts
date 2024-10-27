@@ -43,6 +43,9 @@ export function convertRoot(
           case "break": {
             return convertBreak(node, options);
           }
+          default: {
+            return undefined;
+          }
         }
       })
       .filter((node) => node !== undefined),
@@ -56,22 +59,27 @@ function convertParagraph(
 ): PxastParagraph {
   return {
     type: "paragraph",
-    children: [...tree.children].map((node) => {
-      switch (node.type) {
-        case "text": {
-          return convertText(node, options);
+    children: [...tree.children]
+      .map((node) => {
+        switch (node.type) {
+          case "text": {
+            return convertText(node, options);
+          }
+          case "ruby": {
+            return convertRuby(node, options);
+          }
+          case "emphasis": {
+            return convertEmphasis(node, options);
+          }
+          case "break": {
+            return convertBreak(node, options);
+          }
+          default: {
+            return undefined;
+          }
         }
-        case "ruby": {
-          return convertRuby(node, options);
-        }
-        case "emphasis": {
-          return convertEmphasis(node, options);
-        }
-        case "break": {
-          return convertBreak(node, options);
-        }
-      }
-    }),
+      })
+      .filter((node) => node !== undefined),
   };
 }
 

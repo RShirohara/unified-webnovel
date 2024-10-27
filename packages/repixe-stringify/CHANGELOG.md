@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.0](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-stringify@0.2.4...@rshirohara/repixe-stringify@0.3.0) (2024-10-27)
+
+### ⚠ BREAKING CHANGES
+
+* replace `PageHeading` to `PageBreak` in pxast (#329)
+
+### Features
+
+* replace `PageHeading` to `PageBreak` in pxast ([#329](https://github.com/RShirohara/unified-webnovel/issues/329)) ([cb9c913](https://github.com/RShirohara/unified-webnovel/commit/cb9c91302a24d994cc136017842303d5fdd4819c))
+
+### Code Refactoring
+
+* AST compile process for repixe ([#345](https://github.com/RShirohara/unified-webnovel/issues/345)) ([1a8ecdc](https://github.com/RShirohara/unified-webnovel/commit/1a8ecdc0242950f800ee7a4824393f4dae23daa1))
+* fix how to call callbackFn ([#346](https://github.com/RShirohara/unified-webnovel/issues/346)) ([8b81ced](https://github.com/RShirohara/unified-webnovel/commit/8b81cede3a26ea687b759dfb81c1527ab3d635e9))
+* replace `PageHeading` to `PageBreak` on forgot to delete location ([#330](https://github.com/RShirohara/unified-webnovel/issues/330)) ([cef979c](https://github.com/RShirohara/unified-webnovel/commit/cef979c6e8ab141bd179c99fa537c3fa09c95dac)), closes [#329](https://github.com/RShirohara/unified-webnovel/issues/329)
+
 ## [0.2.4](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-stringify@0.2.3...@rshirohara/repixe-stringify@0.2.4) (2024-09-08)
 
 * build(deps): bump unified from 11.0.4 to 11.0.5 (#308) ([2c675ee](https://github.com/RShirohara/unified-webnovel/commit/2c675ee)), closes [#308](https://github.com/RShirohara/unified-webnovel/issues/308)

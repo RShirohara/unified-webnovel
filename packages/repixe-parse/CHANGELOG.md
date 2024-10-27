@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.0](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-parse@0.2.4...@rshirohara/repixe-parse@0.3.0) (2024-10-27)
+
+### ⚠ BREAKING CHANGES
+
+* replace `PageHeading` to `PageBreak` in pxast (#329)
+
+### Features
+
+* replace `PageHeading` to `PageBreak` in pxast ([#329](https://github.com/RShirohara/unified-webnovel/issues/329)) ([cb9c913](https://github.com/RShirohara/unified-webnovel/commit/cb9c91302a24d994cc136017842303d5fdd4819c))
+
+### Bug Fixes
+
+* url characters pattern in `PhrasingContent/Link` for repixe ([#344](https://github.com/RShirohara/unified-webnovel/issues/344)) ([b0082d3](https://github.com/RShirohara/unified-webnovel/commit/b0082d35e3ed1164474b4c753d180c0917cb0263)), closes [#343](https://github.com/RShirohara/unified-webnovel/issues/343)
+
+### Code Refactoring
+
+* rewrite parser for repixe-parse ([#341](https://github.com/RShirohara/unified-webnovel/issues/341)) ([bcf2948](https://github.com/RShirohara/unified-webnovel/commit/bcf29480598bd0e08a4f7f714d75eabdb7924414))
+
 ## [0.2.4](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-parse@0.2.3...@rshirohara/repixe-parse@0.2.4) (2024-09-08)
 
 * build(deps): bump unified from 11.0.4 to 11.0.5 (#308) ([2c675ee](https://github.com/RShirohara/unified-webnovel/commit/2c675ee)), closes [#308](https://github.com/RShirohara/unified-webnovel/issues/308)

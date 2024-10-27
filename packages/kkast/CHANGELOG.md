@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/kkast@0.1.2...@rshirohara/kkast@0.1.3) (2024-10-27)
+
+### Documents
+
+* fix ast node order for kkast ([#349](https://github.com/RShirohara/unified-webnovel/issues/349)) ([270dfd6](https://github.com/RShirohara/unified-webnovel/commit/270dfd68d819f3070de713bb2d510d9c8053cdf4))
+
 ## [0.1.2](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/kkast@0.1.1...@rshirohara/kkast@0.1.2) (2024-09-08)
 
 * build(deps): bump @types/unist from 3.0.2 to 3.0.3 (#321) ([c16c922](https://github.com/RShirohara/unified-webnovel/commit/c16c922)), closes [#321](https://github.com/RShirohara/unified-webnovel/issues/321)

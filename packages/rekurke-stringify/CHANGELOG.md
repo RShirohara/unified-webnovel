@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-stringify@0.1.2...@rshirohara/rekurke-stringify@0.1.3) (2024-10-27)
+
+**Note:** Version bump only for package @rshirohara/rekurke-stringify
+
 ## [0.1.2](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-stringify@0.1.1...@rshirohara/rekurke-stringify@0.1.2) (2024-09-08)
 
 * build(deps): bump unified from 11.0.4 to 11.0.5 (#308) ([2c675ee](https://github.com/RShirohara/unified-webnovel/commit/2c675ee)), closes [#308](https://github.com/RShirohara/unified-webnovel/issues/308)

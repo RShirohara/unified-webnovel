@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.0](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/pxast@0.2.3...@rshirohara/pxast@0.3.0) (2024-10-27)
+
+### ⚠ BREAKING CHANGES
+
+* replace `PageHeading` to `PageBreak` in pxast (#329)
+
+### Features
+
+* replace `PageHeading` to `PageBreak` in pxast ([#329](https://github.com/RShirohara/unified-webnovel/issues/329)) ([cb9c913](https://github.com/RShirohara/unified-webnovel/commit/cb9c91302a24d994cc136017842303d5fdd4819c))
+
+### Documents
+
+* fix ast node order for pxast ([#348](https://github.com/RShirohara/unified-webnovel/issues/348)) ([1769233](https://github.com/RShirohara/unified-webnovel/commit/17692338ac30833208dcdc174e670dae286058a5))
+
 ## [0.2.3](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/pxast@0.2.2...@rshirohara/pxast@0.2.3) (2024-09-08)
 
 * build(deps): bump @types/unist from 3.0.2 to 3.0.3 (#321) ([c16c922](https://github.com/RShirohara/unified-webnovel/commit/c16c922)), closes [#321](https://github.com/RShirohara/unified-webnovel/issues/321)

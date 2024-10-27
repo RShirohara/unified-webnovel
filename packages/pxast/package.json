@@ -1,6 +1,6 @@
 {
   "name": "@rshirohara/pxast",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Pixiv novel ast definition.",
   "keywords": ["unified", "repixe", "pixiv"],
   "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/pxast#readme",

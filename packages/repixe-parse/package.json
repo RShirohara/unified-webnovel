@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@unified-webnovel/tsconfig": "workspace:*",
-    "peggy": "^4.0.3",
+    "peggy": "^4.1.1",
     "ts-pegjs": "^4.2.1"
   },
   "publishConfig": {

@@ -36,7 +36,10 @@
     "@rshirohara/repixe-parse": "workspace:*",
     "@rshirohara/repixe-stringify": "workspace:*",
     "@unified-webnovel/tsconfig": "workspace:*",
-    "@vivliostyle/vfm": "^2.2.1"
+    "@vivliostyle/vfm": "^2.2.1",
+    "rehype-stringify": "10.0.1",
+    "remark-parse": "11.0.0",
+    "remark-rehype": "11.1.1"
   },
   "publishConfig": {
     "access": "public",

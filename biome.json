@@ -18,8 +18,7 @@
   },
   "formatter": {
     "enabled": true,
-    "formatWithErrors": false,
-    "indentStyle": "space"
+    "formatWithErrors": false
   },
   "organizeImports": {
     "enabled": true

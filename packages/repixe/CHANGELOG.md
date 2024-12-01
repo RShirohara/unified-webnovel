@@ -3,10 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.2.6](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe@0.2.5...@rshirohara/repixe@0.2.6) (2024-12-01)
-
-**Note:** Version bump only for package @rshirohara/repixe
-
 ## [0.2.5](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe@0.2.4...@rshirohara/repixe@0.2.5) (2024-10-27)
 
 ### Code Refactoring

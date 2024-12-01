@@ -3,10 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.3.1](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/pxast@0.3.0...@rshirohara/pxast@0.3.1) (2024-12-01)
-
-**Note:** Version bump only for package @rshirohara/pxast
-
 ## [0.3.0](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/pxast@0.2.3...@rshirohara/pxast@0.3.0) (2024-10-27)
 
 ### ⚠ BREAKING CHANGES

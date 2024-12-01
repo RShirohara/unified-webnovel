@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-repixe@0.1.1...@rshirohara/rekurke-repixe@0.1.2) (2024-12-01)
+
+**Note:** Version bump only for package @rshirohara/rekurke-repixe
+
 ## [0.1.1](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-repixe@0.1.0...@rshirohara/rekurke-repixe@0.1.1) (2024-10-27)
 
 ### Code Refactoring

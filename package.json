@@ -1,32 +1,32 @@
 {
-  "name": "unified-webnovel",
-  "private": true,
-  "description": "unified packages for web novel.",
-  "license": "MIT",
-  "type": "module",
-  "packageManager": "pnpm@9.12.1",
-  "workspaces": ["./packages/*"],
-  "scripts": {
-    "build": "pnpm run -r build",
-    "check": "biome check .",
-    "publish": "lerna publish from-git",
-    "test": "vitest run --coverage.enabled --coverage.reportOnFailure --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
-    "test:watch": "vitest watch",
-    "version:check": "lerna changed",
-    "version:update": "lerna version --conventional-commits --no-git-tag-version --sync-workspace-lock"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@edge-runtime/vm": "4.0.4",
-    "@lerna-lite/changed": "3.10.1",
-    "@lerna-lite/cli": "3.10.1",
-    "@lerna-lite/publish": "3.10.1",
-    "@lerna-lite/version": "3.10.1",
-    "@vitest/coverage-v8": "2.1.6",
-    "clean-package": "2.2.0",
-    "conventional-changelog-conventionalcommits": "7.0.2",
-    "typescript": "5.7.2",
-    "vite-tsconfig-paths": "5.1.3",
-    "vitest": "2.1.6"
-  }
+	"name": "unified-webnovel",
+	"private": true,
+	"description": "unified packages for web novel.",
+	"license": "MIT",
+	"type": "module",
+	"packageManager": "pnpm@9.14.4",
+	"workspaces": ["./packages/*"],
+	"scripts": {
+		"build": "pnpm run -r build",
+		"check": "biome check .",
+		"publish": "lerna publish from-git",
+		"test": "vitest run --coverage.enabled --coverage.reportOnFailure --coverage.reporter=text --coverage.reporter=json-summary --coverage.reporter=json",
+		"test:watch": "vitest watch",
+		"version:check": "lerna changed",
+		"version:update": "lerna version --conventional-commits --no-git-tag-version --sync-workspace-lock"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@edge-runtime/vm": "4.0.4",
+		"@lerna-lite/changed": "3.10.1",
+		"@lerna-lite/cli": "3.10.1",
+		"@lerna-lite/publish": "3.10.1",
+		"@lerna-lite/version": "3.10.1",
+		"@vitest/coverage-v8": "2.1.6",
+		"clean-package": "2.2.0",
+		"conventional-changelog-conventionalcommits": "7.0.2",
+		"typescript": "5.7.2",
+		"vite-tsconfig-paths": "5.1.3",
+		"vitest": "2.1.6"
+	}
 }

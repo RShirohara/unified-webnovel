@@ -5,6 +5,6 @@ import { type Options, buildOptions } from "./options.js";
 import { postprocess } from "./postprocessor.js";
 
 export function toKkast(tree: PxastRoot, options?: Options | null): KkastRoot {
-  const option = buildOptions(options);
-  return postprocess(convertRoot(tree, option), option);
+	const option = buildOptions(options);
+	return postprocess(convertRoot(tree, option), option);
 }

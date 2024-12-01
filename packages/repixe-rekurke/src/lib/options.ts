@@ -1,18 +1,18 @@
 export interface Options {
-  preserveUnmatchedSyntax?: boolean;
+	preserveUnmatchedSyntax?: boolean;
 }
 
 interface InternalOptions {
-  preserveUnmatchedSyntax: boolean;
+	preserveUnmatchedSyntax: boolean;
 }
 
 export const defaultOptions: InternalOptions = {
-  preserveUnmatchedSyntax: false,
+	preserveUnmatchedSyntax: false,
 };
 
 export function buildOptions(options?: Options | null): InternalOptions {
-  return {
-    ...defaultOptions,
-    ...options,
-  };
+	return {
+		...defaultOptions,
+		...options,
+	};
 }

@@ -1,12 +1,12 @@
 {
-  "extends": "@unified-webnovel/tsconfig/tsconfig.esm.json",
-  "compilerOptions": {
-    "rootDir": "./",
-    "baseUrl": "./src",
-    "paths": {
-      "~*": [".*"]
-    },
-    "types": ["@rshirohara/kkast"]
-  },
-  "include": ["./src", "./test"]
+	"extends": "@unified-webnovel/tsconfig/tsconfig.esm.json",
+	"compilerOptions": {
+		"rootDir": "./",
+		"baseUrl": "./src",
+		"paths": {
+			"~*": [".*"]
+		},
+		"types": ["@rshirohara/kkast"]
+	},
+	"include": ["./src", "./test"]
 }

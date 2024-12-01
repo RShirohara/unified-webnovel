@@ -1,44 +1,44 @@
 {
-  "name": "@rshirohara/pxast",
-  "version": "0.3.0",
-  "description": "Pixiv novel ast definition.",
-  "keywords": ["unified", "repixe", "pixiv"],
-  "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/pxast#readme",
-  "bugs": {
-    "url": "https://github.com/RShirohara/unified-webnovel/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RShirohara/unified-webnovel.git",
-    "directory": "packages/pxast"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Ray Shirohara",
-    "url": "https://github.com/RShirohara"
-  },
-  "main": "",
-  "types": "./src/index.d.ts",
-  "files": ["./src"],
-  "scripts": {
-    "prepack": "clean-package",
-    "postpack": "clean-package restore"
-  },
-  "dependencies": {
-    "@types/unist": "^3.0.3"
-  },
-  "devDependencies": {
-    "@unified-webnovel/tsconfig": "workspace:*"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  },
-  "clean-package": {
-    "remove": [
-      "devDependencies.@unified-webnovel/tsconfig",
-      "publishConfig",
-      "clean-package"
-    ]
-  }
+	"name": "@rshirohara/pxast",
+	"version": "0.3.0",
+	"description": "Pixiv novel ast definition.",
+	"keywords": ["unified", "repixe", "pixiv"],
+	"homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/pxast#readme",
+	"bugs": {
+		"url": "https://github.com/RShirohara/unified-webnovel/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/RShirohara/unified-webnovel.git",
+		"directory": "packages/pxast"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Ray Shirohara",
+		"url": "https://github.com/RShirohara"
+	},
+	"main": "",
+	"types": "./src/index.d.ts",
+	"files": ["./src"],
+	"scripts": {
+		"prepack": "clean-package",
+		"postpack": "clean-package restore"
+	},
+	"dependencies": {
+		"@types/unist": "^3.0.3"
+	},
+	"devDependencies": {
+		"@unified-webnovel/tsconfig": "workspace:*"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	},
+	"clean-package": {
+		"remove": [
+			"devDependencies.@unified-webnovel/tsconfig",
+			"publishConfig",
+			"clean-package"
+		]
+	}
 }

@@ -42,15 +42,15 @@ type TransformMutate = (tree: KkastRoot, file: VFile) => PxastRoot;
  * @returns {TransformMutate}
  */
 export function rekurkeRepixe(
-  destination?: Readonly<Options> | Processor | null,
-  options?: Readonly<Options> | null,
+	destination?: Readonly<Options> | Processor | null,
+	options?: Readonly<Options> | null,
 ): TransformBridge | TransformMutate {
-  if (destination && "run" in destination) {
-    return async (tree, file) => {
-      const pxastTree = toPxast(tree, options);
-      await destination.run(pxastTree, file);
-    };
-  }
+	if (destination && "run" in destination) {
+		return async (tree, file) => {
+			const pxastTree = toPxast(tree, options);
+			await destination.run(pxastTree, file);
+		};
+	}
 
-  return (tree, _file) => toPxast(tree, destination ?? options);
+	return (tree, _file) => toPxast(tree, destination ?? options);
 }

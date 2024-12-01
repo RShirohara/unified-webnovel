@@ -1,11 +1,11 @@
 {
-  "extends": "@unified-webnovel/tsconfig/tsconfig.esm.json",
-  "compilerOptions": {
-    "rootDir": "./",
-    "baseUrl": "./src",
-    "paths": {
-      "~/*": ["./*"]
-    }
-  },
-  "include": ["./src", "./test"]
+	"extends": "@unified-webnovel/tsconfig/tsconfig.esm.json",
+	"compilerOptions": {
+		"rootDir": "./",
+		"baseUrl": "./src",
+		"paths": {
+			"~/*": ["./*"]
+		}
+	},
+	"include": ["./src", "./test"]
 }

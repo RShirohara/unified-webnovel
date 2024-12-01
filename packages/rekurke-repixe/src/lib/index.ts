@@ -4,6 +4,6 @@ import { convertRoot } from "./converter.js";
 import { type Options, buildOptions } from "./options.js";
 
 export function toPxast(tree: KkastRoot, options?: Options | null): PxastRoot {
-  const option = buildOptions(options);
-  return convertRoot(tree, option);
+	const option = buildOptions(options);
+	return convertRoot(tree, option);
 }

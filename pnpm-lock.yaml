@@ -12,8 +12,8 @@ importers:
         specifier: ^1.9.4
         version: 1.9.4
       '@edge-runtime/vm':
-        specifier: ^4.0.3
-        version: 4.0.3
+        specifier: ^4.0.4
+        version: 4.0.4
       '@lerna-lite/changed':
         specifier: ^3.10.0
         version: 3.10.0(@lerna-lite/publish@3.10.0(@types/node@22.7.4)(typescript@5.7.2))(@lerna-lite/version@3.10.0(@lerna-lite/publish@3.10.0(@types/node@22.7.4)(typescript@5.7.2))(@types/node@22.7.4)(typescript@5.7.2))(@types/node@22.7.4)(typescript@5.7.2)
@@ -28,7 +28,7 @@ importers:
         version: 3.10.0(@lerna-lite/publish@3.10.0(@types/node@22.7.4)(typescript@5.7.2))(@types/node@22.7.4)(typescript@5.7.2)
       '@vitest/coverage-v8':
         specifier: ^2.1.4
-        version: 2.1.4(vitest@2.1.4(@edge-runtime/vm@4.0.3)(@types/node@22.7.4))
+        version: 2.1.4(vitest@2.1.4(@edge-runtime/vm@4.0.4)(@types/node@22.7.4))
       clean-package:
         specifier: ^2.2.0
         version: 2.2.0
@@ -43,7 +43,7 @@ importers:
         version: 5.0.1(typescript@5.7.2)(vite@5.4.10(@types/node@22.7.4))
       vitest:
         specifier: ^2.1.4
-        version: 2.1.4(@edge-runtime/vm@4.0.3)(@types/node@22.7.4)
+        version: 2.1.4(@edge-runtime/vm@4.0.4)(@types/node@22.7.4)
 
   packages/kkast:
     dependencies:
@@ -308,12 +308,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@edge-runtime/primitives@5.1.0':
-    resolution: {integrity: sha512-bs379S/qL7b9B1fXM3xYe+g2orW7Uy0m8oIudiXLcHQyZLsdd0Gfw9STngFDnaAfAcRN5g+/YEMPSsDqiPm0TQ==}
+  '@edge-runtime/primitives@5.1.1':
+    resolution: {integrity: sha512-osrHE4ObQ3XFkvd1sGBLkheV2mcHUqJI/Bum2AWA0R3U78h9lif3xZAdl6eLD/XnW4xhsdwjPUejLusXbjvI4Q==}
     engines: {node: '>=16'}
 
-  '@edge-runtime/vm@4.0.3':
-    resolution: {integrity: sha512-2EKlqxSbZTV4D+XG8DTX+9P1SL+m48ahvNbDuxz+dZkmUZ+ju4hl/m28j7QMbC9kU5S+4HUJCYKCAfA+3gggLw==}
+  '@edge-runtime/vm@4.0.4':
+    resolution: {integrity: sha512-LqPw+yaSPpCNnVZl5XoHQAySEzlnZiC9gReUuQHMh9GI03KKqwpVqWkIK1UfK116Yww7f2WZuAgnY/nhHwTsJA==}
     engines: {node: '>=16'}
 
   '@esbuild/aix-ppc64@0.21.5':
@@ -2500,11 +2500,11 @@ snapshots:
   '@biomejs/cli-win32-x64@1.9.4':
     optional: true
 
-  '@edge-runtime/primitives@5.1.0': {}
+  '@edge-runtime/primitives@5.1.1': {}
 
-  '@edge-runtime/vm@4.0.3':
+  '@edge-runtime/vm@4.0.4':
     dependencies:
-      '@edge-runtime/primitives': 5.1.0
+      '@edge-runtime/primitives': 5.1.1
 
   '@esbuild/aix-ppc64@0.21.5':
     optional: true
@@ -3189,7 +3189,7 @@ snapshots:
 
   '@types/unist@3.0.3': {}
 
-  '@vitest/coverage-v8@2.1.4(vitest@2.1.4(@edge-runtime/vm@4.0.3)(@types/node@22.7.4))':
+  '@vitest/coverage-v8@2.1.4(vitest@2.1.4(@edge-runtime/vm@4.0.4)(@types/node@22.7.4))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -3203,7 +3203,7 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.1.4(@edge-runtime/vm@4.0.3)(@types/node@22.7.4)
+      vitest: 2.1.4(@edge-runtime/vm@4.0.4)(@types/node@22.7.4)
     transitivePeerDependencies:
       - supports-color
 
@@ -4661,7 +4661,7 @@ snapshots:
       '@types/node': 22.7.4
       fsevents: 2.3.3
 
-  vitest@2.1.4(@edge-runtime/vm@4.0.3)(@types/node@22.7.4):
+  vitest@2.1.4(@edge-runtime/vm@4.0.4)(@types/node@22.7.4):
     dependencies:
       '@vitest/expect': 2.1.4
       '@vitest/mocker': 2.1.4(vite@5.4.10(@types/node@22.7.4))
@@ -4684,7 +4684,7 @@ snapshots:
       vite-node: 2.1.4(@types/node@22.7.4)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@edge-runtime/vm': 4.0.3
+      '@edge-runtime/vm': 4.0.4
       '@types/node': 22.7.4
     transitivePeerDependencies:
       - less

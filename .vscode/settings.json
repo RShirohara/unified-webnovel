@@ -19,7 +19,11 @@
     "rekurke",
     "repixe",
     "rshirohara",
-    "webnovel"
+    "webnovel",
+    "Shirohara",
+    "postpack",
+    "pegjs",
+    "tspegjs"
   ],
   "javascript.format.enable": false,
   "npm.packageManager": "pnpm"

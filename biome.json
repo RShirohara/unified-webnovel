@@ -1,31 +1,31 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.5.0/schema.json",
-  "files": {
-    "ignore": ["*.peg.ts"],
-    "ignoreUnknown": true
-  },
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true,
-    "defaultBranch": "main"
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "all": true
-    }
-  },
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": false
-  },
-  "organizeImports": {
-    "enabled": true
-  },
-  "json": {
-    "parser": {
-      "allowComments": true
-    }
-  }
+	"$schema": "https://biomejs.dev/schemas/1.5.0/schema.json",
+	"files": {
+		"ignore": ["*.peg.ts"],
+		"ignoreUnknown": true
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true,
+		"defaultBranch": "main"
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"all": true
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"json": {
+		"parser": {
+			"allowComments": true
+		}
+	}
 }

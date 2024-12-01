@@ -1,48 +1,48 @@
 {
-  "$schema": "./node_modules/@lerna-lite/cli/schemas/lerna-schema.json",
-  "version": "independent",
-  "npmClient": "pnpm",
-  "packages": ["./packages/*"],
-  "useWorkspaces": true,
-  "changelogPreset": {
-    "name": "conventionalcommits",
-    "types": [
-      {
-        "type": "feat",
-        "section": "Features"
-      },
-      {
-        "type": "fix",
-        "section": "Bug Fixes"
-      },
-      {
-        "type": "perf",
-        "section": "Performance Improvements"
-      },
-      {
-        "type": "docs",
-        "section": "Documents"
-      },
-      {
-        "type": "style",
-        "hidden": true
-      },
-      {
-        "type": "refactor",
-        "section": "Code Refactoring"
-      },
-      {
-        "type": "test",
-        "hidden": true
-      },
-      {
-        "type": "build",
-        "section": "Build System"
-      },
-      {
-        "type": "ci",
-        "hidden": true
-      }
-    ]
-  }
+	"$schema": "./node_modules/@lerna-lite/cli/schemas/lerna-schema.json",
+	"version": "independent",
+	"npmClient": "pnpm",
+	"packages": ["./packages/*"],
+	"useWorkspaces": true,
+	"changelogPreset": {
+		"name": "conventionalcommits",
+		"types": [
+			{
+				"type": "feat",
+				"section": "Features"
+			},
+			{
+				"type": "fix",
+				"section": "Bug Fixes"
+			},
+			{
+				"type": "perf",
+				"section": "Performance Improvements"
+			},
+			{
+				"type": "docs",
+				"section": "Documents"
+			},
+			{
+				"type": "style",
+				"hidden": true
+			},
+			{
+				"type": "refactor",
+				"section": "Code Refactoring"
+			},
+			{
+				"type": "test",
+				"hidden": true
+			},
+			{
+				"type": "build",
+				"section": "Build System"
+			},
+			{
+				"type": "ci",
+				"hidden": true
+			}
+		]
+	}
 }

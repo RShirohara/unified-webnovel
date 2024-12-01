@@ -1,6 +1,6 @@
 {
-  "name": "@unified-webnovel/tsconfig",
-  "private": true,
-  "description": "tsconfig.json definition for unified-webnovel.",
-  "files": ["./tsconfig.*.json"]
+	"name": "@unified-webnovel/tsconfig",
+	"private": true,
+	"description": "tsconfig.json definition for unified-webnovel.",
+	"files": ["./tsconfig.*.json"]
 }

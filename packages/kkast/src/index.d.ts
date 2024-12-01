@@ -1,49 +1,49 @@
 // Type definitions for kkast.
 
 import type {
-  Node,
-  Literal as UnistLiteral,
-  Parent as UnistParent,
+	Node,
+	Literal as UnistLiteral,
+	Parent as UnistParent,
 } from "unist";
 
 // Node
 export interface Parent extends UnistParent {
-  children: KkastContent[];
+	children: KkastContent[];
 }
 
 export interface Literal extends UnistLiteral {
-  value: string;
+	value: string;
 }
 
 export interface Root extends Parent {
-  type: "root";
+	type: "root";
 }
 
 export interface Paragraph extends Parent {
-  type: "paragraph";
-  children: PhrasingContent[];
+	type: "paragraph";
+	children: PhrasingContent[];
 }
 
 export interface ParagraphMargin extends Node {
-  type: "paragraphMargin";
-  size: number;
+	type: "paragraphMargin";
+	size: number;
 }
 
 export interface Break extends Node {
-  type: "break";
+	type: "break";
 }
 
 export interface Emphasis extends Literal {
-  type: "emphasis";
+	type: "emphasis";
 }
 
 export interface Ruby extends Literal {
-  type: "ruby";
-  ruby: string;
+	type: "ruby";
+	ruby: string;
 }
 
 export interface Text extends Literal {
-  type: "text";
+	type: "text";
 }
 
 // Content model

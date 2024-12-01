@@ -1,58 +1,58 @@
 {
-  "name": "@rshirohara/rekurke-parse",
-  "version": "0.1.2",
-  "description": "rekurke plugin to add support for parsing kakuyomu novel format.",
-  "keywords": ["unified", "rekurke", "kakuyomu"],
-  "homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/rekurke-parse#readme",
-  "bugs": {
-    "url": "https://github.com/RShirohara/unified-webnovel/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RShirohara/unified-webnovel.git",
-    "directory": "packages/rekurke-parse"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Ray Shirohara",
-    "url": "https://github.com/RShirohara"
-  },
-  "type": "module",
-  "exports": "./src/index.ts",
-  "types": "./src/index.ts",
-  "files": ["./dist", "./src"],
-  "scripts": {
-    "build": "pnpm run build:peg && pnpm run build:ts",
-    "build:peg": "peggy --cache --format=es --plugin=./node_modules/ts-pegjs/dist/tspegjs.js -o ./src/lib/parser.peg.ts ./syntax/kakuyomu.peggy",
-    "build:ts": "tsc -b tsconfig.build.json",
-    "prepack": "pnpm run build && clean-package",
-    "postpack": "clean-package restore"
-  },
-  "dependencies": {
-    "@rshirohara/kkast": "workspace:^",
-    "unified": "^11.0.5"
-  },
-  "devDependencies": {
-    "@unified-webnovel/tsconfig": "workspace:*",
-    "peggy": "4.2.0",
-    "ts-pegjs": "4.2.1"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  },
-  "clean-package": {
-    "replace": {
-      "exports": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "remove": [
-      "scripts.build",
-      "scripts.build:peg",
-      "scripts.build:ts",
-      "devDependencies.@unified-webnovel/tsconfig",
-      "publishConfig",
-      "clean-package"
-    ]
-  }
+	"name": "@rshirohara/rekurke-parse",
+	"version": "0.1.2",
+	"description": "rekurke plugin to add support for parsing kakuyomu novel format.",
+	"keywords": ["unified", "rekurke", "kakuyomu"],
+	"homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/rekurke-parse#readme",
+	"bugs": {
+		"url": "https://github.com/RShirohara/unified-webnovel/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/RShirohara/unified-webnovel.git",
+		"directory": "packages/rekurke-parse"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Ray Shirohara",
+		"url": "https://github.com/RShirohara"
+	},
+	"type": "module",
+	"exports": "./src/index.ts",
+	"types": "./src/index.ts",
+	"files": ["./dist", "./src"],
+	"scripts": {
+		"build": "pnpm run build:peg && pnpm run build:ts",
+		"build:peg": "peggy --cache --format=es --plugin=./node_modules/ts-pegjs/dist/tspegjs.js -o ./src/lib/parser.peg.ts ./syntax/kakuyomu.peggy",
+		"build:ts": "tsc -b tsconfig.build.json",
+		"prepack": "pnpm run build && clean-package",
+		"postpack": "clean-package restore"
+	},
+	"dependencies": {
+		"@rshirohara/kkast": "workspace:^",
+		"unified": "^11.0.5"
+	},
+	"devDependencies": {
+		"@unified-webnovel/tsconfig": "workspace:*",
+		"peggy": "4.2.0",
+		"ts-pegjs": "4.2.1"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	},
+	"clean-package": {
+		"replace": {
+			"exports": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"remove": [
+			"scripts.build",
+			"scripts.build:peg",
+			"scripts.build:ts",
+			"devDependencies.@unified-webnovel/tsconfig",
+			"publishConfig",
+			"clean-package"
+		]
+	}
 }

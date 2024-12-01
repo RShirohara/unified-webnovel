@@ -4,5 +4,5 @@ import { postprocess } from "./postprocessor.js";
 import { preprocess } from "./preprocessor.js";
 
 export function fromKakuyomuNovel(doc: string): Root {
-  return postprocess(parse(preprocess(doc)));
+	return postprocess(parse(preprocess(doc)));
 }

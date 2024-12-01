@@ -1,6 +1,6 @@
 {
-  "extends": "@unified-webnovel/tsconfig/tsconfig.esm.json",
-  "compilerOptions": {
-    "baseUrl": "./src"
-  }
+	"extends": "@unified-webnovel/tsconfig/tsconfig.esm.json",
+	"compilerOptions": {
+		"baseUrl": "./src"
+	}
 }

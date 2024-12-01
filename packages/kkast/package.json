@@ -1,6 +1,6 @@
 {
 	"name": "@rshirohara/kkast",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"description": "Kakuyomu novel ast definition.",
 	"keywords": ["unified", "rekurke", "kakuyomu"],
 	"homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/kkast#readme",

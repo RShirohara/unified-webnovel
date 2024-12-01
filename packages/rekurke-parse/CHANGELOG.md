@@ -3,13 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.1.3](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-parse@0.1.2...@rshirohara/rekurke-parse@0.1.3) (2024-12-01)
-
-### Build System
-
-* **deps-dev:** bump peggy from 4.0.3 to 4.1.1 in the peggy group ([#354](https://github.com/RShirohara/unified-webnovel/issues/354)) ([f02ff8e](https://github.com/RShirohara/unified-webnovel/commit/f02ff8e9591e59f64307695f4d274f3ce91b370a))
-* **deps-dev:** bump peggy from 4.1.1 to 4.2.0 in the peggy group ([#366](https://github.com/RShirohara/unified-webnovel/issues/366)) ([df606d0](https://github.com/RShirohara/unified-webnovel/commit/df606d0d73a868570d3d9a1b36c53ff1cd994d1d))
-
 ## [0.1.2](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-parse@0.1.1...@rshirohara/rekurke-parse@0.1.2) (2024-10-27)
 
 ### Code Refactoring

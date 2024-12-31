@@ -17,7 +17,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@edge-runtime/vm": "4.0.4",
+		"@edge-runtime/vm": "5.0.0",
 		"@lerna-lite/changed": "3.10.1",
 		"@lerna-lite/cli": "3.10.1",
 		"@lerna-lite/publish": "3.10.1",

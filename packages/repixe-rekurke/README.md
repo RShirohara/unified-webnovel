@@ -2,8 +2,8 @@
 
 [![LICENSE][license-badge]][license]
 
-[**repixe**][repixe] plugin that turns [pixiv novel][pixiv-novel] format into
-[kakuyomu novel][kakuyomu-novel] format to support [rekurke][].
+**repixe** plugin that turns [pixiv novel][pixiv-novel] format into
+[kakuyomu novel][kakuyomu-novel] format to support rekurke.
 
 ## Contents
 
@@ -26,7 +26,7 @@
 
 ## What is this?
 
-This package is a [unified][] ([repixe][]) plugin that switches from repixe to rekurke.
+This package is a [unified][] (repixe) plugin that switches from repixe to rekurke.
 It does this by transforming the current pixiv novel ([pxast][]) syntax tree
 into an kakuyomu novel ([kkast][]) syntax tree.
 
@@ -137,8 +137,6 @@ There are no extra exported types.
 [npm]: https://docs.npmjs.com/cli/install
 [pixiv-novel]: https://www.pixiv.net/novel
 [pxast]: ../pxast
-[rekurke]: ../rekurke
-[repixe]: ../repixe
 [typescript]: https://www.typescriptlang.org
 [unified-processor]: https://github.com/unifiedjs/unified#processor
 [unified-transformer-ecosystem]: https://github.com/unifiedjs/unified#transforming-between-ecosystems

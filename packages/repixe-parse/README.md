@@ -2,7 +2,7 @@
 
 [![LICENSE][license-badge]][license]
 
-[**repixe**][repixe] plugin to add support for parsing [pixiv novel][pixiv-novel] format.
+**repixe** plugin to add support for parsing [pixiv novel][pixiv-novel] format.
 
 ## Contents
 
@@ -116,6 +116,5 @@ There are no extra exported types.
 [pixiv-novel-notation]: https://www.pixiv.help/hc/ja/articles/235584168-%E5%B0%8F%E8%AA%AC%E4%BD%9C%E5%93%81%E3%81%AE%E6%9C%AC%E6%96%87%E5%86%85%E3%81%AB%E4%BD%BF%E3%81%88%E3%82%8B%E7%89%B9%E6%AE%8A%E3%82%BF%E3%82%B0%E3%81%A8%E3%81%AF
 [pixiv-novel]: https://www.pixiv.net/novel
 [pxast]: ../pxast
-[repixe]: ../repixe
 [typescript]: https://www.typescriptlang.org
 [unified]: https://github.com/unifiedjs/unified

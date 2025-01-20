@@ -83,6 +83,10 @@ jobs:
             os: ubuntu-latest
             node-version: latest
             test-environment: node
+          - label: nodejs-22
+            os: ubuntu-latest
+            node-version: 20
+            test-environment: node
           - label: nodejs-20
             os: ubuntu-latest
             node-version: 20

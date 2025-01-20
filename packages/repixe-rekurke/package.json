@@ -1,6 +1,6 @@
 {
 	"name": "@rshirohara/repixe-rekurke",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"description": "repixe plugin that turns pixiv novel format into kakuyomu novel format to support rekurke.",
 	"keywords": ["unified", "repixe", "pixiv", "rekurke", "kakuyomu"],
 	"homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/repixe-rekurke#readme",

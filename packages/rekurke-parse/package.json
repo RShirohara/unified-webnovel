@@ -1,6 +1,6 @@
 {
 	"name": "@rshirohara/rekurke-parse",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"description": "rekurke plugin to add support for parsing kakuyomu novel format.",
 	"keywords": ["unified", "rekurke", "kakuyomu"],
 	"homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/rekurke-parse#readme",

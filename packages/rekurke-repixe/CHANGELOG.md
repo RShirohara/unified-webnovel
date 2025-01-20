@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-repixe@0.1.2...@rshirohara/rekurke-repixe@0.1.3) (2025-01-20)
+
+### Documents
+
+* remove simple in/out-put packages  ([#382](https://github.com/RShirohara/unified-webnovel/issues/382)) ([2cdb3c0](https://github.com/RShirohara/unified-webnovel/commit/2cdb3c013a196dae581864743a3c70dd9e61026f))
+
 ## [0.1.2](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-repixe@0.1.1...@rshirohara/rekurke-repixe@0.1.2) (2024-12-01)
 
 **Note:** Version bump only for package @rshirohara/rekurke-repixe

@@ -2,7 +2,7 @@
 
 [![LICENSE][license-badge]][license]
 
-[**repixe**][repixe] plugin to add support for serializing [pixiv novel][pixiv-novel] format.
+**repixe** plugin to add support for serializing [pixiv novel][pixiv-novel] format.
 
 ## Contents
 
@@ -144,6 +144,5 @@ There are no extra exported types.
 [npm]: https://docs.npmjs.com/cli/install
 [pixiv-novel]: https://www.pixiv.net/novel
 [pxast]: ../pxast
-[repixe]: ../repixe
 [typescript]: https://www.typescriptlang.org
 [unified]: https://github.com/unifiedjs/unified

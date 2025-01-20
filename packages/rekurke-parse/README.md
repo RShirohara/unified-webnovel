@@ -2,7 +2,7 @@
 
 [![LICENSE][license-badge]][license]
 
-[**rekurke**][rekurke] plugin to support for parsing
+**rekurke** plugin to support for parsing
 [kakuyomu novel][kakuyomu-novel] format.
 
 ## Contents
@@ -118,6 +118,5 @@ There are no extra exported types.
 [license-badge]: https://img.shields.io/github/license/RShirohara/unified-webnovel
 [license]: ./LICENSE.md
 [npm]: https://docs.npmjs.com/cli/install
-[rekurke]: ../rekurke
 [typescript]: https://www.typescriptlang.org
 [unified]: https://github.com/unifiedjs/unified

@@ -11,7 +11,6 @@
 ### [Pixiv novel][pixiv-novel]
 
 - [pxast](./packages/pxast)
-- [repixe](./packages/repixe)
 - [repixe-parse](./packages/repixe-parse)
 - [repixe-stringify](./packages/repixe-stringify)
 - [repixe-rekurke](./packages/repixe-rekurke)
@@ -19,7 +18,6 @@
 ### [Kakuyomu][kakuyomu]
 
 - [kkast](./packages/kkast)
-- [rekurke](./packages/rekurke)
 - [rekurke-parse](./packages/rekurke-parse)
 - [rekurke-stringify](./packages/rekurke-stringify)
 - [rekurke-repixe](./packages/rekurke-repixe)

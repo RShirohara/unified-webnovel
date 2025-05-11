@@ -12,8 +12,6 @@ updates:
       - "Type: Dependencies"
     assignees:
       - "RShirohara"
-    reviewers:
-      - "RShirohara"
     versioning-strategy: increase
     open-pull-requests-limit: 10
     groups:
@@ -42,6 +40,4 @@ updates:
       - "Type: CI"
       - "Type: Dependencies"
     assignees:
-      - "RShirohara"
-    reviewers:
       - "RShirohara"

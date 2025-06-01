@@ -78,11 +78,11 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
       peggy:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
       ts-pegjs:
         specifier: 4.2.1
-        version: 4.2.1(peggy@5.0.2)
+        version: 4.2.1(peggy@5.0.3)
 
   packages/rekurke-repixe:
     dependencies:
@@ -138,11 +138,11 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
       peggy:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
       ts-pegjs:
         specifier: 4.2.1
-        version: 4.2.1(peggy@5.0.2)
+        version: 4.2.1(peggy@5.0.3)
 
   packages/repixe-rekurke:
     dependencies:
@@ -1061,9 +1061,9 @@ packages:
     resolution: {integrity: sha512-lomjuFZKfM6MSAnV9aCZC9sc0qGbmZdfygNv+nCpqVkSKdCxCklLtd16O0EILGkImHw9ZpHkAnHaB+8Zxq5W6Q==}
     engines: {node: '>=8.0.0'}
 
-  commander@13.1.0:
-    resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==}
-    engines: {node: '>=18'}
+  commander@14.0.0:
+    resolution: {integrity: sha512-2uM9rYjPvyq39NwLRqaiLtWHyDC1FvryJDa2ATTVims5YAS4PupsEQsDvP14FqhFr0P49CYDugi59xaxJlTXRA==}
+    engines: {node: '>=20'}
 
   common-ancestor-path@1.0.1:
     resolution: {integrity: sha512-L3sHRo1pXXEqX8VU28kfgUY+YGsk09hPqZiZmLacNib6XNTCM8ubYeT7ryXQw8asB1sKgcU5lkB7ONug08aB8w==}
@@ -1828,8 +1828,8 @@ packages:
     resolution: {integrity: sha512-vE7JKRyES09KiunauX7nd2Q9/L7lhok4smP9RZTDeD4MVs72Dp2qNFVz39Nz5a0FVEW0BJR6C0DYrq6unoziZA==}
     engines: {node: '>= 14.16'}
 
-  peggy@5.0.2:
-    resolution: {integrity: sha512-s7cQVFZ845bskMM60L3pjWv/6QkC0dZeWd/qrj9g7vvjjS/gkHLTA4Bzs6dxIBezDPdD+WUjoEKgiH7OJA3JAw==}
+  peggy@5.0.3:
+    resolution: {integrity: sha512-QErYmLjj/ehiNNJRqx2qb36hzkanuascpMqREs2RQqaXhU3cflIRScP/u2BoobIfu/FaeI3GGxNB/vFX/Ar9lg==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -3342,7 +3342,7 @@ snapshots:
       strip-ansi: 6.0.1
       wcwidth: 1.0.1
 
-  commander@13.1.0: {}
+  commander@14.0.0: {}
 
   common-ancestor-path@1.0.1: {}
 
@@ -4130,10 +4130,10 @@ snapshots:
 
   pathval@2.0.0: {}
 
-  peggy@5.0.2:
+  peggy@5.0.3:
     dependencies:
       '@peggyjs/from-mem': 2.0.0
-      commander: 13.1.0
+      commander: 14.0.0
       source-map-generator: 2.0.0
 
   picocolors@1.1.1: {}
@@ -4418,9 +4418,9 @@ snapshots:
       '@ts-morph/common': 0.19.0
       code-block-writer: 12.0.0
 
-  ts-pegjs@4.2.1(peggy@5.0.2):
+  ts-pegjs@4.2.1(peggy@5.0.3):
     dependencies:
-      peggy: 5.0.2
+      peggy: 5.0.3
       prettier: 2.8.8
       ts-morph: 18.0.0
 

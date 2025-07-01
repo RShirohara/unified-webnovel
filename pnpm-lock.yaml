@@ -78,11 +78,11 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
       peggy:
-        specifier: 5.0.3
-        version: 5.0.3
+        specifier: 5.0.4
+        version: 5.0.4
       ts-pegjs:
         specifier: 4.2.1
-        version: 4.2.1(peggy@5.0.3)
+        version: 4.2.1(peggy@5.0.4)
 
   packages/rekurke-repixe:
     dependencies:
@@ -138,11 +138,11 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
       peggy:
-        specifier: 5.0.3
-        version: 5.0.3
+        specifier: 5.0.4
+        version: 5.0.4
       ts-pegjs:
         specifier: 4.2.1
-        version: 4.2.1(peggy@5.0.3)
+        version: 4.2.1(peggy@5.0.4)
 
   packages/repixe-rekurke:
     dependencies:
@@ -705,8 +705,8 @@ packages:
   '@octokit/types@14.1.0':
     resolution: {integrity: sha512-1y6DgTy8Jomcpu33N+p5w58l6xyt55Ar2I91RPiIA0xCJBXyUAhXCcmZaDWSANiha7R9a6qJJ2CRomGPZ6f46g==}
 
-  '@peggyjs/from-mem@2.0.0':
-    resolution: {integrity: sha512-f+pL/s2DiT+2dxwheSoJT0P/KJy/s0klzE+ZqRdXHlkeyFk/DpKtyjLZIiA79kx56g3oEPA8Zu9EzEKzAwuvhw==}
+  '@peggyjs/from-mem@2.0.1':
+    resolution: {integrity: sha512-5dAPJsLrb3KQahPb8kUqg9nGS2dKlMC4vCB3dMWoZIRqmPrNbBt6P6jidczFBoz+2EbFXBxXi0o9BUpEPHoD+g==}
     engines: {node: '>=20'}
 
   '@pkgjs/parseargs@0.11.0':
@@ -1803,8 +1803,8 @@ packages:
     resolution: {integrity: sha512-vE7JKRyES09KiunauX7nd2Q9/L7lhok4smP9RZTDeD4MVs72Dp2qNFVz39Nz5a0FVEW0BJR6C0DYrq6unoziZA==}
     engines: {node: '>= 14.16'}
 
-  peggy@5.0.3:
-    resolution: {integrity: sha512-QErYmLjj/ehiNNJRqx2qb36hzkanuascpMqREs2RQqaXhU3cflIRScP/u2BoobIfu/FaeI3GGxNB/vFX/Ar9lg==}
+  peggy@5.0.4:
+    resolution: {integrity: sha512-NMRm2w2irCFbiOaejvcDEyn+DMUaGd8s4RT1ztj9Kr/kR367pziIvmjqJ0OFqcAg+LqT5tPGsW96MNT5gUNdUw==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -1910,11 +1910,6 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  semver@7.7.1:
-    resolution: {integrity: sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.7.2:
     resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
     engines: {node: '>=10'}
@@ -1966,8 +1961,8 @@ packages:
     resolution: {integrity: sha512-aSbHV0DaBcr7u0PVHXzM6NbZNAtrr9sF6+Qfs9UUVG7Ll3jQ6hHi8F/xqIIcn2rvIVbr0v/2zyjSdwSV47AgLQ==}
     engines: {node: '>=12'}
 
-  source-map-generator@2.0.0:
-    resolution: {integrity: sha512-4KomB7QsJti7dFBAVF6SXHzuCNQauk4gE2CummcqPzl+eJqXz1CkkiBdVXXW3g8VGh23bxcdEVACOzrxpIqnUg==}
+  source-map-generator@2.0.1:
+    resolution: {integrity: sha512-AtEu86XavXC2HD/bQVQoDbovnTRZE/0QMAAHn6RxALAoLOM3a47IG06TpsJK23BnCmjbTYNLwx2vUhgzRYgGMA==}
     engines: {node: '>=20'}
 
   source-map-js@1.2.1:
@@ -2994,9 +2989,9 @@ snapshots:
     dependencies:
       '@octokit/openapi-types': 25.1.0
 
-  '@peggyjs/from-mem@2.0.0':
+  '@peggyjs/from-mem@2.0.1':
     dependencies:
-      semver: 7.7.1
+      semver: 7.7.2
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -4067,11 +4062,11 @@ snapshots:
 
   pathval@2.0.0: {}
 
-  peggy@5.0.3:
+  peggy@5.0.4:
     dependencies:
-      '@peggyjs/from-mem': 2.0.0
+      '@peggyjs/from-mem': 2.0.1
       commander: 14.0.0
-      source-map-generator: 2.0.0
+      source-map-generator: 2.0.1
 
   picocolors@1.1.1: {}
 
@@ -4179,8 +4174,6 @@ snapshots:
   safer-buffer@2.1.2:
     optional: true
 
-  semver@7.7.1: {}
-
   semver@7.7.2: {}
 
   set-blocking@2.0.0: {}
@@ -4231,7 +4224,7 @@ snapshots:
     dependencies:
       is-plain-obj: 4.1.0
 
-  source-map-generator@2.0.0: {}
+  source-map-generator@2.0.1: {}
 
   source-map-js@1.2.1: {}
 
@@ -4353,9 +4346,9 @@ snapshots:
       '@ts-morph/common': 0.19.0
       code-block-writer: 12.0.0
 
-  ts-pegjs@4.2.1(peggy@5.0.3):
+  ts-pegjs@4.2.1(peggy@5.0.4):
     dependencies:
-      peggy: 5.0.3
+      peggy: 5.0.4
       prettier: 2.8.8
       ts-morph: 18.0.0
 

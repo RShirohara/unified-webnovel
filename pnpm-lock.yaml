@@ -36,11 +36,11 @@ importers:
         specifier: 9.0.0
         version: 9.0.0
       typescript:
-        specifier: 5.8.3
-        version: 5.8.3
+        specifier: 5.9.2
+        version: 5.9.2
       vite-tsconfig-paths:
         specifier: 5.1.4
-        version: 5.1.4(typescript@5.8.3)(vite@7.0.0(@types/node@22.15.34)(yaml@2.8.0))
+        version: 5.1.4(typescript@5.9.2)(vite@7.0.0(@types/node@22.15.34)(yaml@2.8.0))
       vitest:
         specifier: 3.2.4
         version: 3.2.4(@edge-runtime/vm@5.0.0)(@types/node@22.15.34)(yaml@2.8.0)
@@ -2116,8 +2116,8 @@ packages:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
-  typescript@5.8.3:
-    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
+  typescript@5.9.2:
+    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4368,9 +4368,9 @@ snapshots:
       prettier: 2.8.8
       ts-morph: 18.0.0
 
-  tsconfck@3.0.3(typescript@5.8.3):
+  tsconfck@3.0.3(typescript@5.9.2):
     optionalDependencies:
-      typescript: 5.8.3
+      typescript: 5.9.2
 
   tuf-js@3.0.1:
     dependencies:
@@ -4386,7 +4386,7 @@ snapshots:
 
   type-fest@4.41.0: {}
 
-  typescript@5.8.3: {}
+  typescript@5.9.2: {}
 
   uglify-js@3.19.3:
     optional: true
@@ -4471,11 +4471,11 @@ snapshots:
       - tsx
       - yaml
 
-  vite-tsconfig-paths@5.1.4(typescript@5.8.3)(vite@7.0.0(@types/node@22.15.34)(yaml@2.8.0)):
+  vite-tsconfig-paths@5.1.4(typescript@5.9.2)(vite@7.0.0(@types/node@22.15.34)(yaml@2.8.0)):
     dependencies:
       debug: 4.4.0
       globrex: 0.1.2
-      tsconfck: 3.0.3(typescript@5.8.3)
+      tsconfck: 3.0.3(typescript@5.9.2)
     optionalDependencies:
       vite: 7.0.0(@types/node@22.15.34)(yaml@2.8.0)
     transitivePeerDependencies:

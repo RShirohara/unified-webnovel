@@ -1,6 +1,5 @@
-import { describe, expect, test } from "vitest";
-
 import type { Root } from "@rshirohara/kkast";
+import { describe, expect, test } from "vitest";
 import { fromKakuyomuNovel } from "~/lib/index.js";
 
 describe("2つの改行で成立する`ParagraphMargin`", () => {

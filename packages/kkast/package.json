@@ -2,7 +2,11 @@
 	"name": "@rshirohara/kkast",
 	"version": "0.1.4",
 	"description": "Kakuyomu novel ast definition.",
-	"keywords": ["unified", "rekurke", "kakuyomu"],
+	"keywords": [
+		"unified",
+		"rekurke",
+		"kakuyomu"
+	],
 	"homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/kkast#readme",
 	"bugs": {
 		"url": "https://github.com/RShirohara/unified-webnovel/issues"
@@ -19,7 +23,9 @@
 	},
 	"main": "",
 	"types": "./src/index.d.ts",
-	"files": ["./src"],
+	"files": [
+		"./src"
+	],
 	"scripts": {
 		"prepack": "clean-package",
 		"postpack": "clean-package restore"

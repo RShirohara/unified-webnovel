@@ -5,7 +5,9 @@
 	"license": "MIT",
 	"type": "module",
 	"packageManager": "pnpm@10.10.0",
-	"workspaces": ["./packages/*"],
+	"workspaces": [
+		"./packages/*"
+	],
 	"scripts": {
 		"build": "pnpm run -r build",
 		"check": "biome check .",

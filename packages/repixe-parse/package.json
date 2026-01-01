@@ -2,7 +2,11 @@
 	"name": "@rshirohara/repixe-parse",
 	"version": "0.3.3",
 	"description": "repixe plugin to add support for parsing pixiv novel format.",
-	"keywords": ["unified", "repixe", "pixiv"],
+	"keywords": [
+		"unified",
+		"repixe",
+		"pixiv"
+	],
 	"homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/repixe-parse#readme",
 	"bugs": {
 		"url": "https://github.com/RShirohara/unified-webnovel/issues"
@@ -20,7 +24,10 @@
 	"type": "module",
 	"exports": "./src/index.ts",
 	"types": "./src/index.ts",
-	"files": ["./dist", "./src"],
+	"files": [
+		"./dist",
+		"./src"
+	],
 	"scripts": {
 		"build": "pnpm run build:peg && pnpm run build:ts",
 		"build:peg": "peggy --cache --format=es --plugin=./node_modules/ts-pegjs/dist/tspegjs.js -o ./src/lib/parser.peg.ts ./syntax/pixiv.peggy",

@@ -2,7 +2,11 @@
 	"name": "@rshirohara/rekurke-parse",
 	"version": "0.1.5",
 	"description": "rekurke plugin to add support for parsing kakuyomu novel format.",
-	"keywords": ["unified", "rekurke", "kakuyomu"],
+	"keywords": [
+		"unified",
+		"rekurke",
+		"kakuyomu"
+	],
 	"homepage": "https://github.com/RShirohara/unified-webnovel/tree/main/packages/rekurke-parse#readme",
 	"bugs": {
 		"url": "https://github.com/RShirohara/unified-webnovel/issues"
@@ -20,7 +24,10 @@
 	"type": "module",
 	"exports": "./src/index.ts",
 	"types": "./src/index.ts",
-	"files": ["./dist", "./src"],
+	"files": [
+		"./dist",
+		"./src"
+	],
 	"scripts": {
 		"build": "pnpm run build:peg && pnpm run build:ts",
 		"build:peg": "peggy --cache --format=es --plugin=./node_modules/ts-pegjs/dist/tspegjs.js -o ./src/lib/parser.peg.ts ./syntax/kakuyomu.peggy",

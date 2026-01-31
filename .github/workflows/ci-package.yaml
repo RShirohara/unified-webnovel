@@ -62,7 +62,7 @@ jobs:
         uses: ./.github/actions/setup-pnpm
 
       - name: Run biome
-        uses: mongolyy/reviewdog-action-biome@abafdf75a79678ef8e2715298ee2dfc12262c82f # v2.7.1
+        uses: mongolyy/reviewdog-action-biome@cf9206b36be1b4dbce665866def251ee685a7f71 # v2.8.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           tool_name: Check result (Biome)

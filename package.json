@@ -28,7 +28,7 @@
 		"clean-package": "2.2.0",
 		"conventional-changelog-conventionalcommits": "9.1.0",
 		"typescript": "5.9.3",
-		"vite-tsconfig-paths": "6.0.3",
+		"vite-tsconfig-paths": "6.0.5",
 		"vitest": "4.0.18"
 	}
 }

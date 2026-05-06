@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-repixe@0.1.4...@rshirohara/rekurke-repixe@0.1.5) (2026-05-06)
+
+### Code Refactoring
+
+* apply linter/formatter upstream fixes ([#485](https://github.com/RShirohara/unified-webnovel/issues/485)) ([662e334](https://github.com/RShirohara/unified-webnovel/commit/662e3344c0aab970e7169ad1406a54ba55c60680))
+
 ## [0.1.4](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-repixe@0.1.3...@rshirohara/rekurke-repixe@0.1.4) (2025-06-01)
 
 **Note:** Version bump only for package @rshirohara/rekurke-repixe

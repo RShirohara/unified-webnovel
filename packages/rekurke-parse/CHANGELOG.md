@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-parse@0.1.5...@rshirohara/rekurke-parse@0.1.6) (2026-05-06)
+
+### Code Refactoring
+
+* apply linter/formatter upstream fixes ([#485](https://github.com/RShirohara/unified-webnovel/issues/485)) ([662e334](https://github.com/RShirohara/unified-webnovel/commit/662e3344c0aab970e7169ad1406a54ba55c60680))
+
+### Build System
+
+* **deps-dev:** bump peggy from 5.0.3 to 5.0.4 in the peggy group ([#431](https://github.com/RShirohara/unified-webnovel/issues/431)) ([8b63b9b](https://github.com/RShirohara/unified-webnovel/commit/8b63b9bbb5c20513ce19f29407628026011af6f1))
+* **deps-dev:** bump peggy from 5.0.4 to 5.0.5 in the peggy group ([#438](https://github.com/RShirohara/unified-webnovel/issues/438)) ([882725b](https://github.com/RShirohara/unified-webnovel/commit/882725b52082d0e9874c890ba0b187d052ddc74d))
+* **deps-dev:** bump peggy from 5.0.5 to 5.0.6 in the peggy group ([#447](https://github.com/RShirohara/unified-webnovel/issues/447)) ([3743730](https://github.com/RShirohara/unified-webnovel/commit/3743730fd3c23ed7122bdfac0363237d41e6e7b5))
+* **deps-dev:** bump peggy from 5.0.6 to 5.1.0 in the peggy group ([#504](https://github.com/RShirohara/unified-webnovel/issues/504)) ([5af24e6](https://github.com/RShirohara/unified-webnovel/commit/5af24e64a9cf96dd46c5199a9e2afaa6032c79fd))
+
 ## [0.1.5](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-parse@0.1.4...@rshirohara/rekurke-parse@0.1.5) (2025-06-01)
 
 ### Build System

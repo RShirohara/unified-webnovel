@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-stringify@0.1.5...@rshirohara/rekurke-stringify@0.1.6) (2026-05-06)
+
+### Code Refactoring
+
+* apply linter/formatter upstream fixes ([#485](https://github.com/RShirohara/unified-webnovel/issues/485)) ([662e334](https://github.com/RShirohara/unified-webnovel/commit/662e3344c0aab970e7169ad1406a54ba55c60680))
+
 ## [0.1.5](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/rekurke-stringify@0.1.4...@rshirohara/rekurke-stringify@0.1.5) (2025-01-20)
 
 ### Documents

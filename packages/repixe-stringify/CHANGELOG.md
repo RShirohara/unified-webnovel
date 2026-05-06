@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.3](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-stringify@0.3.2...@rshirohara/repixe-stringify@0.3.3) (2026-05-06)
+
+### Code Refactoring
+
+* apply linter/formatter upstream fixes ([#485](https://github.com/RShirohara/unified-webnovel/issues/485)) ([662e334](https://github.com/RShirohara/unified-webnovel/commit/662e3344c0aab970e7169ad1406a54ba55c60680))
+
 ## [0.3.2](https://github.com/RShirohara/unified-webnovel/compare/@rshirohara/repixe-stringify@0.3.1...@rshirohara/repixe-stringify@0.3.2) (2025-01-20)
 
 ### Documents

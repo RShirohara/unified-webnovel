@@ -1,6 +1,6 @@
 {
 	"name": "@rshirohara/rekurke-stringify",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "rekurke plugin to add support for serializing kakuyomu novel format.",
 	"keywords": [
 		"unified",
